@@ -32,6 +32,26 @@ export function metaText(count, unit, generatedAt) {
   return parts.join(" · ");
 }
 
+// ---------- 資料 ----------
+
+// 同一個 JSON 由多個分區共用（articles.json：論文＋回顧）時只抓一次；失敗不快取，下次呼叫再試
+const jsonCache = new Map();
+export function fetchJSON(url) {
+  if (!jsonCache.has(url)) {
+    const p = fetch(url, { cache: "no-cache" })
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .catch((err) => {
+        jsonCache.delete(url);
+        throw err;
+      });
+    jsonCache.set(url, p);
+  }
+  return jsonCache.get(url);
+}
+
 // ---------- 提示訊息 ----------
 
 let toastTimer = 0;

@@ -14,8 +14,11 @@
 //   setRead(pmid, read, article?)    標已讀時若在「稍後細讀」佇列中，同一次寫入把 later 改 false（laterAt 保留當歷史）
 //   setSaved(pmid, saved, article?)  「收藏」長期書庫，副本含書目欄位；標已讀不影響收藏
 //   setNote(pmid, text)              收藏筆記，存在同一份文件的 note 欄位
-//   getAllSaved()                → [{ pmid, savedAt, note, article }]，依 savedAt 新到舊
+//   markReviewed(pmid, article?)     回顧區「還記得」「完成」：reviewedAt = now、reviewCount +1
+//   getAllSaved()                → [{ pmid, savedAt, note, reviewedAt, reviewCount, article }]，依 savedAt 新到舊
 //   getAllRead()                 → [{ pmid, readAt, article }]，依 readAt 新到舊
+//   getAllReviewed()             → [{ pmid, reviewedAt, article }]，回顧過的文章（含已取消收藏的），依 reviewedAt 新到舊
+//   isSynced()                   登入後第一次 onSnapshot 是否已到（之前的空清單不代表真的沒有）
 // videoState 另有：
 //   setWatched(videoId, watched, video?)  標已看時若在「稍後看」佇列中，同一次寫入把 later 改 false
 //   getAllWatched()              → [{ id, watchedAt, item }]，依 watchedAt 新到舊
@@ -71,6 +74,7 @@ function byTimeDesc(key) {
 function createCollection(name, flags) {
   let cache = new Map();   // id → Firestore 文件資料
   let unsubscribe = null;
+  let synced = false;      // 這次登入後第一次 onSnapshot 是否已到
   const listeners = new Set();
 
   const emit = () => listeners.forEach((cb) => cb());
@@ -81,11 +85,13 @@ function createCollection(name, flags) {
     cache: () => cache,
     entry: (id) => cache.get(id),
     view,
+    synced: () => synced,
 
     // 登入身分變動時由 handleUser 呼叫：先 clear（通知登入狀態前），再 listen
     clear() {
       unsubscribe?.();
       unsubscribe = null;
+      synced = false;
       cache = new Map();
     },
     listen(user) {
@@ -95,6 +101,7 @@ function createCollection(name, flags) {
         fb.collection(fb.db, name),
         (snap) => {
           cache = new Map(snap.docs.map((d) => [d.id, d.data()]));
+          synced = true;
           emit();
         },
         (err) => console.error(`Firestore 監聽失敗（${name}）`, err),
@@ -168,7 +175,8 @@ export async function signOutUser() {
 
 const papers = createCollection("userState", ["read", "later", "saved"]);
 
-// 冗餘副本只有 title／journal／url／topics（收藏、稍後細讀另有書目欄位），其餘欄位補空值讓 papers.js 能照常排序、渲染
+// 冗餘副本只有 title／journal／url／topics（收藏、稍後細讀另有書目欄位；收藏、回顧另有 AI 摘要等，見 reviewCopy），
+// 其餘欄位補空值讓 papers.js 能照常排序、渲染
 // （#2 遷移來的已讀文件可能沒有 title，由 papers.js 顯示成「PMID xxx」；#5 之前的收藏沒有書目欄位）
 function fallbackArticle(pmid, e, at) {
   return {
@@ -176,8 +184,11 @@ function fallbackArticle(pmid, e, at) {
     title: e.title || "",
     journal: e.journal || "",
     journal_full: "",
-    pub_date: "",
-    abstract: "",
+    pub_date: e.pub_date || "",
+    abstract: e.abstract || "",
+    summary_zh: e.summary_zh,
+    oa_url: e.oa_url || null,
+    oa_pdf: !!e.oa_pdf,
     doi: e.doi || "",
     authors: e.authors || [],
     year: e.year || "",
@@ -208,6 +219,29 @@ function biblio(article) {
   };
 }
 
+// 收藏、回顧時另存 AI 摘要、英文摘要、發表日與 OA 連結，文章被 90 天滾動移出 articles.json 後回顧區仍有內容可看。
+// 只寫有值的欄位：傳進來的若是（缺這些欄位的）副本，不會把先前存好的蓋掉
+function reviewCopy(article) {
+  if (!article) return {};
+  const out = {};
+  const s = article.summary_zh;
+  if (s && !s.error && s.headline) {
+    out.summary_zh = {
+      headline: s.headline,
+      points: s.points ?? [],
+      relevance: Number.isInteger(s.relevance) ? s.relevance : null,
+      reason: s.reason ?? "",
+    };
+  }
+  if (article.abstract) out.abstract = article.abstract;
+  if (article.pub_date) out.pub_date = article.pub_date;
+  if (article.oa_url) {
+    out.oa_url = article.oa_url;
+    out.oa_pdf = !!article.oa_pdf;
+  }
+  return out;
+}
+
 function paperMeta(article) {
   if (!article) return {};
   return {
@@ -232,10 +266,21 @@ export const paperState = {
     return papers.list("later", "laterAt", paperItem);
   },
   async getAllSaved() {
-    return papers.list("saved", "savedAt", (pmid, e, at) => ({ ...paperItem(pmid, e, at), note: e.note || "" }));
+    return papers.list("saved", "savedAt", (pmid, e, at) => ({
+      ...paperItem(pmid, e, at),
+      note: e.note || "",
+      reviewedAt: toIso(e.reviewedAt),
+      reviewCount: e.reviewCount || 0,
+    }));
   },
   async getAllRead() {
     return papers.list("read", "readAt", paperItem);
+  },
+  async getAllReviewed() {
+    return papers.list("reviewedAt", "reviewedAt", paperItem);
+  },
+  isSynced() {
+    return papers.synced();
   },
 
   async setRead(pmid, read, article = null) {
@@ -261,6 +306,15 @@ export const paperState = {
       savedAt: saved ? now() : null,
       ...paperMeta(article),
       ...biblio(article),
+      ...reviewCopy(article),
+    });
+  },
+  // 回顧：次數以本地快取 +1（不用 increment()，樂觀快取裡才不會是 FieldValue）；同時補寫 reviewCopy（#8 之前的收藏沒有）
+  async markReviewed(pmid, article = null) {
+    await papers.write(pmid, {
+      reviewedAt: now(),
+      reviewCount: (papers.entry(pmid)?.reviewCount || 0) + 1,
+      ...reviewCopy(article),
     });
   },
   // 筆記存在同一份文件的 note 欄位；取消收藏時不動它，再次收藏時筆記會回來

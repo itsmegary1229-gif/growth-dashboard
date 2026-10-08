@@ -6,7 +6,8 @@
 
 - 純靜態 HTML / CSS / JavaScript，**無框架、無打包工具**
 - 託管於 GitHub Pages（repo 根目錄）：`itsmegary1229-gif/growth-dashboard`
-- 兩個分區：**論文**（PubMed E-utilities）、**影片**（YouTube 公開 RSS），由 GitHub Actions 每天台灣 06:00 自動抓取
+- 三個分區：**論文**（PubMed E-utilities）、**影片**（YouTube 公開 RSS），由 GitHub Actions 每天台灣 06:00 自動抓取；
+  **回顧**（每天從收藏抽文章重讀，純前端）
 
 ## 檔案結構
 
@@ -28,12 +29,13 @@ growth-dashboard/
     ├── css/style.css
     └── js/
         ├── app.js                ← 外殼：分區切換（URL hash）、頁首各分區篇數、登入 UI
-        ├── util.js               ← 共用工具：esc、台灣日期、toast、搜尋框、localStorage 偏好
+        ├── util.js               ← 共用工具：esc、台灣日期、toast、搜尋框、localStorage 偏好、共用 JSON 抓取
         ├── state.js              ← 個人狀態抽象層（Firestore，每分區一個集合）＋登入狀態
         ├── firebase.js           ← Firebase 初始化（CDN SDK，版號只寫在這裡）
         └── sections/
             ├── papers.js         ← 論文分區：篩選／搜尋、渲染、事件、收藏筆記、RIS
-            └── videos.js         ← 影片分區：頻道 pill、搜尋、卡片、已看／稍後看
+            ├── videos.js         ← 影片分區：頻道 pill、搜尋、卡片、已看／稍後看
+            └── review.js         ← 回顧分區：每日抽選收藏、還記得／再讀一次／移除收藏
 ```
 
 ## 鐵則
@@ -47,12 +49,14 @@ growth-dashboard/
 
 ## 分區架構
 
-- 頁首（站名、篇數／更新時間、登入）下方一排分區 tab「論文」「影片」；所選分區存在 URL hash（`#papers`／`#videos`），
+- 頁首（站名、篇數／更新時間、登入）下方一排分區 tab「論文」「影片」「回顧」；所選分區存在 URL hash（`#papers`／`#videos`／`#review`），
   重整後停在同一分區，沒有或不認得的 hash 用論文。切換分區不清各分區的狀態（子分頁、篩選、搜尋都留著）。
 - `index.html` 裡每個分區是一個 `<div class="section" id="section-{id}">`，含自己的黏頂控制列與列表；
   影片分區的元素 id 一律加 `v-` 前綴（論文沿用原本的 id）。
 - 分區模組介面：`init({ setMeta })`，`setMeta(text)` 更新頁首該分區的「N 篇／支 · 更新：MM/DD HH:mm」，
   app.js 只顯示目前分區的那一份。分區各自 `onAuthChange`／`onStatesChange` 重繪。
+- `articles.json` 由論文與回顧兩個分區共用，透過 `util.js` 的 `fetchJSON(url)` 只抓一次。
+  回顧分區沿用 papers.js 匯出的 `renderAbstract`、`summaryOf`、`renderRelevance`、`journalClass`。
 - 新增分區：寫 `sections/xxx.js`、在 `index.html` 加 `#section-xxx` 與分區 tab、在 app.js 的 `SECTIONS` 登記；
   需要個人狀態就在 `state.js` 用 `createCollection` 開一個集合，並把集合名加進 `firestore.rules`。
 
@@ -139,6 +143,21 @@ fetch.yml 在抓取之後執行（`continue-on-error: true`，失敗不擋 commi
   說明收合時 2 行；操作列 已看｜稍後看｜在 YouTube 開啟 ↗。已看淡化（「已看」分頁不淡化，多一行「已看於」）。
 - 「稍後看」「已看」以 Firestore 副本為主、`videos.json` 仍有時用完整資料，依 `laterAt`／`watchedAt` 新到舊。
 
+### 回顧分區（`sections/review.js`）
+- 需登入。候選池：`userState` 中 `saved == true`、且今天（台灣日期）還沒回顧的文章。
+- 抽選順序：從未回顧（沒有 `reviewedAt`）> `reviewedAt` 的台灣日期最久遠；同一組內依 FNV-1a(`"YYYY-MM-DD:pmid"`) 排序，
+  同一天任何裝置重整都看到同一篇，隔天換順序。目前出的是佇列第一篇。
+- 每天上限 5 篇。**今天已回顧篇數由 Firestore 的 `reviewedAt` 推算**（所有 reviewedAt 是今天的文件，含之後取消收藏的），
+  手機和電腦進度一致；只有完成畫面「再來一篇」加開的篇數存 localStorage `mdr.review.v1`（`{date, extra}`，隔天失效、只限這台裝置）。
+  「移除收藏」不算進今天的篇數。
+- 卡片：上方小字「今天第 N / 上限 篇 · 收藏共 M 篇 · 上次回顧」；headline（大字；沒有 AI 摘要時改以英文標題當主標）、英文標題、
+  期刊＋年份＋相關度、重點條列、筆記（暖色底「你當時寫的 · 收藏於 …」）。
+- 按鈕：「還記得」→ `markReviewed`；「再讀一次」→ 展開英文摘要＋看全文／PDF 連結，按鈕換成「完成」（同樣 `markReviewed`）；
+  「移除收藏」→ `setSaved(false)`（筆記保留）。皆樂觀更新、重繪成下一篇；換篇後 400ms 內忽略點擊（防連點）。
+  手機版按鈕列黏在畫面底部。
+- 完成畫面：今天回顧 N 篇・收藏共 M 篇・從未回顧 K 篇；還有候選時顯示「再來一篇」，收藏都回顧過時顯示「明天再來」。
+- 文章在 `articles.json` 時用完整資料，否則用 Firestore 副本（見 `reviewCopy`）。
+
 ### 個人狀態的三個概念（互相獨立，一篇可以同時具備）
 - **稍後細讀**（`later`）：短期待讀佇列。標已讀時自動離開佇列。
 - **收藏**（`saved`）：長期書庫。筆記、RIS 匯出都在這裡；標已讀不影響收藏。
@@ -150,7 +169,10 @@ Firebase 專案 `growth-dashboard-989fb`，SDK **13.0.0**（gstatic CDN 的 ES m
 文件 ID = PMID，欄位：`read`、`later`、`saved`（bool）、`readAt`／`laterAt`／`savedAt`（Timestamp｜null，用客戶端時間）、
 `title`、`journal`（簡稱）、`url`、`topics`（string[]）、`note`（string，收藏筆記），
 收藏、加入稍後細讀時另存書目 `authors`、`year`、`doi`、`volume`、`issue`、`pages`（#5 起；之前的收藏沒有，不回填）。
-`title`～`pages` 是冗餘副本，讓收藏／已讀清單與 RIS 匯出不依賴 `articles.json`。
+收藏與回顧（`markReviewed`）時另存 `summary_zh`（`{headline, points, relevance, reason}`）、`abstract`、`pub_date`、`oa_url`、`oa_pdf`
+（#8 起，`reviewCopy`；只寫有值的欄位，不會用空值蓋掉舊副本；#8 之前的收藏在第一次回顧時補上——前提是文章還在 `articles.json`）。
+`title`～`oa_pdf` 是冗餘副本，讓收藏／已讀清單、回顧與 RIS 匯出不依賴 `articles.json`（90 天後退場）。
+回顧：`reviewedAt`（Timestamp，最後一次「還記得／完成」）、`reviewCount`（number，沒有視為 0；以本地快取 +1 寫入，不用 `increment()`）。
 寫入一律 `setDoc(..., { merge: true })`；取消已讀／稍後細讀／收藏時不刪文件，只把布林改 false、時間改 null；
 例外：`setRead(pmid, true)` 時若 `later` 為 true，同一次寫入把 `later` 改 false，但 `laterAt` 保留當歷史；`note` 只由 `setNote` 改，
 取消收藏不動它（再次收藏時筆記會回來）。
@@ -164,7 +186,9 @@ Firebase 專案 `growth-dashboard-989fb`，SDK **13.0.0**（gstatic CDN 的 ES m
 `createCollection(name, flags)` 是單一集合的核心（快取、onSnapshot、樂觀寫入與回滾）；登入／登出時所有集合一起切換監聽。
 對外匯出 `paperState`（userState；沿用 #2～#5.5 的函式名稱與回傳格式）與 `videoState`（videoState），共同介面：
 `getState`、`getAllStates`、`setLater`、`getAllLater`、`onStatesChange`；另各有 `setRead`／`setSaved`／`setNote`／
-`getAllSaved`／`getAllRead`，與 `setWatched`／`getAllWatched`。清單項目一律有 `id`、`item`（論文另帶 `pmid`、`article`）。
+`getAllSaved`／`getAllRead`，與 `setWatched`／`getAllWatched`。paperState 另有 #8 的 `markReviewed(pmid, article?)`、
+`getAllReviewed()`（有 `reviewedAt` 的文件，含已取消收藏的）、`isSynced()`（登入後第一次 onSnapshot 是否已到，回顧區用來避免閃出空狀態）；
+`getAllSaved()` 項目多 `reviewedAt`（ISO）、`reviewCount`。清單項目一律有 `id`、`item`（論文另帶 `pmid`、`article`）。
 登入相關 `onAuthChange`、`signIn`、`signOutUser`、`AuthRequiredError` 兩分區共用。
 
 ### 安全規則（`firestore.rules`）
@@ -256,3 +280,10 @@ console 會有一則 videoState 監聽失敗的錯誤。
   - 本機以 TED、YouTube（@handle／網址，解析並回寫 channel_id 成功）、Google for Developers（UC id）測試，
     `videos.json` 結構正確；測完 `channels.json` 清回 `[]`、`videos.json` 清回空殼。
   - ⚠️ **新安全規則待業主套用**（見「安全規則」）；**業主尚未填頻道、尚未驗收影片同步**。
+- [x] **Handoff #8 回顧區——今天重讀一篇**（2026-10-08）：`sections/review.js`（新）、`index.html`、`app.js`、`state.js`、
+  `util.js`、`papers.js`、`style.css`。細節見「資料層說明 → 回顧分區」。
+  - 「收藏」分頁卡片多一行小字「回顧 N 次 · 上次 YYYY-MM-DD」（沒回顧過不顯示）。
+  - 與 handoff 的差異：今天的回顧篇數改由 Firestore `reviewedAt` 推算（handoff 寫 localStorage；那樣手機和電腦進度不一致），
+    localStorage 只存「再來一篇」的加開數。另在收藏／回顧時多存 AI 摘要等副本（`reviewCopy`），否則文章 90 天退場後回顧卡只剩英文標題。
+  - 安全規則不用改（同一集合加欄位）。本機以假 Firestore 驗證抽選、上限、再來一篇、移除收藏、收藏分頁回顧次數、手機／桌機版面；
+    **業主尚未以真實帳號驗收**。

@@ -3,7 +3,7 @@
 
 import { paperState, onAuthChange, AuthRequiredError } from "../state.js";
 import {
-  $, DAY, esc, twDay, metaText, toast, authRequiredMessage, bindSearch, loadPrefs, savePrefs,
+  $, DAY, esc, twDay, metaText, toast, authRequiredMessage, bindSearch, loadPrefs, savePrefs, fetchJSON,
 } from "../util.js";
 
 const {
@@ -153,7 +153,8 @@ function renderControls(scope) {
   $("hide-read").checked = ui.hideRead;
 }
 
-function renderAbstract(text) {
+// renderAbstract／summaryOf／renderRelevance／journalClass 回顧分區也用
+export function renderAbstract(text) {
   if (!text) return `<p class="muted">（PubMed 無摘要）</p>`;
   return text.split(/\n\s*\n/).map((para) => {
     const m = para.match(/^([A-Z][A-Z0-9 ,&/()-]{1,40}):\s*(.*)$/s);
@@ -164,17 +165,21 @@ function renderAbstract(text) {
 }
 
 // AI 摘要：summary_zh 不存在或是 { error } 時都不顯示
-function summaryOf(a) {
+export function summaryOf(a) {
   const s = a.summary_zh;
   return s && !s.error && s.headline ? s : null;
 }
 
-function renderRelevance(a) {
+export function renderRelevance(a) {
   const r = relevanceOf(a);
   if (r === null || summaryOf(a) === null) return "";
   const level = r >= 4 ? "high" : r <= 2 ? "low" : "mid";
   const reason = a.summary_zh.reason ? ` title="${esc(a.summary_zh.reason)}"` : "";
   return `<span class="rel rel-${level}"${reason}>相關 ${r}/5</span>`;
+}
+
+export function journalClass(journal) {
+  return JOURNALS.includes(journal) ? `j-${journal.toLowerCase()}` : "j-other";
 }
 
 function renderPoints(s) {
@@ -196,10 +201,10 @@ function renderCard(a) {
   const st = states.get(a.pmid) || {};
   const open = expanded.has(a.pmid);
   const readAt = ui.tab === "read" ? readList.find((r) => r.pmid === a.pmid)?.readAt : null;
+  const saved = ui.tab === "saved" ? savedList.find((s) => s.pmid === a.pmid) : null;
   const withNote = ui.tab === "saved";
   // Unpaywall 有 PDF 直連才標「PDF」，否則是 OA 落地頁
   const oa = a.oa_url ? `<a class="act act-link act-oa" href="${esc(a.oa_url)}" target="_blank" rel="noopener noreferrer">${a.oa_pdf ? "PDF ↗" : "OA 全文 ↗"}</a>` : "";
-  const jClass = JOURNALS.includes(a.journal) ? `j-${a.journal.toLowerCase()}` : "j-other";
   const summary = summaryOf(a);
   const topics = (a.topics || []).map((t) =>
     `<span class="topic">${esc(TOPIC_NAME[t] || t)}</span>`).join("");
@@ -210,11 +215,12 @@ function renderCard(a) {
     </h2>
     ${summary ? `<p class="headline">${esc(summary.headline)}</p>` : ""}
     <div class="card-meta">
-      ${a.journal ? `<span class="journal ${jClass}">${esc(a.journal)}</span>` : ""}
+      ${a.journal ? `<span class="journal ${journalClass(a.journal)}">${esc(a.journal)}</span>` : ""}
       ${renderRelevance(a)}
       <time datetime="${esc(a.pub_date)}">${esc(a.pub_date)}</time>
     </div>
     ${ui.tab === "read" ? `<p class="read-at">${readAt ? `已讀於 ${twDay.format(new Date(readAt))}` : "已讀日期不明"}</p>` : ""}
+    ${saved?.reviewCount ? `<p class="review-stat">回顧 ${saved.reviewCount} 次${saved.reviewedAt ? ` · 上次 ${twDay.format(new Date(saved.reviewedAt))}` : ""}</p>` : ""}
     ${renderPoints(summary)}
     <div class="abstract" data-act="toggle">${renderAbstract(a.abstract)}</div>
     ${topics ? `<div class="topics">${topics}</div>` : ""}
@@ -585,9 +591,7 @@ export async function init(ctx) {
   bindNotes();
   bindState();
   try {
-    const res = await fetch("data/articles.json", { cache: "no-cache" });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
+    const data = await fetchJSON("data/articles.json");
     articles = (data.articles || []).slice().sort(compareArticles);
     await refreshStates();
     loaded = true;

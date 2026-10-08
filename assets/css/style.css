@@ -65,7 +65,7 @@ button { cursor: pointer; -webkit-tap-highlight-color: transparent; }
   gap: 12px;
 }
 
-/* ---------- 分區切換（論文／影片） ---------- */
+/* ---------- 分區切換（論文／影片／回顧） ---------- */
 
 .section-tabs {
   display: flex;
@@ -574,6 +574,144 @@ main.wrap { padding-bottom: calc(48px + env(safe-area-inset-bottom)); }
   .tab { flex: 1 1 auto; font-size: 0.95rem; padding: 0 4px; white-space: nowrap; }
 }
 
+/* 「收藏」分頁：回顧次數 */
+.review-stat {
+  margin: 4px 0 0;
+  font-size: 0.82rem;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 回顧分區 ---------- */
+
+.review { max-width: 640px; margin: 0 auto; padding-top: 18px; }
+
+.review-progress {
+  margin: 0 2px 10px;
+  font-size: 0.82rem;
+  color: var(--text-3);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.review-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 24px 20px 22px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+.review-card.is-fresh { animation: review-in 0.25s ease-out; }
+@keyframes review-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+.review-headline {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.5;
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+.review-title {
+  margin: 10px 0 0;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--text-2);
+}
+.review-title.is-main { margin-top: 0; font-size: 1.2rem; font-weight: 650; color: var(--text); }
+.review-card .card-meta { flex-wrap: wrap; row-gap: 6px; margin-top: 10px; }
+
+.review-points {
+  margin: 16px 0 0;
+  padding: 12px 14px 12px 32px;
+  border-radius: 12px;
+  background: #f5f8f7;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.review-points li + li { margin-top: 6px; }
+.review-points li::marker { color: var(--accent); }
+
+/* 筆記：暖色底，和 AI 重點區分開來——這是自己寫的 */
+.review-note {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border-left: 4px solid #c98a2b;
+  background: #fbf3e4;
+}
+.review-note-label {
+  margin: 0 0 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #94600f;
+}
+.review-note-text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.review-more { margin-top: 18px; padding-top: 16px; border-top: 1px solid #efefed; }
+.review-abstract { color: var(--text-2); font-size: 0.97rem; line-height: 1.7; }
+.review-abstract p { margin: 0 0 0.9em; }
+.review-abstract p:last-child { margin-bottom: 0; }
+.review-links { display: flex; gap: 8px; margin-top: 14px; }
+
+.review-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+.review-actions .rv-primary { grid-column: 1 / -1; }
+.review-actions.is-open { grid-template-columns: 1fr; }
+/* 手機：卡片常比一屏長，按鈕黏在底部，不用捲到最下面才按得到 */
+@media (max-width: 639px) {
+  .review-actions {
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    margin: 4px calc(-1 * var(--gutter)) 0;
+    padding: 14px var(--gutter) calc(12px + env(safe-area-inset-bottom));
+    background: linear-gradient(rgba(247, 247, 245, 0), var(--bg) 16px);
+  }
+}
+.review-actions.is-open .rv-remove { justify-self: center; min-height: 44px; border: 0; background: none; }
+
+.rv-btn {
+  min-height: 52px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-2);
+}
+.rv-btn:hover { border-color: #c9cbc8; }
+.rv-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.rv-primary:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
+.rv-remove { color: #9b2c2c; font-weight: 500; }
+
+.review-done {
+  margin: 40px 0;
+  padding: 32px 20px;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.review-done-title { margin: 0; font-size: 1.3rem; font-weight: 700; color: var(--accent-strong); }
+.review-done-stat { margin: 8px 0 0; font-size: 0.92rem; color: var(--text-2); font-variant-numeric: tabular-nums; }
+.review-done .rv-btn { margin-top: 20px; min-width: 160px; color: var(--accent-strong); border-color: var(--accent); }
+
 /* ---------- 影片卡片 ---------- */
 
 /* 手機：縮圖滿版在上；桌機：縮圖在左，操作列橫跨兩欄 */
@@ -631,7 +769,11 @@ main.wrap { padding-bottom: calc(48px + env(safe-area-inset-bottom)); }
   .card { padding: 22px 24px 16px; }
   .actions { flex-direction: row; justify-content: space-between; }
   .act { flex: none; min-width: 96px; }
-  .section-tabs { max-width: 280px; }
+  .section-tabs { max-width: 360px; }
+  .review-card { padding: 30px 32px 26px; }
+  .review-actions { grid-template-columns: 1.4fr 1fr 1fr; }
+  .review-actions .rv-primary { grid-column: auto; }
+  .review-actions.is-open { grid-template-columns: 2fr 1fr; }
   .vcard { grid-template-columns: 200px minmax(0, 1fr); column-gap: 18px; }
   .thumb { margin: 0; align-self: start; }
   .vcard .actions { grid-column: 1 / -1; }
