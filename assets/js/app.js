@@ -178,7 +178,8 @@ function renderCard(a) {
   const open = expanded.has(a.pmid);
   const readAt = ui.tab === "read" ? readList.find((r) => r.pmid === a.pmid)?.readAt : null;
   const withNote = ui.tab === "saved";
-  const pdf = a.oa_url ? `<a class="act act-link act-pdf" href="${esc(a.oa_url)}" target="_blank" rel="noopener noreferrer">PDF ↗</a>` : "";
+  // Unpaywall 有 PDF 直連才標「PDF」，否則是 OA 落地頁
+  const oa = a.oa_url ? `<a class="act act-link act-oa" href="${esc(a.oa_url)}" target="_blank" rel="noopener noreferrer">${a.oa_pdf ? "PDF ↗" : "OA 全文 ↗"}</a>` : "";
   const jClass = JOURNALS.includes(a.journal) ? `j-${a.journal.toLowerCase()}` : "j-other";
   const topics = (a.topics || []).map((t) =>
     `<span class="topic">${esc(TOPIC_NAME[t] || t)}</span>`).join("");
@@ -195,12 +196,12 @@ function renderCard(a) {
     <div class="abstract" data-act="toggle">${renderAbstract(a.abstract)}</div>
     ${topics ? `<div class="topics">${topics}</div>` : ""}
     ${withNote ? renderNote(a.pmid) : ""}
-    <div class="actions${withNote ? " has-note" : ""}${pdf ? " has-pdf" : ""}">
+    <div class="actions${withNote ? " has-note" : ""}${oa ? " has-oa" : ""}">
       <button type="button" class="act act-read" data-act="read" aria-pressed="${!!st.read}">${st.read ? "✓ 已讀" : "已讀"}</button>
       <button type="button" class="act act-save" data-act="save" aria-pressed="${!!st.saved}">${st.saved ? "★ 已收藏" : "☆ 收藏"}</button>
       ${withNote ? `<button type="button" class="act act-note" data-act="note" aria-expanded="${editingNote === a.pmid}">✎ 筆記</button>` : ""}
       <a class="act act-link" href="${esc(a.url)}" target="_blank" rel="noopener noreferrer">看全文 ↗</a>
-      ${pdf}
+      ${oa}
     </div>
   </article>`;
 }

@@ -495,18 +495,18 @@ main.wrap { padding-bottom: calc(48px + env(safe-area-inset-bottom)); }
 .act-link { color: var(--accent-strong); font-weight: 600; }
 .act-note[aria-expanded="true"] { border-color: var(--accent); color: var(--accent-strong); }
 
-/* 手機上四顆以上按鈕依文字寬度分配，才擠得下；五顆（筆記＋PDF）時兩個連結換到第二列 */
+/* 手機上四顆以上按鈕依文字寬度分配，才擠得下；五顆（筆記＋PDF／OA 全文）時兩個連結換到第二列 */
 @media (max-width: 639px) {
-  .actions.has-note, .actions.has-pdf { gap: 6px; }
-  .actions.has-note .act, .actions.has-pdf .act { flex: 1 1 auto; padding: 0 8px; font-size: 0.88rem; }
-  .actions.has-note.has-pdf { flex-wrap: wrap; }
-  .actions.has-note.has-pdf .act-link { flex-basis: 40%; }
+  .actions.has-note, .actions.has-oa { gap: 6px; }
+  .actions.has-note .act, .actions.has-oa .act { flex: 1 1 auto; padding: 0 8px; font-size: 0.88rem; }
+  .actions.has-note.has-oa { flex-wrap: wrap; }
+  .actions.has-note.has-oa .act-link { flex-basis: 40%; }
   .tab { font-size: 0.95rem; padding: 0 4px; white-space: nowrap; }
 }
-/* 小於 380px 時四顆（已讀、收藏、看全文、PDF）也擠不下，連結一樣換到第二列 */
-@media (max-width: 379px) {
-  .actions.has-pdf { flex-wrap: wrap; }
-  .actions.has-pdf .act-link { flex-basis: 40%; }
+/* 小於 400px 時四顆（已讀、收藏、看全文、PDF／OA 全文）也擠不下，排成 2×2，連結在第二列 */
+@media (max-width: 399px) {
+  .actions.has-oa { flex-wrap: wrap; }
+  .actions.has-oa:not(.has-note) .act { flex-basis: calc(50% - 3px); }
 }
 
 .empty {
@@ -524,7 +524,7 @@ main.wrap { padding-bottom: calc(48px + env(safe-area-inset-bottom)); }
   .actions { justify-content: flex-start; }
   .act { flex: none; min-width: 104px; }
   .act-link { margin-left: auto; }
-  .act-link + .act-pdf { margin-left: 0; }
+  .act-link + .act-oa { margin-left: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

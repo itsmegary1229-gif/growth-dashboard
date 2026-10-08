@@ -95,6 +95,7 @@ MONTHS = {
         ["jan", "feb", "mar", "apr", "may", "jun",
          "jul", "aug", "sep", "oct", "nov", "dec"], start=1)
 }
+OA_KEYS = ("oa_url", "oa_pdf", "oa_checked_at")
 TA_TO_ABBR = {v.lower(): k for k, v in JOURNALS.items()}
 
 _last_request = 0.0
@@ -263,7 +264,7 @@ def efetch(pmids):
 
 
 def unpaywall(doi):
-    """查 Unpaywall，回傳 OA 連結（優先 PDF）或 None；查詢失敗丟出例外（呼叫端略過該篇）。"""
+    """查 Unpaywall，回傳（OA 連結或 None, 是否為 PDF 直連）；查詢失敗丟出例外（呼叫端略過該篇）。"""
     global _last_oa_request
     wait = OA_INTERVAL - (time.monotonic() - _last_oa_request)
     if wait > 0:
@@ -277,10 +278,12 @@ def unpaywall(doi):
             data = json.loads(resp.read())
     except urllib.error.HTTPError as e:
         if e.code == 404:  # Unpaywall 沒收錄這個 DOI，視同沒有 OA
-            return None
+            return None, False
         raise
     best = data.get("best_oa_location") or {}
-    return best.get("url_for_pdf") or best.get("url") or None
+    if best.get("url_for_pdf"):
+        return best["url_for_pdf"], True
+    return best.get("url") or None, False
 
 
 def needs_oa_check(a, now):
@@ -289,12 +292,17 @@ def needs_oa_check(a, now):
     checked = a.get("oa_checked_at")
     if not checked:
         return True
+    if a.get("oa_url") and "oa_pdf" not in a:  # #5 首版沒記 oa_pdf，重查一次補上
+        return True
     return a.get("oa_url") is None and \
         now - parse_iso(checked) > timedelta(days=OA_RECHECK_DAYS)
 
 
 def check_oa(articles, now):
-    """就地更新需要查詢的文章的 oa_url／oa_checked_at；回傳（查詢篇數, 有 OA 篇數, 失敗篇數）。"""
+    """就地更新需要查詢的文章的 oa_url／oa_pdf／oa_checked_at；回傳（查詢篇數, 有 OA 篇數, 失敗篇數）。"""
+    for a in articles:  # #5 首版查過但沒有 OA 的文章沒有 oa_pdf，補成 False
+        if a.get("oa_checked_at") and not a.get("oa_url"):
+            a.setdefault("oa_pdf", False)
     targets = [a for a in articles if needs_oa_check(a, now)]
     found = failed = streak = 0
     for i, a in enumerate(targets):
@@ -304,7 +312,7 @@ def check_oa(articles, now):
             failed += len(targets) - i
             break
         try:
-            oa_url = unpaywall(a["doi"])
+            oa_url, oa_pdf = unpaywall(a["doi"])
             streak = 0
         except Exception as e:  # 單篇失敗不影響整體，下次排程再查
             print(f"  ! Unpaywall 查詢失敗（PMID {a['pmid']}，{a['doi']}）：{e}",
@@ -313,6 +321,7 @@ def check_oa(articles, now):
             streak += 1
             continue
         a["oa_url"] = oa_url
+        a["oa_pdf"] = oa_pdf
         a["oa_checked_at"] = iso_utc(datetime.now(timezone.utc))
         if oa_url:
             found += 1
@@ -358,7 +367,8 @@ def main():
     old_articles = []
     if OUTPUT.exists():
         old_articles = json.loads(OUTPUT.read_text(encoding="utf-8")).get("articles", [])
-        existing = {a["pmid"]: a for a in old_articles}
+        # 複製一份：check_oa 會就地改文章，不能動到 old_articles，否則步驟 6 比不出差異
+        existing = {a["pmid"]: dict(a) for a in old_articles}
 
     merged = dict(existing)
     new_pmids = []
@@ -366,14 +376,15 @@ def main():
         old = existing.get(pmid)
         topics = [t for t in TOPICS if t in hits[pmid]
                   or (old and t in old.get("topics", []))]
+        # OA 查詢結果沿用舊值（舊值缺哪個欄位就保持缺，needs_oa_check 靠它判斷要不要重查），由步驟 5 決定要不要重查
+        oa = {k: old[k] for k in OA_KEYS if k in old} if old else \
+            {"oa_url": None, "oa_pdf": False, "oa_checked_at": None}
         merged[pmid] = dict(
             art,
             topics=topics,
             url=f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/",
             added_at=old["added_at"] if old else now_str,
-            # OA 查詢結果沿用舊值，由步驟 5 決定要不要重查
-            oa_url=old.get("oa_url") if old else None,
-            oa_checked_at=old.get("oa_checked_at") if old else None,
+            **oa,
         )
         if not old:
             new_pmids.append(pmid)

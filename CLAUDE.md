@@ -53,8 +53,9 @@ efetch 批次（≤200）→ 與既有 JSON 以 pmid 合併（舊文保留 `adde
 
 ### Unpaywall（OA 全文連結）
 對有 `doi` 的文章 GET `https://api.unpaywall.org/v2/{doi}?email=…`（無 key），取 `best_oa_location.url_for_pdf`，
-沒有則取 `.url`，寫進 `oa_url`（無 OA 為 null）並記 `oa_checked_at`。
-只查「沒有 `oa_checked_at`」或「`oa_url` 為 null 且 `oa_checked_at` 超過 30 天」的文章（embargo 解除後會變 OA）。
+沒有則取 `.url`，寫進 `oa_url`（無 OA 為 null）、`oa_pdf`（取到的是 `url_for_pdf` 才 true）並記 `oa_checked_at`。
+只查「沒有 `oa_checked_at`」或「`oa_url` 為 null 且 `oa_checked_at` 超過 30 天」的文章（embargo 解除後會變 OA），
+外加「有 `oa_url` 但沒有 `oa_pdf` 欄位」的（#5 首版資料，查一次補上）。
 請求間隔 ≥ 0.2 秒；DOI 不在 Unpaywall（HTTP 404）視同無 OA；其他錯誤印警告、不寫 `oa_checked_at`（下次排程再查），
 連續失敗 5 次就放棄本次剩下的（Unpaywall 整個掛掉時不拖慢 Actions）。OA 查詢失敗永遠不會讓腳本 exit 1。
 設定在腳本頂端 `OA_INTERVAL`／`OA_RECHECK_DAYS`／`OA_MAX_STREAK`。
@@ -66,7 +67,7 @@ efetch 批次（≤200）→ 與既有 JSON 以 pmid 合併（舊文保留 `adde
 `doi`、`authors`（陣列，每位 "LastName Initials"，例 "Yang JR"；團體作者照原文；沒有 Initials 時只有姓）、
 `year`（pub_date 的年）、`volume`、`issue`、`pages`（MedlinePgn 原樣，如 "123-30"、"e7923"；
 線上搶先刊出的文章這三欄為空字串）、`topics`（主題 id 陣列）、`url`、`added_at`（首次進入本檔的 UTC 時間）、
-`oa_url`（OA 全文連結或 null）、`oa_checked_at`（最後一次成功查 Unpaywall 的 UTC 時間）。
+`oa_url`（OA 全文連結或 null）、`oa_pdf`（bool，`oa_url` 是否為 PDF 直連）、`oa_checked_at`（最後一次成功查 Unpaywall 的 UTC 時間）。
 
 ### Firestore（`userState` 集合）
 Firebase 專案 `growth-dashboard-989fb`，SDK **13.0.0**（gstatic CDN 的 ES module 版：
@@ -120,10 +121,12 @@ Firebase 專案 `growth-dashboard-989fb`，SDK **13.0.0**（gstatic CDN 的 ES m
   - 手機：三個分頁等寬；「稍後細讀」卡片有四顆按鈕，窄螢幕改依文字寬度分配並縮小字級（320px 寬可排下）。
 - [x] **Handoff #5 書目欄位、Unpaywall OA 連結、RIS 匯出**（2026-10-08）：`fetch_pubmed.py`、`articles.json`、`index.html`、
   `app.js`、`state.js`、`style.css`。
-  - 本機 `--days 90` 重跑：172 篇全部補上書目與 OA 查詢（`added_at` 全數保留），有 OA 80 篇（其中 68 篇是 PRS-GO 等
-    只給 doi.org 落地頁、沒有 PDF 直連）；90 篇是線上搶先刊出，尚無卷期頁碼。
-  - 卡片：有 `oa_url` 時「看全文 ↗」旁多一顆「PDF ↗」（三個分頁都有）。手機版：「稍後細讀」五顆按鈕時兩個連結換到第二列；
-    其他分頁四顆按鈕在 < 380px 寬時也換列。
+  - 本機 `--days 90` 重跑：172 篇全部補上書目與 OA 查詢（`added_at` 全數保留），有 OA 80 篇（PDF 直連 12 篇、
+    68 篇是 PRS-GO 等只給 doi.org 落地頁）；90 篇是線上搶先刊出，尚無卷期頁碼。
+  - 卡片：有 `oa_url` 時「看全文 ↗」旁多一顆連結（三個分頁都有）：`oa_pdf` 為 true 顯示「PDF ↗」，否則「OA 全文 ↗」。
+    手機版：「稍後細讀」五顆按鈕時兩個連結換到第二列；其他分頁四顆按鈕在 < 400px 寬時排成 2×2。
+  - 修正：`check_oa` 會就地改文章，原本會連帶改到用來比對的 `old_articles`，導致只有 OA 欄位變動時誤判「無變更」不寫檔；
+    現在合併前先複製一份。
   - `state.js`：`setSaved` 多寫書目欄位；`fallbackArticle` 也帶這些欄位（避免在已退場的收藏上取消收藏時被空值覆蓋）。
   - 「稍後細讀」結果列右側「匯出 RIS」（有文章才顯示），匯出目前主題 pill＋搜尋下列出的文章；資料優先 `articles.json`，
     退場的用 Firestore 副本。檔名 `growth-dashboard_saved_YYYYMMDD.ris`（台灣日期），UTF-8 無 BOM、CRLF。

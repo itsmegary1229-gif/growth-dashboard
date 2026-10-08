@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T02:52:38Z",
+  "generated_at": "2026-10-08T03:06:03Z",
   "articles": [
     {
       "pmid": "42809129",
@@ -23,7 +23,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42809129/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:52:46Z"
+      "oa_checked_at": "2026-10-08T02:52:46Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42806127",
@@ -46,7 +47,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42806127/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://link.springer.com/content/pdf/10.1007/s00266-026-06276-2.pdf",
-      "oa_checked_at": "2026-10-08T02:52:47Z"
+      "oa_checked_at": "2026-10-08T03:04:27Z",
+      "oa_pdf": true
     },
     {
       "pmid": "42803819",
@@ -76,7 +78,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42803819/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:52:48Z"
+      "oa_checked_at": "2026-10-08T02:52:48Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42800777",
@@ -104,7 +107,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42800777/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://www.ijoms.com/article/S0901-5027(26)00402-9/pdf",
-      "oa_checked_at": "2026-10-08T02:52:49Z"
+      "oa_checked_at": "2026-10-08T03:04:28Z",
+      "oa_pdf": true
     },
     {
       "pmid": "42809320",
@@ -128,7 +132,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42809320/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:52:51Z"
+      "oa_checked_at": "2026-10-08T02:52:51Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42791356",
@@ -161,7 +166,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42791356/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://link.springer.com/content/pdf/10.1007/s00266-026-06228-w.pdf",
-      "oa_checked_at": "2026-10-08T02:52:52Z"
+      "oa_checked_at": "2026-10-08T03:04:29Z",
+      "oa_pdf": true
     },
     {
       "pmid": "42786800",
@@ -184,7 +190,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42786800/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:52:53Z"
+      "oa_checked_at": "2026-10-08T02:52:53Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42781764",
@@ -213,7 +220,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42781764/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:52:54Z"
+      "oa_checked_at": "2026-10-08T02:52:54Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42781695",
@@ -238,7 +246,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42781695/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008118",
-      "oa_checked_at": "2026-10-08T02:52:55Z"
+      "oa_checked_at": "2026-10-08T03:04:30Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42781666",
@@ -262,7 +271,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42781666/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008075",
-      "oa_checked_at": "2026-10-08T02:52:56Z"
+      "oa_checked_at": "2026-10-08T03:04:31Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42781611",
@@ -288,7 +298,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42781611/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008070",
-      "oa_checked_at": "2026-10-08T02:52:57Z"
+      "oa_checked_at": "2026-10-08T03:04:32Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42781236",
@@ -312,7 +323,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42781236/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008119",
-      "oa_checked_at": "2026-10-08T02:52:58Z"
+      "oa_checked_at": "2026-10-08T03:04:33Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42773939",
@@ -336,7 +348,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42773939/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:52:59Z"
+      "oa_checked_at": "2026-10-08T02:52:59Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42800778",
@@ -363,7 +376,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42800778/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1016/j.ijom.2026.09.017",
-      "oa_checked_at": "2026-10-08T02:53:00Z"
+      "oa_checked_at": "2026-10-08T03:04:35Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42775335",
@@ -388,7 +402,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42775335/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008113",
-      "oa_checked_at": "2026-10-08T02:53:01Z"
+      "oa_checked_at": "2026-10-08T03:04:36Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42768206",
@@ -417,7 +432,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42768206/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:02Z"
+      "oa_checked_at": "2026-10-08T02:53:02Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42765934",
@@ -442,7 +458,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42765934/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:03Z"
+      "oa_checked_at": "2026-10-08T02:53:03Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42760356",
@@ -475,7 +492,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42760356/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:04Z"
+      "oa_checked_at": "2026-10-08T02:53:04Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42760355",
@@ -501,7 +519,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42760355/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:05Z"
+      "oa_checked_at": "2026-10-08T02:53:05Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42760153",
@@ -527,7 +546,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42760153/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:06Z"
+      "oa_checked_at": "2026-10-08T02:53:06Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42759497",
@@ -551,7 +571,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42759497/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://academic.oup.com/asj/advance-article-pdf/doi/10.1093/asj/sjag206/71227588/sjag206.pdf",
-      "oa_checked_at": "2026-10-08T02:53:07Z"
+      "oa_checked_at": "2026-10-08T03:04:37Z",
+      "oa_pdf": true
     },
     {
       "pmid": "42758306",
@@ -578,7 +599,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42758306/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:08Z"
+      "oa_checked_at": "2026-10-08T02:53:08Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42754700",
@@ -608,7 +630,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42754700/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:09Z"
+      "oa_checked_at": "2026-10-08T02:53:09Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42754699",
@@ -632,7 +655,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42754699/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:10Z"
+      "oa_checked_at": "2026-10-08T02:53:10Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42753205",
@@ -656,7 +680,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42753205/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:11Z"
+      "oa_checked_at": "2026-10-08T02:53:11Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42749522",
@@ -683,7 +708,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42749522/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:12Z"
+      "oa_checked_at": "2026-10-08T02:53:12Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42747262",
@@ -707,7 +733,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42747262/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:13Z"
+      "oa_checked_at": "2026-10-08T02:53:13Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42742258",
@@ -731,7 +758,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42742258/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1093/asj/sjag197",
-      "oa_checked_at": "2026-10-08T02:53:14Z"
+      "oa_checked_at": "2026-10-08T03:04:38Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42741888",
@@ -761,7 +789,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42741888/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:15Z"
+      "oa_checked_at": "2026-10-08T02:53:15Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42741784",
@@ -786,7 +815,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42741784/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008078",
-      "oa_checked_at": "2026-10-08T02:53:16Z"
+      "oa_checked_at": "2026-10-08T03:04:39Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42741519",
@@ -814,7 +844,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42741519/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008104",
-      "oa_checked_at": "2026-10-08T02:53:16Z"
+      "oa_checked_at": "2026-10-08T03:04:40Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42728839",
@@ -837,7 +868,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42728839/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:17Z"
+      "oa_checked_at": "2026-10-08T02:53:17Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42728656",
@@ -866,7 +898,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42728656/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://academic.oup.com/asj/advance-article-pdf/doi/10.1093/asj/sjag195/71036046/sjag195.pdf",
-      "oa_checked_at": "2026-10-08T02:53:19Z"
+      "oa_checked_at": "2026-10-08T03:04:41Z",
+      "oa_pdf": true
     },
     {
       "pmid": "42728362",
@@ -891,7 +924,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42728362/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:19Z"
+      "oa_checked_at": "2026-10-08T02:53:19Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42724883",
@@ -917,7 +951,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42724883/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008115",
-      "oa_checked_at": "2026-10-08T02:53:20Z"
+      "oa_checked_at": "2026-10-08T03:04:42Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42724855",
@@ -945,7 +980,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42724855/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008117",
-      "oa_checked_at": "2026-10-08T02:53:21Z"
+      "oa_checked_at": "2026-10-08T03:04:43Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42716983",
@@ -971,7 +1007,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42716983/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://link.springer.com/content/pdf/10.1007/s00266-026-06259-3.pdf",
-      "oa_checked_at": "2026-10-08T02:53:22Z"
+      "oa_checked_at": "2026-10-08T03:04:44Z",
+      "oa_pdf": true
     },
     {
       "pmid": "42716981",
@@ -997,7 +1034,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42716981/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:24Z"
+      "oa_checked_at": "2026-10-08T02:53:24Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42716979",
@@ -1025,7 +1063,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42716979/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:24Z"
+      "oa_checked_at": "2026-10-08T02:53:24Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42714254",
@@ -1050,7 +1089,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42714254/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:25Z"
+      "oa_checked_at": "2026-10-08T02:53:25Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42711479",
@@ -1075,7 +1115,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42711479/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:26Z"
+      "oa_checked_at": "2026-10-08T02:53:26Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42711476",
@@ -1100,7 +1141,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42711476/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:27Z"
+      "oa_checked_at": "2026-10-08T02:53:27Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42711161",
@@ -1131,7 +1173,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42711161/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://www.ijoms.com/article/S0901-5027(26)00387-5/pdf",
-      "oa_checked_at": "2026-10-08T02:53:28Z"
+      "oa_checked_at": "2026-10-08T03:04:45Z",
+      "oa_pdf": true
     },
     {
       "pmid": "42707774",
@@ -1158,7 +1201,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42707774/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008102",
-      "oa_checked_at": "2026-10-08T02:53:29Z"
+      "oa_checked_at": "2026-10-08T03:04:46Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42698640",
@@ -1188,7 +1232,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42698640/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008092",
-      "oa_checked_at": "2026-10-08T02:53:30Z"
+      "oa_checked_at": "2026-10-08T03:04:47Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42695809",
@@ -1213,7 +1258,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42695809/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:31Z"
+      "oa_checked_at": "2026-10-08T02:53:31Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42695808",
@@ -1238,7 +1284,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42695808/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:32Z"
+      "oa_checked_at": "2026-10-08T02:53:32Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42695798",
@@ -1264,7 +1311,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42695798/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:33Z"
+      "oa_checked_at": "2026-10-08T02:53:33Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42691211",
@@ -1289,7 +1337,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42691211/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:33Z"
+      "oa_checked_at": "2026-10-08T02:53:33Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42751681",
@@ -1320,7 +1369,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42751681/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008053",
-      "oa_checked_at": "2026-10-08T02:53:34Z"
+      "oa_checked_at": "2026-10-08T03:04:48Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42751415",
@@ -1344,7 +1394,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42751415/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008055",
-      "oa_checked_at": "2026-10-08T02:53:35Z"
+      "oa_checked_at": "2026-10-08T03:04:49Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42689241",
@@ -1373,7 +1424,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42689241/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008083",
-      "oa_checked_at": "2026-10-08T02:53:36Z"
+      "oa_checked_at": "2026-10-08T03:04:50Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42689229",
@@ -1397,7 +1449,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42689229/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008108",
-      "oa_checked_at": "2026-10-08T02:53:37Z"
+      "oa_checked_at": "2026-10-08T03:04:52Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42686471",
@@ -1425,7 +1478,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42686471/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:38Z"
+      "oa_checked_at": "2026-10-08T02:53:38Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42685067",
@@ -1449,7 +1503,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42685067/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:39Z"
+      "oa_checked_at": "2026-10-08T02:53:39Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42683216",
@@ -1474,7 +1529,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42683216/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008066",
-      "oa_checked_at": "2026-10-08T02:53:40Z"
+      "oa_checked_at": "2026-10-08T03:04:53Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42683202",
@@ -1500,7 +1556,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42683202/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008050",
-      "oa_checked_at": "2026-10-08T02:53:40Z"
+      "oa_checked_at": "2026-10-08T03:04:54Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42674940",
@@ -1528,7 +1585,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42674940/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://www.ijoms.com/article/S0901-5027(26)00367-X/pdf",
-      "oa_checked_at": "2026-10-08T02:53:41Z"
+      "oa_checked_at": "2026-10-08T03:04:55Z",
+      "oa_pdf": true
     },
     {
       "pmid": "42670247",
@@ -1554,7 +1612,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42670247/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://academic.oup.com/asj/advance-article-pdf/doi/10.1093/asj/sjag177/70877485/sjag177.pdf",
-      "oa_checked_at": "2026-10-08T02:53:42Z"
+      "oa_checked_at": "2026-10-08T03:04:56Z",
+      "oa_pdf": true
     },
     {
       "pmid": "42660550",
@@ -1581,7 +1640,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42660550/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:43Z"
+      "oa_checked_at": "2026-10-08T02:53:43Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42658087",
@@ -1605,7 +1665,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42658087/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:44Z"
+      "oa_checked_at": "2026-10-08T02:53:44Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42658153",
@@ -1634,7 +1695,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42658153/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:45Z"
+      "oa_checked_at": "2026-10-08T02:53:45Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42649432",
@@ -1665,7 +1727,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42649432/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://link.springer.com/content/pdf/10.1007/s00266-026-06255-7.pdf",
-      "oa_checked_at": "2026-10-08T02:53:46Z"
+      "oa_checked_at": "2026-10-08T03:04:57Z",
+      "oa_pdf": true
     },
     {
       "pmid": "42648972",
@@ -1698,7 +1761,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42648972/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1016/j.ijom.2026.08.023",
-      "oa_checked_at": "2026-10-08T02:53:47Z"
+      "oa_checked_at": "2026-10-08T03:04:58Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42647885",
@@ -1721,7 +1785,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42647885/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:48Z"
+      "oa_checked_at": "2026-10-08T02:53:48Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42647884",
@@ -1753,7 +1818,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42647884/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:49Z"
+      "oa_checked_at": "2026-10-08T02:53:49Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42647882",
@@ -1785,7 +1851,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42647882/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:50Z"
+      "oa_checked_at": "2026-10-08T02:53:50Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42647880",
@@ -1810,7 +1877,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42647880/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:51Z"
+      "oa_checked_at": "2026-10-08T02:53:51Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42637645",
@@ -1835,7 +1903,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42637645/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:52Z"
+      "oa_checked_at": "2026-10-08T02:53:52Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42631270",
@@ -1859,7 +1928,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42631270/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007958",
-      "oa_checked_at": "2026-10-08T02:53:53Z"
+      "oa_checked_at": "2026-10-08T03:04:59Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42631262",
@@ -1886,7 +1956,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42631262/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008061",
-      "oa_checked_at": "2026-10-08T02:53:54Z"
+      "oa_checked_at": "2026-10-08T03:05:00Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42629250",
@@ -1913,7 +1984,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42629250/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:55Z"
+      "oa_checked_at": "2026-10-08T02:53:55Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42627492",
@@ -1944,7 +2016,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42627492/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:56Z"
+      "oa_checked_at": "2026-10-08T02:53:56Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42626711",
@@ -1973,7 +2046,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42626711/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008052",
-      "oa_checked_at": "2026-10-08T02:53:57Z"
+      "oa_checked_at": "2026-10-08T03:05:01Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42626655",
@@ -1997,7 +2071,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42626655/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007988",
-      "oa_checked_at": "2026-10-08T02:53:58Z"
+      "oa_checked_at": "2026-10-08T03:05:02Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42624761",
@@ -2025,7 +2100,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42624761/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1016/j.ijom.2026.08.003",
-      "oa_checked_at": "2026-10-08T02:53:59Z"
+      "oa_checked_at": "2026-10-08T03:05:03Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42618467",
@@ -2052,7 +2128,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42618467/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1016/j.ijom.2026.08.008",
-      "oa_checked_at": "2026-10-08T02:54:00Z"
+      "oa_checked_at": "2026-10-08T03:05:04Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42613261",
@@ -2079,7 +2156,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42613261/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:01Z"
+      "oa_checked_at": "2026-10-08T02:54:01Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42608236",
@@ -2109,7 +2187,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42608236/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1016/j.ijom.2026.08.007",
-      "oa_checked_at": "2026-10-08T02:54:02Z"
+      "oa_checked_at": "2026-10-08T03:05:05Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42592551",
@@ -2133,7 +2212,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42592551/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007967",
-      "oa_checked_at": "2026-10-08T02:54:03Z"
+      "oa_checked_at": "2026-10-08T03:05:06Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42587095",
@@ -2164,7 +2244,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42587095/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:04Z"
+      "oa_checked_at": "2026-10-08T02:54:04Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42581097",
@@ -2193,7 +2274,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42581097/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:05Z"
+      "oa_checked_at": "2026-10-08T02:54:05Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42579285",
@@ -2221,7 +2303,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42579285/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1093/asj/sjag164",
-      "oa_checked_at": "2026-10-08T02:54:06Z"
+      "oa_checked_at": "2026-10-08T03:05:07Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42578186",
@@ -2250,7 +2333,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42578186/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007964",
-      "oa_checked_at": "2026-10-08T02:54:07Z"
+      "oa_checked_at": "2026-10-08T03:05:09Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42576065",
@@ -2287,7 +2371,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42576065/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:08Z"
+      "oa_checked_at": "2026-10-08T02:54:08Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42576062",
@@ -2317,7 +2402,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42576062/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:09Z"
+      "oa_checked_at": "2026-10-08T02:54:09Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42575825",
@@ -2344,7 +2430,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42575825/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:10Z"
+      "oa_checked_at": "2026-10-08T02:54:10Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42565202",
@@ -2369,7 +2456,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42565202/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008008",
-      "oa_checked_at": "2026-10-08T02:54:11Z"
+      "oa_checked_at": "2026-10-08T03:05:10Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42565201",
@@ -2392,7 +2480,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42565201/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007990",
-      "oa_checked_at": "2026-10-08T02:54:12Z"
+      "oa_checked_at": "2026-10-08T03:05:11Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42565200",
@@ -2417,7 +2506,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42565200/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008016",
-      "oa_checked_at": "2026-10-08T02:54:13Z"
+      "oa_checked_at": "2026-10-08T03:05:12Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42565146",
@@ -2446,7 +2536,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42565146/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008004",
-      "oa_checked_at": "2026-10-08T02:54:14Z"
+      "oa_checked_at": "2026-10-08T03:05:12Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42565105",
@@ -2473,7 +2564,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42565105/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008002",
-      "oa_checked_at": "2026-10-08T02:54:15Z"
+      "oa_checked_at": "2026-10-08T03:05:14Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42559587",
@@ -2499,7 +2591,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42559587/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007999",
-      "oa_checked_at": "2026-10-08T02:54:16Z"
+      "oa_checked_at": "2026-10-08T03:05:15Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42557456",
@@ -2524,7 +2617,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42557456/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:17Z"
+      "oa_checked_at": "2026-10-08T02:54:17Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42557455",
@@ -2551,7 +2645,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42557455/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:17Z"
+      "oa_checked_at": "2026-10-08T02:54:17Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42554674",
@@ -2578,7 +2673,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42554674/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:18Z"
+      "oa_checked_at": "2026-10-08T02:54:18Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42554673",
@@ -2606,7 +2702,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42554673/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:20Z"
+      "oa_checked_at": "2026-10-08T02:54:20Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42559632",
@@ -2638,7 +2735,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42559632/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008001",
-      "oa_checked_at": "2026-10-08T02:54:20Z"
+      "oa_checked_at": "2026-10-08T03:05:16Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42559498",
@@ -2668,7 +2766,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42559498/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008014",
-      "oa_checked_at": "2026-10-08T02:54:21Z"
+      "oa_checked_at": "2026-10-08T03:05:17Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42559424",
@@ -2695,7 +2794,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42559424/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000008007",
-      "oa_checked_at": "2026-10-08T02:54:22Z"
+      "oa_checked_at": "2026-10-08T03:05:18Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42719910",
@@ -2720,7 +2820,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42719910/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007987",
-      "oa_checked_at": "2026-10-08T02:54:23Z"
+      "oa_checked_at": "2026-10-08T03:05:19Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42547599",
@@ -2747,7 +2848,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42547599/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:24Z"
+      "oa_checked_at": "2026-10-08T02:54:24Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42547597",
@@ -2772,7 +2874,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42547597/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:25Z"
+      "oa_checked_at": "2026-10-08T02:54:25Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42547595",
@@ -2800,7 +2903,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42547595/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:26Z"
+      "oa_checked_at": "2026-10-08T02:54:26Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42545491",
@@ -2827,7 +2931,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42545491/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:27Z"
+      "oa_checked_at": "2026-10-08T02:54:27Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42432380",
@@ -2853,7 +2958,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42432380/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://link.springer.com/content/pdf/10.1007/s00266-026-06167-6.pdf",
-      "oa_checked_at": "2026-10-08T02:54:28Z"
+      "oa_checked_at": "2026-10-08T03:05:20Z",
+      "oa_pdf": true
     },
     {
       "pmid": "42538455",
@@ -2881,7 +2987,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42538455/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:29Z"
+      "oa_checked_at": "2026-10-08T02:54:29Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42536174",
@@ -2909,7 +3016,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42536174/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:29Z"
+      "oa_checked_at": "2026-10-08T02:54:29Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42530441",
@@ -2932,7 +3040,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42530441/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:30Z"
+      "oa_checked_at": "2026-10-08T02:54:30Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42521782",
@@ -2958,7 +3067,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42521782/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://link.springer.com/content/pdf/10.1007/s00266-026-06151-0.pdf",
-      "oa_checked_at": "2026-10-08T02:54:31Z"
+      "oa_checked_at": "2026-10-08T03:05:21Z",
+      "oa_pdf": true
     },
     {
       "pmid": "42519939",
@@ -2987,7 +3097,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42519939/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:32Z"
+      "oa_checked_at": "2026-10-08T02:54:32Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42517588",
@@ -3011,7 +3122,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42517588/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1093/asj/sjag160",
-      "oa_checked_at": "2026-10-08T02:54:33Z"
+      "oa_checked_at": "2026-10-08T03:05:22Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42520012",
@@ -3038,7 +3150,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42520012/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:34Z"
+      "oa_checked_at": "2026-10-08T02:54:34Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42517061",
@@ -3063,7 +3176,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42517061/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007944",
-      "oa_checked_at": "2026-10-08T02:54:35Z"
+      "oa_checked_at": "2026-10-08T03:05:22Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42517059",
@@ -3090,7 +3204,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42517059/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007961",
-      "oa_checked_at": "2026-10-08T02:54:36Z"
+      "oa_checked_at": "2026-10-08T03:05:24Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42502006",
@@ -3116,7 +3231,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42502006/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:37Z"
+      "oa_checked_at": "2026-10-08T02:54:37Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42499804",
@@ -3146,7 +3262,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42499804/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007927",
-      "oa_checked_at": "2026-10-08T02:54:38Z"
+      "oa_checked_at": "2026-10-08T03:05:25Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42495057",
@@ -3174,7 +3291,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42495057/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007870",
-      "oa_checked_at": "2026-10-08T02:54:39Z"
+      "oa_checked_at": "2026-10-08T03:05:26Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42493593",
@@ -3200,7 +3318,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42493593/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:40Z"
+      "oa_checked_at": "2026-10-08T02:54:40Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42493592",
@@ -3224,7 +3343,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42493592/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:41Z"
+      "oa_checked_at": "2026-10-08T02:54:41Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42489645",
@@ -3252,7 +3372,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42489645/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/prs.0000000000013331",
-      "oa_checked_at": "2026-10-08T02:54:42Z"
+      "oa_checked_at": "2026-10-08T03:05:27Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42488922",
@@ -3282,7 +3403,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42488922/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007877",
-      "oa_checked_at": "2026-10-08T02:54:42Z"
+      "oa_checked_at": "2026-10-08T03:05:28Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42488919",
@@ -3313,7 +3435,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42488919/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007949",
-      "oa_checked_at": "2026-10-08T02:54:43Z"
+      "oa_checked_at": "2026-10-08T03:05:29Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42486939",
@@ -3342,7 +3465,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42486939/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1007/s00266-026-06001-z",
-      "oa_checked_at": "2026-10-08T02:54:44Z"
+      "oa_checked_at": "2026-10-08T03:05:31Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42486938",
@@ -3366,7 +3490,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42486938/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:45Z"
+      "oa_checked_at": "2026-10-08T02:54:45Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42486933",
@@ -3394,7 +3519,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42486933/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:46Z"
+      "oa_checked_at": "2026-10-08T02:54:46Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42485070",
@@ -3420,7 +3546,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42485070/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:47Z"
+      "oa_checked_at": "2026-10-08T02:54:47Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42481023",
@@ -3443,7 +3570,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42481023/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:48Z"
+      "oa_checked_at": "2026-10-08T02:54:48Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42481794",
@@ -3466,7 +3594,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42481794/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:49Z"
+      "oa_checked_at": "2026-10-08T02:54:49Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42477150",
@@ -3490,7 +3619,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42477150/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:50Z"
+      "oa_checked_at": "2026-10-08T02:54:50Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42559606",
@@ -3518,7 +3648,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42559606/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007903",
-      "oa_checked_at": "2026-10-08T02:54:51Z"
+      "oa_checked_at": "2026-10-08T03:05:32Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42559491",
@@ -3545,7 +3676,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42559491/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007911",
-      "oa_checked_at": "2026-10-08T02:54:52Z"
+      "oa_checked_at": "2026-10-08T03:05:33Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42559471",
@@ -3570,7 +3702,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42559471/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007931",
-      "oa_checked_at": "2026-10-08T02:54:53Z"
+      "oa_checked_at": "2026-10-08T03:05:34Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42467617",
@@ -3594,7 +3727,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42467617/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:54Z"
+      "oa_checked_at": "2026-10-08T02:54:54Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42466235",
@@ -3621,7 +3755,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42466235/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007950",
-      "oa_checked_at": "2026-10-08T02:54:54Z"
+      "oa_checked_at": "2026-10-08T03:05:35Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42466233",
@@ -3651,7 +3786,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42466233/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007960",
-      "oa_checked_at": "2026-10-08T02:54:55Z"
+      "oa_checked_at": "2026-10-08T03:05:36Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42460034",
@@ -3677,7 +3813,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42460034/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007941",
-      "oa_checked_at": "2026-10-08T02:54:56Z"
+      "oa_checked_at": "2026-10-08T03:05:38Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42458045",
@@ -3705,7 +3842,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42458045/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:57Z"
+      "oa_checked_at": "2026-10-08T02:54:57Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42455864",
@@ -3729,7 +3867,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42455864/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:58Z"
+      "oa_checked_at": "2026-10-08T02:54:58Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42455863",
@@ -3754,7 +3893,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42455863/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:59Z"
+      "oa_checked_at": "2026-10-08T02:54:59Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42453204",
@@ -3780,7 +3920,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42453204/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007831",
-      "oa_checked_at": "2026-10-08T02:55:00Z"
+      "oa_checked_at": "2026-10-08T03:05:39Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42453203",
@@ -3808,7 +3949,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42453203/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007938",
-      "oa_checked_at": "2026-10-08T02:55:01Z"
+      "oa_checked_at": "2026-10-08T03:05:40Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42448835",
@@ -3841,7 +3983,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42448835/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:02Z"
+      "oa_checked_at": "2026-10-08T02:55:02Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42448834",
@@ -3865,7 +4008,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42448834/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:03Z"
+      "oa_checked_at": "2026-10-08T02:55:03Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42448833",
@@ -3892,7 +4036,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42448833/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:04Z"
+      "oa_checked_at": "2026-10-08T02:55:04Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42446182",
@@ -3922,7 +4067,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42446182/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1093/asj/sjag148",
-      "oa_checked_at": "2026-10-08T02:55:05Z"
+      "oa_checked_at": "2026-10-08T03:05:41Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42443423",
@@ -3949,7 +4095,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42443423/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:06Z"
+      "oa_checked_at": "2026-10-08T02:55:06Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42443422",
@@ -3976,7 +4123,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42443422/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:07Z"
+      "oa_checked_at": "2026-10-08T02:55:07Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42443420",
@@ -4003,7 +4151,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42443420/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:08Z"
+      "oa_checked_at": "2026-10-08T02:55:08Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42443418",
@@ -4038,7 +4187,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42443418/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:09Z"
+      "oa_checked_at": "2026-10-08T02:55:09Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42434083",
@@ -4063,7 +4213,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42434083/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007901",
-      "oa_checked_at": "2026-10-08T02:55:10Z"
+      "oa_checked_at": "2026-10-08T03:05:42Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42434082",
@@ -4088,7 +4239,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42434082/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007933",
-      "oa_checked_at": "2026-10-08T02:55:11Z"
+      "oa_checked_at": "2026-10-08T03:05:44Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42434078",
@@ -4113,7 +4265,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42434078/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007923",
-      "oa_checked_at": "2026-10-08T02:55:12Z"
+      "oa_checked_at": "2026-10-08T03:05:45Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42432378",
@@ -4142,7 +4295,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42432378/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:12Z"
+      "oa_checked_at": "2026-10-08T02:55:12Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42426477",
@@ -4169,7 +4323,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42426477/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:13Z"
+      "oa_checked_at": "2026-10-08T02:55:13Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42425820",
@@ -4197,7 +4352,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42425820/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1016/j.ijom.2026.06.028",
-      "oa_checked_at": "2026-10-08T02:55:14Z"
+      "oa_checked_at": "2026-10-08T03:05:47Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42425818",
@@ -4226,7 +4382,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42425818/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:15Z"
+      "oa_checked_at": "2026-10-08T02:55:15Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42424527",
@@ -4249,7 +4406,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42424527/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1093/asj/sjag146",
-      "oa_checked_at": "2026-10-08T02:55:16Z"
+      "oa_checked_at": "2026-10-08T03:05:48Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42423965",
@@ -4277,7 +4435,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42423965/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.21203/rs.3.rs-7214663/v1",
-      "oa_checked_at": "2026-10-08T02:55:17Z"
+      "oa_checked_at": "2026-10-08T03:05:49Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42420660",
@@ -4308,7 +4467,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42420660/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1007/s00266-026-06059-9",
-      "oa_checked_at": "2026-10-08T02:55:18Z"
+      "oa_checked_at": "2026-10-08T03:05:51Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42422246",
@@ -4333,7 +4493,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42422246/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007920",
-      "oa_checked_at": "2026-10-08T02:55:20Z"
+      "oa_checked_at": "2026-10-08T03:05:52Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42467998",
@@ -4360,7 +4521,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42467998/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:21Z"
+      "oa_checked_at": "2026-10-08T02:55:21Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42549368",
@@ -4385,7 +4547,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42549368/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007733",
-      "oa_checked_at": "2026-10-08T02:55:22Z"
+      "oa_checked_at": "2026-10-08T03:05:53Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42549350",
@@ -4412,7 +4575,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42549350/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": "https://doi.org/10.1097/gox.0000000000007867",
-      "oa_checked_at": "2026-10-08T02:55:23Z"
+      "oa_checked_at": "2026-10-08T03:05:54Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42842697",
@@ -4445,7 +4609,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42842697/",
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:24Z"
+      "oa_checked_at": "2026-10-08T02:55:24Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42841083",
@@ -4472,7 +4637,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42841083/",
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:25Z"
+      "oa_checked_at": "2026-10-08T02:55:25Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42840772",
@@ -4498,7 +4664,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42840772/",
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:26Z"
+      "oa_checked_at": "2026-10-08T02:55:26Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42838862",
@@ -4526,7 +4693,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42838862/",
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:27Z"
+      "oa_checked_at": "2026-10-08T02:55:27Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42836382",
@@ -4551,7 +4719,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42836382/",
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:28Z"
+      "oa_checked_at": "2026-10-08T02:55:28Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42823517",
@@ -4576,7 +4745,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42823517/",
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:30Z"
+      "oa_checked_at": "2026-10-08T02:55:30Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42823516",
@@ -4606,7 +4776,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42823516/",
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:31Z"
+      "oa_checked_at": "2026-10-08T02:55:31Z",
+      "oa_pdf": false
     },
     {
       "pmid": "42823514",
@@ -4634,7 +4805,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42823514/",
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:31Z"
+      "oa_checked_at": "2026-10-08T02:55:31Z",
+      "oa_pdf": false
     }
   ]
 }
