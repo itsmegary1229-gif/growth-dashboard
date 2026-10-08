@@ -1,0 +1,39 @@
+name: Fetch PubMed
+
+on:
+  schedule:
+    - cron: "0 22 * * *"  # UTC 22:00 = 台灣 06:00
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-pubmed
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Fetch PubMed articles
+        run: python scripts/fetch_pubmed.py
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- data/articles.json && \
+             [ -z "$(git ls-files --others --exclude-standard data/articles.json)" ]; then
+            echo "data/articles.json 無變更，略過 commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/articles.json
+          git commit -m "chore: update articles $(TZ=Asia/Taipei date +%F)"
+          git push

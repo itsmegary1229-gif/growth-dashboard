@@ -1,0 +1,118 @@
+{
+  "generated_at": "2026-10-08T01:09:30Z",
+  "articles": [
+    {
+      "pmid": "42842697",
+      "title": "Effectiveness of Closed-Incision Negative Pressure Wound Therapy in Non-Autologous Breast Surgery: A Systematic Review and Meta-Analysis.",
+      "journal": "PRS",
+      "journal_full": "Plastic and reconstructive surgery",
+      "pub_date": "2026-10-06",
+      "abstract": "BACKGROUND: Prophylactic closed-incision negative pressure wound therapy (ciNPWT) may reduce risk of postoperative wound complications, but its use in breast surgery remains uncertain due to lack of breast-specific recommendations in guidelines. This meta-analysis addresses this gap by evaluating the efficacy of ciNPWT versus standard dressings in non-autologous breast surgery.\n\nMETHODS: A meta-analysis of RCTs and observational studies comparing ciNPWT versus standard dressings in patients undergoing mastectomy, implant-based breast reconstruction, or mammoplasty was conducted following PRISMA (from inception to September 2025). Outcomes were total wound complications, surgical site infection, wound dehiscence, necrosis, seroma, haematoma, re-operation, and implant loss. Risk of bias (RoB2, ROBINS-I) and certainty (GRADE) were assessed, and data pooled (RStudio). Registered with PROSPERO (CRD420251002005).\n\nRESULTS: Twenty studies (6 RCTs, 14 observational) involving 2287 patients (3376 breasts) were included. ciNPWT significantly reduced total wound complications (RR 0.56, 95%CI 0.42-0.74; p<0.0001; I²=71.9%; moderate certainty), corresponding to an absolute risk reduction (ARR) of 14% (31.8% to 17.8%). Wound dehiscence (RR 0.48, 95%CI 0.29-0.79; p=0.0037; I²=33.4%) and necrosis (RR 0.67, 95%CI 0.48-0.94; p=0.0187; I²=7.5%) were also significantly reduced. Subgroup analyses suggested stronger effects in BMI ≥30 (RR 0.41 vs 0.61 for BMI <30) and with -125 mmHg settings (RR 0.46 vs 0.65 for -80 mmHg), though differences were not statistically significant (p>0.20).\n\nCONCLUSION: Moderate-certainty evidence indicates that ciNPWT reduces postoperative wound complications-particularly dehiscence and necrosis-with a clinically meaningful ARR of 14% for total wound complications. Refining patient selection and device configuration may further enhance its applicability.",
+      "doi": "10.1097/PRS.0000000000013481",
+      "topics": [
+        "wound"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42842697/",
+      "added_at": "2026-10-08T01:09:30Z"
+    },
+    {
+      "pmid": "42841083",
+      "title": "Upper-extremity Injuries from Side-by-side All-terrain Vehicle Accidents: Experience and Outcomes in over 200 Patients.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-10-06",
+      "abstract": "BACKGROUND: Side-by-side all-terrain vehicle (ATV) crashes produce high-energy upper-extremity trauma requiring complex reconstruction. Despite the increasing prevalence of these injuries, characterization of injury patterns, management, and outcomes remains limited.\n\nMETHODS: A multicenter retrospective review was performed across 9 level I trauma centers from 2019 to 2023. Adult patients with upper-extremity injuries from side-by-side ATV crashes who were evaluated by the hand surgery service were identified through a trauma registry and manual chart review. Demographics, injury characteristics, operative interventions, and outcomes were collected. A minimum of 6 weeks of follow-up was required for inclusion in the outcome analysis.\n\nRESULTS: Among 207 patients (mean age, 32 ± 17 y; 70.5% male), the hand was the most frequently injured region (76.8%), followed by the wrist (30.4%) and forearm (26.6%). Open fractures occurred in 66.7% of patients, including 28% with Gustilo type IIIB or IIIC injuries. Patients underwent a mean of 1.5 operations during the index hospitalization; reconstruction included rotation flaps (10%), free flaps (4%), and dermal substitute placement (27%). Early amputation occurred in 18.4%. At a mean follow-up of 31 weeks (n = 158, 76.3%), patients underwent a mean of 2.6 ± 2.3 total operations; infection occurred in 19.6%; 15.2% required operative debridement; and late amputation occurred in 9.5%, yielding an overall amputation rate of 25.6%.\n\nCONCLUSIONS: Side-by-side ATV crashes cause severe, often contaminated, multitissue upper-extremity injuries with high rates of infection and amputation despite aggressive surgical management.",
+      "doi": "10.1097/GOX.0000000000008156",
+      "topics": [
+        "wound"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42841083/",
+      "added_at": "2026-10-08T01:09:30Z"
+    },
+    {
+      "pmid": "42840772",
+      "title": "Keystone Flap, a Versatile Option for Salvaging Infected Spinal Instrumentation Associated to Soft-tissue Defects: A Novel Option.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-10-06",
+      "abstract": "Keystone design perforator island flaps (KDPIFs) are fasciocutaneous flaps based on multiple perforators that provide reliable perfusion to large tissue segments. Their design incorporates elements of advancement, rotation, interpolation, and transposition, allowing recruitment of surrounding lax tissue to achieve durable coverage with minimal tension. These characteristics make them particularly useful for reconstruction of complex posterior trunk defects. We present the case of a 23-year-old man with severe neuromuscular scoliosis who underwent posterior spinal instrumentation from T3 to L5 and subsequently developed vertebral osteomyelitis caused by multidrug-resistant organisms. Following serial debridements, negative pressure wound therapy, and targeted antibiotic therapy, a 40 × 15 cm dorsal midline defect with exposed spinal instrumentation remained. Given the substantial mechanical and deformity-related risks associated with hardware removal, a strategy focused on implant preservation was pursued. Reconstruction was performed using a subtype IIA KDPIF, achieving tension-free closure, effective dead-space obliteration, and stable soft-tissue coverage over the instrumentation. At 2-year follow-up, there was no evidence of recurrent infection or hardware exposure, with preservation of implant stability and satisfactory functional and aesthetic outcomes. In this case, hardware salvage combined with KDPIF reconstruction provided durable soft-tissue coverage while avoiding the mechanical instability and deformity risks associated with implant removal. KDPIFs may represent a useful reconstructive option for selected patients with complex spinal defects and exposed instrumentation.",
+      "doi": "10.1097/GOX.0000000000008165",
+      "topics": [
+        "wound"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42840772/",
+      "added_at": "2026-10-08T01:09:30Z"
+    },
+    {
+      "pmid": "42838862",
+      "title": "Correlation between maxillary movement and changes in nasolabial and nasofacial angles after Le Fort I osteotomy.",
+      "journal": "IJOMS",
+      "journal_full": "International journal of oral and maxillofacial surgery",
+      "pub_date": "2026-10-06",
+      "abstract": "Nasal aesthetic changes are a key concern in orthognathic surgery. This retrospective cohort study investigated whether the direction and magnitude of maxillary movement independently affect postoperative nasolabial angle (NLA) and nasofacial angle (NFA) following Le Fort I osteotomy in bimaxillary surgery. Forty-four patients (10 men, 34 women; median age 24 years) treated at a single institution were analyzed using standardized lateral cephalograms obtained preoperatively and at 1 week and 12 months postoperatively. Horizontal (anteroposterior) and vertical (superoinferior) maxillary displacements were derived from three-dimensional surgical planning and validated by cephalometric superimposition. Changes in NLA and NFA were assessed using Pearson correlation and multiple linear regression analyses, including change in sella-nasion-B point (SNB) angle as a confounder. Horizontal advancement was significantly correlated with NLA (r = 0.32, P = 0.034) and NFA (r = 0.68, P < 0.001), whereas vertical movement showed no significant correlation with NLA and a modest negative correlation with NFA (r = -0.43, P = 0.004). Multiple regression analysis showed that horizontal advancement independently predicted increased NFA (unstandardized coefficient = 0.80, P < 0.001), whereas the NLA model was not statistically significant (R² = 0.13, P = 0.114). Horizontal maxillary advancement demonstrated a relatively predictable relationship with NFA, whereas NLA changes were more variable and less reliably predicted by skeletal movement alone. NFA may therefore be a more robust parameter for preoperative prediction, patient counseling, and refinement of digital surgical simulations.",
+      "doi": "10.1016/j.ijom.2026.09.015",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42838862/",
+      "added_at": "2026-10-08T01:09:30Z"
+    },
+    {
+      "pmid": "42836382",
+      "title": "Safety Profile of Standardized Tranexamic Acid (TXA) Dosing in Rhytidectomy: A Retrospective Comparative Cohort Study.",
+      "journal": "ASJ",
+      "journal_full": "Aesthetic surgery journal",
+      "pub_date": "2026-10-06",
+      "abstract": "BACKGROUND: Tranexamic acid (TXA) has been associated with reductions in intraoperative blood loss, early postoperative bleeding, time to drain removal, and postoperative ecchymosis in rhytidectomy. However, concerns regarding potential cutaneous and systemic complications persist, and interpretation of the literature is limited by variability in dosing, route of administration, and operative technique. As a result, the safety profile of TXA when mixed with local anesthetic in facelift surgery remains incompletely defined.\n\nOBJECTIVES: To evaluate complications associated with TXA mixed with local anesthetic using a standardized concentration and dosing protocol in patients undergoing combined facial and cervical rhytidectomy.\n\nMETHODS: A retrospective comparative cohort study was conducted of a single surgeon's patients undergoing combined facial and cervical rhytidectomy under intravenous sedation, with and without the use of tranexamic acid (TXA) in local anesthetic infiltration (non-TXA vs TXA cohorts, 2012-2025). TXA was administered at defined concentrations of 9.1 mg/mL for incisional infiltration and 0.8 mg/mL in tumescent solution, with an average total dose of 582.6 mg per case.\n\nRESULTS: A total of 1,036 patients were included (TXA, n = 556; non-TXA, n = 480). TXA use was not associated with an increase in minor or major ischemic events or systemic complications. Distal flap vascular compromise requiring topical nitroglycerin occurred at similar rates providing an additional clinical measure of mild flap vascular stress. No cases of permanent nerve paralysis were observed.\n\nCONCLUSIONS: In this single-surgeon cohort using defined dosing, TXA mixed with local anesthetic was not associated with increased ischemic or systemic complications.",
+      "doi": "10.1093/asj/sjag219",
+      "topics": [
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42836382/",
+      "added_at": "2026-10-08T01:09:30Z"
+    },
+    {
+      "pmid": "42823517",
+      "title": "Endoscopic Periorbital and Midface Rejuvenation with Direct Fixation: An Alternative to Suspension Techniques.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-01",
+      "abstract": "BACKGROUND: Early aging changes of the periorbital-midface unit frequently present as lateral brow descent, lid-cheek elongation, and early midface ptosis. Conventional facelift procedures may be unnecessarily invasive in such patients, while isolated brow-lifting techniques often fail to adequately address the functional continuity of the periorbital-midface complex.\n\nOBJECTIVES: This study introduces the endoscopic periorbital and midface rejuvenation with direct fixation technique, which is designed to achieve stable repositioning of the periorbital-midface unit through anatomically guided mobilization and direct periosteal fixation.\n\nMETHODS: The technique includes a transtemporal incision and dissection under endoscopic visualization, sequential release of temporal ligamentous structures, entry into the prezygomatic space, vertical mobilization, direct fixation of the malar fat pad to the periosteum of the lateral orbital rim and temporal lifting using barbed sutures. Objective outcomes were assessed using standardized photographic measurements, and patient-reported outcomes were evaluated using FACE-Q domains.\n\nRESULTS: The study included 62 patients with a mean follow-up of 15.2 months. Significant improvements were observed in brow height (mean increase 18.3%), lateral canthal angle (8.4%), and lower eyelid length (mean reduction 19.7%) (p < 0.05). FACE-Q scores improved significantly across all evaluated domains. No major complications and no temporary or permanent zygomatic branch injury occurred. Transient frontal branch neuropraxia lasting longer than 1 month was observed in three patients (4.8%).\n\nCONCLUSIONS: Endoscopic periorbital and midface rejuvenation with direct fixation provides effective improvement of the brow-periorbital-midface complex with a favorable safety profile.\n\nLEVEL OF EVIDENCE IV: Therapeutic study. This journal requires that authors assign a level of evidence to each submission to which Evidence-Based Medicine rankings are applicable. This excludes Review Articles, Book Reviews, and manuscripts that concern Basic Science, Animal Studies, Cadaver Studies, and Experimental Studies. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266.",
+      "doi": "10.1007/s00266-026-06244-w",
+      "topics": [
+        "eye",
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42823517/",
+      "added_at": "2026-10-08T01:09:30Z"
+    },
+    {
+      "pmid": "42823516",
+      "title": "Transcutaneous versus Transconjunctival Fixation in Non-Incisional Double Eyelid Surgery: A Long-Term Survival Analysis of Crease Retention.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-01",
+      "abstract": "BACKGROUND: Non-incisional double eyelid surgery is widely performed in East Asia. However, crease loss is a common concern after surgery and a frequent reason for revision. Both transcutaneous and transconjunctival fixation techniques are commonly used; however, their relative effectiveness in long-term crease retention is controversial.\n\nMETHODS: This retrospective observational study examined 423 consecutive patients who underwent non-incisional double eyelid surgery clinic with transcutaneous or transconjunctival fixation at a high-volume esthetic surgery between July 2020 and July 2021. Crease loss was defined as the need for revision surgery due to the patient reporting fading or disappearance of the crease. Kaplan-Meier survival analysis and Cox proportional hazards regression were performed to evaluate factors associated with crease retention. Multivariable models were adjusted for age, sex, eyelid thickness, eyelid design, and puffy eyelid status.\n\nRESULTS: Of the 423 eyelids analyzed, 174 underwent transcutaneous fixation, and 249 underwent transconjunctival fixation. Baseline demographic and anatomical characteristics were comparable between the two groups. Kaplan-Meier analysis revealed a significantly higher rate of crease retention in the transconjunctival fixation group (log-rank p < 0.001). Univariable analysis revealed a significant association between fixation method and crease loss (hazard ratio [HR] = 0.43, 95% confidence interval [CI]: 0.29-0.64, p < 0.001). This association remained significant in the multivariable analysis (HR = 0.43, 95% CI: 0.29-0.64, p < 0.001). Sex, eyelid thickness, eyelid design, and age were not independently associated with crease loss.\n\nCONCLUSION: Following non-incisional double eyelid surgery, transconjunctival fixation was associated with a significantly reduced risk of crease loss compared with transcutaneous fixation. The fixation method appears to be the primary determinant of long-term crease stability, underscoring its importance in surgical planning.\n\nLEVEL OF EVIDENCE III: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266.",
+      "doi": "10.1007/s00266-026-06230-2",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42823516/",
+      "added_at": "2026-10-08T01:09:30Z"
+    },
+    {
+      "pmid": "42823514",
+      "title": "Ethmoid Perpendicular Plate Grafting: Combined Functional and Subunit Reconstruction in Asian Secondary Cleft Lip-Nose Deformities.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-01",
+      "abstract": "BACKGROUND: Asian secondary cleft rhinoplasty requires robust grafting. Autologous costal cartilage, while common, is limited by donor site morbidity, calcification, and warping. This study introduces a reconstructive protocol using the perpendicular plate of the ethmoid (PPE) to overcome these limitations.\n\nMETHODS: A retrospective review included 130 patients who underwent secondary cleft rhinoplasty, with 49 of them using PPE and septal cartilage between September 2017 and August 2025. The surgical technique integrated L-strut reconstruction with soft tissue subunit and orbicularis oris muscle repositioning. A representative subset (n = 12) was evaluated using the NOSE scale and ROE to objectively assess outcomes.\n\nRESULTS: Overall, 98% of patients (48/49) expressed high subjective satisfaction over the follow-up. Complications were rare (2% infection rate, managed conservatively). Quantitative subset analysis demonstrated significant functional and aesthetic improvements: median NOSE scores decreased from 11.00 to 3.50 (p = 0.033), and mean ROE scores surged from 8.17 ± 2.41 to 20.42 ± 4.27 (p < 0.001).\n\nCONCLUSION: Autologous PPE grafting is a reliable, structurally robust alternative to costal cartilage in Asian secondary cleft rhinoplasty. It effectively restores subunit harmony and airway patency with minimal donor site morbidity.\n\nLEVEL OF EVIDENCE III: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266.This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06280-6",
+      "topics": [
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42823514/",
+      "added_at": "2026-10-08T01:09:30Z"
+    }
+  ]
+}
