@@ -1,5 +1,5 @@
 import {
-  getAllStates, setRead, setSaved, setNote, getAllSaved, getAllRead,
+  getAllStates, setRead, setLater, setSaved, setNote, getAllLater, getAllSaved, getAllRead,
   onAuthChange, onStatesChange, signIn, signOutUser, AuthRequiredError,
 } from "./state.js";
 
@@ -18,15 +18,16 @@ const SEARCH_DELAY = 200;
 const NOTE_DELAY = 800;
 
 const ui = {
-  tab: "new",     // new | saved | read
+  tab: "new",     // new | later（稍後細讀佇列）| saved（收藏書庫）| read
   topic: "all",   // all | topic id
   range: "7",     // 7 | 30 | all
   hideRead: false,
   query: "",      // 關鍵字搜尋；不存 localStorage，換分頁時清空
 };
 let articles = [];        // 來自 articles.json
-let states = new Map();   // pmid → { read, saved }
-let savedList = [];       // getAllSaved() 結果
+let states = new Map();   // pmid → { read, later, saved }
+let laterList = [];       // getAllLater() 結果（laterAt 新到舊）
+let savedList = [];       // getAllSaved() 結果（savedAt 新到舊）
 let readList = [];        // getAllRead() 結果（readAt 新到舊）
 let authStatus = "unknown"; // unknown | signedIn | signedOut | unavailable
 let loaded = false;       // articles.json 載入完成前不渲染列表
@@ -94,13 +95,14 @@ function savePrefs() {
 // ---------- 資料 ----------
 
 // 目前分頁＋時間範圍內的文章（搜尋、主題、隱藏已讀之前）
-// 「稍後細讀」「已讀」以 Firestore 副本為主，articles.json 仍有該篇時改用完整資料（含摘要）
+// 「稍後細讀」「收藏」「已讀」以 Firestore 副本為主，articles.json 仍有該篇時改用完整資料（含摘要）；
+// 三份清單在 state.js 已依各自的時間排好
+const PERSONAL_LISTS = { later: () => laterList, saved: () => savedList, read: () => readList };
+
 function scopeArticles() {
-  if (ui.tab === "saved" || ui.tab === "read") {
+  if (PERSONAL_LISTS[ui.tab]) {
     const byPmid = new Map(articles.map((a) => [a.pmid, a]));
-    const list = (ui.tab === "saved" ? savedList : readList)
-      .map((s) => byPmid.get(s.pmid) || s.article);
-    return ui.tab === "saved" ? list.sort(compareArticles) : list; // readList 已依 readAt 排好
+    return PERSONAL_LISTS[ui.tab]().map((s) => byPmid.get(s.pmid) || s.article);
   }
   if (ui.range === "all") return articles;
   const cutoff = Date.now() - Number(ui.range) * DAY;
@@ -112,7 +114,7 @@ function noteOf(pmid) {
   return savedList.find((s) => s.pmid === pmid)?.note || "";
 }
 
-// 空白分隔多詞為 AND；比對標題＋摘要，「稍後細讀」另含筆記
+// 空白分隔多詞為 AND；比對標題＋摘要，「收藏」另含筆記
 function searchArticles(scope) {
   const terms = ui.query.toLowerCase().split(/\s+/).filter(Boolean);
   if (!terms.length) return scope;
@@ -135,7 +137,7 @@ function visibleArticles(scope) {
 function renderControls(scope) {
   document.querySelectorAll(".tab").forEach((b) =>
     b.setAttribute("aria-selected", String(b.dataset.tab === ui.tab)));
-  $("saved-count").textContent = savedList.length ? savedList.length : "";
+  $("later-count").textContent = laterList.length ? laterList.length : "";
 
   const counts = { all: scope.length };
   for (const t of TOPICS) counts[t.id] = scope.filter((a) => a.topics.includes(t.id)).length;
@@ -196,12 +198,17 @@ function renderCard(a) {
     <div class="abstract" data-act="toggle">${renderAbstract(a.abstract)}</div>
     ${topics ? `<div class="topics">${topics}</div>` : ""}
     ${withNote ? renderNote(a.pmid) : ""}
-    <div class="actions${withNote ? " has-note" : ""}${oa ? " has-oa" : ""}">
-      <button type="button" class="act act-read" data-act="read" aria-pressed="${!!st.read}">${st.read ? "✓ 已讀" : "已讀"}</button>
-      <button type="button" class="act act-save" data-act="save" aria-pressed="${!!st.saved}">${st.saved ? "★ 已收藏" : "☆ 收藏"}</button>
-      ${withNote ? `<button type="button" class="act act-note" data-act="note" aria-expanded="${editingNote === a.pmid}">✎ 筆記</button>` : ""}
-      <a class="act act-link" href="${esc(a.url)}" target="_blank" rel="noopener noreferrer">看全文 ↗</a>
-      ${oa}
+    <div class="actions">
+      <div class="act-group">
+        <button type="button" class="act act-read" data-act="read" aria-pressed="${!!st.read}">${st.read ? "✓ 已讀" : "已讀"}</button>
+        <button type="button" class="act act-later" data-act="later" aria-pressed="${!!st.later}">${st.later ? "✓ 稍後細讀" : "稍後細讀"}</button>
+        <button type="button" class="act act-save" data-act="save" aria-pressed="${!!st.saved}">${st.saved ? "★ 已收藏" : "☆ 收藏"}</button>
+      </div>
+      <div class="act-group act-group-links">
+        ${withNote ? `<button type="button" class="act act-note" data-act="note" aria-expanded="${editingNote === a.pmid}">✎ 筆記</button>` : ""}
+        <a class="act act-link" href="${esc(a.url)}" target="_blank" rel="noopener noreferrer">看全文 ↗</a>
+        ${oa}
+      </div>
     </div>
   </article>`;
 }
@@ -239,16 +246,18 @@ function render() {
     }
     return;
   }
-  const personal = ui.tab !== "new"; // 「稍後細讀」「已讀」需登入
+  const personal = ui.tab !== "new"; // 「稍後細讀」「收藏」「已讀」需登入
   let msg;
   if (personal && authStatus === "unknown") {
     msg = "載入中…";
   } else if (personal && authStatus === "unavailable") {
     msg = "同步服務載入失敗，請重新整理頁面。";
   } else if (personal && authStatus !== "signedIn") {
-    msg = ui.tab === "saved" ? "登入後才能看到收藏。" : "登入後才能看到已讀紀錄。";
+    msg = { later: "登入後才能看到稍後細讀佇列。", saved: "登入後才能看到收藏。", read: "登入後才能看到已讀紀錄。" }[ui.tab];
+  } else if (ui.tab === "later" && !laterList.length) {
+    msg = "佇列是空的。<br>按下「稍後細讀」，文章就會排進這裡；標成已讀後自動離開。";
   } else if (ui.tab === "saved" && !savedList.length) {
-    msg = "還沒有收藏的文章。<br>在「新進」按下「☆ 收藏」，文章就會出現在這裡。";
+    msg = "還沒有收藏的文章。<br>按下「☆ 收藏」，文章就會長期留在這裡，可以寫筆記、匯出 RIS。";
   } else if (ui.tab === "read" && !readList.length) {
     msg = "還沒有已讀的文章。<br>在「新進」按下「已讀」，文章就會依時間出現在這裡。";
   } else if (searching && !searched.length) {
@@ -269,7 +278,7 @@ function renderMeta(generatedAt) {
 
 // ---------- RIS 匯出 ----------
 
-// 「稍後細讀」目前篩選條件下列出的文章（scopeArticles 已優先用 articles.json 的完整資料）
+// 「收藏」目前篩選條件下列出的文章（scopeArticles 已優先用 articles.json 的完整資料）
 function exportArticles() {
   return visibleArticles(searchArticles(scopeArticles()));
 }
@@ -443,7 +452,9 @@ function bindAuth() {
 }
 
 async function refreshStates() {
-  [states, savedList, readList] = await Promise.all([getAllStates(), getAllSaved(), getAllRead()]);
+  [states, laterList, savedList, readList] = await Promise.all([
+    getAllStates(), getAllLater(), getAllSaved(), getAllRead(),
+  ]);
 }
 
 // ---------- 筆記 ----------
@@ -604,7 +615,7 @@ function bindEvents() {
     const card = e.target.closest(".card");
     if (!el || !card) return;
     const pmid = card.dataset.pmid;
-    const st = states.get(pmid) || { read: false, saved: false };
+    const st = states.get(pmid) || { read: false, later: false, saved: false };
 
     switch (el.dataset.act) {
       case "toggle": {
@@ -630,6 +641,7 @@ function bindEvents() {
         openNote(pmid);
         return;
       case "read":
+      case "later":
       case "save":
         break;
       default:
@@ -641,10 +653,12 @@ function bindEvents() {
     }
     // 樂觀更新：state.js 先改本地快取並觸發 onStatesChange 重繪，寫入失敗會自行回滾
     const article = articles.find((a) => a.pmid === pmid) ||
+      laterList.find((l) => l.pmid === pmid)?.article ||
       savedList.find((s) => s.pmid === pmid)?.article ||
       readList.find((r) => r.pmid === pmid)?.article || null;
     try {
       if (el.dataset.act === "read") await setRead(pmid, !st.read, article);
+      else if (el.dataset.act === "later") await setLater(pmid, !st.later, article);
       else await setSaved(pmid, !st.saved, article);
     } catch (err) {
       toast(err instanceof AuthRequiredError ? authRequiredMessage() : "同步失敗，已還原");

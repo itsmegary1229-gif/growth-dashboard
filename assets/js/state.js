@@ -1,11 +1,14 @@
 // 已讀／收藏狀態的抽象層，存在 Firestore 集合 userState（文件 ID = PMID）。
 // 原有對外介面（皆為 async）維持不變：
-//   getState(pmid)               → { read, saved }
-//   getAllStates()               → Map<pmid, { read, saved }>
-//   setRead(pmid, read, article?)    article 可選，用來寫入 title／journal／url／topics 冗餘副本
-//   setSaved(pmid, saved, article?)  收藏時一併存文章冗餘副本（含書目欄位），文章被 90 天滾動移出 JSON 後
-//                                    仍能在「稍後細讀」看到、匯出 RIS
-//   getAllSaved()                → [{ pmid, savedAt, note, article }]（article 由冗餘副本組成）
+//   getState(pmid)               → { read, later, saved }
+//   getAllStates()               → Map<pmid, { read, later, saved }>
+//   setRead(pmid, read, article?)    article 可選，用來寫入 title／journal／url／topics 冗餘副本；
+//                                    標已讀時若在「稍後細讀」佇列中，同一次寫入把 later 改 false（laterAt 保留當歷史）
+//   setLater(pmid, later, article?)  「稍後細讀」短期佇列，副本寫法同 setSaved
+//   setSaved(pmid, saved, article?)  「收藏」長期書庫，一併存文章冗餘副本（含書目欄位），文章被 90 天滾動移出 JSON 後
+//                                    仍能在「收藏」看到、匯出 RIS；標已讀不影響收藏
+//   getAllLater()                → [{ pmid, laterAt, article }]，依 laterAt 新到舊
+//   getAllSaved()                → [{ pmid, savedAt, note, article }]，依 savedAt 新到舊（article 由冗餘副本組成）
 //   getAllRead()                 → [{ pmid, readAt, article }]，依 readAt 新到舊
 //   setNote(pmid, text)          收藏筆記，存在同一份文件的 note 欄位
 // 未登入時讀取回傳空狀態，寫入丟出 AuthRequiredError。
@@ -95,7 +98,7 @@ export async function signOutUser() {
 // ---------- 讀取 ----------
 
 function view(entry) {
-  return { read: !!entry?.read, saved: !!entry?.saved };
+  return { read: !!entry?.read, later: !!entry?.later, saved: !!entry?.saved };
 }
 
 function toIso(ts) {
@@ -110,7 +113,7 @@ export async function getAllStates() {
   return new Map([...cache].map(([pmid, e]) => [pmid, view(e)]));
 }
 
-// 冗餘副本只有 title／journal／url／topics（收藏另有書目欄位），其餘欄位補空值讓 app.js 能照常排序、渲染
+// 冗餘副本只有 title／journal／url／topics（收藏、稍後細讀另有書目欄位），其餘欄位補空值讓 app.js 能照常排序、渲染
 // （#2 遷移來的已讀文件可能沒有 title，由 app.js 顯示成「PMID xxx」；#5 之前的收藏沒有書目欄位）
 function fallbackArticle(pmid, e, at) {
   return {
@@ -132,16 +135,31 @@ function fallbackArticle(pmid, e, at) {
   };
 }
 
+// 依時間新到舊；沒有時間的（例如 #2 遷移來的已讀）排最後
+function byTimeDesc(key) {
+  return (a, b) => (b[key] || "").localeCompare(a[key] || "") || Number(b.pmid) - Number(a.pmid);
+}
+
+export async function getAllLater() {
+  return [...cache]
+    .filter(([, e]) => e.later)
+    .map(([pmid, e]) => {
+      const laterAt = toIso(e.laterAt);
+      return { pmid, laterAt, article: fallbackArticle(pmid, e, laterAt) };
+    })
+    .sort(byTimeDesc("laterAt"));
+}
+
 export async function getAllSaved() {
   return [...cache]
     .filter(([, e]) => e.saved)
     .map(([pmid, e]) => {
       const savedAt = toIso(e.savedAt);
       return { pmid, savedAt, note: e.note || "", article: fallbackArticle(pmid, e, savedAt) };
-    });
+    })
+    .sort(byTimeDesc("savedAt"));
 }
 
-// 依 readAt 新到舊；沒有 readAt（#2 遷移來的）排最後
 export async function getAllRead() {
   return [...cache]
     .filter(([, e]) => e.read)
@@ -149,12 +167,12 @@ export async function getAllRead() {
       const readAt = toIso(e.readAt);
       return { pmid, readAt, article: fallbackArticle(pmid, e, readAt) };
     })
-    .sort((a, b) => (b.readAt || "").localeCompare(a.readAt || "") || Number(b.pmid) - Number(a.pmid));
+    .sort(byTimeDesc("readAt"));
 }
 
 // ---------- 寫入 ----------
 
-// 收藏副本多存的書目欄位（RIS 匯出用）
+// 收藏／稍後細讀副本多存的書目欄位（RIS 匯出用）
 function biblio(article) {
   if (!article) return {};
   return {
@@ -197,6 +215,17 @@ export async function setRead(pmid, read, article = null) {
     read: !!read,
     readAt: read ? fb?.Timestamp.now() ?? null : null,
     ...meta(article),
+    // 看完就離開「稍後細讀」佇列；laterAt 不清，留作歷史
+    ...(read && cache.get(pmid)?.later ? { later: false } : {}),
+  });
+}
+
+export async function setLater(pmid, later, article = null) {
+  await write(pmid, {
+    later: !!later,
+    laterAt: later ? fb?.Timestamp.now() ?? null : null,
+    ...meta(article),
+    ...biblio(article),
   });
 }
 

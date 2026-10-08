@@ -18,7 +18,7 @@ growth-dashboard/
 ├── .github/workflows/fetch.yml   ← 每日排程（UTC 22:00）＋可手動觸發
 ├── scripts/fetch_pubmed.py       ← PubMed 抓取腳本（Python 3.11，僅標準函式庫）
 ├── data/articles.json            ← 排程產出的文章資料（勿手動編輯）
-├── index.html                    ← 儀表板主頁（單頁，「新進」／「稍後細讀」／「已讀」頁內切換）
+├── index.html                    ← 儀表板主頁（單頁，「新進」／「稍後細讀」／「收藏」／「已讀」頁內切換）
 ├── firestore.rules               ← Firestore 安全規則（只放 repo，尚未套用到主控台）
 └── assets/
     ├── css/style.css
@@ -69,14 +69,20 @@ efetch 批次（≤200）→ 與既有 JSON 以 pmid 合併（舊文保留 `adde
 線上搶先刊出的文章這三欄為空字串）、`topics`（主題 id 陣列）、`url`、`added_at`（首次進入本檔的 UTC 時間）、
 `oa_url`（OA 全文連結或 null）、`oa_pdf`（bool，`oa_url` 是否為 PDF 直連）、`oa_checked_at`（最後一次成功查 Unpaywall 的 UTC 時間）。
 
+### 個人狀態的三個概念（互相獨立，一篇可以同時具備）
+- **稍後細讀**（`later`）：短期待讀佇列。標已讀時自動離開佇列。
+- **收藏**（`saved`）：長期書庫。筆記、RIS 匯出都在這裡；標已讀不影響收藏。
+- **已讀**（`read`）：閱讀紀錄。
+
 ### Firestore（`userState` 集合）
 Firebase 專案 `growth-dashboard-989fb`，SDK **13.0.0**（gstatic CDN 的 ES module 版：
 `https://www.gstatic.com/firebasejs/13.0.0/firebase-{app,auth,firestore}.js`）。
-文件 ID = PMID，欄位：`read`（bool）、`saved`（bool）、`readAt`／`savedAt`（Timestamp｜null，用客戶端時間）、
+文件 ID = PMID，欄位：`read`、`later`、`saved`（bool）、`readAt`／`laterAt`／`savedAt`（Timestamp｜null，用客戶端時間）、
 `title`、`journal`（簡稱）、`url`、`topics`（string[]）、`note`（string，收藏筆記），
-收藏時另存書目 `authors`、`year`、`doi`、`volume`、`issue`、`pages`（#5 起；之前的收藏沒有，不回填）。
+收藏、加入稍後細讀時另存書目 `authors`、`year`、`doi`、`volume`、`issue`、`pages`（#5 起；之前的收藏沒有，不回填）。
 `title`～`pages` 是冗餘副本，讓收藏／已讀清單與 RIS 匯出不依賴 `articles.json`。
-寫入一律 `setDoc(..., { merge: true })`；取消已讀／收藏時不刪文件，只把布林改 false、時間改 null；`note` 只由 `setNote` 改，
+寫入一律 `setDoc(..., { merge: true })`；取消已讀／稍後細讀／收藏時不刪文件，只把布林改 false、時間改 null；
+例外：`setRead(pmid, true)` 時若 `later` 為 true，同一次寫入把 `later` 改 false，但 `laterAt` 保留當歷史；`note` 只由 `setNote` 改，
 取消收藏不動它（再次收藏時筆記會回來）。
 
 ## 現況
@@ -132,3 +138,13 @@ Firebase 專案 `growth-dashboard-989fb`，SDK **13.0.0**（gstatic CDN 的 ES m
     退場的用 Firestore 副本。檔名 `growth-dashboard_saved_YYYYMMDD.ris`（台灣日期），UTF-8 無 BOM、CRLF。
     AU 轉成 "Yang, J. R."（EndNote 靠逗號拆姓名）；不是「姓＋1–4 個大寫縮寫」的視為團體作者，結尾加逗號。
     PubMed 省略寫法的頁碼（"1234-45"）會補成 EP 1245；e 開頭或其他格式整串放 SP。AB／N1 的換行壓成空白（RIS 一欄一行）。
+- [x] **Handoff #5.5 拆分「稍後細讀」與「收藏」**（2026-10-08）：`index.html`、`app.js`、`state.js`、`style.css`。
+  - 原本「收藏」按鈕就是把文章放進「稍後細讀」分頁，現在拆成兩個獨立概念（見「資料層說明」），Firestore 多 `later`／`laterAt`，
+    既有資料不遷移（業主已清空收藏）。安全規則不用改。
+  - 分頁：新進｜稍後細讀（`ui.tab = "later"`，依 `laterAt` 新到舊，tab 上顯示佇列篇數）｜收藏（`"saved"`，依 `savedAt` 新到舊）｜已讀。
+    三個個人分頁都以 Firestore 副本為主、JSON 有時用完整版；主題 pill＋搜尋適用；未登入各自顯示提示。
+  - 筆記、「匯出 RIS」、搜尋含筆記：從「稍後細讀」搬到「收藏」（#5 段落提到的「稍後細讀」現在都指「收藏」）。
+  - `state.js` 新增 `setLater(pmid, bool, article?)`（副本＋書目寫法同 `setSaved`）、`getAllLater()`；`getState`／`getAllStates`
+    多回傳 `later`；`getAllSaved()` 改為依 `savedAt` 新到舊。手動取消稍後細讀會清 `laterAt`（同取消收藏）。
+  - 卡片操作列分兩組：狀態（已讀｜稍後細讀｜收藏）＋內容（✎ 筆記〔僅收藏分頁〕｜看全文｜PDF／OA 全文）。
+    手機兩組各一列，桌機同一列左右分開；取代 #5 的 `has-note`／`has-oa` 換列規則。320px 寬（含全部按下、六顆按鈕、兩位數篇數）排得下。
