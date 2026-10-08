@@ -30,6 +30,12 @@ jobs:
       - name: Fetch PubMed articles
         run: python scripts/fetch_pubmed.py
 
+      # 影片失敗不擋論文更新；YouTube RSS 常間歇性 404，腳本會重試，給足時間
+      - name: Fetch YouTube videos
+        continue-on-error: true
+        timeout-minutes: 20
+        run: python scripts/fetch_videos.py
+
       # 摘要失敗不擋文章更新：continue-on-error，下一步照樣 commit
       - name: Summarize with Claude
         continue-on-error: true
@@ -39,15 +45,16 @@ jobs:
           SUMMARIZE_LIMIT: ${{ inputs.summarize_limit || 60 }}
         run: python scripts/summarize.py --limit "$SUMMARIZE_LIMIT"
 
+      # articles.json、videos.json，以及 fetch_videos.py 回寫 channel_id 的 channels.json
       - name: Commit if changed
         run: |
-          if git diff --quiet -- data/articles.json && \
-             [ -z "$(git ls-files --others --exclude-standard data/articles.json)" ]; then
-            echo "data/articles.json 無變更，略過 commit"
+          FILES="data/articles.json data/videos.json config/channels.json"
+          if [ -z "$(git status --porcelain -- $FILES)" ]; then
+            echo "資料無變更，略過 commit"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/articles.json
-          git commit -m "chore: update articles $(TZ=Asia/Taipei date +%F)"
+          git add -- $(for f in $FILES; do [ -e "$f" ] && echo "$f"; done)
+          git commit -m "chore: update data $(TZ=Asia/Taipei date +%F)"
           git push

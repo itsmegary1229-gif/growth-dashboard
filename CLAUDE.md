@@ -6,7 +6,7 @@
 
 - 純靜態 HTML / CSS / JavaScript，**無框架、無打包工具**
 - 託管於 GitHub Pages（repo 根目錄）：`itsmegary1229-gif/growth-dashboard`
-- 資料來源：PubMed E-utilities，由 GitHub Actions 每天台灣 06:00 自動抓取
+- 兩個分區：**論文**（PubMed E-utilities）、**影片**（YouTube 公開 RSS），由 GitHub Actions 每天台灣 06:00 自動抓取
 
 ## 檔案結構
 
@@ -18,24 +18,43 @@ growth-dashboard/
 ├── .github/workflows/fetch.yml   ← 每日排程（UTC 22:00）＋可手動觸發
 ├── scripts/fetch_pubmed.py       ← PubMed 抓取腳本（Python 3.11，僅標準函式庫）
 ├── scripts/summarize.py          ← AI 中文摘要＋相關度評分（Claude API，僅標準函式庫）
+├── scripts/fetch_videos.py       ← YouTube RSS 抓取腳本（僅標準函式庫）
+├── config/channels.json          ← 影片頻道設定（業主手動編輯；腳本會回寫 channel_id）
 ├── data/articles.json            ← 排程產出的文章資料（勿手動編輯）
-├── index.html                    ← 儀表板主頁（單頁，「新進」／「稍後細讀」／「收藏」／「已讀」頁內切換）
-├── firestore.rules               ← Firestore 安全規則（只放 repo，尚未套用到主控台）
+├── data/videos.json              ← 排程產出的影片資料（勿手動編輯）
+├── index.html                    ← 儀表板主頁（單頁；頂層分區「論文」「影片」，各自的子分頁頁內切換）
+├── firestore.rules               ← Firestore 安全規則（只放 repo，由業主貼到主控台）
 └── assets/
     ├── css/style.css
     └── js/
-        ├── app.js                ← 載入 JSON、篩選／搜尋、渲染、事件、登入 UI、收藏筆記
-        ├── state.js              ← 已讀／收藏／筆記狀態抽象層（Firestore）＋登入狀態
-        └── firebase.js           ← Firebase 初始化（CDN SDK，版號只寫在這裡）
+        ├── app.js                ← 外殼：分區切換（URL hash）、頁首各分區篇數、登入 UI
+        ├── util.js               ← 共用工具：esc、台灣日期、toast、搜尋框、localStorage 偏好
+        ├── state.js              ← 個人狀態抽象層（Firestore，每分區一個集合）＋登入狀態
+        ├── firebase.js           ← Firebase 初始化（CDN SDK，版號只寫在這裡）
+        └── sections/
+            ├── papers.js         ← 論文分區：篩選／搜尋、渲染、事件、收藏筆記、RIS
+            └── videos.js         ← 影片分區：頻道 pill、搜尋、卡片、已看／稍後看
 ```
 
 ## 鐵則
 
-1. **`data/articles.json` 由排程產出，勿手動編輯**。要改內容請改 `scripts/fetch_pubmed.py` 的設定區。
+1. **`data/articles.json`、`data/videos.json` 由排程產出，勿手動編輯**。要改內容請改 `scripts/fetch_pubmed.py` 的設定區
+   或 `config/channels.json`。
 2. **不做 SEO、不接 GA4**（私人工具，不需要被搜尋或追蹤）。
 3. 本地預覽須用 **Live Server**（`http://127.0.0.1:5500`），不要用 `file://` 開啟（fetch JSON / Firebase 會失敗）。
 4. 抓取腳本只用 Python 標準函式庫，不引入第三方套件（Actions 不需要 pip install）。
 5. 每個 handoff 完成後，更新本檔的「現況」段落。
+
+## 分區架構
+
+- 頁首（站名、篇數／更新時間、登入）下方一排分區 tab「論文」「影片」；所選分區存在 URL hash（`#papers`／`#videos`），
+  重整後停在同一分區，沒有或不認得的 hash 用論文。切換分區不清各分區的狀態（子分頁、篩選、搜尋都留著）。
+- `index.html` 裡每個分區是一個 `<div class="section" id="section-{id}">`，含自己的黏頂控制列與列表；
+  影片分區的元素 id 一律加 `v-` 前綴（論文沿用原本的 id）。
+- 分區模組介面：`init({ setMeta })`，`setMeta(text)` 更新頁首該分區的「N 篇／支 · 更新：MM/DD HH:mm」，
+  app.js 只顯示目前分區的那一份。分區各自 `onAuthChange`／`onStatesChange` 重繪。
+- 新增分區：寫 `sections/xxx.js`、在 `index.html` 加 `#section-xxx` 與分區 tab、在 app.js 的 `SECTIONS` 登記；
+  需要個人狀態就在 `state.js` 用 `createCollection` 開一個集合，並把集合名加進 `firestore.rules`。
 
 ## 資料層說明
 
@@ -88,12 +107,44 @@ fetch.yml 在抓取之後執行（`continue-on-error: true`，失敗不擋 commi
 - 費用（Haiku 4.5，$1／$5 每百萬 input／output token）：每篇約 1–1.5k input＋300 output tokens ≈ US$0.003；
   172 篇補跑約 US$0.5，每天新文章 5–15 篇約 US$0.05 以下。實際用量看 Actions log 的 tokens 行。
 
+### 影片（`scripts/fetch_videos.py`）
+`config/channels.json` 是陣列，每項 `{ "name": 顯示名稱, "channel": 頻道 }`，`channel` 可以是 `UC…` 的 channel_id、
+`@handle` 或頻道網址，例：
+```json
+[
+  { "name": "某頻道", "channel": "@somehandle" },
+  { "name": "另一頻道", "channel": "UCxxxxxxxxxxxxxxxxxxxxxx" }
+]
+```
+- 給 `@handle`／網址時，第一次抓頻道頁 HTML 解析出 channel_id（canonical link → `itemprop=identifier` → `externalId`），
+  回寫成該項的 `channel_id` 欄位，之後直接用。**改了 `channel` 要連同 `channel_id` 一起刪掉**才會重新解析。
+- 每頻道抓 `https://www.youtube.com/feeds/videos.xml?channel_id=UC…`（公開 RSS、無 key，最新 15 支，含 Shorts）。
+- YouTube RSS 常**間歇性回 404／500**（2026-10 實測單次成功率約 3 成，curl 也一樣，換 `playlist_id` 或加參數無效），
+  所以每個請求重試 8 次、第 n 次等 min(2n, 10) 秒；某頻道全部失敗就印警告、保留它的既有影片，全部頻道都失敗才 exit 1。
+  fetch.yml 這步 `continue-on-error: true`、`timeout-minutes: 20`。
+- 合併：video_id 去重、舊影片保留 `added_at`、其餘欄位以新抓的為準；依 `added_at` 保留 90 天；`added_at` 新到舊排序；有變才寫檔。
+- `channels.json` 為空時印「未設定頻道」直接結束（不動 `videos.json`）。repo 裡的 `videos.json` 是空殼
+  `{"generated_at": null, "videos": []}`，避免前端抓 404 在 console 留錯誤。
+- 前端：`channels.json` 為空且沒有影片 → 「尚未設定頻道」空狀態；兩個檔案 404 也當成空的，不報錯。
+
+### `videos.json` 欄位
+`generated_at`、`videos[]`：`video_id`、`title`、`channel_name`（channels.json 的 `name`）、`channel_id`、
+`published`（UTC ISO，`…Z`）、`url`（RSS 的 alternate link，Shorts 是 `/shorts/…`）、`thumbnail`（media:thumbnail 最大尺寸，
+實際上 RSS 只給 480×360 的 hqdefault）、`description`（前 500 字）、`added_at`（首次進入本檔的 UTC 時間）。
+
+### 影片分區畫面
+- 子分頁「新進」「稍後看」（tab 上顯示佇列數）「已看」；頻道 pill（全部＋channels.json 順序的頻道，其次是只出現在資料裡的）；
+  「新進」有時間範圍（依 `added_at`）與「隱藏已看」，選擇記在 localStorage `mdr.prefs.videos.v1`；搜尋 title＋description。
+- 卡片：縮圖（手機滿版在上、桌機 200px 在左，點擊開 YouTube）、標題（點擊展開）、頻道名＋發布日（台灣日期）、
+  說明收合時 2 行；操作列 已看｜稍後看｜在 YouTube 開啟 ↗。已看淡化（「已看」分頁不淡化，多一行「已看於」）。
+- 「稍後看」「已看」以 Firestore 副本為主、`videos.json` 仍有時用完整資料，依 `laterAt`／`watchedAt` 新到舊。
+
 ### 個人狀態的三個概念（互相獨立，一篇可以同時具備）
 - **稍後細讀**（`later`）：短期待讀佇列。標已讀時自動離開佇列。
 - **收藏**（`saved`）：長期書庫。筆記、RIS 匯出都在這裡；標已讀不影響收藏。
 - **已讀**（`read`）：閱讀紀錄。
 
-### Firestore（`userState` 集合）
+### Firestore（論文：`userState` 集合）
 Firebase 專案 `growth-dashboard-989fb`，SDK **13.0.0**（gstatic CDN 的 ES module 版：
 `https://www.gstatic.com/firebasejs/13.0.0/firebase-{app,auth,firestore}.js`）。
 文件 ID = PMID，欄位：`read`、`later`、`saved`（bool）、`readAt`／`laterAt`／`savedAt`（Timestamp｜null，用客戶端時間）、
@@ -103,6 +154,23 @@ Firebase 專案 `growth-dashboard-989fb`，SDK **13.0.0**（gstatic CDN 的 ES m
 寫入一律 `setDoc(..., { merge: true })`；取消已讀／稍後細讀／收藏時不刪文件，只把布林改 false、時間改 null；
 例外：`setRead(pmid, true)` 時若 `later` 為 true，同一次寫入把 `later` 改 false，但 `laterAt` 保留當歷史；`note` 只由 `setNote` 改，
 取消收藏不動它（再次收藏時筆記會回來）。
+
+### Firestore（影片：`videoState` 集合）
+文件 ID = video_id，欄位：`watched`、`later`（bool）、`watchedAt`／`laterAt`（Timestamp｜null）、
+`title`、`channel_name`、`url`、`thumbnail`（冗餘副本）。寫法同 `userState`：`setDoc(merge)`、取消時布林改 false、時間改 null；
+`setWatched(id, true)` 時若 `later` 為 true，同一次寫入把 `later` 改 false（`laterAt` 保留）。
+
+### `state.js`
+`createCollection(name, flags)` 是單一集合的核心（快取、onSnapshot、樂觀寫入與回滾）；登入／登出時所有集合一起切換監聽。
+對外匯出 `paperState`（userState；沿用 #2～#5.5 的函式名稱與回傳格式）與 `videoState`（videoState），共同介面：
+`getState`、`getAllStates`、`setLater`、`getAllLater`、`onStatesChange`；另各有 `setRead`／`setSaved`／`setNote`／
+`getAllSaved`／`getAllRead`，與 `setWatched`／`getAllWatched`。清單項目一律有 `id`、`item`（論文另帶 `pmid`、`article`）。
+登入相關 `onAuthChange`、`signIn`、`signOutUser`、`AuthRequiredError` 兩分區共用。
+
+### 安全規則（`firestore.rules`）
+只允許 uid `caItxfEfasaJYMCLCnhEd7OGRMl1` 讀寫 `userState`、`videoState` 兩個集合。**檔案已更新、尚未套用**，
+業主要貼到主控台發佈；新規則套用前若主控台是只允許 `userState` 的舊規則，影片的「已看／稍後看」會寫入失敗、
+console 會有一則 videoState 監聽失敗的錯誤。
 
 ## 現況
 
@@ -177,3 +245,14 @@ Firebase 專案 `growth-dashboard-989fb`，SDK **13.0.0**（gstatic CDN 的 ES m
     沒有分數的文章當 3 分排（避免新文章在摘要前沉底）。其他分頁維持原排序。
   - 搜尋範圍加入 headline 與 points。
   - 本機 dry-run：待摘要 172 篇（無摘要 16 篇），未實際呼叫 API；**業主尚未手動觸發 workflow 驗收**。
+- [x] **Handoff #7 頂層分區架構＋影片分區**（2026-10-08）：`index.html`、`app.js`（改為外殼）、`util.js`（新）、
+  `sections/papers.js`（原 app.js 的論文邏輯）、`sections/videos.js`（新）、`state.js`（改成每分區一個集合）、`style.css`、
+  `scripts/fetch_videos.py`（新）、`config/channels.json`（新，空陣列）、`data/videos.json`（新，空殼）、`fetch.yml`、`firestore.rules`。
+  細節見「分區架構」與「資料層說明 → 影片」。
+  - 論文分區的行為不變（四個分頁、主題 pill、搜尋、時間範圍／排序／隱藏已讀與其 localStorage、AI 摘要與相關度、
+    筆記、RIS、未登入提示、樂觀更新）。頁首「N 篇 · 更新」改成依分區顯示。
+  - fetch.yml：PubMed 抓取後加「Fetch YouTube videos」（continue-on-error）；commit 步驟改成一併提交
+    `data/articles.json`、`data/videos.json`、`config/channels.json`，訊息改為 `chore: update data YYYY-MM-DD`。
+  - 本機以 TED、YouTube（@handle／網址，解析並回寫 channel_id 成功）、Google for Developers（UC id）測試，
+    `videos.json` 結構正確；測完 `channels.json` 清回 `[]`、`videos.json` 清回空殼。
+  - ⚠️ **新安全規則待業主套用**（見「安全規則」）；**業主尚未填頻道、尚未驗收影片同步**。

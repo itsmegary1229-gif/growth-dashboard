@@ -33,8 +33,16 @@
         </form>
       </div>
     </div>
+    <div class="wrap">
+      <div class="section-tabs" role="tablist" aria-label="分區">
+        <button type="button" role="tab" class="section-tab" data-section="papers" aria-selected="true">論文</button>
+        <button type="button" role="tab" class="section-tab" data-section="videos" aria-selected="false">影片</button>
+      </div>
+    </div>
   </header>
 
+  <!-- 論文分區（assets/js/sections/papers.js） -->
+  <div class="section" id="section-papers">
   <nav class="controls" aria-label="篩選">
     <div class="wrap">
       <div class="tabs" role="tablist">
@@ -75,6 +83,45 @@
     </div>
     <div id="list" class="list"></div>
   </main>
+  </div>
+
+  <!-- 影片分區（assets/js/sections/videos.js） -->
+  <div class="section" id="section-videos" hidden>
+  <nav class="controls" aria-label="篩選">
+    <div class="wrap">
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" class="tab" data-tab="new" aria-selected="true">新進</button>
+        <button type="button" role="tab" class="tab" data-tab="later" aria-selected="false">稍後看 <span class="tab-count" id="v-later-count"></span></button>
+        <button type="button" role="tab" class="tab" data-tab="watched" aria-selected="false">已看</button>
+      </div>
+      <div class="pills" id="v-channels" role="radiogroup" aria-label="頻道"></div>
+      <div class="search" role="search">
+        <input type="search" class="search-input" id="v-search" placeholder="搜尋標題、說明"
+          aria-label="關鍵字搜尋" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search">
+        <button type="button" class="search-clear" id="v-search-clear" aria-label="清除搜尋" hidden>×</button>
+      </div>
+      <div class="subbar" id="v-subbar">
+        <div class="range" id="v-range" role="radiogroup" aria-label="時間範圍">
+          <button type="button" class="seg" data-range="7">近 7 天</button>
+          <button type="button" class="seg" data-range="30">近 30 天</button>
+          <button type="button" class="seg" data-range="all">全部</button>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="v-hide-watched">
+          <span class="switch-track" aria-hidden="true"></span>
+          <span>隱藏已看</span>
+        </label>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <div class="result-bar">
+      <p class="result-count" id="v-result-count" aria-live="polite"></p>
+    </div>
+    <div id="v-list" class="list"></div>
+  </main>
+  </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 </body>

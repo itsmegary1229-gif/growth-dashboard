@@ -1,12 +1,10 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /userState/{pmid} {
+    match /{collection}/{docId} {
       allow read, write: if request.auth != null
-        && request.auth.uid == "caItxfEfasaJYMCLCnhEd7OGRMl1";
-    }
-    match /{document=**} {
-      allow read, write: if false;
+        && request.auth.uid == "caItxfEfasaJYMCLCnhEd7OGRMl1"
+        && collection in ['userState', 'videoState'];
     }
   }
 }
