@@ -6,8 +6,8 @@
 
 - 純靜態 HTML / CSS / JavaScript，**無框架、無打包工具**
 - 託管於 GitHub Pages（repo 根目錄）：`itsmegary1229-gif/growth-dashboard`
-- 三個分區：**論文**（PubMed E-utilities）、**影片**（YouTube 公開 RSS），由 GitHub Actions 每天台灣 06:00 自動抓取；
-  **回顧**（每天從收藏抽文章重讀，純前端）
+- 四個分區：**論文**（PubMed E-utilities）、**影片**（YouTube 公開 RSS）、**文章**（任意 RSS／Atom，非醫學的 newsletter、部落格），
+  由 GitHub Actions 每天台灣 06:00 自動抓取；**回顧**（每天從收藏抽文章重讀，純前端）
 
 ## 檔案結構
 
@@ -20,10 +20,13 @@ growth-dashboard/
 ├── scripts/fetch_pubmed.py       ← PubMed 抓取腳本（Python 3.11，僅標準函式庫）
 ├── scripts/summarize.py          ← AI 中文摘要＋相關度評分（Claude API，僅標準函式庫）
 ├── scripts/fetch_videos.py       ← YouTube RSS 抓取腳本（僅標準函式庫）
+├── scripts/fetch_feeds.py        ← 通用 RSS／Atom 抓取腳本（僅標準函式庫）
 ├── config/channels.json          ← 影片頻道設定（業主手動編輯；腳本會回寫 channel_id）
-├── data/articles.json            ← 排程產出的文章資料（勿手動編輯）
+├── config/feeds.json             ← 文章 feed 設定（業主手動編輯）
+├── data/articles.json            ← 排程產出的論文資料（勿手動編輯）
 ├── data/videos.json              ← 排程產出的影片資料（勿手動編輯）
-├── index.html                    ← 儀表板主頁（單頁；頂層分區「論文」「影片」，各自的子分頁頁內切換）
+├── data/feeds.json               ← 排程產出的 RSS 文章資料（勿手動編輯）
+├── index.html                    ← 儀表板主頁（單頁；頂層分區「論文」「影片」「文章」「回顧」，各自的子分頁頁內切換）
 ├── firestore.rules               ← Firestore 安全規則（只放 repo，由業主貼到主控台）
 └── assets/
     ├── css/style.css
@@ -34,14 +37,16 @@ growth-dashboard/
         ├── firebase.js           ← Firebase 初始化（CDN SDK，版號只寫在這裡）
         └── sections/
             ├── papers.js         ← 論文分區：篩選／搜尋、渲染、事件、收藏筆記、RIS
-            ├── videos.js         ← 影片分區：頻道 pill、搜尋、卡片、已看／稍後看
+            ├── listSection.js    ← 清單分區共用模組（新進／稍後／完成、來源 pill、搜尋、卡片、Firestore 狀態）
+            ├── videos.js         ← 影片分區：listSection 的設定＋影片卡片
+            ├── articles.js       ← 文章分區：listSection 的設定＋文章卡片
             └── review.js         ← 回顧分區：每日抽選收藏、還記得／再讀一次／移除收藏
 ```
 
 ## 鐵則
 
-1. **`data/articles.json`、`data/videos.json` 由排程產出，勿手動編輯**。要改內容請改 `scripts/fetch_pubmed.py` 的設定區
-   或 `config/channels.json`。
+1. **`data/articles.json`、`data/videos.json`、`data/feeds.json` 由排程產出，勿手動編輯**。要改內容請改
+   `scripts/fetch_pubmed.py` 的設定區、`config/channels.json` 或 `config/feeds.json`。
 2. **不做 SEO、不接 GA4**（私人工具，不需要被搜尋或追蹤）。
 3. 本地預覽須用 **Live Server**（`http://127.0.0.1:5500`），不要用 `file://` 開啟（fetch JSON / Firebase 會失敗）。
 4. 抓取腳本只用 Python 標準函式庫，不引入第三方套件（Actions 不需要 pip install）。
@@ -49,16 +54,41 @@ growth-dashboard/
 
 ## 分區架構
 
-- 頁首（站名、篇數／更新時間、登入）下方一排分區 tab「論文」「影片」「回顧」；所選分區存在 URL hash（`#papers`／`#videos`／`#review`），
+- 頁首（站名、篇數／更新時間、登入）下方一排分區 tab「論文」「影片」「文章」「回顧」；所選分區存在 URL hash
+  （`#papers`／`#videos`／`#articles`／`#review`），
   重整後停在同一分區，沒有或不認得的 hash 用論文。切換分區不清各分區的狀態（子分頁、篩選、搜尋都留著）。
 - `index.html` 裡每個分區是一個 `<div class="section" id="section-{id}">`，含自己的黏頂控制列與列表；
-  影片分區的元素 id 一律加 `v-` 前綴（論文沿用原本的 id）。
+  影片分區的元素 id 一律加 `v-` 前綴、文章分區加 `a-`（論文沿用原本的 id）。
 - 分區模組介面：`init({ setMeta })`，`setMeta(text)` 更新頁首該分區的「N 篇／支 · 更新：MM/DD HH:mm」，
   app.js 只顯示目前分區的那一份。分區各自 `onAuthChange`／`onStatesChange` 重繪。
 - `articles.json` 由論文與回顧兩個分區共用，透過 `util.js` 的 `fetchJSON(url)` 只抓一次。
   回顧分區沿用 papers.js 匯出的 `renderAbstract`、`summaryOf`、`renderRelevance`、`journalClass`。
 - 新增分區：寫 `sections/xxx.js`、在 `index.html` 加 `#section-xxx` 與分區 tab、在 app.js 的 `SECTIONS` 登記；
   需要個人狀態就在 `state.js` 用 `createCollection` 開一個集合，並把集合名加進 `firestore.rules`。
+  「新進／稍後／完成」型的清單分區直接用 `listSection.js`（見下）＋ `state.js` 的 `createListStore`，複製 `#section-articles` 的 HTML 換前綴。
+
+### 清單分區共用模組（`sections/listSection.js`）
+`createListSection(cfg)` 回傳 `{ init }`。影片、文章兩個分區只提供設定物件與卡片內容函式：
+
+| 設定 | 影片（videos.js） | 文章（articles.js） |
+|---|---|---|
+| `id`／`prefix` | `videos`／`v-` | `articles`／`a-` |
+| `dataUrl`／`listKey` | `data/videos.json`／`videos` | `data/feeds.json`／`items` |
+| `configUrl` | `config/channels.json` | `config/feeds.json` |
+| `idKey`（＝Firestore 文件 ID） | `video_id` | `key`（sha1(id)） |
+| `sourceKey`／`groupKey` | `channel_name`／null | `feed_name`／`category` |
+| `store` | `videoState`（doneFlag `watched`） | `feedState`（doneFlag `read`） |
+| `prefsKey`／`hidePref` | `mdr.prefs.videos.v1`／`hideWatched` | `mdr.prefs.articles.v1`／`hideRead` |
+| `text`（完成／稍後／開啟） | 已看／稍後看／在 YouTube 開啟 ↗ | 已讀／稍後讀／開啟 ↗ |
+| `renderCard` | 縮圖＋標題＋頻道／日期＋說明 2 行 | 標題＋feed／日期＋summary 3 行（`.clamp-3`） |
+
+另有 `searchText`、`urlOf`、`sort`、`cardClass`，與空狀態／錯誤文字（`notConfigured`、`metaNotConfigured`、`noData`、`loadError`）。
+其他文字（佇列空、登入提示、都讀完了…）由 `text.noun`／`done`／`later`／`finished`／`unit` 組成，影片的字句與重構前一致。
+子分頁 `data-tab` 為 `new`／`later`／`done`；元素 id：`{p}sources`、`{p}subsources`（選填）、`{p}search`、`{p}search-clear`、
+`{p}subbar`、`{p}range`、`{p}hide-done`、`{p}later-count`、`{p}result-count`、`{p}list`；卡片 `data-id`。
+- 來源 pill：`groupKey` 為 null，或設定檔與資料都沒有分類 → 一排「全部＋各來源」。有分類 → 第一排「全部＋各分類」
+  （設定檔順序，沒填分類的來源歸「未分類」），點分類後第二排（`{p}subsources`）列「全部{分類}＋該分類的來源」。
+  分類以設定檔為準（Firestore 副本沒有分類），其次是資料裡的 `category`。
 
 ## 資料層說明
 
@@ -143,6 +173,32 @@ fetch.yml 在抓取之後執行（`continue-on-error: true`，失敗不擋 commi
   說明收合時 2 行；操作列 已看｜稍後看｜在 YouTube 開啟 ↗。已看淡化（「已看」分頁不淡化，多一行「已看於」）。
 - 「稍後看」「已看」以 Firestore 副本為主、`videos.json` 仍有時用完整資料，依 `laterAt`／`watchedAt` 新到舊。
 
+### 文章（`scripts/fetch_feeds.py`）
+`config/feeds.json` 是陣列，每項 `{ "name": 顯示名稱, "url": feed 網址, "category": 分類（選填） }`，例：
+```json
+[
+  { "name": "某電子報", "url": "https://example.com/feed", "category": "生產力" },
+  { "name": "某部落格", "url": "https://example.org/atom.xml" }
+]
+```
+- 支援 RSS 2.0、RSS 1.0（RDF）、Atom（以 local name 解析，不管命名空間前綴）。
+- 每篇：`id`（RSS guid 或 link；Atom id 或 link）、`key`（sha1(id) hex，前端與 Firestore 的文件 ID）、`title`（去 HTML）、`link`、
+  `published`（RSS pubDate／dc:date、Atom published／updated → UTC ISO；缺或無法解析用抓取時間）、
+  `summary`（description／content:encoded 或 Atom summary／content，去 HTML 標籤與 entity、壓空白、前 500 字，超過加「…」）、
+  `feed_name`、`category`（沒填是空字串）、`added_at`。
+- 每個 feed 最多取 50 篇（`MAX_PER_FEED`），發表日早於 90 天的不收（避免第一次抓到整個存檔都變成「新進」）。
+- 單一 feed 失敗（逾時 20 秒、HTTP 錯誤、XML 錯、不認得的格式）重試 1 次後印警告、保留它的既有文章；全部失敗才 exit 1。
+  fetch.yml 這步 `continue-on-error: true`、`timeout-minutes: 10`。
+- 合併：`id` 去重、保留原 `added_at`、其餘以新抓的為準；依 `added_at` 保留 90 天；`added_at` 新到舊（同時再依 `published`）；有變才寫檔。
+- `feeds.json` 為空時印「未設定 feed」直接結束（不動 `data/feeds.json`）。repo 裡的 `data/feeds.json` 是空殼 `{"generated_at": null, "items": []}`。
+- stdout 摘要：各 feed「本次抓到 / 其中新增」、總抓到／新增／移除、保留篇數。
+
+### 文章分區畫面
+- 子分頁「新進」「稍後讀」（tab 上顯示佇列數）「已讀」；來源 pill（有分類時兩層，見上）；「新進」有時間範圍與「隱藏已讀」
+  （localStorage `mdr.prefs.articles.v1`）；搜尋 title＋summary。
+- 卡片：標題（點擊展開）、feed 名＋發表日（台灣日期）、summary 收合時 3 行；操作列 已讀｜稍後讀｜開啟 ↗。
+- `feeds.json` 設定為空且沒有資料 → 「尚未設定 feed」。
+
 ### 回顧分區（`sections/review.js`）
 - 需登入。候選池：`userState` 中 `saved == true`、且今天（台灣日期）還沒回顧的文章。
 - 抽選順序：從未回顧（沒有 `reviewedAt`）> `reviewedAt` 的台灣日期最久遠；同一組內依 FNV-1a(`"YYYY-MM-DD:pmid"`) 排序，
@@ -180,21 +236,26 @@ Firebase 專案 `growth-dashboard-989fb`，SDK **13.0.0**（gstatic CDN 的 ES m
 ### Firestore（影片：`videoState` 集合）
 文件 ID = video_id，欄位：`watched`、`later`（bool）、`watchedAt`／`laterAt`（Timestamp｜null）、
 `title`、`channel_name`、`url`、`thumbnail`（冗餘副本）。寫法同 `userState`：`setDoc(merge)`、取消時布林改 false、時間改 null；
-`setWatched(id, true)` 時若 `later` 為 true，同一次寫入把 `later` 改 false（`laterAt` 保留）。
+`setDone(id, true)`（已看）時若 `later` 為 true，同一次寫入把 `later` 改 false（`laterAt` 保留）。
+
+### Firestore（文章：`feedState` 集合）
+文件 ID = `feeds.json` 的 `key`（sha1(id) 的 40 字 hex；guid／網址含 `/` 不能當文件 ID），欄位：`read`、`later`（bool）、
+`readAt`／`laterAt`（Timestamp｜null）、`title`、`feed_name`、`link`（冗餘副本）。寫法與 `videoState` 相同。
 
 ### `state.js`
 `createCollection(name, flags)` 是單一集合的核心（快取、onSnapshot、樂觀寫入與回滾）；登入／登出時所有集合一起切換監聽。
-對外匯出 `paperState`（userState；沿用 #2～#5.5 的函式名稱與回傳格式）與 `videoState`（videoState），共同介面：
-`getState`、`getAllStates`、`setLater`、`getAllLater`、`onStatesChange`；另各有 `setRead`／`setSaved`／`setNote`／
-`getAllSaved`／`getAllRead`，與 `setWatched`／`getAllWatched`。paperState 另有 #8 的 `markReviewed(pmid, article?)`、
+對外匯出 `paperState`（userState；沿用 #2～#5.5 的函式名稱與回傳格式）、`videoState`、`feedState`，共同介面：
+`getState`、`getAllStates`、`setLater`、`getAllLater`、`onStatesChange`。paperState 另有 `setRead`／`setSaved`／`setNote`／
+`getAllSaved`／`getAllRead`。videoState、feedState 由 `createListStore(name, doneFlag, meta, item)` 產生，另有
+`doneFlag`（`"watched"`／`"read"`）、`setDone(id, bool, item?)`、`getAllDone()`（項目帶 `{doneFlag}At`）——#9 起取代 `setWatched`／`getAllWatched`。paperState 另有 #8 的 `markReviewed(pmid, article?)`、
 `getAllReviewed()`（有 `reviewedAt` 的文件，含已取消收藏的）、`isSynced()`（登入後第一次 onSnapshot 是否已到，回顧區用來避免閃出空狀態）；
 `getAllSaved()` 項目多 `reviewedAt`（ISO）、`reviewCount`。清單項目一律有 `id`、`item`（論文另帶 `pmid`、`article`）。
-登入相關 `onAuthChange`、`signIn`、`signOutUser`、`AuthRequiredError` 兩分區共用。
+登入相關 `onAuthChange`、`signIn`、`signOutUser`、`AuthRequiredError` 各分區共用。
 
 ### 安全規則（`firestore.rules`）
-只允許 uid `caItxfEfasaJYMCLCnhEd7OGRMl1` 讀寫 `userState`、`videoState` 兩個集合。**檔案已更新、尚未套用**，
-業主要貼到主控台發佈；新規則套用前若主控台是只允許 `userState` 的舊規則，影片的「已看／稍後看」會寫入失敗、
-console 會有一則 videoState 監聽失敗的錯誤。
+只允許 uid `caItxfEfasaJYMCLCnhEd7OGRMl1` 讀寫 `userState`、`videoState`、`feedState` 三個集合。**檔案已更新（#9 加 `feedState`）、尚未套用**，
+業主要貼到主控台發佈；新規則套用前，主控台規則沒涵蓋的集合（影片 `videoState`、文章 `feedState`）會寫入失敗，
+console 會有該集合監聽失敗的錯誤。
 
 ## 現況
 
@@ -287,3 +348,15 @@ console 會有一則 videoState 監聽失敗的錯誤。
     localStorage 只存「再來一篇」的加開數。另在收藏／回顧時多存 AI 摘要等副本（`reviewCopy`），否則文章 90 天退場後回顧卡只剩英文標題。
   - 安全規則不用改（同一集合加欄位）。本機以假 Firestore 驗證抽選、上限、再來一篇、移除收藏、收藏分頁回顧次數、手機／桌機版面；
     **業主尚未以真實帳號驗收**。
+- [x] **Handoff #9 通用 RSS「文章」分區＋清單分區共用模組**（2026-10-08）：`sections/listSection.js`（新）、`sections/articles.js`（新）、
+  `sections/videos.js`（改用共用模組）、`state.js`（`createListStore`、`feedState`）、`index.html`、`app.js`、`style.css`、
+  `scripts/fetch_feeds.py`（新）、`config/feeds.json`（新，空陣列）、`data/feeds.json`（新，空殼）、`fetch.yml`、`firestore.rules`。
+  細節見「清單分區共用模組」「文章」「Firestore（文章）」。
+  - 影片分區重構：`videos.js` 只剩設定＋卡片；元素 id `v-channels` → `v-sources`、`v-hide-watched` → `v-hide-done`，子分頁 `watched` → `done`；
+    `videoState.setWatched`／`getAllWatched` → `setDone`／`getAllDone`。Firestore 欄位、localStorage 偏好鍵與欄位、畫面字句都不變。
+  - 分類兩層 pill 已實作（不是只有 feed 層級）。
+  - fetch.yml 在影片之後加「Fetch RSS feeds」（continue-on-error）；commit 一併提交 `data/feeds.json`。
+  - 本機以 Hacker News（RSS 2.0）、Simon Willison（Atom）、Cal Newport（RSS 2.0，WordPress）加一個不存在的網址測試：三個解析成功、
+    壞的那個跳過；重跑無變更不寫檔。前端以假 Firestore 驗證文章分區（分類／來源 pill、稍後讀、已讀、已讀分頁、未登入提示）
+    與影片分區重構後行為（頻道 pill、搜尋、時間範圍偏好沿用、已看／稍後看、隱藏已看、展開）。測完 `feeds.json` 清回 `[]`、`data/feeds.json` 清回空殼。
+  - ⚠️ **新安全規則（含 `feedState`）待業主套用**；**業主尚未填 feed、尚未以真實帳號驗收**。

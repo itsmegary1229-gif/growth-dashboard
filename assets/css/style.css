@@ -65,7 +65,7 @@ button { cursor: pointer; -webkit-tap-highlight-color: transparent; }
   gap: 12px;
 }
 
-/* ---------- 分區切換（論文／影片／回顧） ---------- */
+/* ---------- 分區切換（論文／影片／文章／回顧） ---------- */
 
 .section-tabs {
   display: flex;
@@ -746,6 +746,11 @@ main.wrap { padding-bottom: calc(48px + env(safe-area-inset-bottom)); }
   white-space: normal;
 }
 .card.is-open .description { cursor: auto; }
+.card:not(.is-open) .description.clamp-3 { -webkit-line-clamp: 3; line-clamp: 3; }
+
+/* 文章分區：選了分類後的第二排來源 pill */
+.subpills { margin-top: 8px; }
+.subpills .pill { min-height: 34px; font-size: 0.86rem; }
 
 .empty code {
   font-size: 0.9em;
@@ -769,7 +774,7 @@ main.wrap { padding-bottom: calc(48px + env(safe-area-inset-bottom)); }
   .card { padding: 22px 24px 16px; }
   .actions { flex-direction: row; justify-content: space-between; }
   .act { flex: none; min-width: 96px; }
-  .section-tabs { max-width: 360px; }
+  .section-tabs { max-width: 440px; }
   .review-card { padding: 30px 32px 26px; }
   .review-actions { grid-template-columns: 1.4fr 1fr 1fr; }
   .review-actions .rv-primary { grid-column: auto; }

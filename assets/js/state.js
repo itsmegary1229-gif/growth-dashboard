@@ -1,8 +1,9 @@
 // 個人狀態的抽象層，存在 Firestore。每個分區一個集合，登入狀態共用：
 //   paperState → 集合 userState（文件 ID = PMID）
 //   videoState → 集合 videoState（文件 ID = video_id）
+//   feedState  → 集合 feedState（文件 ID = feeds.json 的 key，即 sha1(id)；RSS 的 guid／網址不能直接當文件 ID）
 //
-// 兩個 store 共同的介面（皆為 async，onStatesChange 除外）：
+// 所有 store 共同的介面（皆為 async，onStatesChange 除外）：
 //   getState(id)                 → 該分區的布林旗標，例如 { read, later, saved }
 //   getAllStates()               → Map<id, 旗標>
 //   setLater(id, later, item?)   「稍後」短期佇列；item 可選，用來寫冗餘副本
@@ -19,14 +20,15 @@
 //   getAllRead()                 → [{ pmid, readAt, article }]，依 readAt 新到舊
 //   getAllReviewed()             → [{ pmid, reviewedAt, article }]，回顧過的文章（含已取消收藏的），依 reviewedAt 新到舊
 //   isSynced()                   登入後第一次 onSnapshot 是否已到（之前的空清單不代表真的沒有）
-// videoState 另有：
-//   setWatched(videoId, watched, video?)  標已看時若在「稍後看」佇列中，同一次寫入把 later 改 false
-//   getAllWatched()              → [{ id, watchedAt, item }]，依 watchedAt 新到舊
+// videoState、feedState 由 createListStore 產生（清單分區 sections/listSection.js 用），另有：
+//   doneFlag                     「完成」旗標名稱：videoState 為 "watched"（已看），feedState 為 "read"（已讀）
+//   setDone(id, done, item?)     標完成時若在「稍後」佇列中，同一次寫入把 later 改 false（laterAt 保留當歷史）
+//   getAllDone()                 → [{ id, <doneFlag>At, item }]，依完成時間新到舊
 //
 // 未登入時讀取回傳空狀態，寫入丟出 AuthRequiredError。
 // 寫入採樂觀更新：先改本地快取並通知 onStatesChange，再 setDoc(merge)；失敗則回滾、再通知，並把錯誤丟回呼叫端。
 //
-// 登入相關（兩個分區共用）：
+// 登入相關（所有分區共用）：
 //   onAuthChange(cb)             cb({ status, email })，status 為 unknown | signedIn | signedOut | unavailable（SDK 載入失敗）
 //   signIn(email, password) / signOutUser()
 
@@ -323,70 +325,93 @@ export const paperState = {
   },
 };
 
-// ---------- 影片：videoState ----------
+// ---------- 清單分區：videoState／feedState ----------
 
-const videos = createCollection("videoState", ["watched", "later"]);
-
-// 副本只有 title／channel_name／url／thumbnail，其餘欄位補空值讓 videos.js 能照常渲染
-function videoItem(id, e, at) {
+// 新進／稍後／完成三種狀態的集合；meta(item) 組冗餘副本，item(id, entry, at) 由副本組回清單項目
+function createListStore(name, doneFlag, meta, item) {
+  const c = createCollection(name, [doneFlag, "later"]);
+  const doneAt = `${doneFlag}At`;
+  const build = (id, e, at) => ({ item: item(id, e, at) });
   return {
-    item: {
-      video_id: id,
-      title: e.title || "",
-      channel_name: e.channel_name || "",
-      url: e.url || `https://www.youtube.com/watch?v=${id}`,
-      thumbnail: e.thumbnail || "",
-      published: "",
-      description: "",
-      added_at: at || new Date(0).toISOString(),
+    doneFlag,
+    onStatesChange: c.onStatesChange,
+
+    async getState(id) {
+      return c.view(c.entry(id));
+    },
+    async getAllStates() {
+      return new Map([...c.cache()].map(([id, e]) => [id, c.view(e)]));
+    },
+
+    async getAllLater() {
+      return c.list("later", "laterAt", build);
+    },
+    async getAllDone() {
+      return c.list(doneFlag, doneAt, build);
+    },
+
+    async setDone(id, done, it = null) {
+      await c.write(id, {
+        [doneFlag]: !!done,
+        [doneAt]: done ? now() : null,
+        ...meta(it),
+        // 看完就離開「稍後」佇列；laterAt 不清，留作歷史
+        ...(done && c.entry(id)?.later ? { later: false } : {}),
+      });
+    },
+    async setLater(id, later, it = null) {
+      await c.write(id, {
+        later: !!later,
+        laterAt: later ? now() : null,
+        ...meta(it),
+      });
     },
   };
 }
 
-function videoMeta(video) {
-  if (!video) return {};
-  return {
+// 影片副本只有 title／channel_name／url／thumbnail，其餘欄位補空值讓清單分區能照常渲染
+export const videoState = createListStore(
+  "videoState",
+  "watched",
+  (video) => (video ? {
     title: video.title ?? "",
     channel_name: video.channel_name ?? "",
     url: video.url ?? "",
     thumbnail: video.thumbnail ?? "",
-  };
-}
+  } : {}),
+  (id, e, at) => ({
+    video_id: id,
+    title: e.title || "",
+    channel_name: e.channel_name || "",
+    url: e.url || `https://www.youtube.com/watch?v=${id}`,
+    thumbnail: e.thumbnail || "",
+    published: "",
+    description: "",
+    added_at: at || new Date(0).toISOString(),
+  }),
+);
 
-export const videoState = {
-  onStatesChange: videos.onStatesChange,
-
-  async getState(id) {
-    return videos.view(videos.entry(id));
-  },
-  async getAllStates() {
-    return new Map([...videos.cache()].map(([id, e]) => [id, videos.view(e)]));
-  },
-
-  async getAllLater() {
-    return videos.list("later", "laterAt", videoItem);
-  },
-  async getAllWatched() {
-    return videos.list("watched", "watchedAt", videoItem);
-  },
-
-  async setWatched(id, watched, video = null) {
-    await videos.write(id, {
-      watched: !!watched,
-      watchedAt: watched ? now() : null,
-      ...videoMeta(video),
-      // 看完就離開「稍後看」佇列；laterAt 不清，留作歷史
-      ...(watched && videos.entry(id)?.later ? { later: false } : {}),
-    });
-  },
-  async setLater(id, later, video = null) {
-    await videos.write(id, {
-      later: !!later,
-      laterAt: later ? now() : null,
-      ...videoMeta(video),
-    });
-  },
-};
+// 文章副本只有 title／feed_name／link；文件 ID 是 feeds.json 的 key
+export const feedState = createListStore(
+  "feedState",
+  "read",
+  (it) => (it ? {
+    title: it.title ?? "",
+    feed_name: it.feed_name ?? "",
+    link: it.link ?? "",
+  } : {}),
+  (key, e, at) => ({
+    key,
+    id: "",
+    title: e.title || "",
+    feed_name: e.feed_name || "",
+    category: "",
+    link: e.link || "",
+    published: "",
+    summary: "",
+    added_at: at || new Date(0).toISOString(),
+  }),
+);
 
 // ---------- 從 localStorage 遷移（Handoff #2 遺留，只有論文） ----------
 

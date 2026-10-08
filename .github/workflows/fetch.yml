@@ -36,6 +36,12 @@ jobs:
         timeout-minutes: 20
         run: python scripts/fetch_videos.py
 
+      # RSS／Atom 文章；單一 feed 失敗腳本會跳過，整步失敗也不擋其他資料
+      - name: Fetch RSS feeds
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python scripts/fetch_feeds.py
+
       # 摘要失敗不擋文章更新：continue-on-error，下一步照樣 commit
       - name: Summarize with Claude
         continue-on-error: true
@@ -45,10 +51,10 @@ jobs:
           SUMMARIZE_LIMIT: ${{ inputs.summarize_limit || 60 }}
         run: python scripts/summarize.py --limit "$SUMMARIZE_LIMIT"
 
-      # articles.json、videos.json，以及 fetch_videos.py 回寫 channel_id 的 channels.json
+      # articles.json、videos.json、feeds.json，以及 fetch_videos.py 回寫 channel_id 的 channels.json
       - name: Commit if changed
         run: |
-          FILES="data/articles.json data/videos.json config/channels.json"
+          FILES="data/articles.json data/videos.json data/feeds.json config/channels.json"
           if [ -z "$(git status --porcelain -- $FILES)" ]; then
             echo "資料無變更，略過 commit"
             exit 0

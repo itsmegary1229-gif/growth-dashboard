@@ -1,17 +1,18 @@
-// 外殼：分區切換（URL hash #papers / #videos / #review）、頁首各分區的篇數／更新時間、登入 UI。
+// 外殼：分區切換（URL hash #papers / #videos / #articles / #review）、頁首各分區的篇數／更新時間、登入 UI。
 // 各分區的子分頁、篩選、卡片都在 sections/*.js；共用工具在 util.js，個人狀態在 state.js。
 
 import { onAuthChange, signIn, signOutUser } from "./state.js";
 import { $, toast } from "./util.js";
 import * as papers from "./sections/papers.js";
 import * as videos from "./sections/videos.js";
+import * as articles from "./sections/articles.js";
 import * as review from "./sections/review.js";
 
-const SECTIONS = { papers, videos, review };
+const SECTIONS = { papers, videos, articles, review };
 const DEFAULT_SECTION = "papers";
 
 let current = null;
-const metas = { papers: "載入中…", videos: "載入中…", review: "" };
+const metas = { papers: "載入中…", videos: "載入中…", articles: "載入中…", review: "" };
 
 // ---------- 分區 ----------
 
