@@ -181,6 +181,7 @@ fetch.yml 在抓取之後執行（`continue-on-error: true`，失敗不擋 commi
   { "name": "某部落格", "url": "https://example.org/atom.xml" }
 ]
 ```
+- Blogger 的 `/feeds/posts/default` 若被作者設了 feed 轉址（例如轉到 follow.it，回的是 HTML），網址加 `?redirect=false` 取原始 Atom。
 - 支援 RSS 2.0、RSS 1.0（RDF）、Atom（以 local name 解析，不管命名空間前綴）。
 - 每篇：`id`（RSS guid 或 link；Atom id 或 link）、`key`（sha1(id) hex，前端與 Firestore 的文件 ID）、`title`（去 HTML）、`link`、
   `published`（RSS pubDate／dc:date、Atom published／updated → UTC ISO；缺或無法解析用抓取時間）、
