@@ -48,21 +48,33 @@ APS（Aesthetic Plast Surg —— **不是** Archives of Plastic Surgery）、IJ
 
 ### 抓取流程
 每主題一次 esearch（5 本期刊 AND 主題關鍵字，`datetype=edat`、`reldate=7`，可用 `--days N` 覆蓋）→ PMID 取聯集 →
-efetch 批次（≤200）→ 與既有 JSON 以 pmid 合併（舊文保留 `added_at`）→ 依 `added_at` 保留 90 天 →
-新到舊排序 → 文章有變才寫檔。
+efetch 批次（≤200）→ 與既有 JSON 以 pmid 合併（舊文保留 `added_at`、`oa_url`、`oa_checked_at`，其餘欄位以新抓的為準）→
+依 `added_at` 保留 90 天 → 新到舊排序 → Unpaywall 查 OA → 文章有變才寫檔。
+
+### Unpaywall（OA 全文連結）
+對有 `doi` 的文章 GET `https://api.unpaywall.org/v2/{doi}?email=…`（無 key），取 `best_oa_location.url_for_pdf`，
+沒有則取 `.url`，寫進 `oa_url`（無 OA 為 null）並記 `oa_checked_at`。
+只查「沒有 `oa_checked_at`」或「`oa_url` 為 null 且 `oa_checked_at` 超過 30 天」的文章（embargo 解除後會變 OA）。
+請求間隔 ≥ 0.2 秒；DOI 不在 Unpaywall（HTTP 404）視同無 OA；其他錯誤印警告、不寫 `oa_checked_at`（下次排程再查），
+連續失敗 5 次就放棄本次剩下的（Unpaywall 整個掛掉時不拖慢 Actions）。OA 查詢失敗永遠不會讓腳本 exit 1。
+設定在腳本頂端 `OA_INTERVAL`／`OA_RECHECK_DAYS`／`OA_MAX_STREAK`。
 
 ### `articles.json` 欄位
 `generated_at`（最後一次內容變動的 UTC 時間）、`articles[]`：
 `pmid`、`title`、`journal`（簡稱）、`journal_full`、`pub_date`（YYYY-MM-DD，優先用線上發表日 ArticleDate，
 否則用卷期 PubDate，缺月日補 01）、`abstract`（多段以空行分隔，結構式摘要帶 `BACKGROUND:` 等標籤）、
-`doi`、`topics`（主題 id 陣列）、`url`、`added_at`（首次進入本檔的 UTC 時間）。
+`doi`、`authors`（陣列，每位 "LastName Initials"，例 "Yang JR"；團體作者照原文；沒有 Initials 時只有姓）、
+`year`（pub_date 的年）、`volume`、`issue`、`pages`（MedlinePgn 原樣，如 "123-30"、"e7923"；
+線上搶先刊出的文章這三欄為空字串）、`topics`（主題 id 陣列）、`url`、`added_at`（首次進入本檔的 UTC 時間）、
+`oa_url`（OA 全文連結或 null）、`oa_checked_at`（最後一次成功查 Unpaywall 的 UTC 時間）。
 
 ### Firestore（`userState` 集合）
 Firebase 專案 `growth-dashboard-989fb`，SDK **13.0.0**（gstatic CDN 的 ES module 版：
 `https://www.gstatic.com/firebasejs/13.0.0/firebase-{app,auth,firestore}.js`）。
 文件 ID = PMID，欄位：`read`（bool）、`saved`（bool）、`readAt`／`savedAt`（Timestamp｜null，用客戶端時間）、
-`title`、`journal`（簡稱）、`url`、`topics`（string[]）、`note`（string，收藏筆記）。
-`title`～`topics` 是冗餘副本，讓收藏／已讀清單不依賴 `articles.json`。
+`title`、`journal`（簡稱）、`url`、`topics`（string[]）、`note`（string，收藏筆記），
+收藏時另存書目 `authors`、`year`、`doi`、`volume`、`issue`、`pages`（#5 起；之前的收藏沒有，不回填）。
+`title`～`pages` 是冗餘副本，讓收藏／已讀清單與 RIS 匯出不依賴 `articles.json`。
 寫入一律 `setDoc(..., { merge: true })`；取消已讀／收藏時不刪文件，只把布林改 false、時間改 null；`note` 只由 `setNote` 改，
 取消收藏不動它（再次收藏時筆記會回來）。
 
@@ -106,3 +118,14 @@ Firebase 專案 `growth-dashboard-989fb`，SDK **13.0.0**（gstatic CDN 的 ES m
   - 筆記框聚焦時列表不重繪（避免打斷注音輸入、保住游標），失焦後補繪；在筆記框聚焦狀態下點其他按鈕時，
     重繪延到這次 click 處理完，免得按鈕被換掉要點兩次。
   - 手機：三個分頁等寬；「稍後細讀」卡片有四顆按鈕，窄螢幕改依文字寬度分配並縮小字級（320px 寬可排下）。
+- [x] **Handoff #5 書目欄位、Unpaywall OA 連結、RIS 匯出**（2026-10-08）：`fetch_pubmed.py`、`articles.json`、`index.html`、
+  `app.js`、`state.js`、`style.css`。
+  - 本機 `--days 90` 重跑：172 篇全部補上書目與 OA 查詢（`added_at` 全數保留），有 OA 80 篇（其中 68 篇是 PRS-GO 等
+    只給 doi.org 落地頁、沒有 PDF 直連）；90 篇是線上搶先刊出，尚無卷期頁碼。
+  - 卡片：有 `oa_url` 時「看全文 ↗」旁多一顆「PDF ↗」（三個分頁都有）。手機版：「稍後細讀」五顆按鈕時兩個連結換到第二列；
+    其他分頁四顆按鈕在 < 380px 寬時也換列。
+  - `state.js`：`setSaved` 多寫書目欄位；`fallbackArticle` 也帶這些欄位（避免在已退場的收藏上取消收藏時被空值覆蓋）。
+  - 「稍後細讀」結果列右側「匯出 RIS」（有文章才顯示），匯出目前主題 pill＋搜尋下列出的文章；資料優先 `articles.json`，
+    退場的用 Firestore 副本。檔名 `growth-dashboard_saved_YYYYMMDD.ris`（台灣日期），UTF-8 無 BOM、CRLF。
+    AU 轉成 "Yang, J. R."（EndNote 靠逗號拆姓名）；不是「姓＋1–4 個大寫縮寫」的視為團體作者，結尾加逗號。
+    PubMed 省略寫法的頁碼（"1234-45"）會補成 EP 1245；e 開頭或其他格式整串放 SP。AB／N1 的換行壓成空白（RIS 一欄一行）。

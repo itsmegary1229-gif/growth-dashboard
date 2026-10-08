@@ -3,7 +3,8 @@
 //   getState(pmid)               → { read, saved }
 //   getAllStates()               → Map<pmid, { read, saved }>
 //   setRead(pmid, read, article?)    article 可選，用來寫入 title／journal／url／topics 冗餘副本
-//   setSaved(pmid, saved, article?)  收藏時一併存文章冗餘副本，文章被 90 天滾動移出 JSON 後仍能在「稍後細讀」看到
+//   setSaved(pmid, saved, article?)  收藏時一併存文章冗餘副本（含書目欄位），文章被 90 天滾動移出 JSON 後
+//                                    仍能在「稍後細讀」看到、匯出 RIS
 //   getAllSaved()                → [{ pmid, savedAt, note, article }]（article 由冗餘副本組成）
 //   getAllRead()                 → [{ pmid, readAt, article }]，依 readAt 新到舊
 //   setNote(pmid, text)          收藏筆記，存在同一份文件的 note 欄位
@@ -109,8 +110,8 @@ export async function getAllStates() {
   return new Map([...cache].map(([pmid, e]) => [pmid, view(e)]));
 }
 
-// 冗餘副本只有 title／journal／url／topics，其餘欄位補空值讓 app.js 能照常排序、渲染
-// （#2 遷移來的已讀文件可能沒有 title，由 app.js 顯示成「PMID xxx」）
+// 冗餘副本只有 title／journal／url／topics（收藏另有書目欄位），其餘欄位補空值讓 app.js 能照常排序、渲染
+// （#2 遷移來的已讀文件可能沒有 title，由 app.js 顯示成「PMID xxx」；#5 之前的收藏沒有書目欄位）
 function fallbackArticle(pmid, e, at) {
   return {
     pmid,
@@ -119,7 +120,12 @@ function fallbackArticle(pmid, e, at) {
     journal_full: "",
     pub_date: "",
     abstract: "",
-    doi: "",
+    doi: e.doi || "",
+    authors: e.authors || [],
+    year: e.year || "",
+    volume: e.volume || "",
+    issue: e.issue || "",
+    pages: e.pages || "",
     topics: e.topics || [],
     url: e.url || `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`,
     added_at: at || new Date(0).toISOString(),
@@ -147,6 +153,19 @@ export async function getAllRead() {
 }
 
 // ---------- 寫入 ----------
+
+// 收藏副本多存的書目欄位（RIS 匯出用）
+function biblio(article) {
+  if (!article) return {};
+  return {
+    authors: article.authors ?? [],
+    year: article.year || (article.pub_date || "").slice(0, 4),
+    doi: article.doi ?? "",
+    volume: article.volume ?? "",
+    issue: article.issue ?? "",
+    pages: article.pages ?? "",
+  };
+}
 
 function meta(article) {
   if (!article) return {};
@@ -186,6 +205,7 @@ export async function setSaved(pmid, saved, article = null) {
     saved: !!saved,
     savedAt: saved ? fb?.Timestamp.now() ?? null : null,
     ...meta(article),
+    ...biblio(article),
   });
 }
 

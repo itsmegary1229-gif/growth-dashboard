@@ -29,6 +29,9 @@ EFETCH_BATCH = 200     # efetch 每批最多幾筆
 REQUEST_INTERVAL = 0.4  # 每次請求最少間隔秒數（NCBI 無 key 上限 3 次/秒）
 RETRIES = 3            # 失敗後重試次數
 RETRY_WAIT = 2         # 重試間隔秒數
+OA_INTERVAL = 0.2      # Unpaywall 每次請求最少間隔秒數
+OA_RECHECK_DAYS = 30   # 沒有 OA 的文章隔幾天再查一次（embargo 解除後可能變 OA）
+OA_MAX_STREAK = 5      # Unpaywall 連續失敗幾次就放棄本次剩下的查詢
 
 # 簡稱 → PubMed 期刊名稱（[ta] 欄位，等同 MedlineTA）
 # 注意：APS 是 Aesthetic Plastic Surgery，不是 Archives of Plastic Surgery
@@ -83,6 +86,7 @@ TOPICS = {
 # ============================================================
 
 EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+UNPAYWALL = "https://api.unpaywall.org/v2"
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "data" / "articles.json"
 
@@ -94,6 +98,7 @@ MONTHS = {
 TA_TO_ABBR = {v.lower(): k for k, v in JOURNALS.items()}
 
 _last_request = 0.0
+_last_oa_request = 0.0
 
 
 def request(endpoint, params):
@@ -210,6 +215,20 @@ def parse_article(node):
                 doi = (loc.text or "").strip()
                 break
 
+    authors = []
+    for au in article.findall("AuthorList/Author"):
+        if au.get("ValidYN") == "N":
+            continue
+        collective = text_of(au.find("CollectiveName"))
+        if collective:
+            authors.append(collective)
+            continue
+        last = text_of(au.find("LastName"))
+        initials = text_of(au.find("Initials"))
+        if last:
+            authors.append(f"{last} {initials}" if initials else last)
+
+    issue_el = article.find("Journal/JournalIssue")
     return {
         "pmid": pmid,
         "title": text_of(article.find("ArticleTitle")),
@@ -218,6 +237,11 @@ def parse_article(node):
         "pub_date": pub_date,
         "abstract": "\n\n".join(paragraphs),
         "doi": doi,
+        "authors": authors,
+        "year": pub_date[:4],
+        "volume": text_of(issue_el.find("Volume")) if issue_el is not None else "",
+        "issue": text_of(issue_el.find("Issue")) if issue_el is not None else "",
+        "pages": text_of(article.find("Pagination/MedlinePgn")),
     }
 
 
@@ -236,6 +260,63 @@ def efetch(pmids):
             art = parse_article(node)
             results[art["pmid"]] = art
     return results
+
+
+def unpaywall(doi):
+    """查 Unpaywall，回傳 OA 連結（優先 PDF）或 None；查詢失敗丟出例外（呼叫端略過該篇）。"""
+    global _last_oa_request
+    wait = OA_INTERVAL - (time.monotonic() - _last_oa_request)
+    if wait > 0:
+        time.sleep(wait)
+    url = (f"{UNPAYWALL}/{urllib.parse.quote(doi, safe='/')}"
+           f"?{urllib.parse.urlencode({'email': EMAIL})}")
+    req = urllib.request.Request(url, headers={"User-Agent": f"{TOOL} (mailto:{EMAIL})"})
+    _last_oa_request = time.monotonic()
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            data = json.loads(resp.read())
+    except urllib.error.HTTPError as e:
+        if e.code == 404:  # Unpaywall 沒收錄這個 DOI，視同沒有 OA
+            return None
+        raise
+    best = data.get("best_oa_location") or {}
+    return best.get("url_for_pdf") or best.get("url") or None
+
+
+def needs_oa_check(a, now):
+    if not a.get("doi"):
+        return False
+    checked = a.get("oa_checked_at")
+    if not checked:
+        return True
+    return a.get("oa_url") is None and \
+        now - parse_iso(checked) > timedelta(days=OA_RECHECK_DAYS)
+
+
+def check_oa(articles, now):
+    """就地更新需要查詢的文章的 oa_url／oa_checked_at；回傳（查詢篇數, 有 OA 篇數, 失敗篇數）。"""
+    targets = [a for a in articles if needs_oa_check(a, now)]
+    found = failed = streak = 0
+    for i, a in enumerate(targets):
+        if streak >= OA_MAX_STREAK:  # Unpaywall 可能整個掛了，剩下的留給下次
+            print(f"  ! Unpaywall 連續失敗 {streak} 次，略過其餘 {len(targets) - i} 篇",
+                  file=sys.stderr)
+            failed += len(targets) - i
+            break
+        try:
+            oa_url = unpaywall(a["doi"])
+            streak = 0
+        except Exception as e:  # 單篇失敗不影響整體，下次排程再查
+            print(f"  ! Unpaywall 查詢失敗（PMID {a['pmid']}，{a['doi']}）：{e}",
+                  file=sys.stderr)
+            failed += 1
+            streak += 1
+            continue
+        a["oa_url"] = oa_url
+        a["oa_checked_at"] = iso_utc(datetime.now(timezone.utc))
+        if oa_url:
+            found += 1
+    return len(targets) - failed, found, failed
 
 
 def iso_utc(dt):
@@ -290,6 +371,9 @@ def main():
             topics=topics,
             url=f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/",
             added_at=old["added_at"] if old else now_str,
+            # OA 查詢結果沿用舊值，由步驟 5 決定要不要重查
+            oa_url=old.get("oa_url") if old else None,
+            oa_checked_at=old.get("oa_checked_at") if old else None,
         )
         if not old:
             new_pmids.append(pmid)
@@ -300,7 +384,10 @@ def main():
     articles.sort(key=lambda a: (a["added_at"], a["pub_date"], int(a["pmid"])),
                   reverse=True)
 
-    # 5. 文章內容有變才寫檔（避免每天只因 generated_at 不同而產生 commit）
+    # 5. Unpaywall 查 OA 全文連結（新文章，以及沒有 OA 且超過 30 天沒查的）
+    oa_checked, oa_found, oa_failed = check_oa(articles, now)
+
+    # 6. 文章內容有變才寫檔（避免每天只因 generated_at 不同而產生 commit）
     if articles != old_articles:
         OUTPUT.parent.mkdir(parents=True, exist_ok=True)
         payload = {"generated_at": now_str, "articles": articles}
@@ -310,7 +397,7 @@ def main():
     else:
         written = False
 
-    # 6. 摘要
+    # 7. 摘要
     removed = len(merged) - len(articles)
     print()
     print(f"=== PubMed 抓取摘要（{now_str}，近 {args.days} 天）===")
@@ -329,6 +416,8 @@ def main():
     others = {a["journal"] for a in fetched.values()} - set(JOURNALS)
     if others:
         print(f"  ! 有無法對應簡稱的期刊：{', '.join(sorted(others))}")
+    print(f"Unpaywall：本次查詢 {oa_checked} 篇、其中有 OA {oa_found} 篇"
+          + (f"；查詢失敗 {oa_failed} 篇（下次再試）" if oa_failed else ""))
     print(f"articles.json 總共保留 {len(articles)} 篇"
           f"（{'已更新' if written else '無變更，未寫檔'}）")
 

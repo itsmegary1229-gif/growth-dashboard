@@ -178,6 +178,7 @@ function renderCard(a) {
   const open = expanded.has(a.pmid);
   const readAt = ui.tab === "read" ? readList.find((r) => r.pmid === a.pmid)?.readAt : null;
   const withNote = ui.tab === "saved";
+  const pdf = a.oa_url ? `<a class="act act-link act-pdf" href="${esc(a.oa_url)}" target="_blank" rel="noopener noreferrer">PDF ↗</a>` : "";
   const jClass = JOURNALS.includes(a.journal) ? `j-${a.journal.toLowerCase()}` : "j-other";
   const topics = (a.topics || []).map((t) =>
     `<span class="topic">${esc(TOPIC_NAME[t] || t)}</span>`).join("");
@@ -194,11 +195,12 @@ function renderCard(a) {
     <div class="abstract" data-act="toggle">${renderAbstract(a.abstract)}</div>
     ${topics ? `<div class="topics">${topics}</div>` : ""}
     ${withNote ? renderNote(a.pmid) : ""}
-    <div class="actions${withNote ? " has-note" : ""}">
+    <div class="actions${withNote ? " has-note" : ""}${pdf ? " has-pdf" : ""}">
       <button type="button" class="act act-read" data-act="read" aria-pressed="${!!st.read}">${st.read ? "✓ 已讀" : "已讀"}</button>
       <button type="button" class="act act-save" data-act="save" aria-pressed="${!!st.saved}">${st.saved ? "★ 已收藏" : "☆ 收藏"}</button>
       ${withNote ? `<button type="button" class="act act-note" data-act="note" aria-expanded="${editingNote === a.pmid}">✎ 筆記</button>` : ""}
       <a class="act act-link" href="${esc(a.url)}" target="_blank" rel="noopener noreferrer">看全文 ↗</a>
+      ${pdf}
     </div>
   </article>`;
 }
@@ -221,6 +223,7 @@ function render() {
   renderControls(searched);
 
   const searching = !!ui.query.trim();
+  $("export-ris").hidden = !(ui.tab === "saved" && list.length);
   $("result-count").textContent =
     searching ? `符合 ${list.length} 篇` : list.length ? `${list.length} 篇` : "";
   if (list.length) {
@@ -261,6 +264,71 @@ function renderMeta(generatedAt) {
   const parts = [`${articles.length} 篇`];
   if (generatedAt) parts.push(`更新：${formatUpdated(generatedAt)}`);
   $("meta").textContent = parts.join(" · ");
+}
+
+// ---------- RIS 匯出 ----------
+
+// 「稍後細讀」目前篩選條件下列出的文章（scopeArticles 已優先用 articles.json 的完整資料）
+function exportArticles() {
+  return visibleArticles(searchArticles(scopeArticles()));
+}
+
+// "Yang JR" → "Yang, J. R."（EndNote 依逗號拆姓名）；不是「姓 縮寫」格式的視為團體作者，
+// 結尾加逗號讓 EndNote 當成機構名稱，不拆姓名
+function risAuthor(name) {
+  const m = name.match(/^(.+) (\p{Lu}{1,4})$/u);
+  return m ? `${m[1]}, ${[...m[2]].map((c) => `${c}.`).join(" ")}` : `${name},`;
+}
+
+// "123-130" → SP/EP；PubMed 會省略結束頁的共同前綴（"1234-45" = 1234–1245），這裡補回；
+// e 開頭的電子頁碼或其他格式整串放 SP
+function risPages(pages) {
+  const m = pages.match(/^(\d+)-(\d+)$/);
+  if (!m) return [["SP", pages]];
+  const [, sp, ep] = m;
+  const full = ep.length < sp.length ? sp.slice(0, sp.length - ep.length) + ep : ep;
+  return [["SP", sp], ["EP", full]];
+}
+
+function risRecord(a) {
+  const oneLine = (s) => String(s ?? "").replace(/\s+/g, " ").trim();
+  const fields = [["TY", "JOUR"]];
+  for (const au of a.authors || []) fields.push(["AU", risAuthor(au)]);
+  fields.push(
+    ["TI", a.title],
+    ["T2", a.journal],
+    ["PY", a.year || (a.pub_date || "").slice(0, 4)],
+    ["VL", a.volume],
+    ["IS", a.issue],
+    ...(a.pages ? risPages(a.pages) : []),
+    ["DO", a.doi],
+    ["AB", a.abstract],
+    ["UR", a.url],
+    ["AN", a.pmid],
+    ["N1", noteOf(a.pmid)],
+  );
+  return fields
+    .map(([tag, v]) => [tag, oneLine(v)])
+    .filter(([, v]) => v)
+    .map(([tag, v]) => `${tag}  - ${v}`)
+    .concat("ER  - ")
+    .join("\r\n");
+}
+
+function exportRis() {
+  const list = exportArticles();
+  if (!list.length) return;
+  const text = list.map(risRecord).join("\r\n\r\n") + "\r\n";
+  const blob = new Blob([text], { type: "application/x-research-info-systems;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `growth-dashboard_saved_${twDay.format(new Date()).replaceAll("-", "")}.ris`;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  toast(`已匯出 ${list.length} 篇`);
 }
 
 // ---------- 提示訊息 ----------
@@ -521,6 +589,8 @@ function bindEvents() {
     savePrefs();
     render();
   });
+
+  $("export-ris").addEventListener("click", exportRis);
 
   $("hide-read").addEventListener("change", (e) => {
     ui.hideRead = e.target.checked;

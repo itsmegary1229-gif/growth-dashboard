@@ -304,12 +304,35 @@ button { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 
 main.wrap { padding-bottom: calc(48px + env(safe-area-inset-bottom)); }
 
-.result-count {
+.result-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   margin: 14px 2px 8px;
+}
+.result-bar:has(.result-count:empty):has(.export-btn[hidden]) { display: none; }
+.result-count {
+  margin: 0;
   font-size: 0.85rem;
   color: var(--text-3);
 }
 .result-count:empty { display: none; }
+
+.export-btn {
+  margin-left: auto;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--accent-strong);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.export-btn:hover { background: var(--accent-soft); }
 
 .list { display: flex; flex-direction: column; gap: 16px; }
 
@@ -472,11 +495,18 @@ main.wrap { padding-bottom: calc(48px + env(safe-area-inset-bottom)); }
 .act-link { color: var(--accent-strong); font-weight: 600; }
 .act-note[aria-expanded="true"] { border-color: var(--accent); color: var(--accent-strong); }
 
-/* 手機上四顆按鈕依文字寬度分配，才擠得下 */
+/* 手機上四顆以上按鈕依文字寬度分配，才擠得下；五顆（筆記＋PDF）時兩個連結換到第二列 */
 @media (max-width: 639px) {
-  .actions.has-note { gap: 6px; }
-  .actions.has-note .act { flex: 1 1 auto; padding: 0 8px; font-size: 0.88rem; }
+  .actions.has-note, .actions.has-pdf { gap: 6px; }
+  .actions.has-note .act, .actions.has-pdf .act { flex: 1 1 auto; padding: 0 8px; font-size: 0.88rem; }
+  .actions.has-note.has-pdf { flex-wrap: wrap; }
+  .actions.has-note.has-pdf .act-link { flex-basis: 40%; }
   .tab { font-size: 0.95rem; padding: 0 4px; white-space: nowrap; }
+}
+/* 小於 380px 時四顆（已讀、收藏、看全文、PDF）也擠不下，連結一樣換到第二列 */
+@media (max-width: 379px) {
+  .actions.has-pdf { flex-wrap: wrap; }
+  .actions.has-pdf .act-link { flex-basis: 40%; }
 }
 
 .empty {
@@ -494,6 +524,7 @@ main.wrap { padding-bottom: calc(48px + env(safe-area-inset-bottom)); }
   .actions { justify-content: flex-start; }
   .act { flex: none; min-width: 104px; }
   .act-link { margin-left: auto; }
+  .act-link + .act-pdf { margin-left: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
