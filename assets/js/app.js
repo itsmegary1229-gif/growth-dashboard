@@ -22,6 +22,7 @@ const ui = {
   topic: "all",   // all | topic id
   range: "7",     // 7 | 30 | all
   hideRead: false,
+  sort: "rel",    // rel | time（只用在「新進」）
   query: "",      // 關鍵字搜尋；不存 localStorage，換分頁時清空
 };
 let articles = [];        // 來自 articles.json
@@ -77,18 +78,32 @@ function compareArticles(a, b) {
   return Number(b.pmid) - Number(a.pmid);
 }
 
+// 尚未摘要或摘要失敗的文章沒有分數，當 3 分（中間）排，免得新文章沉到最底
+const UNSCORED = 3;
+function relevanceOf(a) {
+  const r = a.summary_zh?.relevance;
+  return Number.isInteger(r) ? r : null;
+}
+
+// 「新進」的相關度排序：relevance 高→低，同分依原本的時間排序
+function compareByRelevance(a, b) {
+  const d = (relevanceOf(b) ?? UNSCORED) - (relevanceOf(a) ?? UNSCORED);
+  return d || compareArticles(a, b);
+}
+
 function loadPrefs() {
   try {
     const p = JSON.parse(localStorage.getItem(PREFS_KEY) || "{}");
     if (["7", "30", "all"].includes(p.range)) ui.range = p.range;
     if (typeof p.hideRead === "boolean") ui.hideRead = p.hideRead;
+    if (["rel", "time"].includes(p.sort)) ui.sort = p.sort;
   } catch { /* 用預設值 */ }
 }
 
 function savePrefs() {
   try {
     localStorage.setItem(PREFS_KEY,
-      JSON.stringify({ range: ui.range, hideRead: ui.hideRead }));
+      JSON.stringify({ range: ui.range, hideRead: ui.hideRead, sort: ui.sort }));
   } catch { /* 忽略 */ }
 }
 
@@ -114,12 +129,13 @@ function noteOf(pmid) {
   return savedList.find((s) => s.pmid === pmid)?.note || "";
 }
 
-// 空白分隔多詞為 AND；比對標題＋摘要，「收藏」另含筆記
+// 空白分隔多詞為 AND；比對標題＋摘要＋AI 摘要（headline、points），「收藏」另含筆記
 function searchArticles(scope) {
   const terms = ui.query.toLowerCase().split(/\s+/).filter(Boolean);
   if (!terms.length) return scope;
   return scope.filter((a) => {
-    let hay = `${a.title}\n${a.abstract}`;
+    const s = a.summary_zh;
+    let hay = `${a.title}\n${a.abstract}\n${s?.headline || ""}\n${(s?.points || []).join("\n")}`;
     if (ui.tab === "saved") hay += `\n${noteOf(a.pmid)}`;
     hay = hay.toLowerCase();
     return terms.every((t) => hay.includes(t));
@@ -127,9 +143,11 @@ function searchArticles(scope) {
 }
 
 function visibleArticles(scope) {
-  return scope.filter((a) =>
+  const list = scope.filter((a) =>
     (ui.topic === "all" || a.topics.includes(ui.topic)) &&
     !(ui.tab === "new" && ui.hideRead && states.get(a.pmid)?.read));
+  // articles 本身已依時間排好；其他分頁維持各自的排序
+  return ui.tab === "new" && ui.sort === "rel" ? list.sort(compareByRelevance) : list;
 }
 
 // ---------- 渲染 ----------
@@ -150,8 +168,10 @@ function renderControls(scope) {
   $("search-clear").hidden = !$("search").value;
 
   $("subbar").hidden = ui.tab !== "new";
-  document.querySelectorAll(".seg").forEach((b) =>
+  document.querySelectorAll("#range .seg").forEach((b) =>
     b.setAttribute("aria-pressed", String(b.dataset.range === ui.range)));
+  document.querySelectorAll(".sort-seg").forEach((b) =>
+    b.setAttribute("aria-pressed", String(b.dataset.sort === ui.sort)));
   $("hide-read").checked = ui.hideRead;
 }
 
@@ -163,6 +183,25 @@ function renderAbstract(text) {
       ? `<p><span class="abs-label">${esc(m[1])}</span> ${esc(m[2])}</p>`
       : `<p>${esc(para)}</p>`;
   }).join("");
+}
+
+// AI 摘要：summary_zh 不存在或是 { error } 時都不顯示
+function summaryOf(a) {
+  const s = a.summary_zh;
+  return s && !s.error && s.headline ? s : null;
+}
+
+function renderRelevance(a) {
+  const r = relevanceOf(a);
+  if (r === null || summaryOf(a) === null) return "";
+  const level = r >= 4 ? "high" : r <= 2 ? "low" : "mid";
+  const reason = a.summary_zh.reason ? ` title="${esc(a.summary_zh.reason)}"` : "";
+  return `<span class="rel rel-${level}"${reason}>相關 ${r}/5</span>`;
+}
+
+function renderPoints(s) {
+  if (!s?.points?.length) return "";
+  return `<ul class="points" data-act="toggle">${s.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>`;
 }
 
 function renderNote(pmid) {
@@ -183,6 +222,7 @@ function renderCard(a) {
   // Unpaywall 有 PDF 直連才標「PDF」，否則是 OA 落地頁
   const oa = a.oa_url ? `<a class="act act-link act-oa" href="${esc(a.oa_url)}" target="_blank" rel="noopener noreferrer">${a.oa_pdf ? "PDF ↗" : "OA 全文 ↗"}</a>` : "";
   const jClass = JOURNALS.includes(a.journal) ? `j-${a.journal.toLowerCase()}` : "j-other";
+  const summary = summaryOf(a);
   const topics = (a.topics || []).map((t) =>
     `<span class="topic">${esc(TOPIC_NAME[t] || t)}</span>`).join("");
   return `
@@ -190,11 +230,14 @@ function renderCard(a) {
     <h2 class="card-title">
       <button type="button" class="title-btn" data-act="toggle" aria-expanded="${open}">${esc(a.title || `PMID ${a.pmid}`)}</button>
     </h2>
+    ${summary ? `<p class="headline">${esc(summary.headline)}</p>` : ""}
     <div class="card-meta">
       ${a.journal ? `<span class="journal ${jClass}">${esc(a.journal)}</span>` : ""}
+      ${renderRelevance(a)}
       <time datetime="${esc(a.pub_date)}">${esc(a.pub_date)}</time>
     </div>
     ${ui.tab === "read" ? `<p class="read-at">${readAt ? `已讀於 ${twDay.format(new Date(readAt))}` : "已讀日期不明"}</p>` : ""}
+    ${renderPoints(summary)}
     <div class="abstract" data-act="toggle">${renderAbstract(a.abstract)}</div>
     ${topics ? `<div class="topics">${topics}</div>` : ""}
     ${withNote ? renderNote(a.pmid) : ""}
@@ -602,6 +645,14 @@ function bindEvents() {
     render();
   });
 
+  $("sort").addEventListener("click", (e) => {
+    const b = e.target.closest(".sort-seg");
+    if (!b) return;
+    ui.sort = b.dataset.sort;
+    savePrefs();
+    render();
+  });
+
   $("export-ris").addEventListener("click", exportRis);
 
   $("hide-read").addEventListener("change", (e) => {
@@ -619,8 +670,8 @@ function bindEvents() {
 
     switch (el.dataset.act) {
       case "toggle": {
-        // 在摘要上選取文字時不要收合
-        if (el.classList.contains("abstract") && String(window.getSelection())) return;
+        // 在摘要／重點上選取文字時不要收合
+        if (!el.classList.contains("title-btn") && String(window.getSelection())) return;
         const open = !expanded.has(pmid);
         open ? expanded.add(pmid) : expanded.delete(pmid);
         card.classList.toggle("is-open", open);

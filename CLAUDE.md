@@ -17,6 +17,7 @@ growth-dashboard/
 ├── .gitignore
 ├── .github/workflows/fetch.yml   ← 每日排程（UTC 22:00）＋可手動觸發
 ├── scripts/fetch_pubmed.py       ← PubMed 抓取腳本（Python 3.11，僅標準函式庫）
+├── scripts/summarize.py          ← AI 中文摘要＋相關度評分（Claude API，僅標準函式庫）
 ├── data/articles.json            ← 排程產出的文章資料（勿手動編輯）
 ├── index.html                    ← 儀表板主頁（單頁，「新進」／「稍後細讀」／「收藏」／「已讀」頁內切換）
 ├── firestore.rules               ← Firestore 安全規則（只放 repo，尚未套用到主控台）
@@ -48,7 +49,7 @@ APS（Aesthetic Plast Surg —— **不是** Archives of Plastic Surgery）、IJ
 
 ### 抓取流程
 每主題一次 esearch（5 本期刊 AND 主題關鍵字，`datetype=edat`、`reldate=7`，可用 `--days N` 覆蓋）→ PMID 取聯集 →
-efetch 批次（≤200）→ 與既有 JSON 以 pmid 合併（舊文保留 `added_at`、`oa_url`、`oa_checked_at`，其餘欄位以新抓的為準）→
+efetch 批次（≤200）→ 與既有 JSON 以 pmid 合併（舊文保留 `added_at`、`oa_url`、`oa_checked_at`、`summary_zh`，其餘欄位以新抓的為準）→
 依 `added_at` 保留 90 天 → 新到舊排序 → Unpaywall 查 OA → 文章有變才寫檔。
 
 ### Unpaywall（OA 全文連結）
@@ -67,7 +68,25 @@ efetch 批次（≤200）→ 與既有 JSON 以 pmid 合併（舊文保留 `adde
 `doi`、`authors`（陣列，每位 "LastName Initials"，例 "Yang JR"；團體作者照原文；沒有 Initials 時只有姓）、
 `year`（pub_date 的年）、`volume`、`issue`、`pages`（MedlinePgn 原樣，如 "123-30"、"e7923"；
 線上搶先刊出的文章這三欄為空字串）、`topics`（主題 id 陣列）、`url`、`added_at`（首次進入本檔的 UTC 時間）、
-`oa_url`（OA 全文連結或 null）、`oa_pdf`（bool，`oa_url` 是否為 PDF 直連）、`oa_checked_at`（最後一次成功查 Unpaywall 的 UTC 時間）。
+`oa_url`（OA 全文連結或 null）、`oa_pdf`（bool，`oa_url` 是否為 PDF 直連）、`oa_checked_at`（最後一次成功查 Unpaywall 的 UTC 時間）、
+`summary_zh`（AI 摘要，見下；尚未摘要的文章沒有這個欄位）。
+
+### AI 摘要（`scripts/summarize.py`）
+fetch.yml 在抓取之後執行（`continue-on-error: true`，失敗不擋 commit；`timeout-minutes: 40`）。API key 只在 GitHub Secrets
+`ANTHROPIC_API_KEY`，**本機沒有 key**，本機只能 `python3 scripts/summarize.py --dry-run [--limit N]`（印 prompt 與篇數）。
+- 對象：沒有 `summary_zh`、`summary_zh.error` 存在、或 `basis == "title"` 但現在有摘要的文章；依檔案順序（新到舊）取前 `--limit` 篇
+  （預設 60；workflow_dispatch 的 `summarize_limit` 可填 200 做補跑）。
+- 呼叫 `POST https://api.anthropic.com/v1/messages`，模型 `MODEL = "claude-haiku-4-5"`、max_tokens 600、temperature 0；
+  prompt（system＋user 模板）在腳本頂端設定區。輸入 title、journal、pub_date、命中主題、abstract（無摘要時只給標題並說明）。
+- 回傳要求純 JSON；解析失敗剝除 ``` 圍欄再試，仍失敗或欄位不合格記 `{"error", "at"}`（下次重試）。
+- 間隔 ≥ 0.5 秒；429／5xx／網路錯誤指數退避重試 3 次，仍失敗記 error；400／401／403／404（參數、key、模型不存在）
+  每篇都會一樣失敗，直接停止並 exit 1。每成功 10 篇先寫一次檔，寫檔時更新 `generated_at`。
+- stdout 摘要：處理／成功／失敗篇數與 input／output tokens 總計。
+- `fetch_pubmed.py` 合併時沿用舊文的 `summary_zh`。
+- `summary_zh` 結構：`{headline, points[], relevance(1–5 int), reason, model, at, basis}`，`basis` 為 `"abstract"` 或 `"title"`（無摘要時）；
+  失敗時是 `{error, at}`。
+- 費用（Haiku 4.5，$1／$5 每百萬 input／output token）：每篇約 1–1.5k input＋300 output tokens ≈ US$0.003；
+  172 篇補跑約 US$0.5，每天新文章 5–15 篇約 US$0.05 以下。實際用量看 Actions log 的 tokens 行。
 
 ### 個人狀態的三個概念（互相獨立，一篇可以同時具備）
 - **稍後細讀**（`later`）：短期待讀佇列。標已讀時自動離開佇列。
@@ -148,3 +167,13 @@ Firebase 專案 `growth-dashboard-989fb`，SDK **13.0.0**（gstatic CDN 的 ES m
     多回傳 `later`；`getAllSaved()` 改為依 `savedAt` 新到舊。手動取消稍後細讀會清 `laterAt`（同取消收藏）。
   - 卡片操作列分兩組：狀態（已讀｜稍後細讀｜收藏）＋內容（✎ 筆記〔僅收藏分頁〕｜看全文｜PDF／OA 全文）。
     手機兩組各一列，桌機同一列左右分開；取代 #5 的 `has-note`／`has-oa` 換列規則。320px 寬（含全部按下、六顆按鈕、兩位數篇數）排得下。
+- [x] **Handoff #6 AI 中文摘要＋相關度評分**（2026-10-08）：`scripts/summarize.py`（新）、`fetch_pubmed.py`、`fetch.yml`、
+  `index.html`、`app.js`、`style.css`。細節見「資料層說明 → AI 摘要」。
+  - 模型改用 `claude-haiku-4-5`（handoff 寫的 `claude-haiku-5-5` 不存在，業主同意改）。
+  - 卡片：標題下方顯示 headline（強調色、略小於標題）；期刊標籤旁「相關 N/5」（4–5 強調色、3 灰底、1–2 淡灰框），滑過顯示 reason；
+    展開時英文摘要上方顯示 points 條列，收合時只有 headline＋英文摘要前 3 行。沒有 `summary_zh` 或是 error 的卡片照舊。
+    三個個人分頁的文章仍在 JSON 時也會顯示（Firestore 副本沒有摘要，不寫入）。
+  - 「新進」排序切換「相關度｜時間」（預設相關度，存 `mdr.prefs.v1` 的 `sort`）：relevance 高→低，同分依原時間排序；
+    沒有分數的文章當 3 分排（避免新文章在摘要前沉底）。其他分頁維持原排序。
+  - 搜尋範圍加入 headline 與 points。
+  - 本機 dry-run：待摘要 172 篇（無摘要 16 篇），未實際呼叫 API；**業主尚未手動觸發 workflow 驗收**。

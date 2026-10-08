@@ -385,6 +385,43 @@ main.wrap { padding-bottom: calc(48px + env(safe-area-inset-bottom)); }
 .j-ijoms  { background: #e5eaee; color: #3a4d5c; }
 .j-other  { background: #eeeeec; color: var(--text-2); }
 
+/* ---------- AI 摘要 ---------- */
+
+.headline {
+  margin: 6px 0 0;
+  font-size: 0.97rem;
+  line-height: 1.55;
+  font-weight: 600;
+  color: var(--accent-strong);
+}
+
+.rel {
+  display: inline-block;
+  padding: 0 7px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font-size: 0.76rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.rel-high { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-strong); }
+.rel-mid  { background: #f0f1ef; color: var(--text-2); }
+.rel-low  { background: none; border-color: var(--line); color: #a6abb0; font-weight: 500; }
+
+/* 重點條列：只在展開時顯示，放在英文摘要上方 */
+.points {
+  margin: 12px 0 0;
+  padding: 10px 12px 10px 30px;
+  border-radius: 10px;
+  background: #f5f8f7;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text);
+}
+.points li + li { margin-top: 4px; }
+.points li::marker { color: var(--accent); }
+.card:not(.is-open) .points { display: none; }
+
 .read-at {
   margin: 4px 0 0;
   font-size: 0.85rem;

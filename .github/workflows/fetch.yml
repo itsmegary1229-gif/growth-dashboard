@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "0 22 * * *"  # UTC 22:00 = 台灣 06:00
   workflow_dispatch:
+    inputs:
+      summarize_limit:
+        description: "AI 摘要本次最多處理幾篇（初始補跑可填 200）"
+        type: number
+        default: 60
 
 permissions:
   contents: write
@@ -24,6 +29,15 @@ jobs:
 
       - name: Fetch PubMed articles
         run: python scripts/fetch_pubmed.py
+
+      # 摘要失敗不擋文章更新：continue-on-error，下一步照樣 commit
+      - name: Summarize with Claude
+        continue-on-error: true
+        timeout-minutes: 40
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SUMMARIZE_LIMIT: ${{ inputs.summarize_limit || 60 }}
+        run: python scripts/summarize.py --limit "$SUMMARIZE_LIMIT"
 
       - name: Commit if changed
         run: |

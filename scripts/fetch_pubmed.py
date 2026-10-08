@@ -386,6 +386,9 @@ def main():
             added_at=old["added_at"] if old else now_str,
             **oa,
         )
+        # AI 摘要（scripts/summarize.py 產生）沿用舊值
+        if old and "summary_zh" in old:
+            merged[pmid]["summary_zh"] = old["summary_zh"]
         if not old:
             new_pmids.append(pmid)
 
