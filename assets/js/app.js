@@ -1,4 +1,7 @@
-import { getAllStates, setRead, setSaved, getAllSaved } from "./state.js";
+import {
+  getAllStates, setRead, setSaved, getAllSaved,
+  onAuthChange, onStatesChange, signIn, signOutUser, AuthRequiredError,
+} from "./state.js";
 
 const TOPICS = [
   { id: "contour", name: "輪廓與正顎" },
@@ -21,6 +24,8 @@ const ui = {
 let articles = [];        // 來自 articles.json
 let states = new Map();   // pmid → { read, saved }
 let savedList = [];       // getAllSaved() 結果
+let authStatus = "unknown"; // unknown | signedIn | signedOut | unavailable
+let loaded = false;       // articles.json 載入完成前不渲染列表
 const expanded = new Set();
 
 const $ = (id) => document.getElementById(id);
@@ -159,7 +164,13 @@ function render() {
     return;
   }
   let msg;
-  if (ui.tab === "saved" && !savedList.length) {
+  if (ui.tab === "saved" && authStatus === "unknown") {
+    msg = "載入中…";
+  } else if (ui.tab === "saved" && authStatus === "unavailable") {
+    msg = "同步服務載入失敗，請重新整理頁面。";
+  } else if (ui.tab === "saved" && authStatus !== "signedIn") {
+    msg = "登入後才能看到收藏。";
+  } else if (ui.tab === "saved" && !savedList.length) {
     msg = "還沒有收藏的文章。<br>在「新進」按下「☆ 收藏」，文章就會出現在這裡。";
   } else if (ui.tab === "new" && ui.hideRead && scope.length) {
     msg = "這個範圍的文章都讀完了 👏";
@@ -173,6 +184,116 @@ function renderMeta(generatedAt) {
   const parts = [`${articles.length} 篇`];
   if (generatedAt) parts.push(`更新：${formatUpdated(generatedAt)}`);
   $("meta").textContent = parts.join(" · ");
+}
+
+// ---------- 提示訊息 ----------
+
+let toastTimer = 0;
+function toast(msg) {
+  const el = $("toast");
+  el.textContent = msg;
+  el.hidden = false;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { el.hidden = true; }, 2600);
+}
+
+function authRequiredMessage() {
+  return authStatus === "unavailable" ? "同步服務載入失敗，請重新整理頁面" : "請先登入";
+}
+
+// ---------- 登入 ----------
+
+function loginErrorMessage(err) {
+  switch (err?.code) {
+    case "auth/invalid-credential":
+    case "auth/invalid-login-credentials":
+    case "auth/wrong-password":
+    case "auth/user-not-found":
+    case "auth/invalid-email":
+    case "auth/user-disabled":
+      return "Email 或密碼不正確";
+    case "auth/too-many-requests":
+      return "嘗試次數過多，請稍後再試";
+    case "auth/network-request-failed":
+      return "網路連線失敗，請稍後再試";
+    default:
+      return "登入失敗，請稍後再試";
+  }
+}
+
+function setLoginOpen(open) {
+  $("login-form").hidden = !open;
+  $("login-btn").setAttribute("aria-expanded", String(open));
+  if (open) {
+    $("login-error").textContent = "";
+    $("login-email").focus();
+  }
+}
+
+function renderAccount({ status, email }) {
+  authStatus = status;
+  $("login-btn").hidden = status !== "signedOut";
+  $("logout-btn").hidden = status !== "signedIn";
+  $("logout-btn").title = email ? `已登入：${email}` : "";
+  if (status !== "signedOut") setLoginOpen(false);
+}
+
+function bindAuth() {
+  $("login-btn").addEventListener("click", () => setLoginOpen($("login-form").hidden));
+
+  $("logout-btn").addEventListener("click", async () => {
+    try {
+      await signOutUser();
+    } catch (err) {
+      console.error(err);
+      toast("登出失敗，請稍後再試");
+    }
+  });
+
+  $("login-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = $("login-email").value.trim();
+    const password = $("login-password").value;
+    if (!email || !password) {
+      $("login-error").textContent = "請輸入 Email 和密碼";
+      return;
+    }
+    const submit = $("login-submit");
+    submit.disabled = true;
+    submit.textContent = "登入中…";
+    $("login-error").textContent = "";
+    try {
+      await signIn(email, password);
+      $("login-password").value = "";
+      setLoginOpen(false);
+    } catch (err) {
+      console.error("登入失敗", err);
+      $("login-error").textContent = loginErrorMessage(err);
+    } finally {
+      submit.disabled = false;
+      submit.textContent = "送出";
+    }
+  });
+
+  // Esc 或點表單外面就收起來
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !$("login-form").hidden) {
+      setLoginOpen(false);
+      $("login-btn").focus();
+    }
+  });
+  document.addEventListener("click", (e) => {
+    if (!$("login-form").hidden && !e.target.closest("#account")) setLoginOpen(false);
+  });
+
+  onAuthChange((a) => {
+    renderAccount(a);
+    if (loaded) render();
+  });
+  onStatesChange(async () => {
+    [states, savedList] = await Promise.all([getAllStates(), getAllSaved()]);
+    if (loaded) render();
+  });
 }
 
 // ---------- 事件 ----------
@@ -225,20 +346,24 @@ function bindEvents() {
         return;
       }
       case "read":
-        await setRead(pmid, !st.read);
+      case "save":
         break;
-      case "save": {
-        const article = articles.find((a) => a.pmid === pmid) ||
-          savedList.find((s) => s.pmid === pmid)?.article || null;
-        await setSaved(pmid, !st.saved, article);
-        savedList = await getAllSaved();
-        break;
-      }
       default:
         return;
     }
-    states = await getAllStates();
-    render();
+    if (authStatus !== "signedIn") {
+      toast(authRequiredMessage());
+      return;
+    }
+    // 樂觀更新：state.js 先改本地快取並觸發 onStatesChange 重繪，寫入失敗會自行回滾
+    const article = articles.find((a) => a.pmid === pmid) ||
+      savedList.find((s) => s.pmid === pmid)?.article || null;
+    try {
+      if (el.dataset.act === "read") await setRead(pmid, !st.read, article);
+      else await setSaved(pmid, !st.saved, article);
+    } catch (err) {
+      toast(err instanceof AuthRequiredError ? authRequiredMessage() : "同步失敗，已還原");
+    }
   });
 }
 
@@ -247,12 +372,14 @@ function bindEvents() {
 async function init() {
   loadPrefs();
   bindEvents();
+  bindAuth();
   try {
     const res = await fetch("data/articles.json", { cache: "no-cache" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     articles = (data.articles || []).slice().sort(compareArticles);
     [states, savedList] = await Promise.all([getAllStates(), getAllSaved()]);
+    loaded = true;
     renderMeta(data.generated_at);
     render();
   } catch (err) {

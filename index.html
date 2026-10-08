@@ -11,9 +11,27 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="wrap">
-      <h1 class="site-title">Dr. Yang的磨刀室</h1>
-      <p class="site-meta" id="meta">載入中…</p>
+    <div class="wrap header-row">
+      <div>
+        <h1 class="site-title">Dr. Yang的磨刀室</h1>
+        <p class="site-meta" id="meta">載入中…</p>
+      </div>
+      <div class="account" id="account">
+        <button type="button" class="account-btn" id="login-btn" aria-expanded="false" aria-controls="login-form" hidden>登入</button>
+        <button type="button" class="account-btn" id="logout-btn" hidden>登出</button>
+        <form class="login-form" id="login-form" novalidate hidden>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" id="login-email" autocomplete="username" inputmode="email" required>
+          </label>
+          <label class="field">
+            <span>密碼</span>
+            <input type="password" id="login-password" autocomplete="current-password" required>
+          </label>
+          <p class="login-error" id="login-error" role="alert"></p>
+          <button type="submit" class="login-submit" id="login-submit">送出</button>
+        </form>
+      </div>
     </div>
   </header>
 
@@ -43,5 +61,7 @@
     <p class="result-count" id="result-count" aria-live="polite"></p>
     <div id="list" class="list"></div>
   </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 </body>
 </html>
