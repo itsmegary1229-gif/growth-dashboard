@@ -30,7 +30,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-button, input { font: inherit; color: inherit; }
+button, input, textarea { font: inherit; color: inherit; }
 button { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
@@ -202,6 +202,38 @@ button { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .pill[aria-checked="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
 .pill[aria-checked="true"] .pill-count { color: rgba(255, 255, 255, 0.8); }
 
+/* ---------- 搜尋 ---------- */
+
+.search { position: relative; margin-top: 10px; }
+.search-input {
+  display: block;
+  width: 100%;
+  min-height: 42px;
+  padding: 0 42px 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  font-size: 1rem; /* ≥16px，iOS 才不會自動放大 */
+  -webkit-appearance: none;
+  appearance: none;
+}
+.search-input::placeholder { color: var(--text-3); }
+.search-input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+.search-input:focus { outline: none; border-color: var(--accent); }
+.search-clear {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  background: none;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--text-3);
+}
+.search-clear:hover { color: var(--text); }
+
 .subbar {
   display: flex;
   align-items: center;
@@ -330,6 +362,13 @@ main.wrap { padding-bottom: calc(48px + env(safe-area-inset-bottom)); }
 .j-ijoms  { background: #e5eaee; color: #3a4d5c; }
 .j-other  { background: #eeeeec; color: var(--text-2); }
 
+.read-at {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: var(--accent-strong);
+  font-variant-numeric: tabular-nums;
+}
+
 .abstract {
   margin-top: 10px;
   color: var(--text-2);
@@ -368,6 +407,38 @@ main.wrap { padding-bottom: calc(48px + env(safe-area-inset-bottom)); }
   padding: 2px 8px;
 }
 
+/* ---------- 收藏筆記 ---------- */
+
+.note, .note-input {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.note {
+  border: 0;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--text);
+  text-align: left;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  cursor: text;
+}
+.note-input {
+  min-height: 5.2em;
+  border: 1px solid var(--accent);
+  background: var(--surface);
+  font-size: 1rem; /* ≥16px，iOS 才不會自動放大 */
+  resize: vertical;
+  field-sizing: content;
+}
+.note-input:focus { outline: none; box-shadow: 0 0 0 3px var(--accent-soft); }
+.note-input::placeholder { color: var(--text-3); }
+
 .actions {
   display: flex;
   gap: 8px;
@@ -399,6 +470,14 @@ main.wrap { padding-bottom: calc(48px + env(safe-area-inset-bottom)); }
   font-weight: 600;
 }
 .act-link { color: var(--accent-strong); font-weight: 600; }
+.act-note[aria-expanded="true"] { border-color: var(--accent); color: var(--accent-strong); }
+
+/* 手機上四顆按鈕依文字寬度分配，才擠得下 */
+@media (max-width: 639px) {
+  .actions.has-note { gap: 6px; }
+  .actions.has-note .act { flex: 1 1 auto; padding: 0 8px; font-size: 0.88rem; }
+  .tab { font-size: 0.95rem; padding: 0 4px; white-space: nowrap; }
+}
 
 .empty {
   margin: 48px 0;

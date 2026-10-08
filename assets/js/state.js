@@ -4,7 +4,9 @@
 //   getAllStates()               → Map<pmid, { read, saved }>
 //   setRead(pmid, read, article?)    article 可選，用來寫入 title／journal／url／topics 冗餘副本
 //   setSaved(pmid, saved, article?)  收藏時一併存文章冗餘副本，文章被 90 天滾動移出 JSON 後仍能在「稍後細讀」看到
-//   getAllSaved()                → [{ pmid, savedAt, article }]（article 由冗餘副本組成，可能為 null）
+//   getAllSaved()                → [{ pmid, savedAt, note, article }]（article 由冗餘副本組成）
+//   getAllRead()                 → [{ pmid, readAt, article }]，依 readAt 新到舊
+//   setNote(pmid, text)          收藏筆記，存在同一份文件的 note 欄位
 // 未登入時讀取回傳空狀態，寫入丟出 AuthRequiredError。
 // 寫入採樂觀更新：先改本地快取並通知 onStatesChange，再 setDoc(merge)；失敗則回滾、再通知，並把錯誤丟回呼叫端。
 //
@@ -107,26 +109,41 @@ export async function getAllStates() {
   return new Map([...cache].map(([pmid, e]) => [pmid, view(e)]));
 }
 
+// 冗餘副本只有 title／journal／url／topics，其餘欄位補空值讓 app.js 能照常排序、渲染
+// （#2 遷移來的已讀文件可能沒有 title，由 app.js 顯示成「PMID xxx」）
+function fallbackArticle(pmid, e, at) {
+  return {
+    pmid,
+    title: e.title || "",
+    journal: e.journal || "",
+    journal_full: "",
+    pub_date: "",
+    abstract: "",
+    doi: "",
+    topics: e.topics || [],
+    url: e.url || `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`,
+    added_at: at || new Date(0).toISOString(),
+  };
+}
+
 export async function getAllSaved() {
   return [...cache]
     .filter(([, e]) => e.saved)
     .map(([pmid, e]) => {
       const savedAt = toIso(e.savedAt);
-      // 冗餘副本只有 title／journal／url／topics，其餘欄位補空值讓 app.js 能照常排序、渲染
-      const article = e.title ? {
-        pmid,
-        title: e.title,
-        journal: e.journal || "",
-        journal_full: "",
-        pub_date: "",
-        abstract: "",
-        doi: "",
-        topics: e.topics || [],
-        url: e.url || `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`,
-        added_at: savedAt || new Date(0).toISOString(),
-      } : null;
-      return { pmid, savedAt, article };
+      return { pmid, savedAt, note: e.note || "", article: fallbackArticle(pmid, e, savedAt) };
     });
+}
+
+// 依 readAt 新到舊；沒有 readAt（#2 遷移來的）排最後
+export async function getAllRead() {
+  return [...cache]
+    .filter(([, e]) => e.read)
+    .map(([pmid, e]) => {
+      const readAt = toIso(e.readAt);
+      return { pmid, readAt, article: fallbackArticle(pmid, e, readAt) };
+    })
+    .sort((a, b) => (b.readAt || "").localeCompare(a.readAt || "") || Number(b.pmid) - Number(a.pmid));
 }
 
 // ---------- 寫入 ----------
@@ -170,6 +187,11 @@ export async function setSaved(pmid, saved, article = null) {
     savedAt: saved ? fb?.Timestamp.now() ?? null : null,
     ...meta(article),
   });
+}
+
+// 筆記存在同一份文件的 note 欄位；取消收藏時不動它，再次收藏時筆記會回來
+export async function setNote(pmid, text) {
+  await write(pmid, { note: String(text ?? "") });
 }
 
 // ---------- 從 localStorage 遷移（Handoff #2 遺留） ----------

@@ -18,13 +18,13 @@ growth-dashboard/
 ├── .github/workflows/fetch.yml   ← 每日排程（UTC 22:00）＋可手動觸發
 ├── scripts/fetch_pubmed.py       ← PubMed 抓取腳本（Python 3.11，僅標準函式庫）
 ├── data/articles.json            ← 排程產出的文章資料（勿手動編輯）
-├── index.html                    ← 儀表板主頁（單頁，「新進」／「稍後細讀」頁內切換）
+├── index.html                    ← 儀表板主頁（單頁，「新進」／「稍後細讀」／「已讀」頁內切換）
 ├── firestore.rules               ← Firestore 安全規則（只放 repo，尚未套用到主控台）
 └── assets/
     ├── css/style.css
     └── js/
-        ├── app.js                ← 載入 JSON、篩選、渲染、事件、登入 UI
-        ├── state.js              ← 已讀／收藏狀態抽象層（Firestore）＋登入狀態
+        ├── app.js                ← 載入 JSON、篩選／搜尋、渲染、事件、登入 UI、收藏筆記
+        ├── state.js              ← 已讀／收藏／筆記狀態抽象層（Firestore）＋登入狀態
         └── firebase.js           ← Firebase 初始化（CDN SDK，版號只寫在這裡）
 ```
 
@@ -61,8 +61,10 @@ efetch 批次（≤200）→ 與既有 JSON 以 pmid 合併（舊文保留 `adde
 Firebase 專案 `growth-dashboard-989fb`，SDK **13.0.0**（gstatic CDN 的 ES module 版：
 `https://www.gstatic.com/firebasejs/13.0.0/firebase-{app,auth,firestore}.js`）。
 文件 ID = PMID，欄位：`read`（bool）、`saved`（bool）、`readAt`／`savedAt`（Timestamp｜null，用客戶端時間）、
-`title`、`journal`（簡稱）、`url`、`topics`（string[]）。後四個是冗餘副本，讓收藏清單不依賴 `articles.json`。
-寫入一律 `setDoc(..., { merge: true })`；取消已讀／收藏時不刪文件，只把布林改 false、時間改 null。
+`title`、`journal`（簡稱）、`url`、`topics`（string[]）、`note`（string，收藏筆記）。
+`title`～`topics` 是冗餘副本，讓收藏／已讀清單不依賴 `articles.json`。
+寫入一律 `setDoc(..., { merge: true })`；取消已讀／收藏時不刪文件，只把布林改 false、時間改 null；`note` 只由 `setNote` 改，
+取消收藏不動它（再次收藏時筆記會回來）。
 
 ## 現況
 
@@ -91,3 +93,16 @@ Firebase 專案 `growth-dashboard-989fb`，SDK **13.0.0**（gstatic CDN 的 ES m
     （失敗則保留，下次登入再試）。UI 偏好 `mdr.prefs.v1` 仍留在 localStorage。
   - ⚠️ **安全規則尚未套用**：Firestore 目前是測試模式（任何人可讀寫），業主驗證讀寫成功後要把 `firestore.rules`
     的內容貼到主控台發佈（只允許 uid `caItxfEfasaJYMCLCnhEd7OGRMl1`）。
+- [x] **Handoff #4 已讀分頁、關鍵字搜尋、收藏筆記**（2026-10-08）：`index.html`、`app.js`、`state.js`、`style.css`。
+  - 「已讀」分頁：`read == true` 的文章依 `readAt` 新到舊（#2 遷移來、沒有 `readAt` 的排最後，顯示「已讀日期不明」）；
+    卡片不淡化，多一行「已讀於 YYYY-MM-DD」（台灣日期）。和「稍後細讀」一樣以 Firestore 副本為主、JSON 仍有時補摘要；
+    副本沒有標題時顯示「PMID xxx」。需登入。只有主題 pill，沒有時間範圍／隱藏已讀。
+  - 搜尋框在主題 pill 下方（三個分頁共用）：title＋abstract（「稍後細讀」另含筆記），不分大小寫，空白分隔為 AND，
+    200ms debounce（注音組字中不觸發），與分頁／主題／時間範圍／隱藏已讀疊加；主題 pill 篇數也反映搜尋結果；
+    搜尋時篇數顯示「符合 N 篇」。不存 localStorage，換分頁清空；Esc 或 × 清除。
+  - 收藏筆記（只在「稍後細讀」）：操作列「✎ 筆記」展開 textarea；有筆記時卡片直接顯示，點擊編輯。
+    停止輸入 800ms 或失焦時寫入（樂觀更新）；失敗時提示「筆記同步失敗，內容已保留」，草稿留在記憶體、編輯框重新打開，下次失焦再試。
+  - `state.js` 新增 `getAllRead()`、`setNote(pmid, text)`；`getAllSaved()` 多回傳 `note`，`article` 一律有值（不再是 null）。
+  - 筆記框聚焦時列表不重繪（避免打斷注音輸入、保住游標），失焦後補繪；在筆記框聚焦狀態下點其他按鈕時，
+    重繪延到這次 click 處理完，免得按鈕被換掉要點兩次。
+  - 手機：三個分頁等寬；「稍後細讀」卡片有四顆按鈕，窄螢幕改依文字寬度分配並縮小字級（320px 寬可排下）。

@@ -1,5 +1,5 @@
 import {
-  getAllStates, setRead, setSaved, getAllSaved,
+  getAllStates, setRead, setSaved, setNote, getAllSaved, getAllRead,
   onAuthChange, onStatesChange, signIn, signOutUser, AuthRequiredError,
 } from "./state.js";
 
@@ -14,19 +14,34 @@ const TOPIC_NAME = Object.fromEntries(TOPICS.map((t) => [t.id, t.name]));
 const JOURNALS = ["PRS", "PRS-GO", "ASJ", "APS", "IJOMS"];
 const DAY = 24 * 60 * 60 * 1000;
 const PREFS_KEY = "mdr.prefs.v1";
+const SEARCH_DELAY = 200;
+const NOTE_DELAY = 800;
 
 const ui = {
-  tab: "new",     // new | saved
+  tab: "new",     // new | saved | read
   topic: "all",   // all | topic id
   range: "7",     // 7 | 30 | all
   hideRead: false,
+  query: "",      // 關鍵字搜尋；不存 localStorage，換分頁時清空
 };
 let articles = [];        // 來自 articles.json
 let states = new Map();   // pmid → { read, saved }
 let savedList = [];       // getAllSaved() 結果
+let readList = [];        // getAllRead() 結果（readAt 新到舊）
 let authStatus = "unknown"; // unknown | signedIn | signedOut | unavailable
 let loaded = false;       // articles.json 載入完成前不渲染列表
 const expanded = new Set();
+
+// 筆記編輯狀態
+let editingNote = null;       // 正在編輯筆記的 pmid
+let focusNote = null;         // 下次渲染後要聚焦的筆記 pmid
+const noteDrafts = new Map(); // pmid → 尚未成功寫入的輸入內容（優先於 Firestore 的值）
+const noteTimers = new Map(); // pmid → 停止輸入後寫入的計時器
+
+// 筆記框聚焦時不重繪列表（避免打斷注音輸入）；在筆記框聚焦狀態下按下滑鼠／手指時，
+// 也先不重繪，等這次點擊完成，免得失焦重繪把使用者要點的按鈕換掉
+let renderPending = false;
+let pointerHeld = false;
 
 const $ = (id) => document.getElementById(id);
 
@@ -78,18 +93,35 @@ function savePrefs() {
 
 // ---------- 資料 ----------
 
-// 目前分頁＋時間範圍內的文章（主題、隱藏已讀之前）
+// 目前分頁＋時間範圍內的文章（搜尋、主題、隱藏已讀之前）
+// 「稍後細讀」「已讀」以 Firestore 副本為主，articles.json 仍有該篇時改用完整資料（含摘要）
 function scopeArticles() {
-  if (ui.tab === "saved") {
+  if (ui.tab === "saved" || ui.tab === "read") {
     const byPmid = new Map(articles.map((a) => [a.pmid, a]));
-    return savedList
-      .map((s) => byPmid.get(s.pmid) || s.article)
-      .filter(Boolean)
-      .sort(compareArticles);
+    const list = (ui.tab === "saved" ? savedList : readList)
+      .map((s) => byPmid.get(s.pmid) || s.article);
+    return ui.tab === "saved" ? list.sort(compareArticles) : list; // readList 已依 readAt 排好
   }
   if (ui.range === "all") return articles;
   const cutoff = Date.now() - Number(ui.range) * DAY;
   return articles.filter((a) => Date.parse(a.added_at) >= cutoff);
+}
+
+function noteOf(pmid) {
+  if (noteDrafts.has(pmid)) return noteDrafts.get(pmid);
+  return savedList.find((s) => s.pmid === pmid)?.note || "";
+}
+
+// 空白分隔多詞為 AND；比對標題＋摘要，「稍後細讀」另含筆記
+function searchArticles(scope) {
+  const terms = ui.query.toLowerCase().split(/\s+/).filter(Boolean);
+  if (!terms.length) return scope;
+  return scope.filter((a) => {
+    let hay = `${a.title}\n${a.abstract}`;
+    if (ui.tab === "saved") hay += `\n${noteOf(a.pmid)}`;
+    hay = hay.toLowerCase();
+    return terms.every((t) => hay.includes(t));
+  });
 }
 
 function visibleArticles(scope) {
@@ -112,6 +144,9 @@ function renderControls(scope) {
       aria-checked="${ui.topic === t.id}">${esc(t.name)}<span class="pill-count">${counts[t.id]}</span></button>`
   ).join("");
 
+  $("search").placeholder = ui.tab === "saved" ? "搜尋標題、摘要、筆記" : "搜尋標題、摘要";
+  $("search-clear").hidden = !$("search").value;
+
   $("subbar").hidden = ui.tab !== "new";
   document.querySelectorAll(".seg").forEach((b) =>
     b.setAttribute("aria-pressed", String(b.dataset.range === ui.range)));
@@ -128,51 +163,93 @@ function renderAbstract(text) {
   }).join("");
 }
 
+function renderNote(pmid) {
+  const note = noteOf(pmid);
+  if (editingNote === pmid) {
+    return `<textarea class="note-input" rows="3" aria-label="筆記"
+      placeholder="為什麼存這篇、想用在哪…">${esc(note)}</textarea>`;
+  }
+  if (!note.trim()) return "";
+  return `<button type="button" class="note" data-act="note-edit" title="點擊編輯筆記">${esc(note)}</button>`;
+}
+
 function renderCard(a) {
   const st = states.get(a.pmid) || {};
   const open = expanded.has(a.pmid);
+  const readAt = ui.tab === "read" ? readList.find((r) => r.pmid === a.pmid)?.readAt : null;
+  const withNote = ui.tab === "saved";
   const jClass = JOURNALS.includes(a.journal) ? `j-${a.journal.toLowerCase()}` : "j-other";
   const topics = (a.topics || []).map((t) =>
     `<span class="topic">${esc(TOPIC_NAME[t] || t)}</span>`).join("");
   return `
-  <article class="card${st.read ? " is-read" : ""}${open ? " is-open" : ""}" data-pmid="${esc(a.pmid)}">
+  <article class="card${st.read && ui.tab !== "read" ? " is-read" : ""}${open ? " is-open" : ""}" data-pmid="${esc(a.pmid)}">
     <h2 class="card-title">
-      <button type="button" class="title-btn" data-act="toggle" aria-expanded="${open}">${esc(a.title)}</button>
+      <button type="button" class="title-btn" data-act="toggle" aria-expanded="${open}">${esc(a.title || `PMID ${a.pmid}`)}</button>
     </h2>
     <div class="card-meta">
-      <span class="journal ${jClass}">${esc(a.journal)}</span>
+      ${a.journal ? `<span class="journal ${jClass}">${esc(a.journal)}</span>` : ""}
       <time datetime="${esc(a.pub_date)}">${esc(a.pub_date)}</time>
     </div>
+    ${ui.tab === "read" ? `<p class="read-at">${readAt ? `已讀於 ${twDay.format(new Date(readAt))}` : "已讀日期不明"}</p>` : ""}
     <div class="abstract" data-act="toggle">${renderAbstract(a.abstract)}</div>
     ${topics ? `<div class="topics">${topics}</div>` : ""}
-    <div class="actions">
+    ${withNote ? renderNote(a.pmid) : ""}
+    <div class="actions${withNote ? " has-note" : ""}">
       <button type="button" class="act act-read" data-act="read" aria-pressed="${!!st.read}">${st.read ? "✓ 已讀" : "已讀"}</button>
       <button type="button" class="act act-save" data-act="save" aria-pressed="${!!st.saved}">${st.saved ? "★ 已收藏" : "☆ 收藏"}</button>
+      ${withNote ? `<button type="button" class="act act-note" data-act="note" aria-expanded="${editingNote === a.pmid}">✎ 筆記</button>` : ""}
       <a class="act act-link" href="${esc(a.url)}" target="_blank" rel="noopener noreferrer">看全文 ↗</a>
     </div>
   </article>`;
 }
 
-function render() {
-  const scope = scopeArticles();
-  const list = visibleArticles(scope);
-  renderControls(scope);
+function noteFocused() {
+  return !!document.activeElement?.classList.contains("note-input");
+}
 
-  $("result-count").textContent = list.length ? `${list.length} 篇` : "";
-  if (list.length) {
-    $("list").innerHTML = list.map(renderCard).join("");
+function render() {
+  if (!loaded) return;
+  if (pointerHeld || noteFocused()) {
+    renderPending = true;
     return;
   }
+  renderPending = false;
+
+  const scope = scopeArticles();
+  const searched = searchArticles(scope);
+  const list = visibleArticles(searched);
+  renderControls(searched);
+
+  const searching = !!ui.query.trim();
+  $("result-count").textContent =
+    searching ? `符合 ${list.length} 篇` : list.length ? `${list.length} 篇` : "";
+  if (list.length) {
+    $("list").innerHTML = list.map(renderCard).join("");
+    if (focusNote) {
+      const ta = $("list").querySelector(`.card[data-pmid="${focusNote}"] .note-input`);
+      if (ta) {
+        ta.focus();
+        ta.setSelectionRange(ta.value.length, ta.value.length);
+      }
+      focusNote = null;
+    }
+    return;
+  }
+  const personal = ui.tab !== "new"; // 「稍後細讀」「已讀」需登入
   let msg;
-  if (ui.tab === "saved" && authStatus === "unknown") {
+  if (personal && authStatus === "unknown") {
     msg = "載入中…";
-  } else if (ui.tab === "saved" && authStatus === "unavailable") {
+  } else if (personal && authStatus === "unavailable") {
     msg = "同步服務載入失敗，請重新整理頁面。";
-  } else if (ui.tab === "saved" && authStatus !== "signedIn") {
-    msg = "登入後才能看到收藏。";
+  } else if (personal && authStatus !== "signedIn") {
+    msg = ui.tab === "saved" ? "登入後才能看到收藏。" : "登入後才能看到已讀紀錄。";
   } else if (ui.tab === "saved" && !savedList.length) {
     msg = "還沒有收藏的文章。<br>在「新進」按下「☆ 收藏」，文章就會出現在這裡。";
-  } else if (ui.tab === "new" && ui.hideRead && scope.length) {
+  } else if (ui.tab === "read" && !readList.length) {
+    msg = "還沒有已讀的文章。<br>在「新進」按下「已讀」，文章就會依時間出現在這裡。";
+  } else if (searching && !searched.length) {
+    msg = `沒有符合「${esc(ui.query.trim())}」的文章。`;
+  } else if (ui.tab === "new" && ui.hideRead && searched.length) {
     msg = "這個範圍的文章都讀完了 👏";
   } else {
     msg = "這個條件下沒有文章。";
@@ -288,12 +365,134 @@ function bindAuth() {
 
   onAuthChange((a) => {
     renderAccount(a);
-    if (loaded) render();
+    render();
   });
   onStatesChange(async () => {
-    [states, savedList] = await Promise.all([getAllStates(), getAllSaved()]);
-    if (loaded) render();
+    await refreshStates();
+    render();
   });
+}
+
+async function refreshStates() {
+  [states, savedList, readList] = await Promise.all([getAllStates(), getAllSaved(), getAllRead()]);
+}
+
+// ---------- 筆記 ----------
+
+function storedNote(pmid) {
+  return savedList.find((s) => s.pmid === pmid)?.note || "";
+}
+
+async function saveNote(pmid) {
+  clearTimeout(noteTimers.get(pmid));
+  noteTimers.delete(pmid);
+  if (!noteDrafts.has(pmid)) return;
+  const text = noteDrafts.get(pmid);
+  if (text === storedNote(pmid)) {
+    noteDrafts.delete(pmid);
+    return;
+  }
+  try {
+    await setNote(pmid, text);
+    // 寫入期間又有新輸入的話留著草稿，等下一次寫入
+    if (noteDrafts.get(pmid) === text) noteDrafts.delete(pmid);
+  } catch (err) {
+    // state.js 已回滾快取；草稿保留，重新打開編輯框讓使用者看到內容
+    toast(err instanceof AuthRequiredError ? authRequiredMessage() : "筆記同步失敗，內容已保留");
+    if (!noteFocused()) editingNote = pmid;
+    render();
+  }
+}
+
+function scheduleNoteSave(pmid) {
+  clearTimeout(noteTimers.get(pmid));
+  noteTimers.set(pmid, setTimeout(() => saveNote(pmid), NOTE_DELAY));
+}
+
+function openNote(pmid) {
+  editingNote = pmid;
+  focusNote = pmid;
+  render();
+}
+
+function bindNotes() {
+  const list = $("list");
+  const pmidOf = (el) => el.closest(".card")?.dataset.pmid;
+
+  list.addEventListener("input", (e) => {
+    if (!e.target.classList.contains("note-input")) return;
+    const pmid = pmidOf(e.target);
+    noteDrafts.set(pmid, e.target.value);
+    if (!e.isComposing) scheduleNoteSave(pmid);
+  });
+  list.addEventListener("compositionend", (e) => {
+    if (e.target.classList.contains("note-input")) scheduleNoteSave(pmidOf(e.target));
+  });
+  list.addEventListener("focusout", (e) => {
+    if (!e.target.classList.contains("note-input")) return;
+    const pmid = pmidOf(e.target);
+    saveNote(pmid);
+    if (editingNote === pmid) editingNote = null;
+    render();
+  });
+  list.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && e.target.classList.contains("note-input")) e.target.blur();
+  });
+  // 編輯中按「筆記」是要收起：不讓按鈕搶走焦點，交給 click 處理
+  list.addEventListener("mousedown", (e) => {
+    if (noteFocused() && e.target.closest('[data-act="note"]')) e.preventDefault();
+  });
+
+  document.addEventListener("pointerdown", () => { pointerHeld = noteFocused(); }, true);
+  const release = () => {
+    if (!pointerHeld) return;
+    // 等這次 click 事件處理完再補重繪
+    setTimeout(() => {
+      pointerHeld = false;
+      if (renderPending) render();
+    }, 0);
+  };
+  document.addEventListener("pointerup", release, true);
+  document.addEventListener("pointercancel", release, true);
+  window.addEventListener("blur", release);
+}
+
+// ---------- 搜尋 ----------
+
+function bindSearch() {
+  const input = $("search");
+  let timer = 0;
+  const apply = () => {
+    clearTimeout(timer);
+    ui.query = input.value;
+    render();
+  };
+  input.addEventListener("input", (e) => {
+    $("search-clear").hidden = !input.value;
+    if (e.isComposing) return;
+    clearTimeout(timer);
+    timer = setTimeout(apply, SEARCH_DELAY);
+  });
+  input.addEventListener("compositionend", () => {
+    clearTimeout(timer);
+    timer = setTimeout(apply, SEARCH_DELAY);
+  });
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && input.value) {
+      input.value = "";
+      apply();
+    }
+  });
+  $("search-clear").addEventListener("click", () => {
+    input.value = "";
+    apply();
+    input.focus();
+  });
+}
+
+function clearSearch() {
+  $("search").value = "";
+  ui.query = "";
 }
 
 // ---------- 事件 ----------
@@ -303,6 +502,7 @@ function bindEvents() {
     const b = e.target.closest(".tab");
     if (!b || b.dataset.tab === ui.tab) return;
     ui.tab = b.dataset.tab;
+    clearSearch();
     render();
     window.scrollTo({ top: 0 });
   });
@@ -345,6 +545,19 @@ function bindEvents() {
         card.querySelector(".title-btn").setAttribute("aria-expanded", String(open));
         return;
       }
+      case "note":
+        if (editingNote === pmid) {
+          // 收起：失焦時會寫入並重繪；焦點不在框內時直接收
+          const ta = card.querySelector(".note-input");
+          if (ta && document.activeElement === ta) ta.blur();
+          else { editingNote = null; render(); }
+        } else {
+          openNote(pmid);
+        }
+        return;
+      case "note-edit":
+        openNote(pmid);
+        return;
       case "read":
       case "save":
         break;
@@ -357,7 +570,8 @@ function bindEvents() {
     }
     // 樂觀更新：state.js 先改本地快取並觸發 onStatesChange 重繪，寫入失敗會自行回滾
     const article = articles.find((a) => a.pmid === pmid) ||
-      savedList.find((s) => s.pmid === pmid)?.article || null;
+      savedList.find((s) => s.pmid === pmid)?.article ||
+      readList.find((r) => r.pmid === pmid)?.article || null;
     try {
       if (el.dataset.act === "read") await setRead(pmid, !st.read, article);
       else await setSaved(pmid, !st.saved, article);
@@ -372,13 +586,15 @@ function bindEvents() {
 async function init() {
   loadPrefs();
   bindEvents();
+  bindSearch();
+  bindNotes();
   bindAuth();
   try {
     const res = await fetch("data/articles.json", { cache: "no-cache" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     articles = (data.articles || []).slice().sort(compareArticles);
-    [states, savedList] = await Promise.all([getAllStates(), getAllSaved()]);
+    await refreshStates();
     loaded = true;
     renderMeta(data.generated_at);
     render();
