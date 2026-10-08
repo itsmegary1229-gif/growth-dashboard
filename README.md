@@ -1,2 +1,2 @@
 # growth-dashboard
-Dr. Yang的磨刀室
+Dr. Yang的精神時光屋

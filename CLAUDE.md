@@ -1,4 +1,4 @@
-# CLAUDE.md — Dr. Yang的磨刀室
+# CLAUDE.md — Dr. Yang的精神時光屋
 
 ## 專案定位
 
