@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0e6466">
+  <title>Dr. Yang的磨刀室</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="module" src="assets/js/app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1 class="site-title">Dr. Yang的磨刀室</h1>
+      <p class="site-meta" id="meta">載入中…</p>
+    </div>
+  </header>
+
+  <nav class="controls" aria-label="篩選">
+    <div class="wrap">
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" class="tab" data-tab="new" aria-selected="true">新進</button>
+        <button type="button" role="tab" class="tab" data-tab="saved" aria-selected="false">稍後細讀 <span class="tab-count" id="saved-count"></span></button>
+      </div>
+      <div class="pills" id="topics" role="radiogroup" aria-label="主題"></div>
+      <div class="subbar" id="subbar">
+        <div class="range" id="range" role="radiogroup" aria-label="時間範圍">
+          <button type="button" class="seg" data-range="7">近 7 天</button>
+          <button type="button" class="seg" data-range="30">近 30 天</button>
+          <button type="button" class="seg" data-range="all">全部</button>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="hide-read">
+          <span class="switch-track" aria-hidden="true"></span>
+          <span>隱藏已讀</span>
+        </label>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <p class="result-count" id="result-count" aria-live="polite"></p>
+    <div id="list" class="list"></div>
+  </main>
+</body>
+</html>

@@ -18,10 +18,12 @@ growth-dashboard/
 ├── .github/workflows/fetch.yml   ← 每日排程（UTC 22:00）＋可手動觸發
 ├── scripts/fetch_pubmed.py       ← PubMed 抓取腳本（Python 3.11，僅標準函式庫）
 ├── data/articles.json            ← 排程產出的文章資料（勿手動編輯）
-├── index.html                    ← 儀表板主頁（尚未建立）
-├── assets/                       ← CSS / JS / 圖片（尚未建立）
-│   ├── css/
+├── index.html                    ← 儀表板主頁（單頁，「新進」／「稍後細讀」頁內切換）
+├── assets/
+│   ├── css/style.css
 │   └── js/
+│       ├── app.js                ← 載入 JSON、篩選、渲染、事件
+│       └── state.js              ← 已讀／收藏狀態抽象層（目前 localStorage）
 └── firebase.js                   ← Firebase 設定（尚未建立）
 ```
 
@@ -61,5 +63,13 @@ efetch 批次（≤200）→ 與既有 JSON 以 pmid 合併（舊文保留 `adde
 - [x] **Handoff #1.5 補抓初始資料**（2026-10-08）：`fetch_pubmed.py` 新增 `--days N`（預設 7，覆蓋 esearch 的 `reldate`；
   `fetch.yml` 不帶參數，維持每天 7 天）。本機執行 `--days 90` 補抓，`articles.json` 共 172 篇
   （原 8 篇保留 `added_at`，新增 164 篇 `added_at` 為 2026-10-08T01:19:39Z，約 2027-01-06 起依 90 天保留規則陸續移除）。
-- [ ] Handoff #2：儀表板畫面（index.html / assets/）
-- [ ] Handoff #3：Firebase 相關功能
+- [x] **Handoff #2 儀表板畫面**（2026-10-08）：`index.html`、`assets/css/style.css`、`assets/js/app.js`、`assets/js/state.js`。
+  - 強調色深青 `#0e6466`；系統字型、基礎字級 17px、寬度上限 760px、手機優先；不做深色模式。
+  - 篩選：主題 pill（單選，顯示篇數）、時間範圍（依 `added_at`，近 7／30 天／全部）、隱藏已讀（僅「新進」分頁）。
+    時間範圍與隱藏已讀的選擇記在 localStorage `mdr.prefs.v1`。
+  - 排序：`added_at` 的台灣日期新到舊，同日再依 `pub_date` 新到舊。
+  - `state.js` 介面（皆 async）：`getState(pmid)`、`getAllStates()`、`setRead(pmid, bool)`、
+    `setSaved(pmid, bool, article?)`、`getAllSaved()`。目前存 localStorage `mdr.state.v1`；
+    收藏時存文章快照，文章被 90 天滾動移出 JSON 後仍會留在「稍後細讀」。Handoff #3 只需改寫 `state.js` 內部。
+  - `fetch.yml` 的 actions 升到 `checkout@v7`、`setup-python@v7`（Node 24）。
+- [ ] Handoff #3：Firebase 相關功能（把 `state.js` 內部換成 Firestore）
