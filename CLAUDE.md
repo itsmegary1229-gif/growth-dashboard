@@ -44,7 +44,7 @@ APS（Aesthetic Plast Surg —— **不是** Archives of Plastic Surgery）、IJ
 關鍵字清單在 `scripts/fetch_pubmed.py` 頂端設定區。
 
 ### 抓取流程
-每主題一次 esearch（5 本期刊 AND 主題關鍵字，`datetype=edat`、`reldate=7`）→ PMID 取聯集 →
+每主題一次 esearch（5 本期刊 AND 主題關鍵字，`datetype=edat`、`reldate=7`，可用 `--days N` 覆蓋）→ PMID 取聯集 →
 efetch 批次（≤200）→ 與既有 JSON 以 pmid 合併（舊文保留 `added_at`）→ 依 `added_at` 保留 90 天 →
 新到舊排序 → 文章有變才寫檔。
 
@@ -57,6 +57,9 @@ efetch 批次（≤200）→ 與既有 JSON 以 pmid 合併（舊文保留 `adde
 ## 現況
 
 - [x] **Handoff #1 資料層**（2026-10-08）：`fetch_pubmed.py`、`fetch.yml`、首版 `articles.json` 完成。
-  - 待辦：腳本中 `EMAIL` 仍為 placeholder，需換成真實 email。
+  - `EMAIL` 已填入 itsmegary1229@gmail.com。
+- [x] **Handoff #1.5 補抓初始資料**（2026-10-08）：`fetch_pubmed.py` 新增 `--days N`（預設 7，覆蓋 esearch 的 `reldate`；
+  `fetch.yml` 不帶參數，維持每天 7 天）。本機執行 `--days 90` 補抓，`articles.json` 共 172 篇
+  （原 8 篇保留 `added_at`，新增 164 篇 `added_at` 為 2026-10-08T01:19:39Z，約 2027-01-06 起依 90 天保留規則陸續移除）。
 - [ ] Handoff #2：儀表板畫面（index.html / assets/）
 - [ ] Handoff #3：Firebase 相關功能

@@ -2,9 +2,10 @@
 """每日從 PubMed 抓取指定期刊 × 主題的新文章，合併寫入 data/articles.json。
 
 只用標準函式庫。由 GitHub Actions 每天執行（見 .github/workflows/fetch.yml），
-也可在本機手動執行：python3 scripts/fetch_pubmed.py
+也可在本機手動執行：python3 scripts/fetch_pubmed.py [--days N]
 """
 
+import argparse
 import json
 import sys
 import time
@@ -20,9 +21,9 @@ from pathlib import Path
 # ============================================================
 
 TOOL = "growth-dashboard"
-EMAIL = "your-email@example.com"  # TODO: 換成真實 email（NCBI 用來聯絡濫用情況）
+EMAIL = "itsmegary1229@gmail.com"  # NCBI 用來聯絡濫用情況
 
-RELDATE_DAYS = 7       # 每次往回抓幾天（依進入 PubMed 的日期 edat）
+RELDATE_DAYS = 7       # 每次往回抓幾天（依進入 PubMed 的日期 edat；可用 --days 覆蓋）
 RETENTION_DAYS = 90    # articles.json 滾動保留天數（依 added_at）
 EFETCH_BATCH = 200     # efetch 每批最多幾筆
 REQUEST_INTERVAL = 0.4  # 每次請求最少間隔秒數（NCBI 無 key 上限 3 次/秒）
@@ -130,12 +131,12 @@ def build_query(keywords):
     return f"({journals}) AND ({topic})"
 
 
-def esearch(query):
+def esearch(query, days):
     raw = request("esearch.fcgi", {
         "db": "pubmed",
         "term": query,
         "datetype": "edat",
-        "reldate": RELDATE_DAYS,
+        "reldate": days,
         "retmax": 10000,
         "retmode": "json",
     })
@@ -246,13 +247,20 @@ def parse_iso(s):
 
 
 def main():
+    parser = argparse.ArgumentParser(description="從 PubMed 抓取文章並合併寫入 data/articles.json")
+    parser.add_argument("--days", type=int, default=RELDATE_DAYS,
+                        help=f"往回抓幾天（edat，預設 {RELDATE_DAYS}）")
+    args = parser.parse_args()
+    if args.days < 1:
+        parser.error("--days 必須是正整數")
+
     now = datetime.now(timezone.utc)
     now_str = iso_utc(now)
 
     # 1. 各主題 esearch，記錄每篇命中哪些主題
     hits = {}  # pmid -> [topic ids]
     for tid, cfg in TOPICS.items():
-        ids = esearch(build_query(cfg["keywords"]))
+        ids = esearch(build_query(cfg["keywords"]), args.days)
         print(f"  esearch {tid:8s} {len(ids):4d} 篇")
         for pmid in ids:
             hits.setdefault(pmid, []).append(tid)
@@ -305,7 +313,7 @@ def main():
     # 6. 摘要
     removed = len(merged) - len(articles)
     print()
-    print(f"=== PubMed 抓取摘要（{now_str}，近 {RELDATE_DAYS} 天）===")
+    print(f"=== PubMed 抓取摘要（{now_str}，近 {args.days} 天）===")
     print(f"本次抓到 {len(fetched)} 篇，其中新增 {len(new_pmids)} 篇；"
           f"超過 {RETENTION_DAYS} 天移除 {removed} 篇")
     print("各主題（本次抓到 / 其中新增）：")
