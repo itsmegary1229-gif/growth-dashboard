@@ -1,6 +1,86 @@
 {
-  "generated_at": "2026-10-08T03:44:36Z",
+  "generated_at": "2026-10-10T01:25:41Z",
   "articles": [
+    {
+      "pmid": "42850380",
+      "title": "Modified Sub-Brow Blepharoplasty Reduces Early Postoperative Directional Wrinkles Without Compromising Surgical Outcomes: A Prospective Randomized Controlled Trial.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-08",
+      "abstract": "BACKGROUND: Sub-brow blepharoplasty has become the preferred surgical approach for moderate-to-severe upper eyelid aging. Over the years, numerous modifications and innovations have been introduced to achieve more natural, durable, and precise postoperative outcomes.\n\nOBJECTIVE: We conducted a prospective randomized controlled study to demonstrate that our modified sub-brow blepharoplasty technique can achieve a more natural upper eyelid contour in the early postoperative period while maintaining surgical outcomes during the available 6 month follow-up.\n\nMETHODS: Between June 2024 and June 2025, 60 patients were enrolled and randomly assigned to either the experimental group (modified sub-brow blepharoplasty) or the control group (orbicularis oculi muscle flap crossover fixation blepharoplasty). In addition to preoperative baseline characteristics, postoperative outcomes were evaluated using both subjective and objective measures.\n\nRESULTS: There were no significant differences between the two groups in sex distribution, mean age, or upper eyelid skin laxity grading at baseline. At 3 months postoperatively, the experimental group showed a significantly lower incidence of abnormal directional wrinkles in the upper eyelid, higher physician GAIS scores, and lower anxiety levels. At 6 months postoperatively, the early between-group differences were no longer observed, no significant differences were observed between the two groups in any subjective or objective outcome measures.\n\nCONCLUSION: In this study, the modified sub-brow blepharoplasty technique provided more natural short-term aesthetic results while maintaining comparable surgical outcomes during the available 6 month follow-up.\n\nLEVEL OF EVIDENCE I: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06306-z",
+      "authors": [
+        "Huang C",
+        "Ren Y",
+        "Xu X",
+        "Liang S",
+        "Song B",
+        "Liang Z",
+        "Cao J"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42850380/",
+      "added_at": "2026-10-10T01:24:49Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-10T01:24:52Z",
+      "summary_zh": {
+        "headline": "改良式眉下眼瞼整形術在術後早期減少皺紋，6個月後效果與傳統術式相當。",
+        "points": [
+          "前瞻性隨機對照試驗，60名患者分為改良式眉下眼瞼整形（實驗組）與眼輪匝肌瓣交叉固定術（對照組）。",
+          "術後3個月：改良組異常皺紋發生率顯著降低、醫師GAIS評分更高、患者焦慮程度更低。",
+          "術後6個月：兩組間差異消失，主觀與客觀評估指標無顯著差異，長期效果相當。"
+        ],
+        "relevance": 5,
+        "reason": "直接針對上眼瞼整形術式改良，提供臨床決策依據，改善術後早期美觀度。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-10T01:25:38Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42850378",
+      "title": "Response to \"Comment on 'Upper Blepharoplasty Under Anticoagulant or Antiplatelet Therapy: Is Safety Still a Concern?'\".",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-08",
+      "abstract": "",
+      "doi": "10.1007/s00266-026-06328-7",
+      "authors": [
+        "Viscardi JA",
+        "Giordano S"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42850378/",
+      "added_at": "2026-10-10T01:24:49Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-10T01:24:52Z",
+      "summary_zh": {
+        "headline": "上眼瞼整形術在抗凝血或抗血小板治療下的安全性回應文",
+        "points": [
+          "此為回應性評論文章，針對先前關於抗凝血/抗血小板藥物使用下上眼瞼整形術安全性的研究進行討論",
+          "無摘要，依標題判斷，內容應涉及手術安全性與用藥管理的臨床考量"
+        ],
+        "relevance": 3,
+        "reason": "屬眼周主題但為回應性評論，缺乏原始數據與具體臨床建議，參考價值有限。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-10T01:25:41Z",
+        "basis": "title"
+      }
+    },
     {
       "pmid": "42809129",
       "title": "High vs Low Septal Preservation Rhinoplasty: A Quantitative Morphologic Analysis of Hump-Supratip Dynamics.",
@@ -6789,8 +6869,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42842697/",
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:24Z",
       "oa_pdf": false,
+      "oa_checked_at": "2026-10-08T02:55:24Z",
       "summary_zh": {
         "headline": "乳房手術使用 ciNPWT 可降低傷口併發症 14%，特別是裂開與壞死。",
         "points": [
@@ -6830,8 +6910,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42841083/",
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:25Z",
       "oa_pdf": false,
+      "oa_checked_at": "2026-10-08T02:55:25Z",
       "summary_zh": {
         "headline": "側邊並排ATV事故致上肢創傷：207例患者高截肢率（25.6%）與感染率（19.6%）",
         "points": [
@@ -6870,8 +6950,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42840772/",
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:26Z",
       "oa_pdf": false,
+      "oa_checked_at": "2026-10-08T02:55:26Z",
       "summary_zh": {
         "headline": "Keystone flap 成功保留脊椎植入物，覆蓋感染後大型背部缺損。",
         "points": [
@@ -6912,8 +6992,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42838862/",
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:27Z",
       "oa_pdf": false,
+      "oa_checked_at": "2026-10-08T02:55:27Z",
       "summary_zh": {
         "headline": "Le Fort I 水平前移與鼻面角相關性強，鼻唇角變化較難預測。",
         "points": [
@@ -6951,8 +7031,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42836382/",
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:28Z",
       "oa_pdf": false,
+      "oa_checked_at": "2026-10-08T02:55:28Z",
       "summary_zh": {
         "headline": "Facelift 中局部麻醉混合 TXA 的標準化劑量安全性良好，未增加缺血或全身併發症。",
         "points": [
@@ -6991,8 +7071,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42823517/",
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:30Z",
       "oa_pdf": false,
+      "oa_checked_at": "2026-10-08T02:55:30Z",
       "summary_zh": {
         "headline": "內視鏡眼周中臉拉提搭配直接固定，改善眉下垂與眼瞼-頰部鬆弛。",
         "points": [
@@ -7036,8 +7116,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42823516/",
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:31Z",
       "oa_pdf": false,
+      "oa_checked_at": "2026-10-08T02:55:31Z",
       "summary_zh": {
         "headline": "非切口雙眼皮手術中，經結膜固定優於經皮膚固定，長期皺褶保留率顯著更高。",
         "points": [
@@ -7079,8 +7159,8 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42823514/",
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:31Z",
       "oa_pdf": false,
+      "oa_checked_at": "2026-10-08T02:55:31Z",
       "summary_zh": {
         "headline": "鼻中隔篩板垂直板移植在亞洲次發性唇顎裂鼻畸形重建中安全有效，優於肋軟骨。",
         "points": [
