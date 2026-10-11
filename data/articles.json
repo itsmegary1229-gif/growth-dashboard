@@ -1,6 +1,46 @@
 {
-  "generated_at": "2026-10-10T01:25:41Z",
+  "generated_at": "2026-10-11T00:37:00Z",
   "articles": [
+    {
+      "pmid": "42855508",
+      "title": "Clinical Application of the Percutaneous Orbital Fat Release Technique for Correcting Lower Eyelid Bags and Lacrimal Groove Deformities.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-09",
+      "abstract": "BACKGROUND: Severe lower eyelid blepharoplasty complications and lacrimal groove deformities can significantly impact a person's overall appearance and well-being. Although various treatment methods exist, this article focuses on clinical research related to the surgical correction of lower eyelid blepharoplasty combined with lacrimal groove deformities.\n\nOBJECTIVE: To retrospectively analyze the clinical efficacy of the percutaneous orbital fat release technique for correcting lower eyelid blepharoplasty combined with lacrimal groove deformity in 23 patients.\n\nMETHODS: The patients in this study underwent a procedure in which an appropriate amount of skin was removed, and the orbital fat was secured to the distal fixed periosteum or the superficial layer of the periosteal fascia.\n\nRESULTS: The patient satisfaction rate after surgery was 95.65%, and the improvement rate, according to the physician's evaluation, was 91.30%. The incidence of complications was 21.74%.A significant improvement in the tear trough deformity was observed at the 6-month post-operative follow-up compared to the pre-operative baseline, with a statistically significant difference ( Z = - 4.218 , P < 0.05 ).\n\nCONCLUSIONS: The transcutaneous orbital fat release technique significantly improves Barton grading scores at the 6-month post-operative follow-up, demonstrating clinical feasibility and favorable preliminary efficacy in correcting lower blepharochalasis associated with tear trough deformity. However, given the limitations of a small sample size and the lack of a parallel control group, its long-term stability and broader clinical generalizability warrant further validation through large-scale, high-quality studies.\n\nLEVEL OF EVIDENCE IV: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06284-2",
+      "authors": [
+        "Zhang YY",
+        "Zhang GH",
+        "Li HQ",
+        "Xu JR"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42855508/",
+      "added_at": "2026-10-11T00:35:51Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-11T00:35:54Z",
+      "summary_zh": {
+        "headline": "經皮眶脂肪釋放術改善下眼瞼袋合併淚溝畸形，患者滿意度95.65%。",
+        "points": [
+          "回顧性研究23名患者，術後6個月淚溝畸形改善顯著（Z=-4.218, P<0.05），Barton評分明顯進步。",
+          "患者滿意度95.65%，醫師評估改善率91.30%，但併發症發生率21.74%。",
+          "樣本數小（n=23）、無對照組、證據等級IV，長期穩定性與臨床推廣性需大規模研究驗證。"
+        ],
+        "relevance": 4,
+        "reason": "直接針對下眼瞼整形與淚溝改善的手術技巧，有臨床實用價值但樣本小、證據等級低。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-11T00:37:00Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42850380",
       "title": "Modified Sub-Brow Blepharoplasty Reduces Early Postoperative Directional Wrinkles Without Compromising Surgical Outcomes: A Prospective Randomized Controlled Trial.",
