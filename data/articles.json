@@ -1,6 +1,420 @@
 {
-  "generated_at": "2026-10-11T00:37:00Z",
+  "generated_at": "2026-10-14T00:47:30Z",
   "articles": [
+    {
+      "pmid": "42866743",
+      "title": "Radiofrequency for the Treatment of Facial Ligament Laxity: A Split-face Controlled Exploratory Study.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-10-12",
+      "abstract": "BACKGROUND: Facial aging is a complex and multilayered process. Facial retaining ligaments play a critical role in maintaining soft-tissue position and resisting gravitational descent. Although radiofrequency (RF) therapy is widely used for noninvasive facial rejuvenation, ligament-targeted RF strategies remain insufficiently investigated.\n\nMETHODS: This prospective, evaluator-blind, split-face controlled study enrolled patients with mild-to-moderate facial laxity. A 1.7-MHz bipolar RF device was used for 3 treatment sessions at 4-week intervals. The left side received conventional full-face RF treatment, whereas the right side underwent ligament-targeted RF treatment. The primary outcome was the change in 3-dimensional facial volume measured using the Vectra M3 imaging system. Secondary outcomes included physician- and subject-rated Global Aesthetic Improvement Scale scores at 1 month and 6 months post final treatment. Safety outcomes were also recorded.\n\nRESULTS: A total of 12 patients completed the study (N = 12 per side). One month after the final treatment, no statistically detectable difference was observed between the treatment and control sides in the mean change in 3-dimensional facial volume. Improvements in facial laxity were observed on both sides after treatment. Both physician- and subject-rated Global Aesthetic Improvement Scale scores improved at 1 month and 6 months posttreatment, with no statistically detectable differences between sides. All treatment-related adverse events were mild and transient.\n\nCONCLUSIONS: No statistically detectable differences in contour outcomes were observed between the 2 treatment approaches in this preliminary study. These findings suggest that an anatomically guided approach may offer a feasible option for noninvasive structural facial rejuvenation and warrant further investigation in larger studies.",
+      "doi": "10.1097/GOX.0000000000008127",
+      "authors": [
+        "Li Y",
+        "Guo YL",
+        "Zhou YH",
+        "Luo CE",
+        "Hong WJ"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "10",
+      "pages": "e8127",
+      "topics": [
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42866743/",
+      "added_at": "2026-10-14T00:45:40Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008127",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-14T00:45:45Z",
+      "summary_zh": {
+        "headline": "射頻靶向臉部韌帶與傳統全臉治療效果相當，均改善鬆弛但無顯著差異。",
+        "points": [
+          "前瞻性分臉對照研究，12名患者接受1.7-MHz雙極射頻，左側傳統全臉、右側靶向韌帶治療，間隔4週共3次。",
+          "主要結果：1個月時兩側3D臉部體積變化無統計差異；醫師與患者評分兩側均改善，無顯著差異。",
+          "安全性良好，所有不良事件輕微且短暫；樣本數小（N=12），為初步探索性研究。"
+        ],
+        "relevance": 3,
+        "reason": "非侵入性年輕化技術，但射頻機制與臨床應用尚未明確優於現有方法，屬背景參考價值。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-14T00:46:53Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42864553",
+      "title": "Assessing the Effectiveness of Bupivacaine for Managing Pain Post-rhinoplasty: A Triple-blinded Controlled Clinical Trial.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-12",
+      "abstract": "BACKGROUND: Rhinoplasty is often accompanied by significant postoperative pain, making effective pain management crucial for enhancing patient satisfaction and facilitating recovery. This study evaluates the effectiveness of bupivacaine, a long-acting local anesthetic, in managing postoperative pain for patients undergoing rhinoplasty.\n\nMETHODS: A randomized triple-blind controlled clinical trial was conducted involving 220 participants aged 17 to 50 years, classified as ASA I. Participants were randomly assigned to one of four groups: control (no bupivacaine), injection (4 ml of bupivacaine via nerve block), topical (bupivacaine-soaked mesh placed in the nostrils), and combination (both topical and injection). Pain levels were assessed at 1, 6, 24, 48, and 72 h post-surgery. Secondary outcomes included analgesic consumption, the incidence of postoperative nausea and vomiting, and patient complications.\n\nRESULTS: A total of 212 patients completed the study. At 1, 6, 24, and 72 h post-surgery, the topical group reported significantly lower pain levels compared to other groups. Analgesic consumption was significantly lower in both the injection and combination groups. Additionally, the combination group had lower rates of postoperative nausea and vomiting and reported higher overall satisfaction, with 79.2% rating their experience as \"better than they expected\" (p = 0.020).\n\nCONCLUSION: The use of bupivacaine, especially when applied combined, through both topical and injection methods, greatly improves pain management after rhinoplasty. This technique not only decreases pain and the need for analgesics but also enhances patient satisfaction and reduces side effects.\n\nLEVEL OF EVIDENCE II: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06349-2",
+      "authors": [
+        "Kaboodkhani R",
+        "Babaei T",
+        "Kazemi T",
+        "Babaei A"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42864553/",
+      "added_at": "2026-10-14T00:45:40Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-14T00:45:45Z",
+      "summary_zh": {
+        "headline": "鼻整形術後疼痛管理：布比卡因複合給藥（局部注射+局部敷用）最有效",
+        "points": [
+          "三盲隨機對照試驗，212名患者完成，比較對照組、注射組、局部敷用組、複合組四組",
+          "局部敷用組在術後1、6、24、72小時疼痛最低；複合組止痛藥用量最少、術後噁心嘔吐率最低、滿意度79.2%最高",
+          "複合給藥法（4ml布比卡因神經阻滯+布比卡因浸潤紗布）可同時改善疼痛控制、減少全身用藥、降低副作用"
+        ],
+        "relevance": 4,
+        "reason": "鼻整形術後疼痛管理屬臨床實用知識，但非手術技巧或解剖層面的核心內容。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-14T00:46:56Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42864548",
+      "title": "Pretarsal Orbicularis Oculi Preservation with Palpebral Margin Incision and Internal Fixation for Double Eyelid Blepharoplasty in East Asian Patients: A Retrospective Multicenter Cohort Study.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-12",
+      "abstract": "BACKGROUND: Natural double eyelid blepharoplasty in East Asian patients requires stable crease formation, rapid recovery, inconspicuous scarring, and coordinated eyelid movement. This study evaluated the clinical outcomes of pretarsal orbicularis oculi preservation with palpebral margin incision and internal fixation.\n\nMETHODS: This multicenter retrospective cohort study included 238 East Asian patients who underwent bilateral double eyelid blepharoplasty between June 2019 and April 2023. Patients were divided into a pretarsal orbicularis preservation group with palpebral margin incision and internal fixation (n = 121) and a conventional incisional blepharoplasty group (n = 117). Postoperative morphology, swelling, dynamic eyelid function, scar outcomes, FACE-Q scores, and adverse events were compared. Multivariable linear or logistic regression was used to adjust postoperative comparisons for age, sex, participating center, mild ptosis correction, and epicanthoplasty.\n\nRESULTS: Baseline characteristics and the frequencies of concurrent mild ptosis correction and epicanthoplasty did not differ significantly between groups. Adjusted analyses showed similar natural curvature and bilateral symmetry, whereas the preservation group had lower early swelling scores, better blinking coordination and eye-closure naturalness, lower Vancouver Scar Scale scores, and higher scar satisfaction scores. FACE-Q Satisfaction with Eyes was higher at 6, 12, and 24 months; Psychological Well-being was higher at 6 and 12 months; and Satisfaction with Facial Appearance was higher at all postoperative time points. Total adverse events were less frequent in the preservation group (9.9% vs. 19.7%; adjusted OR, 0.42; 95% CI, 0.19-0.92; P = 0.030).\n\nCONCLUSIONS: Pretarsal orbicularis oculi preservation with palpebral margin incision and internal fixation was associated with reduced early swelling, better dynamic eyelid function, improved scar quality, favorable patient-reported outcomes, and fewer overall adverse events compared with conventional incisional blepharoplasty.\n\nLEVEL OF EVIDENCE III: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine Ratings, please refer to Table of Contents or online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06382-1",
+      "authors": [
+        "Hu Y",
+        "Chen X",
+        "Zhang C",
+        "Wen S",
+        "Ma H",
+        "Li P"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42864548/",
+      "added_at": "2026-10-14T00:45:40Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-14T00:45:45Z",
+      "summary_zh": {
+        "headline": "東亞患者雙眼皮手術保留眼輪匝肌、邊緣切口內固定法減少腫脹、改善瘢痕與眼瞼功能。",
+        "points": [
+          "238名東亞患者雙側雙眼皮手術，保留組121人vs傳統組117人，回顧性多中心隊列研究。",
+          "保留組術後早期腫脹評分低、眨眼協調性與閉眼自然度更佳、Vancouver瘢痕量表評分低、瘢痕滿意度高。",
+          "保留組FACE-Q眼部滿意度於6、12、24月更高，心理健康感於6、12月更高，不良事件發生率低（9.9% vs 19.7%，adjusted OR 0.42）。",
+          "研究限制：回顧性設計、單一種族、未報告長期瘢痕演變、隨訪最長24月。"
+        ],
+        "relevance": 5,
+        "reason": "直接針對眼周雙眼皮手術技巧改進，提供實證支持新術式優於傳統方法的臨床決策依據。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-14T00:47:01Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42864545",
+      "title": "A New Method for Creating Lower-Lid Pretarsal Fullness by Fixation of Orbicularis Oculi Muscle-Wrapped Fascia-Fat Flap to the Tarsal Plate.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-12",
+      "abstract": "BACKGROUND: The study aimed to evaluate the clinical efficacy of orbicularis oculi muscle-wrapped fascia-fat flap fixed to the tarsal plate in creating the pretarsal fullness of the lower eyelids.\n\nPATIENTS AND METHODS: This retrospective study included 213 patients who underwent lower pretarsal augmentation surgery between November 2022 and December 2024. The surgical procedure involved wrapping of fascia-fat flap by orbicularis oculi muscle, followed by fixation to the tarsal plate. After surgery, patients were followed up at 1, 3, 6, and 12 months postoperatively. Clinical outcomes, including the contour of the pretarsal fullness of the lower eyelids and patient satisfaction, were evaluated. The occurrence of complications such as hematomas, scarring, infection, trichiasis, lower eyelid retraction, and ectropion were recorded.\n\nRESULTS: The study comprised 5 males and 208 females, with an age range of 20-50 years. Sutures were removed at 7 days after surgery in all patients. The contour of the pretarsal fullness was good, with complete eyelid closure. At 3- and 6-month follow-up, the pretarsal fullness appeared natural, without the occurrence of lower eyelid retraction or incomplete eyelid closure. Depressed scars were not found at the incision site. Among the 213 patients included, 195 were satisfied with the results, 18 were basically satisfied, and none were dissatisfied, yielding a satisfaction rate of 91.5%.\n\nCONCLUSION: Fixation of orbicularis oculi muscle-wrapped fascia-fat flap to the tarsal plate is effective in creating both static and dynamic pretarsal fullness, yielding excellent clinical outcomes.\n\nLEVEL OF EVIDENCE IV: Eyelid Surgery. This journal requires that authors assign a level of evidence to each submission to which Evidence-Based Medicine rankings are applicable. This excludes Review Articles, Book Reviews, and manuscripts that concern Basic Science, Animal Studies, Cadaver Studies, and Experimental Studies. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06323-y",
+      "authors": [
+        "He T",
+        "Ding W",
+        "Li G"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42864545/",
+      "added_at": "2026-10-14T00:45:40Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-14T00:45:45Z",
+      "summary_zh": {
+        "headline": "orbicularis oculi肌肉包裹筋膜脂肪瓣固定於眼瞼板可有效改善下眼瞼pretarsal飽滿度，213例患者滿意度91.5%。",
+        "points": [
+          "回顧性研究，213例患者（女性208例，年齡20-50歲），2022年11月至2024年12月間接受下眼瞼pretarsal增厚手術。",
+          "術後3、6個月追蹤，pretarsal飽滿度自然，無眼瞼內翻、不完全閉眼或凹陷疤痕；195例滿意、18例基本滿意，滿意度91.5%。",
+          "主要併發症監測包括血腫、疤痕、感染、倒睫、眼瞼內翻、外翻，研究未詳述各併發症發生率。",
+          "證據等級IV，為單一機構回顧性研究，缺乏對照組與長期追蹤（最長12個月）。"
+        ],
+        "relevance": 5,
+        "reason": "直接針對下眼瞼年輕化手術的新技術，提供具體手術方法與臨床療效數據，對眼周整形臨床決策有實用價值。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-14T00:47:05Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42864543",
+      "title": "Beyond Weight Loss: Facial Remodeling Associated with GLP-1 Receptor Agonists-A Systematic Review and Therapeutic Framework.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-12",
+      "abstract": "BACKGROUND: Facial volume depletion and skin laxity have increasingly been reported during weight loss associated with glucagon-like peptide-1 receptor agonist (GLP-1RA) treatment. However, these changes are not recognized as a distinct clinical entity and may overlap with those occurring after other forms of rapid or massive weight loss. Evidence regarding their treatment remains limited.\n\nMETHODS: This systematic review was conducted according to PRISMA 2020 guidelines and prospectively registered in PROSPERO (CRD420261415797). PubMed/MEDLINE, Embase, and Scopus were searched from inception to June 5, 2026. Clinical studies evaluating interventions for facial changes associated with GLP-1RA-related weight loss were included. Study characteristics, interventions, outcomes, safety, and methodological limitations were synthesized narratively. Risk of bias was assessed using the Joanna Briggs Institute critical appraisal tools.\n\nRESULTS: Four uncontrolled observational studies involving 98 treated participants met the eligibility criteria. Two studies enrolled exclusively patients receiving GLP-1RAs or related incretin-based medications, whereas two included mixed weight-loss etiologies. Investigated interventions included injectable biostimulators and fillers, endotissutal bipolar radiofrequency, and a topical formulation. All studies reported favorable within-group findings; however, heterogeneous populations, weight-loss trajectories, interventions, outcomes, and follow-up durations, together with the absence of comparator groups, precluded conclusions regarding treatment effectiveness or superiority.\n\nCONCLUSIONS: The available evidence is preliminary and insufficient to support a validated therapeutic algorithm. The proposed framework is hypothesis-generating and integrates limited review findings with established principles of post-weight-loss facial rejuvenation. Comparative studies evaluating surgical and nonsurgical interventions are required.\n\nLEVEL OF EVIDENCE V: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 . Trial registration number PROSPERO Registration CRD420261415797.",
+      "doi": "10.1007/s00266-026-06331-y",
+      "authors": [
+        "Maglitto F",
+        "Salzano G",
+        "Trotta S",
+        "Manzo E",
+        "Vaira L",
+        "Petrocelli M",
+        "Dell'Aversana Orabona G"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42864543/",
+      "added_at": "2026-10-14T00:45:40Z",
+      "oa_url": "https://doi.org/10.1007/s00266-026-06331-y",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-14T00:45:46Z",
+      "summary_zh": {
+        "headline": "GLP-1 減肥藥引發臉部體積流失與皮膚鬆弛，目前治療證據不足且缺乏對照組研究。",
+        "points": [
+          "系統性回顧納入 4 項非對照觀察研究、98 名受試者，檢視 GLP-1RA 相關減重後的臉部變化治療方式。",
+          "已試驗介入包括注射生物刺激劑、填充物、內組織雙極射頻與外用製劑，均報告組內改善但無對照組比較。",
+          "異質性人口、減重軌跡、介入方式與追蹤期間差異大，現有證據等級 V，無法支持驗證的治療演算法。",
+          "作者提出假說性框架整合減重後臉部年輕化原則，呼籲需進行對照研究評估手術與非手術介入。"
+        ],
+        "relevance": 4,
+        "reason": "屬年輕化主題，涉及臉部體積補充與皮膚緊實，但現有證據初步，臨床應用指引尚未確立。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-14T00:47:10Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42864540",
+      "title": "Refining Levator Plication Formulas for Ptosis Surgery in Asian Patients: Impact of Fatty Degeneration in Levator Aponeurosis.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-12",
+      "abstract": "BACKGROUND: Blepharoptosis correction often relies on established levator aponeurosis (LA) plication formulas, yet their applicability across all clinical scenarios remains uncertain. Fatty degeneration of the LA may significantly alter surgical response. This study analyzes ptosis cases stratified by four grades of fatty infiltration to evaluate the adequacy of existing formulas and identify when modification is necessary.\n\nMETHODS: This retrospective study included 100 eyelids from 51 patients undergoing levator aponeurosis (LA) plication for upper eyelid ptosis. The cohort mostly comprised acquired aponeurotic ptosis, alongside a few congenital and mechanical cases treated with the same LA plication approach. Cases treated with frontalis-orbicularis oculi muscle (FOOM) flap or simple resection were excluded. Preoperative MRD1, ptosis grade, and levator function (LF) were recorded. Intraoperative LA fatty degeneration was graded using standardized photography, with plication adjustments made accordingly. Statistical analysis was performed using SPSS version 30.\n\nRESULTS: The cohort comprised 51 Taiwanese patients (100 eyelids), all of whom were of Asian ethnicity, with a mean age of 48.1 ± 15.7 years; 88 eyelids (88.0%) were from female patients and 12 (12.0%) from male patients. The mean preoperative MRD1 was 1.80 ± 1.29 mm, corresponding to a mean ptosis severity of 2.20 mm (defined as 4 - MRD1), and the mean LF was 9.97 ± 2.97 mm. Among conventional formulas, the 2n + 2 algorithm showed the best calibration (mean absolute error 1.68 mm; ± 1 mm accuracy 57%). Fatty degeneration grades 1-3 showed no significant deviation from predicted outcomes, whereas grade 4 required greater advancement. A simplified two-level model (grades 1-3: 2n + 2; grade 4: 3n) improved overall accuracy to 58% and increased ±1 mm accuracy in grade 4 cases from 66.7 to 83.3%.\n\nCONCLUSIONS: A two-level model algorithm incorporating intraoperative fatty-degeneration grading may help refine traditional levator-plication planning, maintaining simplicity while improving predictability and symmetry in severe aponeurotic ptosis.\n\nLEVEL OF EVIDENCE IV: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06369-y",
+      "authors": [
+        "Ho CY",
+        "Wu SH",
+        "Lin IW",
+        "Lai CS",
+        "Huang SH"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42864540/",
+      "added_at": "2026-10-14T00:45:40Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-14T00:45:46Z",
+      "summary_zh": {
+        "headline": "亞洲患者眼瞼下垂手術：脂肪變性分級可改進 levator plication 公式準確度",
+        "points": [
+          "台灣 51 名患者 100 眼回溯性研究，平均年齡 48.1 歲，88% 女性，主要為後天性 aponeurotic ptosis",
+          "傳統 2n+2 公式平均誤差 1.68 mm、±1 mm 準確度 57%；脂肪變性第 4 級需更大前進量",
+          "二階模型（第 1-3 級用 2n+2；第 4 級用 3n）將整體準確度提升至 58%，第 4 級 ±1 mm 準確度從 66.7% 提升至 83.3%"
+        ],
+        "relevance": 5,
+        "reason": "直接改進眼瞼下垂 plication 手術公式，針對亞洲患者脂肪變性特性提供實用分級調整策略。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-14T00:47:13Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42864539",
+      "title": "Efficacy Analysis of Transconjunctival Blepharoplasty Combined with Nanofat Grafting in Correcting Tear Trough Deformity.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-12",
+      "abstract": "BACKGROUND: Tear trough deformity often coexists with lower eyelid bags. While transconjunctival blepharoplasty combined with autologous fat grafting is effective, the optimal preparation method-conventional fat versus nanofat-remains unclear. This study compares the efficacy and safety of these two techniques.\n\nMETHODS: A retrospective cohort study was conducted on 87 patients who underwent transconjunctival blepharoplasty combined with either granular fat (Group A, n = 41) or nanofat grafting (Group B, n = 46). Outcomes were assessed at 6 months postoperatively using patient satisfaction scores, Barton grade improvement, tear trough height-to-palpebral fissure width (TTDH/PFW) ratio, lower eyelid pigmentation scores, and complication rates.\n\nRESULTS: Both groups showed significant improvement. However, for mild-to-moderate deformity, Group B demonstrated superior outcomes: higher patient satisfaction (P < 0.001), greater reduction in TTDH/PFW (P < 0.05), and significant improvement in lower eyelid pigmentation (P < 0.001). Group B also had a significantly lower complication rate. No significant difference was found for severe deformity.\n\nCONCLUSION: For mild-to-moderate tear trough deformity, nanofat grafting combined with transconjunctival blepharoplasty provides more effective and comprehensive correction-improving contour, reducing pigmentation, and resulting in fewer complications-compared to conventional macrofat grafting.\n\nLEVEL OF EVIDENCE II: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06303-2",
+      "authors": [
+        "Wang L",
+        "Chen Z",
+        "Chai Z",
+        "Fan Y",
+        "Li X",
+        "Chen D",
+        "Miao F",
+        "Guo F"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42864539/",
+      "added_at": "2026-10-14T00:45:40Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-14T00:45:46Z",
+      "summary_zh": {
+        "headline": "Transconjunctival blepharoplasty 搭配 nanofat 移植對輕中度淚溝畸形的矯正效果優於傳統脂肪移植。",
+        "points": [
+          "回顧性隊列研究，87 名患者（nanofat 組 46 人、傳統脂肪組 41 人），術後 6 個月評估。",
+          "Nanofat 組在輕中度畸形患者中滿意度更高（P<0.001）、TTDH/PFW 比值下降更明顯（P<0.05）、眼瞼色素沉著改善顯著（P<0.001）、併發症率更低。",
+          "重度畸形患者兩組無顯著差異，提示 nanofat 優勢主要在輕中度病例。"
+        ],
+        "relevance": 5,
+        "reason": "直接涉及眼周年輕化手術技術選擇，提供 nanofat 與傳統脂肪移植的實證比較，具臨床決策價值。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-14T00:47:17Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42864534",
+      "title": "Extended Autologous Fat Grafting for Temporal Contour Restoration.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-12",
+      "abstract": "BACKGROUND: Continuity of the temporal contour is essential for maintaining a smooth transition from the lateral forehead to the zygomatic arch. Although autologous fat grafting is commonly used to correct temporal hollowing, conventional temple-focused augmentation may be insufficient to restore overall temporal contour continuity. This study presents an extended temporal fat grafting approach to address this limitation.\n\nMETHODS: Extended temporal fat grafting was performed, with deep grafting in the loose areolar plane overlying the temporalis muscle. Selective superficial refinement was performed in the anterior temporal region when necessary. Outcomes were assessed using standardized patient-reported satisfaction measures.\n\nRESULTS: The mean satisfaction score was 2.32 ± 0.48. Secondary touch-up grafting was required in 3.6% of cases. No major complications or perceived posterior temporal hairline changes were observed during follow-up.\n\nCONCLUSIONS: Extended autologous fat grafting involving both the anterior and posterior temporal regions, combined with a dual-entry cross-tunneling technique within the loose areolar space, provided satisfactory temporal contour restoration in this case series. No perceived posterior temporal hairline changes were observed during follow-up. This approach may represent a safe and practical strategy for addressing temporal contour deficiency, although comparative studies are required to further evaluate its potential advantages over conventional techniques.\n\nLEVEL OF EVIDENCE IV: This journal requires that authors assign a level of evidence to each article. For a full description of these evidence-based medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06267-3",
+      "authors": [
+        "Su YS",
+        "Lu SR",
+        "Zhou J",
+        "He LL",
+        "Hu K",
+        "Liu M"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42864534/",
+      "added_at": "2026-10-14T00:45:40Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-14T00:45:46Z",
+      "summary_zh": {
+        "headline": "擴展顳部自體脂肪移植可改善顳部輪廓連續性，滿意度高且併發症少。",
+        "points": [
+          "病例系列研究，採用擴展顳部脂肪移植技術，在顳肌上方疏鬆結締組織層進行深層移植。",
+          "平均滿意度評分 2.32 ± 0.48，僅 3.6% 病例需二次補充移植，無重大併發症或後顳部髮線改變。",
+          "雙入口交叉隧道技術結合前後顳部移植，但研究為病例系列（Level IV），缺乏與傳統技術的對照比較。"
+        ],
+        "relevance": 4,
+        "reason": "屬年輕化與臉部輪廓範疇，顳部填充為常見手術，但缺乏對照組，證據等級較低。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-14T00:47:21Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42864533",
+      "title": "Comparative Vector Analysis in Deep Plane Rhytidectomy: Evaluating Combined Horizontal and Oblique SMAS Fixation Strategies in Face and Neck Lifting.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-12",
+      "abstract": "BACKGROUND: Deep plane rhytidectomy provides effective rejuvenation by repositioning surgical superficial musculoaponeurotic system (SMAS). However, the optimal vector strategy for facial and cervical fixation remains unclear. This study aimed to compare the aesthetic outcomes of four combined SMAS fixation vector strategies-horizontal and oblique-in face and neck lifting using FACE-Q and WSRS analyses.\n\nMETHODS: A retrospective study was conducted on 80 patients who underwent deep plane rhytidectomy between September 2022 and April 2024. The patients were equally divided into four groups: facelift with horizontal and neck lift with horizontal fixation (Group A), facelift with horizontal and neck lift with oblique fixation (Group B), facelift with oblique and neck lift with oblique fixation (Group C), and facelift with oblique and neck lift with horizontal fixation (Group D). All procedures followed a standardized deep plane approach, and postoperative outcomes were evaluated at 6 months using the FACE-Q questionnaire and the Wrinkle Severity Rating Scale (WSRS). Statistical comparisons were performed with one-way ANOVA followed by Tukey's HSD post-hoc test, with a p value < 0.05 considered significant.\n\nRESULTS: Group D (face-oblique + neck-horizontal) demonstrated significantly higher FACE-Q scores (88.4 ± 3.9) and greater WSRS improvement (mean reduction 2.4 ± 0.6 points) compared to Groups A, B, and C (p < 0.01). No significant differences were observed among Groups A-C for either FACE-Q or WSRS. No major complications occurred.\n\nCONCLUSION: A differential vector approach-oblique fixation for the face and horizontal fixation for the neck-yields superior patient satisfaction and wrinkle severity reduction. Combining FACE-Q and WSRS outcomes confirms that tailored vector planning by anatomical region optimizes both subjective and objective results in deep plane rhytidectomy.\n\nLEVEL OF EVIDENCE IV: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06377-y",
+      "authors": [
+        "Cinar F"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42864533/",
+      "added_at": "2026-10-14T00:45:40Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-14T00:45:47Z",
+      "summary_zh": {
+        "headline": "Deep plane facelift中，臉部斜向+頸部水平固定向量策略優於其他組合，FACE-Q評分與皺紋改善最佳。",
+        "points": [
+          "80名患者分四組比較deep plane rhytidectomy的SMAS固定向量策略（水平vs斜向），術後6個月評估。",
+          "第D組（臉部斜向+頸部水平）FACE-Q評分88.4±3.9顯著高於其他組（p<0.01），皺紋嚴重度平均改善2.4±0.6分。",
+          "A、B、C三組間FACE-Q與WSRS無顯著差異，提示差異化向量規劃（因部位而異）為關鍵。",
+          "回溯性研究、無重大併發症，建議臉頸部採不同向量策略可優化主觀滿意度與客觀皺紋改善。"
+        ],
+        "relevance": 5,
+        "reason": "直接針對deep plane facelift與頸部拉提的SMAS固定技巧提供實證比較，具體指導臨床向量選擇。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-14T00:47:25Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42864202",
+      "title": "Treatment of peri-implantitis of extraoral craniofacial endosseous implants: a scoping review.",
+      "journal": "IJOMS",
+      "journal_full": "International journal of oral and maxillofacial surgery",
+      "pub_date": "2026-10-12",
+      "abstract": "This scoping review was performed to synthesize the currently available evidence on the management of peri-implantitis affecting extraoral craniofacial endosseous implants, a condition that presents unique anatomical and microbiological challenges. Although a recently proposed treatment algorithm has gained attention in the literature, it is based on low-level evidence and is overly complex for routine clinical use, serving primarily as a conceptual or research-oriented framework. Pragmatic, evidence-based guidelines tailored to extraoral craniofacial endosseous implants remain lacking. JBI and PRISMA-ScR standards were followed to conduct a structured search, complemented by handsearching and reference screening. Eight studies met the inclusion criteria; only one was prospective. No added benefit was found for local antibiotics compared with mechanical cleaning using hydrogen peroxide. Lower-level evidence consistently emphasized meticulous hygiene instruction, mechanical debridement, and adjunctive topical antiseptics such as chlorhexidine or hydrogen peroxide. Systemic antibiotics guided by microbiological testing were recommended for advanced or refractory cases, whereas implant mobility uniformly indicated explantation. Increased peri-implant skin thickness was associated with poorer outcomes, suggesting a potential role for soft tissue thinning when surgically feasible. Overall, current treatment algorithms and available evidence are of limited practical value. High-quality, comparative research is urgently needed to establish evidence-based and clinically feasible treatment pathways as they have long existed in dental implantology. Future work should further define the indications, efficacy, and optimal use of specific agents to support the development of robust, practice-oriented therapeutic recommendations.",
+      "doi": "10.1016/j.ijom.2026.09.024",
+      "authors": [
+        "Timme M",
+        "Menne MC",
+        "Otto T",
+        "Raguse JD"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "wound"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42864202/",
+      "added_at": "2026-10-14T00:45:40Z",
+      "oa_url": "https://doi.org/10.1016/j.ijom.2026.09.024",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-14T00:45:47Z",
+      "summary_zh": {
+        "headline": "顱顏植入物周圍炎治療缺乏高品質證據，現有演算法臨床實用性有限。",
+        "points": [
+          "8篇研究納入（僅1篇前瞻性），局部抗生素相比機械清創加過氧化氫無額外益處。",
+          "低階證據支持：衛教、機械清創、局部消毒劑（氯己定、過氧化氫），進展型病例用微生物導向全身抗生素，植入物活動度高表示需移除。",
+          "植入物周圍皮膚厚度增加與預後不佳相關，軟組織減薄可能有益；現有治療演算法複雜且實用性低。",
+          "作者呼籲需高品質比較研究建立實證臨床指引，目前證據等級不足以指導常規臨床決策。"
+        ],
+        "relevance": 2,
+        "reason": "涉及顱顏植入物感染管理，但非五大主題核心；軟組織處理提及有限，臨床應用價值不高。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-14T00:47:30Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42855508",
       "title": "Clinical Application of the Percutaneous Orbital Fat Release Technique for Correcting Lower Eyelid Bags and Lacrimal Groove Deformities.",
