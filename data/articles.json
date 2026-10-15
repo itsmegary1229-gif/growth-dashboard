@@ -1,6 +1,408 @@
 {
-  "generated_at": "2026-10-14T00:47:30Z",
+  "generated_at": "2026-10-15T00:13:57Z",
   "articles": [
+    {
+      "pmid": "42873118",
+      "title": "A Composite Internal Stabilization Strategy associated with Absence of Postoperative Hematoma After Facelift: A 561-Patient Comparative Series.",
+      "journal": "PRS",
+      "journal_full": "Plastic and reconstructive surgery",
+      "pub_date": "2026-10-14",
+      "abstract": "BACKGROUND: Postoperative hematoma remains the most common complication following rhytidoplasty, with reported incidences ranging from 0.5% to 8%. Various preventive strategies have been proposed, including blood pressure control, drains, progressive tension sutures and quilting techniques, which have been widely adopted to reduce dead space and improve flap adherence. The authors developed an internal hemostatic network (IHN), combining established suturing principles into a composite technique designed to eliminate dead space and stabilize the facial flap.\n\nMETHODS: A retrospective comparative cohort study was conducted. The study group included 356 consecutive facelift procedures (2018-2025) performed using the IHN technique with progressive tension and quilting sutures, without drains or compressive dressings. A control group consisted of 205 patients (2011-2017) who underwent conventional rhytidoplasty with SMAS plication or SMASectomy and suction drains. The primary outcome was postoperative hematoma requiring surgical evacuation. Secondary outcomes included hospital stay and postoperative complications.\n\nRESULTS: No major hematomas requiring surgical evacuation, seromas, or flap necrosis occurred in the study group. Three patients (0.8%) developed small localized blood collections requiring simple aspiration; none progressed or fulfilled the predefined definition of postoperative hematoma. Transient facial nerve weakness occurred in 10.4% of patients, predominantly involving the marginal mandibular branch, with complete recovery after a mean of 7 weeks and no permanent deficits. All patients were discharged on the day of surgery (mean stay 5 hours). In the control group, 12 hematomas (5.9%) required surgical evacuation. Fisher's exact test demonstrated a statistically significant reduction in hematoma incidence with the IHN technique (p < 0.00001).\n\nCONCLUSIONS: The internal hemostatic network was associated with absence of postoperative hematoma in this retrospective comparative series. By minimizing dead space and stabilizing the flap without drains or external compression, the technique may reduce morbidity and facilitate faster recovery.Level of Evidence: III, retrospective comparative cohort study.",
+      "doi": "10.1097/PRS.0000000000013519",
+      "authors": [
+        "Pellini E",
+        "Vellone V",
+        "Finocchi V"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42873118/",
+      "added_at": "2026-10-15T00:12:09Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-15T00:12:12Z",
+      "summary_zh": {
+        "headline": "內部止血網絡技術在356例拉皮手術中完全消除術後血腫，優於傳統引流方式。",
+        "points": [
+          "回顧性比較隊列研究，IHN組356例（2018-2025）vs對照組205例（2011-2017）；IHN組無需引流或加壓敷料。",
+          "IHN組術後血腫發生率0%（無需手術清除），對照組5.9%（12例需手術清除），差異統計顯著（p<0.00001）。",
+          "IHN組3例（0.8%）出現小血液積液需簡單抽吸，無進展；邊緣下頷神經暫時性無力10.4%，平均7週完全恢復。",
+          "所有IHN組患者當日出院（平均住院5小時），但研究為回顧性設計，缺乏前瞻性隨機對照驗證。"
+        ],
+        "relevance": 5,
+        "reason": "直接針對facelift術後血腫預防的複合技術，提供具體手術策略與顯著臨床成果數據。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-15T00:13:22Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42872381",
+      "title": "Endoscopic Facelift with Isolation of the Fronto-Temporal Facial Nerve Branches: A Clinical Study of 300 Cases.",
+      "journal": "ASJ",
+      "journal_full": "Aesthetic surgery journal",
+      "pub_date": "2026-10-14",
+      "abstract": "BACKGROUND: Preserving the fronto-temporal branches of the facial nerve (CN VII) is the principal technical challenge in endoscopic facelift, and complete mid- and lower-face mobilization requires release of McGregor's patch.\n\nOBJECTIVES: To evaluate endoscopic facelift when the fronto-temporal branches are systematically identified and completely isolated, allowing release of McGregor's patch.\n\nMETHODS: Retrospective study of 300 consecutive patients operated by a single surgeon between May 2021 and August 2024, all with complete circumferential endoscopic isolation of the fronto-temporal branches. Recovery was dated from when the patient noticed the return of voluntary movement of the affected frontalis. Patients not recovered by day 14 received contralateral botulinum toxin for symmetry.\n\nRESULTS: No permanent nerve injury occurred. Transient frontalis weakness occurred in all 300 patients (100%) and resolved completely: an expected consequence of deliberate nerve isolation, not a marker of technical success. Median time to recovery was 14 days (62.3% by day 14; 95% CI 56.9-67.8), unchanged when patients were censored at toxin exposure. Cumulative recovery was 75.3% at 1 month, 87.0% at 3 months and 94.3% at 6 months; recorded dates are upper bounds. Of the 300 patients, 282 (94%) attended the 12-month visit and 265 (94%) rated their outcome good or excellent. Haematoma occurred in 2 (0.7%) and asymmetry requiring revision in 4 (1.3%).\n\nCONCLUSIONS: Complete circumferential isolation of the fronto-temporal branches was reproducible and caused no permanent injury, at the cost of universal transient frontalis weakness. An uncontrolled series cannot establish that this trade-off is justified; prospective controlled comparison is required.",
+      "doi": "10.1093/asj/sjag231",
+      "authors": [
+        "Renert G",
+        "Kaminskyi E",
+        "Diaz-Carandell A"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42872381/",
+      "added_at": "2026-10-15T00:12:09Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-15T00:12:12Z",
+      "summary_zh": {
+        "headline": "內視鏡拉皮完全隔離額顳面神經分支，300例無永久神經損傷但100%暫時性額肌無力。",
+        "points": [
+          "單一術者300例連續病例回顧研究（2021-2024），所有患者均接受完整周圍內視鏡隔離額顳面神經分支，允許完全釋放McGregor's patch。",
+          "暫時性額肌無力100%發生但完全恢復：中位恢復時間14天（62.3%於第14天恢復），1個月75.3%、3個月87.0%、6個月94.3%恢復。",
+          "無永久神經損傷；血腫0.7%（2例）、需修正的不對稱1.3%（4例）；12個月隨訪282例中265例（94%）評估結果良好或優異。",
+          "作者認為此技術可重複執行但無永久損傷代價為普遍暫時性額肌無力，需前瞻對照研究驗證此取捨正當性。"
+        ],
+        "relevance": 5,
+        "reason": "直接針對內視鏡facelift額顳面神經保護的關鍵技術挑戰，提供大樣本臨床結果與神經恢復數據。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-15T00:13:27Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42872269",
+      "title": "Prospective Intraindividual Split-face Histological Comparison of Poly-d,l-lactic Acid and Calcium Hydroxylapatite Skin Boosters Using Stem Cell Markers.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-10-14",
+      "abstract": "BACKGROUND: Poly-d,l-lactic acid (PDLLA) and calcium hydroxylapatite (CaHA) are injectable biostimulators increasingly used as skin boosters. Although both promote tissue regeneration, their comparative histological effects in humans remain poorly characterized, particularly regarding differential vascular, collagenous, and elastinrelated responses that may influence individualized treatment strategies and clinical decision-making.\n\nMETHODS: This institutional review board-approved prospective split-face pilot study included 3 female patients (6 cheeks) who received PDLLA injection on one side and CaHA injection on the contralateral side. Biopsies were obtained 3 months after injection from corresponding preauricular or temporal facial regions during the facelift procedure for histological and immunohistochemical evaluation, including hematoxylin and eosin, Herovici, Verhoeff-Van Gieson, and CD31/CD34 immunostaining. Ultrasound (33 MHz) and surface roughness analysis were also performed, alongside Global Aesthetic Improvement Scale scoring.\n\nRESULTS: Both PDLLA and CaHA demonstrated regenerative activity, though their predominant effects differed. PDLLA was associated with greater angiogenesis (capillary counts and CD31 staining), fibroblast activation, and early collagen remodeling. CaHA exhibited higher elastin fiber density (13% increase by Verhoeff-Van Gieson staining), stronger CD34 expression, and more pronounced early dermal thickening on ultrasound. Both agents improved clinical skin roughness and Global Aesthetic Improvement Scale scores without major adverse events.\n\nCONCLUSIONS: PDLLA and CaHA skin boosters each demonstrated distinct yet beneficial biostimulatory profiles in human tissue. PDLLA favored angiogenesis and collagen remodeling, whereas CaHA promoted elastogenesis, progenitor cell activation, and early tissue reinforcement. These findings highlight the complementary roles of PDLLA and CaHA and underscore the need for larger, long-term studies to refine their clinical applications.",
+      "doi": "10.1097/GOX.0000000000008090",
+      "authors": [
+        "Kim JS"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "10",
+      "pages": "e8090",
+      "topics": [
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42872269/",
+      "added_at": "2026-10-15T00:12:09Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-15T00:12:12Z",
+      "summary_zh": {
+        "headline": "PDLLA與CaHA皮膚生物刺激劑的組織學效應不同：PDLLA促進血管新生與膠原重塑，CaHA促進彈性蛋白與幹細胞活化。",
+        "points": [
+          "前瞻性分面研究，3名患者（6側臉頰），一側注射PDLLA、對側注射CaHA，3個月後於拉皮手術時取樣進行組織學與免疫組化分析。",
+          "PDLLA顯示更高的血管新生（毛細血管計數與CD31染色）、成纖維細胞活化與膠原重塑；CaHA顯示更高的彈性纖維密度（Verhoeff-Van Gieson染色增加13%）、CD34表達與早期真皮增厚。",
+          "兩種製劑均改善臨床皮膚粗糙度與整體美學改善量表評分，無重大不良事件，但樣本數極小（n=3），長期效果未知。"
+        ],
+        "relevance": 4,
+        "reason": "屬年輕化主題的注射治療，提供PDLLA與CaHA的組織學比較數據，有助臨床選擇，但樣本數過小、證據等級有限。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-15T00:13:31Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42871939",
+      "title": "A Case of Severe Necrotizing Soft-tissue Infection With Reconstruction of the Mid-lower Leg Using a Distally Based Pedicled Gracilis Muscle Flap.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-10-14",
+      "abstract": "Here, we report the management of a severe necrotizing soft-tissue infection involving the entire lower limb of a man in his 70s. The infection originated from a lower leg hematoma that developed during anticoagulant therapy for deep vein thrombosis. Necrosis extended from the deep thigh to the lower leg, involving areas surrounding critical structures such as the femoral artery, sciatic nerve, and tibia. Limb salvage was achieved through multiple debridement procedures and skin grafts performed in collaboration with orthopedic and cardiovascular surgery teams. The exposed cortical bone on the anterior midtibia was covered using a distally pedicled gracilis muscle flap in combination with negative-pressure wound therapy to avoid the need for a distal flap. The flap survived sufficiently to avoid a distal flap, and the patient was able to ambulate without a cane 6 months postoperatively.",
+      "doi": "10.1097/GOX.0000000000008096",
+      "authors": [
+        "Tanakura K",
+        "Hayasaka R",
+        "Kuramoto Y",
+        "Imai T"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "10",
+      "pages": "e8096",
+      "topics": [
+        "wound"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42871939/",
+      "added_at": "2026-10-15T00:12:09Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-15T00:12:13Z",
+      "summary_zh": {
+        "headline": "下肢壞死性軟組織感染經多次清創與遠端蒂gracilis肌肉瓣重建成功保肢",
+        "points": [
+          "70歲男性因抗凝血治療後下肢血腫引發壞死性感染，涉及股動脈、坐骨神經、脛骨等重要結構",
+          "採多次清創、植皮、遠端蒂gracilis肌肉瓣搭配NPWT覆蓋脛骨皮質骨",
+          "術後6個月患者無需拐杖行走，成功保肢；個案報告，無對照組"
+        ],
+        "relevance": 4,
+        "reason": "慢性傷口重建與NPWT應用相關，但為單一個案報告，臨床推廣價值有限。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-15T00:13:35Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42871867",
+      "title": "Reliable Detection, Unreliable Clinical Decision-making: Artificial Intelligence Models in Burn Assessment.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-10-14",
+      "abstract": "BACKGROUND: Multimodal artificial intelligence (AI) systems are increasingly used for visual interpretation tasks. Whether commercially available models can be applied to burn surgery, and to what extent, remains unclear. We evaluated a clinical chain from visual recognition (distinguishing burns from nonburned skin) to treatment decision-making (debridement versus immediate skin grafting), including accuracy, output consistency, and skin tone subgroup performance.\n\nMETHODS: Four multimodal large language models (GPT-5.4 Pro, Grok 4.1, Gemini 3.1 Pro, and Claude Opus 4.6) evaluated 50 cropped clinical photographs (25 burns and 25 nonburns) across 5 independent runs (n = 4000 total assessments). Models classified burn presence and treatment recommendation. Ground truth was established by expert consensus among plastic surgeons. Reproducibility was assessed using Fleiss κ.\n\nRESULTS: Burn detection was near-perfect (97.2%-100%, κ = 0.896-1.000) and equivalent across Fitzpatrick skin tone strata. Treatment accuracy in burn cases ranged from 24.8% to 72.8%, with 3 models performing below the majority-class baseline. Reproducibility for treatment decisions dropped to κ = 0.132-0.385 in 3 models, with inconsistent recommendations for identical images. Error patterns were systematic and opposing across models.\n\nCONCLUSIONS: AI systems reliably detected burns but failed to reliably recommend treatment. Reproducibility remained high for visual recognition but substantially lower for clinical decision-making. The clinical chain breaks at the transition from perception to decision, limiting the current applicability in burn surgery. The high sensitivity (94.4%-100%) and specificity (100%) for burn detection suggest that visual recognition may serve as a reliable foundation for future AI-assisted triage in burn care.",
+      "doi": "10.1097/GOX.0000000000008141",
+      "authors": [
+        "Güler I",
+        "Cambaz U",
+        "Kraus A",
+        "Grieb G",
+        "Stelling H"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "10",
+      "pages": "e8141",
+      "topics": [
+        "wound"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42871867/",
+      "added_at": "2026-10-15T00:12:09Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-15T00:12:13Z",
+      "summary_zh": {
+        "headline": "AI 模型能準確識別燒傷但治療決策不可靠，臨床應用受限。",
+        "points": [
+          "四款多模態大語言模型評估 50 張臨床照片（燒傷 25、非燒傷 25），共 4000 次評估；燒傷偵測準確度 97.2%-100%（κ = 0.896-1.000），跨膚色層級一致。",
+          "治療建議準確度僅 24.8%-72.8%，三款模型低於基準線；治療決策重現性差（κ = 0.132-0.385），同一影像產生不一致建議。",
+          "視覺識別可靠但臨床決策不可靠，臨床鏈在感知到決策的轉換處斷裂；高敏感度（94.4%-100%）與特異度（100%）提示 AI 可作為燒傷分診的視覺基礎。"
+        ],
+        "relevance": 2,
+        "reason": "燒傷評估與慢性傷口管理不同領域；AI 應用評估屬背景知識，非直接臨床決策工具。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-15T00:13:39Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42869429",
+      "title": "Evaluation of Costal Cartilage Calcification Using Plain Radiographic Images.",
+      "journal": "ASJ",
+      "journal_full": "Aesthetic surgery journal",
+      "pub_date": "2026-10-14",
+      "abstract": "BACKGROUND: Costal cartilage is a vital autologous graft for structural rhinoplasty, but calcification complicates surgical planning and graft manipulation. Chest computed tomography is the conventional evaluation method but is not routinely used owing to radiation exposure and cost.\n\nOBJECTIVES: To evaluate, using plain rib series radiography, the prevalence, morphological patterns, and predictors of costal cartilage calcification in patients undergoing rhinoplasty.\n\nMETHODS: Two reviewers jointly assessed bilateral 6th-8th costal cartilages from 183 rhinoplasty patients (1,098 rib segments) on preoperative chest radiographs, grading calcification (0-4) and classifying morphological pattern (marginal, granular, or central). Multivariable logistic regression identified independent predictors of calcification presence and severity.\n\nRESULTS: Costal cartilage calcification (grade ≥1) was present in 54.1% of segments, with significantly higher prevalence (62.9% vs 46.6%, P < 0.001) and severity in females than males. Calcification was predominantly marginal in males (95.4%), whereas 15.1% and 17.6% of females showed granular and central patterns, respectively. Severe calcification (grade ≥3) peaked unexpectedly in the 40-49-year group (25.8%) rather than in older patients. On multivariable analysis, female sex (OR 3.01; 95% CI, 1.11-8.12) and age 40-49 years (OR 6.28; 95% CI, 1.69-23.36) were independent predictors of severe calcification.\n\nCONCLUSIONS: Routine rib series imaging should be considered even in younger candidates to optimize donor site selection and avoid unexpected intraoperative findings.",
+      "doi": "10.1093/asj/sjag222",
+      "authors": [
+        "Yoo SH",
+        "Jang YJ"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42869429/",
+      "added_at": "2026-10-15T00:12:09Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-15T00:12:13Z",
+      "summary_zh": {
+        "headline": "肋軟骨鈣化在40-49歲女性患者最嚴重，平面X光可作為鼻整形術前篩檢工具。",
+        "points": [
+          "183名鼻整形患者、1,098根肋骨節段研究，54.1%出現肋軟骨鈣化（grade≥1），女性患者鈣化率顯著高於男性（62.9% vs 46.6%）。",
+          "嚴重鈣化（grade≥3）在40-49歲年齡組達高峰（25.8%），而非老年患者；女性性別（OR 3.01）和40-49歲年齡（OR 6.28）為獨立預測因子。",
+          "鈣化型態性別差異明顯：男性以邊緣型為主（95.4%），女性則有15.1%顆粒型和17.6%中央型，影響移植物操作難度。",
+          "建議即使年輕患者也應進行肋骨X光檢查，以優化供體部位選擇並避免術中意外發現。"
+        ],
+        "relevance": 5,
+        "reason": "直接影響鼻整形術前評估與肋軟骨移植物選擇的臨床決策，提供簡便篩檢方法。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-15T00:13:43Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42869968",
+      "title": "Integrated Perioperative Infection Management Measures (PSMS-11) for ePTFE Rhinoplasty in East Asian Patients: A Large-Sample, Long-Term Retrospective Study.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-13",
+      "abstract": "BACKGROUND: Expanded polytetrafluoroethylene (ePTFE) has been widely utilized in east Asian rhinoplasty due to its favorable stability and biocompatibility. However, postoperative infection which is one of the major complications affecting surgical outcomes and patient satisfaction presents receive much concern. Evidence based on large cohorts with long-term follow-up in this population remains limited.\n\nMETHODS: A retrospective review of 1153 consecutive patients who underwent ePTFE rhinoplasty at our institution from January 2018 to December 2024 was performed. We compared Demographics, surgical techniques, and postoperative outcomes between infected and non-infected cases to identify risk factors for infection. Based on literature review and accumulated clinical experience, a perioperative systematic management strategy-11 Decision Nodes (PSMS-11) was applied consistently in routine practice. Infection characteristics, management approaches, and long-term outcomes were evaluated.\n\nRESULTS: Postoperative infection occurred in a small proportion of patients, with an overall incidence of approximately 1.6% during long-term follow-up. Notably, more than half of infection events presented beyond six months after surgery, including late-onset cases occurring more than one year postoperatively. Revision surgery, active skin inflammation, smoking history, and unfavorable postoperative behaviors were associated with increased infection risk. Early localized infections could be considered for conservative management under close surveillance, whereas persistent or progressive infections required implant removal.\n\nCONCLUSIONS: In this large-sample, long-term retrospective study of East Asian patients, a consistently low infection rate was observed following ePTFE rhinoplasty. These findings suggest that structured integration of perioperative management measures, as summarized by PSMS-11, may contribute to maintaining low infection rates in high-volume clinical practice. Long-term follow-up and individualized treatment decisions remain essential.\n\nLEVEL OF EVIDENCE IV: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06292-2",
+      "authors": [
+        "Yi K",
+        "Li X",
+        "Wang X",
+        "Zou P",
+        "Sun Y",
+        "Xiong X",
+        "Meng X",
+        "Li W",
+        "Yi Z",
+        "Qiao Z"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42869968/",
+      "added_at": "2026-10-15T00:12:09Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-15T00:12:13Z",
+      "summary_zh": {
+        "headline": "ePTFE鼻整形感染率1.6%，超半數為延遲感染；系統性圍手術期管理策略可維持低感染率。",
+        "points": [
+          "1153例東亞患者ePTFE鼻整形回顧性研究（2018–2024），長期追蹤顯示感染率1.6%，超過半數感染發生於術後6個月後，包括術後1年以上的晚期感染。",
+          "修訂手術、活動性皮膚發炎、吸菸史、術後不良行為與感染風險增加相關；早期局限感染可考慮保守治療密切監測，持續或進行性感染需移除植入物。",
+          "PSMS-11系統性圍手術期管理策略的一致應用，在高量臨床實踐中維持低感染率，但研究為回顧性設計（Level IV證據）。"
+        ],
+        "relevance": 4,
+        "reason": "ePTFE鼻整形的感染管理與臨床決策相關，但缺乏對手術技巧或美學結果的直接指導。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-15T00:13:47Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42868661",
+      "title": "Surgical Management of Intractable Lower Eyelid Filler Induration: A 15-Year Experience and Layer-by-Layer Approach.",
+      "journal": "PRS",
+      "journal_full": "Plastic and reconstructive surgery",
+      "pub_date": "2026-10-13",
+      "abstract": "BACKGROUND: Late-onset granulomas in the lower eyelid following non-biodegradable filler injections resist conservative therapies, necessitating surgical excision. Operating in this complex anatomy carries significant risks.\n\nMETHODS: A retrospective review of 282 patients undergoing excision of intractable lower eyelid granulomas (2011-2026) was conducted following a minimum of 6 months of failed medical management. A systematic subciliary approach utilizing sequential layer-by-layer delamination and release of the orbital retaining and tear trough ligaments accessed deep-seated materials. High-risk patients universally received prophylactic canthal support.\n\nRESULTS: The cohort (261 females, 21 males; mean age 36.7 years) had diverse filler materials excised. Clinical success-defined objectively as the resolution of preoperative complaints without recurrence requiring surgery-was 100% (mean follow-up 277.4 days). In a high-risk subgroup (age ≥50, prior periorbital surgery), transient ectropion occurred in 61.7% despite 100% receiving prophylactic canthal support. All resolved conservatively within a mean of 62.2 days. Routine microbiological testing was omitted due to unequivocal chronic presentations.\n\nCONCLUSIONS: Systematic layer-by-layer exploration enables the safe removal of scattered lower eyelid foreign bodies. For infiltrative materials, maximal safe debulking prevents musculocutaneous devascularization. Temporary ectropion, exacerbated by traction-induced neuropraxia, is a common but self-limiting sequela.",
+      "doi": "10.1097/PRS.0000000000013528",
+      "authors": [
+        "Nomoto S"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42868661/",
+      "added_at": "2026-10-15T00:12:09Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-15T00:12:13Z",
+      "summary_zh": {
+        "headline": "下眼瞼非生物可降解填充物肉芽腫手術切除：15年經驗與分層法技巧",
+        "points": [
+          "282例患者回顧性研究（2011-2026），平均追蹤277.4天，臨床成功率100%（無復發需再手術）",
+          "高風險族群（年齡≥50歲或有眼周手術史）中61.7%發生暫時性眼瞼外翻，儘管100%接受預防性眼角支撐，但均在平均62.2天內保守治療痊癒",
+          "採用皮下切口系統性分層剝離與眼眶韌帶釋放法，安全移除深層異物材料，避免肌肉皮膚血管減損"
+        ],
+        "relevance": 5,
+        "reason": "直接涉及眼周手術技巧與併發症管理，提供填充物肉芽腫切除的實用分層法與風險分層策略。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-15T00:13:51Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42868660",
+      "title": "Redefining Facial Size: Frame-Based Photogrammetric Analysis of Hairline Correction as Non-Skeletal Upper Facial Contouring.",
+      "journal": "PRS",
+      "journal_full": "Plastic and reconstructive surgery",
+      "pub_date": "2026-10-13",
+      "abstract": "",
+      "doi": "10.1097/PRS.0000000000013532",
+      "authors": [
+        "Park JH"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42868660/",
+      "added_at": "2026-10-15T00:12:09Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-15T00:12:14Z",
+      "summary_zh": {
+        "headline": "髮際線矯正作為非骨骼性上臉部輪廓調整的攝影測量學分析。",
+        "points": [
+          "採用frame-based photogrammetric方法量化髮際線矯正對臉部比例的影響",
+          "無摘要，依標題判斷；研究將髮際線調整視為非手術性臉部輪廓改善策略"
+        ],
+        "relevance": 2,
+        "reason": "髮際線矯正屬毛髮移植領域，非輪廓與正顎手術的核心內容。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-15T00:13:53Z",
+        "basis": "title"
+      }
+    },
+    {
+      "pmid": "42868659",
+      "title": "Nanofat Grafting: The Future of Regenerative Medicine? A Bibliometric Analysis and Systematic Review of Clinical Applications.",
+      "journal": "PRS",
+      "journal_full": "Plastic and reconstructive surgery",
+      "pub_date": "2026-10-13",
+      "abstract": "BACKGROUND: Nanofat grafting has evolved from a mechanically emulsified adipose-derived product into a regenerative platform used across aesthetic, reconstructive, and functional indications. However, terminology, processing methods, and clinical applications remain heterogeneous. This study combined bibliometric mapping with a systematic review to characterize the evolution, evidence base, and limitations of nanofat research.\n\nMETHODS: A bibliometric analysis was performed using the Web of Science Core Collection to identify nanofat-related publications relevant to plastic, reconstructive, aesthetic, and regenerative surgery. Publication trends, citation metrics, leading contributors, and keyword networks were analyzed using Bibliometrix and VOSviewer. A separate PRISMA-based systematic review was conducted in PubMed/MEDLINE, Embase, Scopus, and Web of Science to identify human clinical studies evaluating nanofat-based interventions.\n\nRESULTS: The bibliometric search identified 286 publications, including 241 after the introduction of nanofat in 2013. Output increased markedly after 2019 and peaked in 2025 with 45 publications. The corpus accumulated 4,320 citations and had an H-index of 37. China, the United States, Italy, Switzerland, and Germany were the leading contributors. The systematic review included 77 clinical studies comprising 2,737 patients, of whom 2,304 received nanofat-based or mechanically emulsified adipose-derived interventions. Clinical applications were grouped into eight domains, with scar remodeling, facial/skin rejuvenation, wound healing, and periorbital rejuvenation representing the most frequent indications.\n\nCONCLUSIONS: Nanofat research has expanded rapidly into a heterogeneous adipose-derived regenerative field. Current evidence supports broad translational interest but remains limited by variability in processing methods, adjunctive therapies, outcomes, and study design. Standardized terminology, product characterization, and indication-specific controlled trials are needed.",
+      "doi": "10.1097/PRS.0000000000013530",
+      "authors": [
+        "Caimi E",
+        "Ghetti EM",
+        "Giovagnoli F",
+        "Prati G",
+        "Vaccari S",
+        "Comunian R",
+        "Di Giuli R",
+        "Bandi V",
+        "Klinger F",
+        "Vinci V"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42868659/",
+      "added_at": "2026-10-15T00:12:09Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-15T00:12:14Z",
+      "summary_zh": {
+        "headline": "Nanofat移植在美容與重建應用快速增長，但缺乏標準化方法與高品質證據。",
+        "points": [
+          "2013年後發表286篇文獻，2025年達45篇/年；77項臨床研究納入2,737患者，其中2,304接受nanofat治療。",
+          "主要應用為疤痕重塑、臉部皮膚年輕化、傷口癒合與眼周年輕化，眼周應用為8大領域之一。",
+          "關鍵限制：處理方法、輔助療法、療效評估與研究設計異質性高，缺乏標準化術語與指標對照試驗。"
+        ],
+        "relevance": 3,
+        "reason": "眼周年輕化為應用領域之一，但本文為廣泛文獻回顧，非眼周特異性研究，臨床指導性有限。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-15T00:13:57Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42866743",
       "title": "Radiofrequency for the Treatment of Facial Ligament Laxity: A Split-face Controlled Exploratory Study.",
