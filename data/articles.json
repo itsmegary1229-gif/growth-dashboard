@@ -1,6 +1,87 @@
 {
-  "generated_at": "2026-10-15T00:13:57Z",
+  "generated_at": "2026-10-15T23:58:50Z",
   "articles": [
+    {
+      "pmid": "42875609",
+      "title": "Efficacy and Safety of At-Home Light-Emitting Diode Photobiomodulation for Facial Rejuvenation: A Systematic Review.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-14",
+      "abstract": "PURPOSE: Photobiomodulation using light-emitting diode (LED) devices has gained popularity for facial rejuvenation. Evidence supporting the safety and efficacy of at-home devices remains fragmented. We aimed to summarize the existing literature evaluating the clinical effectiveness and safety of at-home LED photobiomodulation devices for facial rejuvenation.\n\nMETHODS: A systematic search of MEDLINE/PubMed was conducted for relevant clinical studies, following PRISMA guidelines. Randomized controlled trials and prospective cohort or split-face studies evaluating at-home LED devices for facial rejuvenation were included; studies of in-office devices, laser-based systems, or preclinical models were excluded. Data on wavelength, treatment regimen, clinical outcomes, and adverse events were extracted from each study. Objective and subjective measures of facial aging, including wrinkles, skin elasticity, smoothness, hydration, pore size, and patient-reported cosmetic satisfaction were evaluated.\n\nRESULTS: Eight studies comprising 365 participants met inclusion criteria. Treatment wavelengths ranged from 440 to 1072 nm, with red and near-infrared light most commonly used. Across studies, at-home LED therapy was associated with statistically significant improvements in multiple clinical features of facial aging, including wrinkles, skin texture, elasticity, and periorbital rhytids, along with high patient satisfaction. Adverse events were infrequent, mild, and transient.\n\nCONCLUSIONS: At-home LED photobiomodulation devices appear to be safe and effective for improving facial aging parameters, particularly those emitting red and near-infrared wavelengths. However, variability in treatment protocols, limited comparative data, and underrepresentation of diverse skin phenotypes highlight the need for larger, standardized, and comparative trials to define their role in evidence-based care.\n\nLEVEL OF EVIDENCE I: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06333-w",
+      "authors": [
+        "Das RK",
+        "Thayer WP",
+        "Kubiak CA",
+        "Orra S",
+        "Connor LM",
+        "Perdikis G"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye",
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42875609/",
+      "added_at": "2026-10-15T23:58:37Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-15T23:58:41Z",
+      "summary_zh": {
+        "headline": "居家LED光生物調節對臉部年輕化安全有效，紅光與近紅外線效果最佳。",
+        "points": [
+          "8項研究、365名受試者納入，波長440-1072 nm，紅光與近紅外線最常使用。",
+          "改善皺紋、膚質、彈性與眼周細紋均達統計顯著，患者滿意度高，不良事件輕微且短暫。",
+          "治療方案異質性大、缺乏比較數據、膚色多樣性代表性不足，需更大規模標準化試驗。"
+        ],
+        "relevance": 4,
+        "reason": "非手術年輕化方式，涵蓋眼周改善，但屬能量治療而非手術技巧，臨床參考價值中等。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-15T23:58:46Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42875266",
+      "title": "Is technical difficulty associated with the accuracy of patient-specific implants for maxillary repositioning in minimally invasive orthognathic surgery?",
+      "journal": "IJOMS",
+      "journal_full": "International journal of oral and maxillofacial surgery",
+      "pub_date": "2026-10-14",
+      "abstract": "The use of patient-specific implants (PSIs) in minimally invasive orthognathic surgery remains limited due to concerns about technical difficulty and restricted intraoperative exposure. Whether increasing maxillary movement technical difficulty compromises the accuracy of PSI-assisted minimally invasive surgery remains unclear. This retrospective cohort study evaluated the accuracy of maxillary repositioning using PSIs in minimally invasive bimaxillary orthognathic surgery and its relationship to technical difficulty. Consecutive patients treated at the University of Texas Health San Antonio between June 2023 and September 2025 were included if they underwent bimaxillary minimally invasive orthognathic surgery with complete preoperative and postoperative cone-beam computed tomography records. Patients with craniofacial syndromes, comorbidities affecting postsurgical healing, or those undergoing single-jaw surgery were excluded. Technical difficulty was defined by the presence of maxillary advancement >7 mm, maxillary segmentation, or posterior maxillary impaction >1.5 mm. Accuracy was measured as the root mean square linear discrepancy between planned and postoperative maxillary positions. Demographic characteristics and malocclusion type were recorded as covariates. Thirty-six patients were included, with a mean age of 27 years. Comparisons were made across advancement magnitude, segmentation status, and posterior impaction. No statistically significant differences in root mean square discrepancies were observed across landmarks or axes after correction for multiple comparisons, with the lowest observed probability value being 0.02. These findings demonstrate that PSI-assisted minimally invasive orthognathic surgery achieves clinically acceptable accuracy across varying levels of technical difficulty, supporting its reliable use even in technically demanding cases.",
+      "doi": "10.1016/j.ijom.2026.09.001",
+      "authors": [
+        "Amarista FJ",
+        "Ellis E"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42875266/",
+      "added_at": "2026-10-15T23:58:37Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-15T23:58:42Z",
+      "summary_zh": {
+        "headline": "患者專用植入物輔助微創正顎手術在高難度病例中仍能維持準確度",
+        "points": [
+          "回顧性隊列研究，36名患者接受雙頜微創正顎手術，術前術後均有錐形束電腦斷層掃描紀錄",
+          "技術難度定義為上顎前移>7mm、上顎分段或後上顎內陷>1.5mm；以計畫與術後位置的均方根線性誤差評估準確度",
+          "各地標與軸向的均方根誤差無統計顯著差異（最低p值0.02），支持PSI在技術複雜病例中的可靠性"
+        ],
+        "relevance": 4,
+        "reason": "正顎手術的微創技術與PSI應用屬主題範疇，但為特定技術驗證研究，臨床應用價值中等。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-15T23:58:50Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42873118",
       "title": "A Composite Internal Stabilization Strategy associated with Absence of Postoperative Hematoma After Facelift: A 561-Patient Comparative Series.",
