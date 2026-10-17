@@ -1,6 +1,47 @@
 {
-  "generated_at": "2026-10-17T00:05:21Z",
+  "generated_at": "2026-10-17T23:40:04Z",
   "articles": [
+    {
+      "pmid": "42888121",
+      "title": "Systemic outcomes following maxillomandibular advancement for obstructive sleep apnea: systematic review and meta-analysis.",
+      "journal": "IJOMS",
+      "journal_full": "International journal of oral and maxillofacial surgery",
+      "pub_date": "2026-10-16",
+      "abstract": "Obstructive sleep apnea (OSA) is a common sleep disorder associated with an elevated risk of systemic comorbidities. Maxillomandibular advancement (MMA) surgery can reduce upper airway obstruction and improve sleep parameters, but its systemic health benefits remain less well characterized. This systematic review and meta-analysis was performed to synthesize evidence on the systemic health outcomes associated with MMA in patients with OSA. A comprehensive literature search was conducted in PubMed, Embase, Cochrane CENTRAL, Scopus, and Web of Science from inception through May 20, 2026. Inclusion criteria encompassed original research studies (case series, cohort studies, trials) reporting systemic health outcomes after MMA for OSA. Two reviewers independently screened and extracted data. Risk of bias was assessed using an NIH quality assessment tool. Seven studies (271 patients), with mean follow-up ranging from 5.2 months to 6.6 years, met the inclusion criteria . All studies reported significant reductions in apnea-hypopnea index postoperatively. Four studies included in a meta-analysis demonstrated statistically significant reductions in blood pressure: systolic, mean difference -8.6 mmHg (95% confidence interval -14.2 to -3.0); diastolic, mean difference -5.3 mmHg (95% confidence interval -8.5 to -2.0). MMA for OSA not only improves airway patency and sleep metrics, but is also associated with enduring systemic health benefits, including a blood pressure reduction. Limited evidence also suggests potential improvements in neurocognitive outcomes. Although the evidence suggests a positive impact, further high-quality randomized controlled trials employing rigorous outcome measures (e.g., ambulatory blood pressure monitoring) are needed to fully delineate the persistent systemic effects of maxillomandibular advancement.",
+      "doi": "10.1016/j.ijom.2026.09.022",
+      "authors": [
+        "Holmes C",
+        "Namavarian A",
+        "Malinsky R",
+        "Abdelwahab M",
+        "Ibrahim B"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42888121/",
+      "added_at": "2026-10-17T23:39:56Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-17T23:39:59Z",
+      "summary_zh": {
+        "headline": "正顎前移手術改善睡眠呼吸中止症，並可降低血壓8.6/5.3 mmHg。",
+        "points": [
+          "7項研究、271名患者的系統性回顧與統合分析，追蹤期5.2個月至6.6年。",
+          "MMA術後呼吸暫停低通氣指數顯著下降，收縮壓降低8.6 mmHg、舒張壓降低5.3 mmHg（4項研究統合分析）。",
+          "證據品質有限，作者呼籲需更多高品質隨機對照試驗與嚴格測量（如動態血壓監測）來確認長期全身效益。"
+        ],
+        "relevance": 3,
+        "reason": "正顎手術應用於睡眠呼吸中止症而非美容或輪廓改善，屬臨床應用但偏離主要關注的輪廓正顎領域。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-17T23:40:04Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42886227",
       "title": "Hemostatic Net in Facial Aesthetic Surgery: A Systematic Review and Meta-Analysis.",
