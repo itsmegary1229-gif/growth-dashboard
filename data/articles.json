@@ -1,6 +1,132 @@
 {
-  "generated_at": "2026-10-15T23:58:50Z",
+  "generated_at": "2026-10-17T00:05:21Z",
   "articles": [
+    {
+      "pmid": "42886227",
+      "title": "Hemostatic Net in Facial Aesthetic Surgery: A Systematic Review and Meta-Analysis.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-16",
+      "abstract": "INTRODUCTION: Hematoma is the most frequent and consequential complication after rhytidectomy. The hemostatic net (HN)-a temporary transcutaneous lattice anchoring the flap to the SMAS-platysma-aims to eliminate dead space and minimize shear. Earlier reviews were limited by small samples and methodological heterogeneity. This updated systematic review and meta-analysis synthesizes all available evidence to quantify HN safety and efficacy in facial aesthetic surgery.\n\nMETHODS: Following PRISMA 2020 and Cochrane guidelines (PROSPERO CRD420251149130), PubMed, Scopus, and Cochrane Library were searched through September 2025. Comparative and single-arm studies reporting hematoma, necrosis, seroma, or hyperpigmentation were included. Random-effects DerSimonian-Laird models generated pooled odds ratios (OR) and proportions with 95 % confidence intervals (CI).\n\nRESULTS: Thirteen studies encompassing 3264 unique patients (2175 HN treated) met inclusion criteria; six were comparative. In cervicofacial rhytidectomy, HN reduced the odds of hematoma by 93% compared with drain-based closure (OR 0.07; 95% CI 0.02-0.24; P < .0001; I2 = 25%). No difference in necrosis was observed (OR 0.73; 95% CI 0.20-2.63; P = .63; I2 = 0%). Single-arm pooled rates were hematoma 1.09%, seroma 1.66%, necrosis 0.96%, and persistent hyperpigmentation 0.28%; these are descriptive estimates of incidence and do not support comparative inference. Sensitivity analyses confirmed robustness.\n\nCONCLUSIONS: In cervicofacial rhytidectomy, HN was associated with lower odds of hematoma than drain-based closure, without an increase in skin necrosis. Single-arm analyses provide descriptive estimates of low absolute complication rates, including in gliding brow lift, but do not establish comparative effectiveness outside rhytidectomy. Pigmentary change at suture entry sites is the most frequent visible adverse event and, although usually self-limited, may take up to three months to resolve and warrants explicit preoperative counseling. Evidence derives predominantly from non-randomized studies, and pooled estimates should be interpreted as hypothesis-generating.\n\nLEVEL OF EVIDENCE II: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors https://www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06335-8",
+      "authors": [
+        "Kodalak EA",
+        "Delgado LM",
+        "Ersan M",
+        "Genç FB",
+        "Ferrara VZ",
+        "Vyas KS"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42886227/",
+      "added_at": "2026-10-17T00:04:24Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-17T00:04:27Z",
+      "summary_zh": {
+        "headline": "Hemostatic net 在頸面部拉皮中減少血腫風險 93%，但證據多來自非隨機對照研究。",
+        "points": [
+          "13 篇研究、3264 名患者（2175 人使用 hemostatic net）的統合分析；6 篇為對照研究。",
+          "Hemostatic net vs. 引流管閉合：血腫風險降低 93%（OR 0.07, 95% CI 0.02-0.24, P<0.0001），皮膚壞死無差異（OR 0.73, P=0.63）。",
+          "單臂研究報告血腫 1.09%、血清腫 1.66%、壞死 0.96%、色素沉著 0.28%；縫線進入點色素變化最常見，通常 3 個月內自行消退。",
+          "證據主要來自非隨機研究，統合估計為假說生成性質，rhytidectomy 外的適應症缺乏比較效益證據。"
+        ],
+        "relevance": 4,
+        "reason": "直接涉及 facelift 併發症管理與止血技術，但證據品質中等，臨床應用需謹慎。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-17T00:05:14Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42886226",
+      "title": "Surgical Timing Before Age 3 for Congenital Ptosis: Enhancing Refractive Parameters Recovery in Children.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-16",
+      "abstract": "PURPOSE: The aim of this study is to evaluate the impact of congenital ptosis on visual development and observe postoperative refractive parameters recovery patterns between two distinct age groups: children under 3 years and preschool-aged children (3-6 years).\n\nMETHODS: A cohort study was conducted among 77 patients aged 1 to 6 years diagnosed with severe unilateral congenital simple ptosis at our hospital. Key data points included demographic data, marginal reflex distance 1 (MRD1), refractive status, and best-corrected visual acuity (BCVA). Preoperative refractive data and ocular examination results were compared with corresponding postoperative data.\n\nRESULTS: The prevalence of pathological anisometropia preoperatively was 26.9% for toddlers and 20% for preschoolers. There was a significant difference in preoperative cylinder power between the affected and unaffected eyes (P < 0.01). Among patients aged under 3 years, postoperative difference in spherical equivalent (△SE) showed significant improvement compared to preoperative △SE (P < 0.05). Among patients older than 3 years, there was no significant change in △SE or BCVA. Both age groups showed no significant change in cylinder power.\n\nCONCLUSION: Severe unilateral congenital ptosis induces pathological anisometropia and astigmatism while depleting hyperopic reserve in pediatric patients. Early surgical intervention before age 3 years effectively enhances the recovery of refractive parameters. The evidence substantiates the requirement for timely surgical correction during the visual system's critical developmental period.\n\nLEVEL OF EVIDENCE III: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06297-x",
+      "authors": [
+        "Zhuan S",
+        "Qi Q",
+        "Zhang J",
+        "Li J"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42886226/",
+      "added_at": "2026-10-17T00:04:24Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-17T00:04:27Z",
+      "summary_zh": {
+        "headline": "3歲前手術矯正先天性眼瞼下垂可改善屈光參數恢復，3歲後效果不顯著。",
+        "points": [
+          "77名1-6歲先天性單側嚴重眼瞼下垂患者，術前病理性屈光參差發生率幼兒組26.9%、學齡前組20%。",
+          "3歲以下患者術後球面等效度(△SE)顯著改善(P<0.05)，3歲以上無顯著改善；兩組圓柱度均無改善。",
+          "先天性眼瞼下垂導致屈光參差、散光及遠視儲備耗損，強調視覺發育關鍵期內及時手術的重要性。"
+        ],
+        "relevance": 4,
+        "reason": "眼瞼下垂矯正屬眼周主題，提供兒童先天性眼瞼下垂手術時機的實證依據，具臨床決策參考價值。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-17T00:05:18Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42879137",
+      "title": "\"Association of Anxiety and Depression with Patient-Reported Outcomes After Functional and Aesthetic Rhinoplasty\".",
+      "journal": "PRS",
+      "journal_full": "Plastic and reconstructive surgery",
+      "pub_date": "2026-10-15",
+      "abstract": "BACKGROUND: Body dysmorphic disorder is a well-established predictor of decreased patient satisfaction after rhinoplasty. However, the effect of anxiety and depression on rhinoplasty-specific patient reported outcomes is largely unknown. This study evaluates the association of anxiety and depression with patient satisfaction after functional and aesthetic septorhinoplasty.\n\nMETHODS: This single-center retrospective cohort study included patients undergoing functional or aesthetic septorhinoplasty from 2019-2024. Preoperative and postoperative Nasal Obstruction Symptom Evaluation (NOSE) and Standardized Cosmesis and Health Nasal Outcomes Survey (SCHNOS) scores were extracted from the electronic medical record. Patients with anxiety and/or depression were compared to those without these diagnoses within functional and aesthetic cohorts. Multivariable logistic regression was performed to assess revision rates.\n\nRESULTS: Regarding functional septorhinoplasty (n=490), both the control and anxiety/depression group demonstrated improved NOSE (-44.7 and -32.5, p<0.001) and SCHNOS-Obstructive (-44.9 and -46.9, p<0.001) scores postoperatively. Compared to the control group, the anxiety/depression group reported higher (less favorable) postoperative NOSE (35.3 vs 24.1, p<0.001) and SCHNOS-Obstructive (32.1 vs. 24.1, p=0.027) scores, and higher odds of revision surgery (OR 2.56, 95% CI 1.51-4.39, p<0.001). Regarding aesthetic septorhinoplasty (n=179), both the control and anxiety/depression group demonstrated improved SCHNOS-Cosmetic scores postoperatively (-32.3 and -39.6, p<0.001), with no difference in preoperative or postoperative SCHNOS-Cosmetic scores or revision rates between groups.\n\nCONCLUSION: Patients with anxiety or depression undergoing functional septorhinoplasty reported lower postoperative satisfaction and experienced higher revision rates. In contrast, individuals with anxiety or depression undergoing aesthetic septorhinoplasty demonstrated no significant differences in postoperative satisfaction or revision surgery compared to controls.",
+      "doi": "10.1097/PRS.0000000000013540",
+      "authors": [
+        "Lynn JV",
+        "Stipho CT",
+        "Mohanty AJ",
+        "Brenner MJ",
+        "Moyer JS",
+        "Buchman SR",
+        "Gilman RH"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42879137/",
+      "added_at": "2026-10-17T00:04:24Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-17T00:04:27Z",
+      "summary_zh": {
+        "headline": "焦慮憂鬱症患者功能性鼻整形滿意度較低、修訂率高；美容性鼻整形無顯著差異。",
+        "points": [
+          "功能性鼻整形490例：焦慮/憂鬱組術後NOSE評分35.3 vs 對照組24.1（p<0.001），修訂手術勝算比2.56（95% CI 1.51-4.39）。",
+          "美容性鼻整形179例：焦慮/憂鬱組術後SCHNOS-Cosmetic改善-39.6 vs 對照組-32.3，兩組滿意度與修訂率無顯著差異。",
+          "兩組術後功能性症狀均改善，但焦慮/憂鬱患者對功能性結果的主觀滿意度較低，提示心理因素影響功能性而非美容性預期。"
+        ],
+        "relevance": 4,
+        "reason": "鼻整形患者心理篩檢與預期管理的實用指引，但屬心理社會因素而非手術技巧層面。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-17T00:05:21Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42875609",
       "title": "Efficacy and Safety of At-Home Light-Emitting Diode Photobiomodulation for Facial Rejuvenation: A Systematic Review.",
