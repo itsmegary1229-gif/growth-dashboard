@@ -1,6 +1,87 @@
 {
-  "generated_at": "2026-10-17T23:40:04Z",
+  "generated_at": "2026-10-18T23:49:29Z",
   "articles": [
+    {
+      "pmid": "42889861",
+      "title": "Virgo-inspired Periorbital Lifting Injection Technique: A Structured Multinodal, Layered Framework for Periorbital Rejuvenation.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-10-15",
+      "abstract": "Periorbital aging extends beyond isolated volume loss and encompasses progressive changes in structural support, contour continuity, and tissue transition. These changes often produce a segmented or fatigued appearance that may not be adequately corrected by focal filling alone. We describe the Virgo-inspired periorbital lifting injection technique as a structured, multinodal, layered framework that organizes recognized periorbital support and transition zones into a reproducible treatment sequence. Deep-anchoring nodes are used to provide distributed support, whereas superficial refinement nodes are used to improve contour continuity and optical integration. The Virgo-inspired periorbital lifting injection technique does not propose novel anatomy or previously undescribed injection points. Rather, it offers a practical framework intended to improve procedural clarity, teachability, and consistency in periorbital rejuvenation. An illustrative case is presented to demonstrate the treatment logic and clinical application of this approach.",
+      "doi": "10.1097/GOX.0000000000008172",
+      "authors": [
+        "Li J",
+        "Xue Y",
+        "Kuang L",
+        "Wu Q",
+        "Tian W",
+        "Rehemutila S",
+        "Ai J"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "10",
+      "pages": "e8172",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42889861/",
+      "added_at": "2026-10-18T23:49:17Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008172",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-18T23:49:20Z",
+      "summary_zh": {
+        "headline": "提出Virgo啟發式眼周提升注射技術，以分層多節點框架系統化眼周年輕化治療。",
+        "points": [
+          "描述結構化注射框架，將眼周支撐與過渡區域組織成可重複的治療序列，深層錨定節點提供支撐、淺層精緻節點改善輪廓連續性。",
+          "強調該技術非新解剖或新注射點，而是提供實用框架以改善手術清晰度、可教性與一致性。",
+          "以單一臨床案例展示治療邏輯與臨床應用，缺乏對照組或系列病例數據支持。"
+        ],
+        "relevance": 4,
+        "reason": "屬眼周年輕化注射治療範疇，提供臨床框架但為單案例報告，實證等級較低。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-18T23:49:26Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42889845",
+      "title": "Correction of Superficial Tear Trough Deformity with Autologous Septal Fascia Graft During Lower Blepharoplasty.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-10-15",
+      "abstract": "Residual tear trough deformity (TTD) often persists after standard lower blepharoplasty because of the significant difference in skin thickness between the thin lower eyelid and thicker midface. Current treatments, such as dermal fillers or nanofat grafting, face limitations, including potential surface irregularities, the Tyndall effect, and the need for additional donor sites. This article introduces autologous septal fascia grafting as a novel technique to correct superficial TTD during lower blepharoplasty. The procedure involves harvesting a strip of the orbital septum according to the severity of the preoperative deformity using the same blepharoplasty approach, eliminating distant donor-site morbidity. This linear graft is threaded into the subdermal layer of the tear trough to structurally augment skin thickness and soften the eyelid-cheek junction. Clinical outcomes demonstrated stable improvement of superficial TTD without hypertrophic scarring, contour irregularities, or the Tyndall effect, offering an efficient and durable solution for transition zone camouflage.",
+      "doi": "10.1097/GOX.0000000000008180",
+      "authors": [
+        "Tsai YC",
+        "Lin RY"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "10",
+      "pages": "e8180",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42889845/",
+      "added_at": "2026-10-18T23:49:17Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008180",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-18T23:49:20Z",
+      "summary_zh": {
+        "headline": "眼周淚溝變形可用鼻中膈筋膜自體移植於下眼瞼手術中同時矯正，效果穩定無併發症。",
+        "points": [
+          "新技術：於下眼瞼整形手術中同時取鼻中膈筋膜移植至淚溝皮下層，利用既有切口避免遠端供體部位併發症。",
+          "優勢：相比玻尿酸填充或nanofat移植，此法可避免表面不規則、Tyndall effect，並提供結構性增厚。",
+          "臨床結果：患者淚溝變形穩定改善，無肥厚性疤痕、輪廓不規則或Tyndall effect，提供耐久性解決方案。"
+        ],
+        "relevance": 5,
+        "reason": "直接針對下眼瞼整形中淚溝矯正的新手術技巧，提供臨床實用的自體移植方法。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-18T23:49:29Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42888121",
       "title": "Systemic outcomes following maxillomandibular advancement for obstructive sleep apnea: systematic review and meta-analysis.",
