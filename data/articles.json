@@ -1,6 +1,48 @@
 {
-  "generated_at": "2026-10-18T23:49:29Z",
+  "generated_at": "2026-10-20T00:51:19Z",
   "articles": [
+    {
+      "pmid": "42896156",
+      "title": "Patient-Reported Aesthetic Outcomes of Botulinum Toxin Type A: A Systematic Review and Meta-Analysis of Placebo-Controlled Randomized Trials.",
+      "journal": "ASJ",
+      "journal_full": "Aesthetic surgery journal",
+      "pub_date": "2026-10-19",
+      "abstract": "Botulinum toxin type A (BoNT-A) is widely used for facial rejuvenation, but patient-perceived benefit is best evaluated against an inert control. This systematic review assessed whether BoNT-A, compared with placebo, vehicle, or saline placebo, improves aesthetic self-perception and related patient-reported outcomes. PubMed/MEDLINE, Embase, Scopus, Web of Science, and CENTRAL were searched from inception through September 25, 2026 using a sensitivity-oriented strategy. Randomized controlled trials in adults were eligible when they contained an extractable BoNT-A-versus-placebo contrast and a patient-reported aesthetic outcome. Seventy-five reports were retained: 70 contributed direct comparative evidence from 65 unique placebo-containing RCTs enrolling 18,581 participants across all randomized arms, and five linked reports were retained only for contextual mapping. Four clinically homogeneous responder subsets were quantitatively pooled; all favored BoNT-A, with pooled risk ratios ranging from 5.53 to 14.74 and I2=0% in each analysis. BoNT-A consistently improved treatment or appearance satisfaction, patient-rated facial-line severity or bother, perceived age/youthfulness, and selected appearance-related psychosocial outcomes. Overall RoB 2 was Low in 39/65 RCTs (60.0%) and Some concerns in 26/65 (40.0%). GRADE certainty was moderate for satisfaction/global aesthetic improvement, patient-reported facial-line severity/appearance appraisal, and perceived age/naturalness; low for appearance-related psychological well-being; and very low for general quality-of-life/self-esteem constructs. Placebo-controlled evidence supports a consistent patient-perceived aesthetic benefit of BoNT-A, while broader psychological and quality-of-life claims remain less certain.",
+      "doi": "10.1093/asj/sjag236",
+      "authors": [
+        "Fernandois Barrera VAJ",
+        "Maldonado Rodriguez KA",
+        "Chaple-Gil A",
+        "Basualdo Allende J",
+        "Fernández Godoy EM"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42896156/",
+      "added_at": "2026-10-20T00:50:09Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-20T00:50:12Z",
+      "summary_zh": {
+        "headline": "肉毒桿菌毒素A對比安慰劑確實改善患者自覺美學滿意度，但心理健康效益證據較弱。",
+        "points": [
+          "納入65項隨機對照試驗、18,581名參與者，肉毒桿菌毒素A組相對風險比5.53–14.74倍優於安慰劑。",
+          "患者自覺滿意度、臉部皺紋嚴重度、年輕感知度等美學結果一致改善，GRADE證據等級為中等。",
+          "心理健康與生活品質相關結果證據等級低至極低，廣泛心理社會效益主張缺乏充分支持。",
+          "60%試驗偏差風險低，40%有疑慮，整體方法學品質良好。"
+        ],
+        "relevance": 4,
+        "reason": "肉毒桿菌毒素是年輕化非手術治療核心，系統性回顧提供患者報告結果的高階證據，臨床決策參考價值高。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-20T00:51:19Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42889861",
       "title": "Virgo-inspired Periorbital Lifting Injection Technique: A Structured Multinodal, Layered Framework for Periorbital Rejuvenation.",
