@@ -1,6 +1,322 @@
 {
-  "generated_at": "2026-10-20T00:51:19Z",
+  "generated_at": "2026-10-21T00:16:11Z",
   "articles": [
+    {
+      "pmid": "42897251",
+      "title": "\"Dou-gong\" Technique: A Novel Biomechanical Approach to Injection Rhinoplasty Based on Nasal Ligament Anatomy.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-19",
+      "abstract": "BACKGROUND: Traditional injection rhinoplasty often prioritizes superficial volume augmentation, which can lead to unnatural nasal contours, transient aesthetic effects, and various complications.\n\nOBJECTIVE: This study introduces the \"Dou-gong\" technique, a novel biomechanical approach to injection rhinoplasty inspired by ancient Chinese architecture, and evaluates its clinical efficacy in enhancing nasal contour through nasal ligament support.\n\nMETHODS: A retrospective analysis was performed on 100 patients who underwent the \"Dou-gong\" injection procedure between January and December 2025. The technique targets five precise anatomical zones: the tip, supratip, dorsum, radix, and columella base. Hyaluronic acid was delivered above the periosteum or perichondrium using a 27-G sharp needle to reinforce the structural support of the nasal ligaments. Clinical outcomes were assessed using the Rhinoplasty Outcome Evaluation (ROE) questionnaire and visual analogue scale (VAS) for pain, swelling, and overall satisfaction. Objective outcomes were presented by photogrammetric analysis through 4 nasal landmark parameters.\n\nRESULTS: All 100 patients demonstrated improvements in nasal aesthetics. VAS scores indicated high levels of patient satisfaction, accompanied by minimal procedural pain and postoperative swelling. No severe complications, such as vascular occlusion or material displacement, were observed during the follow-up period.\n\nCONCLUSION: The \"Dou-gong\" technique provides a preliminary, feasible alternative in non-surgical rhinoplasty by shifting the clinical focus from mere volume accumulation to biomechanical ligament reinforcement. Future prospective, randomized controlled investigations are required to evaluate efficacy and benchmark performance against conventional injection modalities.\n\nLEVEL OF EVIDENCE IV: This journal requires that authors assign a level of evidence to each submission to which Evidence-Based Medicine rankings are applicable. This excludes Review Articles, Book Reviews, and manuscripts that concern Basic Science, Animal Studies, Cadaver Studies, and Experimental Studies. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06359-0",
+      "authors": [
+        "Sun C",
+        "Jin M",
+        "Zhen Y",
+        "Yuan J",
+        "An Y"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42897251/",
+      "added_at": "2026-10-21T00:15:34Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-21T00:15:37Z",
+      "summary_zh": {
+        "headline": "「斗拱」技術：基於鼻韌帶解剖的新型注射隆鼻生物力學方法，100例患者顯示良好效果。",
+        "points": [
+          "回顧性分析100名患者（2025年1月至12月），採用透明質酸在骨膜/軟骨膜上方注射於5個解剖區域，強化鼻韌帶支撐結構。",
+          "患者滿意度高、術中疼痛與術後腫脹最小，未觀察到血管閉塞或材料移位等嚴重併發症。",
+          "使用ROE問卷與VAS評分、攝影測量分析4個鼻部標誌參數評估臨床結果。",
+          "研究為回顧性設計（證據等級IV），作者承認需要前瞻性隨機對照試驗來驗證療效。"
+        ],
+        "relevance": 4,
+        "reason": "屬鼻整形非手術方式，提出新型注射技術與解剖學基礎，但證據等級低、缺長期追蹤數據。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-21T00:15:47Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42897248",
+      "title": "Quantifying Facial Rejuvenation after Deep Plane Facelift Using Convolutional Neural Network-Based Age Estimation: Correlation with Patient-Reported Outcomes on the FACE-Q Aesthetic Module.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-19",
+      "abstract": "INTRODUCTION: To quantify perceived age reduction following deep plane face and neck lift surgery using five publicly available CNN models and evaluate the correlation between AI-estimated rejuvenation and FACE-Q Aesthetic Module outcomes.\n\nMETHODS: A retrospective cross-sectional study of 72 female patients undergoing deep plane face and neck lift surgery between 2020 and 2024 was conducted. Standardized photographs were analyzed using five CNN platforms: FacePlusPlus, Amazon Rekognition, Inferdo Face, howOld AI, and Facelytics. The arithmetic midpoint was used for the range-reporting models. A corrected and standardized age reduction metric was computed for each model and averaged into a composite score. The FACE-Q Aesthetic Module was administered at the 12-month follow-up. Spearman's rank correlation analysis was performed.\n\nRESULTS: The composite standardized age reduction was 7.64 ± 3.44 years (15.67 ± 6.76%). Inter-model differences were not significant (Friedman test: χ2(4) = 9.23, p = 0.056). Patient-perceived age reduction correlated strongly with facial appearance (ρ = 0.61, p < 0.001), outcomes (ρ = 0.54), and psychological well-being (ρ = 0.44). AI-estimated rejuvenation showed weaker associations, with only the early life impact reaching significance (ρ = 0.25, p = 0.034).\n\nDISCUSSION: CNN-based age estimation provides a reproducible and observer-independent metric for quantifying facial rejuvenation. AI-estimated and patient-perceived rejuvenation represent complementary dimensions of surgical outcomes, and their integration enables a more rigorous multidimensional evaluation framework.\n\nLEVEL OF EVIDENCE II: This journal requires authors to assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions for Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06374-1",
+      "authors": [
+        "Karaali S",
+        "Alten A",
+        "Tatar BE"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42897248/",
+      "added_at": "2026-10-21T00:15:34Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-21T00:15:37Z",
+      "summary_zh": {
+        "headline": "Deep plane facelift 平均年輕化 7.64 歲，CNN 估計與患者滿意度呈中等相關。",
+        "points": [
+          "72 位女性患者，使用 5 種 CNN 模型分析術前後照片，composite 年輕化 7.64±3.44 歲（15.67±6.76%）",
+          "患者自覺年輕化與 FACE-Q 美觀面向強相關（ρ=0.61），但 AI 估計與 FACE-Q 相關性較弱（ρ=0.25）",
+          "CNN 提供客觀可重複的年輕化量化指標，但無法完全反映患者主觀滿意度，兩者應互補評估"
+        ],
+        "relevance": 5,
+        "reason": "直接評估 deep plane facelift 效果量化與患者滿意度關係，提供臨床決策與療效評估的新工具。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-21T00:15:50Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42897247",
+      "title": "Implant-Compensable Ptosis: A Retrospective Cohort Study Comparing Polyurethane Breast Augmentation Alone Versus Augmentation-mastopexy in Patients with Mild Ptosis.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-19",
+      "abstract": "BACKGROUND: Patients with mild breast ptosis who decline mastopexy pose a clinical challenge. Polyurethane-coated implants possess tissue-adherence properties that may compensate for mild ptosis, but no study has systematically evaluated outcomes in this specific subgroup using defined selection criteria.\n\nOBJECTIVES: To evaluate the clinical outcomes of breast augmentation with polyurethane-coated implants without mastopexy in patients with mild ptosis meeting Implant-Compensable Ptosis (ICP) classification criteria, compared to augmentation-mastopexy and augmentation in non-ptotic controls.\n\nMETHODS: Retrospective three-arm cohort study of 90 consecutive patients (180 breasts) who underwent breast augmentation with polyurethane-coated implants: Group A (ICP, mild ptosis without mastopexy, n = 30), Group B (control, no ptosis, n = 30), and Group C (augmentation-mastopexy, n = 30).\n\nPRIMARY OUTCOME: BREAST-Q Satisfaction with Breasts at 24 months.\n\nSECONDARY OUTCOMES: compensation failure rate (composite of secondary mastopexy, NAC descent > 2 cm, or BREAST-Q decline ≥ 15 points), operative time, capsular contracture, complications, and patient satisfaction. Non-inferiority was assessed against a 5-point margin.\n\nRESULTS: At 24 months, mean BREAST-Q Satisfaction with Breasts was 75.6 ± 9.5 (Group A), 79.3 ± 11.2 (Group B), and 77.4 ± 9.8 (Group C). The difference between Groups A and C was - 1.8 points (95% CI: - 7.1 to + 3.5; p = 0.494), consistent with non-inferior performance, although formal non-inferiority was not established due to limited statistical power (65% vs. planned 80%). Compensation success rate was 90.3% at 24 months (3 failures: 2 secondary mastopexy, 1 anatomical). Mean operative time was 36 min shorter in Group A versus C (66 vs. 102 min; p < 0.001). No capsular contracture Baker ≥ III occurred in any group. Mean NAC descent at 24 months was 0.82 ± 0.55 cm in Group A, significantly greater than Groups B and C (p < 0.001) but below the 2.0 cm failure threshold.\n\nCONCLUSIONS: In patients with mild ptosis meeting ICP criteria, breast augmentation with polyurethane implants alone achieves BREAST-Q satisfaction scores suggestive of non-inferiority to augmentation-mastopexy at 24 months, with a 90% compensation success rate and 35% shorter operative time. Implant volume (≤ 350 cc) emerges as a potential additional criterion. The ICP classification provides the first structured framework for patient selection, counseling, and outcome monitoring in this common clinical scenario. Prospective validation is warranted.\n\nLEVEL OF EVIDENCE III: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06344-7",
+      "authors": [
+        "Soto SB",
+        "Mejía NAR"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42897247/",
+      "added_at": "2026-10-21T00:15:34Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-21T00:15:37Z",
+      "summary_zh": {
+        "headline": "乳房下垂誤抓為眼周ptosis，內容與眼周整形無關。",
+        "points": [
+          "本文研究乳房植入物與乳房下垂矯正，與眼周整形完全無關",
+          "自動篩選系統誤將breast ptosis與眼瞼下垂(blepharoptosis)混淆",
+          "建議排除此篇，屬系統誤抓"
+        ],
+        "relevance": 1,
+        "reason": "乳房手術，非眼周整形。關鍵字ptosis被誤抓，實際內容與五大主題無關。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-21T00:15:53Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42897245",
+      "title": "Does Suction Strategy Using a Negative-Pressure Wound Therapy System at the Extended Latissimus Dorsi Flap Donor Site After Breast Reconstruction Contribute to a Reduction in Seroma Formation?",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-19",
+      "abstract": "BACKGROUND: This study aimed to evaluate the impact of different drainage systems on seroma formation at the donor site following breast reconstruction with extended latissimus dorsi (ELD) flaps.\n\nMETHODS: A retrospective chart review included all patients who underwent ELD flap breast reconstruction between January 2014 and December 2025. Patients were divided into two groups: high-negative-pressure drainage using a negative-pressure wound therapy (NPWT) device and conventional drainage. One-to-one propensity score matching based on age and body mass index minimized selection bias.\n\nRESULTS: The initial cohort included 64 patients (NPWT: n = 26; conventional: n = 38), and propensity score matching yielded 22 pairs. In the propensity-matched cohort, the median daily drainage volume on postoperative day 11 (immediately before drain removal) was significantly lower in the NPWT group than in the conventional group (22.0 [IQR: 14.0-31.5] mL/day vs. 45.0 [IQR: 34.3-56.3] mL/day; p = <0.001). However, no significant between-group differences were observed in the rate of postoperative seroma formation (72.7% vs. 86.4%; p = 0.457), median total aspirated volume after drain removal (46.5 [IQR: 2.3-124.3] mL vs. 79.5 [IQR: 44.0-145.3] mL; p = 0.294), or median duration of seroma persistence (2.0 [IQR: 0.3-3.8] weeks vs. 4.0 [IQR: 3.0-5.0] weeks; p = 0.083).\n\nCONCLUSIONS: Drainage using the NPWT device did not significantly prevent donor-site seroma formation compared with conventional drainage.\n\nLEVEL OF EVIDENCE III: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06383-0",
+      "authors": [
+        "Shimbo K"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "wound"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42897245/",
+      "added_at": "2026-10-21T00:15:34Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-21T00:15:38Z",
+      "summary_zh": {
+        "headline": "乳房重建 ELD 皮瓣供區使用 NPWT 引流未能顯著減少血清腫形成",
+        "points": [
+          "回顧性研究，64 名患者（NPWT 26 人、傳統引流 38 人），傾向配對後 22 對配對",
+          "NPWT 組術後第 11 天引流量顯著較低（22.0 vs 45.0 mL/day，p<0.001），但血清腫發生率無差異（72.7% vs 86.4%，p=0.457）",
+          "引流移除後抽吸總量、血清腫持續時間均無顯著差異，NPWT 未能預防供區血清腫"
+        ],
+        "relevance": 1,
+        "reason": "乳房重建手術，非整形外科讀者關注的五大主題範圍內。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-21T00:15:56Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42897244",
+      "title": "When Does Grade I Ptosis Require Mastopexy? Implant-Only Augmentation in 198 Patients: A Clinical Framework for Patient Selection.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-19",
+      "abstract": "BACKGROUND: Management of Grade I breast ptosis remains controversial because many women desire breast augmentation while wishing to avoid the additional scars associated with mastopexy. Although anatomical measurements are important, less guidance exists regarding how surgeons integrate these findings with tissue characteristics and patient expectations when determining whether augmentation alone is appropriate.\n\nOBJECTIVES: The aim was to evaluate the clinical outcomes of implant-only dual-plane II breast augmentation in carefully selected women with Grade I ptosis and to describe a clinical framework for patient selection.\n\nMETHODS: A retrospective review was performed of 3,265 consecutive primary breast augmentations performed by a single surgeon between 2009 and 2022. After applying predefined inclusion and exclusion criteria, 198 consecutive women (6.1%) with Grade I ptosis underwent augmentation alone. Patient selection incorporated anatomical measurements, clinically estimated native glandular volume, tissue characteristics, and shared decision-making. Clinical outcomes and secondary procedures were evaluated.\n\nRESULTS: The study cohort included 194 saline and 4 silicone gel breast augmentations. Two patients (1.0%) underwent revision for superior implant malposition. No postoperative hematomas, infections, or capsular contractures occurred. Only one patient (0.5%) elected delayed mastopexy during subsequent clinical follow-up. At initial consultation, 48 patients (24.2%) believed augmentation mastopexy would be required; following comprehensive assessment, patient education, expectation alignment, and shared decision-making, these patients elected augmentation alone.\n\nCONCLUSIONS: For carefully selected women with Grade I ptosis, augmentation alone represents a reasonable alternative to routine augmentation mastopexy. Appropriate patient selection extends beyond anatomical measurements alone and is enhanced by integrating tissue characteristics, clinically estimated glandular volume, expectation alignment, and shared decision-making into the preoperative consultation.\n\nLEVEL OF EVIDENCE IV: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06318-9",
+      "authors": [
+        "Eisenberg TS",
+        "Pilla J",
+        "Chapa G"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42897244/",
+      "added_at": "2026-10-21T00:15:34Z",
+      "oa_url": "https://doi.org/10.1007/s00266-026-06318-9",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-21T00:15:38Z",
+      "summary_zh": {
+        "headline": "乳房下垂分級I患者單純隆乳可行，198例無需同時進行提乳手術。",
+        "points": [
+          "回顧性研究3,265例隆乳手術中198例（6.1%）Grade I下垂患者單純隆乳，術後僅1例（0.5%）延後接受提乳。",
+          "患者選擇整合解剖測量、腺體體積估計、組織特性與共同決策；初診時24.2%患者認為需要提乳，經評估後改選單純隆乳。",
+          "併發症極低：2例（1.0%）上位植入物移位，無血腫、感染或莢膜攣縮。",
+          "證據等級IV，單一外科醫師執行，樣本同質性高但外推性受限。"
+        ],
+        "relevance": 1,
+        "reason": "乳房手術非五大主題範圍，誤抓為眼周ptosis。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-21T00:16:00Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42897243",
+      "title": "Dual-Surface Epicanthoplasty for Conservative-to-Moderate Medial Canthal Opening in East Asian Eyelids.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-19",
+      "abstract": "BACKGROUND: Epicanthoplasty aims to improve medial canthal exposure while minimizing visible scarring and postoperative tension. This study describes Dual-Surface Epicanthoplasty, a dual-surface technique for conservative-to-moderate medial canthal opening in East Asian eyelids, guided by a three-dimensional fold-unit concept that coordinates external cutaneous redraping with internal fold turning-point reconstruction.\n\nMETHODS: This retrospective study included 80 patients (140 eyes) with clinically evident epicanthal folds and limited medial canthal exposure treated between February 2023 and April 2025. Outcomes were analyzed at the patient level using averaged bilateral values when applicable. Patients were categorized by surgical laterality and procedure type, and exploratory subgroup analyses compared isolated epicanthoplasty with epicanthoplasty combined with upper blepharoplasty. Morphologic outcomes included visible lacrimal lake width (VLLW), normalized VLLW, and exploratory intraoperative medial canthal fold depth (MCFD). Secondary outcomes included scar visibility, patient satisfaction, and complications.\n\nRESULTS: Mean follow-up was 11.9 ± 2.8 months. VLLW increased from 1.47 ± 0.71 mm to 3.38 ± 0.34 mm, and normalized VLLW increased from 0.128 ± 0.060 to 0.299 ± 0.027 (both p < 0.001). MCFD decreased from 3.43 ± 0.26 mm before deep release to 2.68 ± 0.25 mm after D-A key suturing (p < 0.001). Median scar visibility score was 0 (IQR, 0-0), and median satisfaction score was 5 (IQR, 4-5). Hypertrophic scarring occurred unilaterally in 3 patients (3.8%), all within the asymmetry-revision subgroup. Interocular medial canthal asymmetry requiring unilateral revision occurred in 4 patients (5.0%).\n\nCONCLUSIONS: Dual-Surface Epicanthoplasty may be feasible for selected East Asian patients seeking conservative-to-moderate medial canthal opening and was associated with increased lacrimal lake exposure, reduced exploratory intraoperative fold depth, low scar visibility, and high satisfaction. Controlled studies with reliability testing and longer follow-up are needed.\n\nLEVEL OF EVIDENCE IV: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06358-1",
+      "authors": [
+        "Lv Y",
+        "Shao J",
+        "Pan E",
+        "Fang T"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42897243/",
+      "added_at": "2026-10-21T00:15:34Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-21T00:15:38Z",
+      "summary_zh": {
+        "headline": "雙層表面內眥成形術可安全擴大東亞人眼裂，疤痕最小化且滿意度高。",
+        "points": [
+          "回顧性研究80名患者140眼，平均追蹤11.9個月；可見淚湖寬度從1.47mm增至3.38mm（p<0.001）。",
+          "採用三維褶皺單位概念，結合外層皮膚重塑與內層褶皺轉折點重建，中位疤痕可見度評分0分。",
+          "併發症低：3.8%單側肥厚性疤痕、5.0%需單側修正；患者滿意度中位數5分（滿分5分）。",
+          "作者認可需更長期追蹤與對照研究驗證可靠性，目前證據等級IV。"
+        ],
+        "relevance": 5,
+        "reason": "直接針對東亞人眼周整形的內眥成形術技術創新，涵蓋手術設計、結果量化與併發症分析。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-21T00:16:04Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42897242",
+      "title": "Comment on \"Fat Grafting via the Supraorbital Approach for Upper-Eyelid Depression Correction: A Retrospective Study\".",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-19",
+      "abstract": "",
+      "doi": "10.1007/s00266-026-06398-7",
+      "authors": [
+        "Amir M",
+        "Khan MF"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42897242/",
+      "added_at": "2026-10-21T00:15:34Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-21T00:15:38Z",
+      "summary_zh": {
+        "headline": "上眼瞼凹陷矯正中經眶上途徑脂肪移植的評論文章。",
+        "points": [
+          "此為評論文章（Comment），非原始研究，對前述脂肪移植技術提出討論與意見。",
+          "無摘要可得，依標題判斷內容涉及眼周脂肪移植技術與上眼瞼凹陷矯正。"
+        ],
+        "relevance": 2,
+        "reason": "評論文章，非原始研究數據；眼周相關但缺乏具體臨床證據支持決策。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-21T00:16:07Z",
+        "basis": "title"
+      }
+    },
+    {
+      "pmid": "42897059",
+      "title": "Comparison of the aesthetic impact on the mandibular angle of two types of osteotomy.",
+      "journal": "IJOMS",
+      "journal_full": "International journal of oral and maxillofacial surgery",
+      "pub_date": "2026-10-19",
+      "abstract": "The growing aesthetic demand for projection and definition of the mandibular angle has challenged oral and maxillofacial surgeons, requiring new approaches to osteotomies during orthognathic surgery. This study was undertaken to compare the conventional sagittal split osteotomy (SSO) with anterior oblique osteotomy (AOO) regarding their effects on the mandibular angle in both bone and soft tissue outcomes. A longitudinal observational cohort study was conducted with patients who underwent orthognathic surgery, including pre- and postoperative computed tomography and photographic examinations with a minimum follow-up interval of 6 months. Measurements were performed using Dolphin Imaging software. No significant differences were observed in the angle and vertical height of the mandible between the techniques. However, AOO was more effective in enhancing the lateral projection of the mandibular angle, with a significant increase in gonial distance (P = 0.004). In the soft tissues, AOO also demonstrated a significant effect on horizontal projection in coronal slices (P < 0.001), whereas three-dimensional reconstructions revealed no significant changes. These findings highlight that anterior oblique osteotomy improves mandibular angle projection when compared to conventional sagittal split osteotomy.",
+      "doi": "10.1016/j.ijom.2026.09.020",
+      "authors": [
+        "Silva JAA",
+        "do Lago CAP",
+        "Nunes GJS",
+        "Faro TF",
+        "da Costa Araújo FA",
+        "Laureano Filho JR"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42897059/",
+      "added_at": "2026-10-21T00:15:34Z",
+      "oa_url": "https://doi.org/10.1016/j.ijom.2026.09.020",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-21T00:15:39Z",
+      "summary_zh": {
+        "headline": "前斜向截骨術比傳統矢狀劈開截骨術更能增強下顎角的側向投影。",
+        "points": [
+          "縱向觀察性隊列研究，比較SSO與AOO對下顎角的影響，術後追蹤≥6個月，使用Dolphin Imaging軟體測量。",
+          "AOO在gonial distance上顯著增加（P=0.004），更有效增強下顎角的側向投影；軟組織冠狀面投影也有顯著效果（P<0.001）。",
+          "兩種技術在下顎角度與垂直高度無顯著差異；3D重建未見軟組織顯著變化，提示投影改善主要為骨性改變。"
+        ],
+        "relevance": 4,
+        "reason": "屬正顎手術下顎角美學改善的直接臨床應用，但為特定截骨技術比較，非普遍性技巧。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-21T00:16:11Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42896156",
       "title": "Patient-Reported Aesthetic Outcomes of Botulinum Toxin Type A: A Systematic Review and Meta-Analysis of Placebo-Controlled Randomized Trials.",
