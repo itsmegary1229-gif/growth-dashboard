@@ -1,6 +1,259 @@
 {
-  "generated_at": "2026-10-21T00:16:11Z",
+  "generated_at": "2026-10-23T00:17:27Z",
   "articles": [
+    {
+      "pmid": "42904892",
+      "title": "Upper Eyelid Anatomy Revisited based on Detailed Operating Microscope Observations.",
+      "journal": "PRS",
+      "journal_full": "Plastic and reconstructive surgery",
+      "pub_date": "2026-10-21",
+      "abstract": "This anatomical study of the upper eyelid is based on detailed analysis of 74 consecutive primary upper blepharoplasty procedures (148 eyelids) performed under the operating microscope. There were 54 Asian and 20 Caucasian patients. Visualization under the miscroscope provided a unique operative perspective on the structural anatomy and relationships of the upper eyelid. The anatomy of the orbital septum and its relationships to the retro-orbicularis oculi fat (ROOF), levator aponeurosis, and retroseptal fat pads are presented in detail. The lower-positioned transverse ligament, its relationship to the anterior fascial sheath of the levator aponeurosis and the bilaminar nature of the levator aponeurosis, consisting of anterior and posterior layers, were clearly demonstrated. The lower-positioned transverse ligament was identified in 94% of eyelids. The mean length of the levator aponeurosis was 17.6 mm (range, 14-21 mm), and the mean length of its fused proximal portion was 5.4 mm (range, 4.0-8.0 mm). The clinical relevance of these anatomical findings in upper blepharoplasty is discussed. An anterior approach to the Müller muscle and its dissection is also presented. Finally, danger zones for bleeding are detailed with videographic demonstration. This paper provides a clearer surgical roadmap, offering practical anatomical guidance for various cosmetic and reconstructive upper eyelid procedures.",
+      "doi": "10.1097/PRS.0000000000013552",
+      "authors": [
+        "Wong CH",
+        "Hsieh MKH",
+        "Goy TWT",
+        "Minelli L",
+        "Mendelson B"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42904892/",
+      "added_at": "2026-10-23T00:15:56Z",
+      "oa_url": "https://doi.org/10.1097/prs.0000000000013552",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-23T00:15:59Z",
+      "summary_zh": {
+        "headline": "顯微鏡下詳細觀察揭示上眼瞼解剖結構，提供眼瞼手術的精確手術路徑圖。",
+        "points": [
+          "74例連續上眼瞼整形手術（148眼）的顯微鏡觀察研究，包含54名亞洲患者與20名高加索患者。",
+          "明確展示眼輪匝肌後脂肪（ROOF）、眼輪匝肌隔膜、提眼瞼肌腱膜與其雙層結構（前後層）的解剖關係；下位橫向韌帶在94%眼瞼中被識別。",
+          "提眼瞼肌腱膜平均長度17.6 mm（14-21 mm），融合近端平均長度5.4 mm（4.0-8.0 mm）；詳細標示出血危險區域。",
+          "提供上眼瞼美容與重建手術的實用解剖指引與手術路徑圖，包括Müller肌肉的前方入路。"
+        ],
+        "relevance": 5,
+        "reason": "直接針對上眼瞼整形手術的精細解剖與手術技巧，提供顯微鏡下的詳細解剖指引與出血風險管理。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-23T00:17:07Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42903425",
+      "title": "Central Pedicle Breast Reshaping Combined With Poly-4-hydroxybutyrate Scaffold Reinforcement: A Technical Description and Preliminary Single-surgeon Experience.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-10-20",
+      "abstract": "BACKGROUND: Breast shape remains a persistent challenge following mastopexy, breast reduction, massive weight loss breast reshaping, revision surgery, and selected reconstructive procedures. The central pedicle preserves vascularized parenchyma, whereas poly-4-hydroxybutyrate (P4HB) scaffold reinforcement has been proposed as a soft-tissue support during postoperative remodeling. This study describes a single-surgeon experience combining these procedures.\n\nMETHODS: A retrospective review of an operative database was performed. Thirty patients undergoing breast reshaping using a central pedicle technique combined with P4HB scaffold reinforcement between June 2025 and April 2026 were included. Demographic variables, indication for surgery, mesh configuration, resection weights, and documented complications were analyzed.\n\nRESULTS: The mean age was 42 years, and the mean body mass index was 24.8 kg/m2. This cohort included massive weight loss breast reshaping (18 patients, 60.0%), aesthetic mastopexy/reduction (7 patients, 23.3%), explant/revision procedures (2 patients, 6.7%), late breast reconstruction (2 patients, 6.7%), and immediate breast reconstruction (1 patient, 3.3%). No patients were smokers, had diabetes, had a history of breast irradiation, or had breast implants at the time of surgery. Follow-up ranged from 3 to 12 months. The most common scaffold configuration was the origami construct (70.0%). No intraoperative or postoperative complications were recorded. One patient experienced transient inferolateral mesh palpability that resolved spontaneously after 4 weeks.\n\nCONCLUSIONS: In this preliminary single-surgeon experience, central pedicle breast reshaping combined with P4HB scaffold reinforcement was feasible. No major complications were observed. Objective measurements of recurrent ptosis, lower-pole stretch, projection maintenance, and patient-reported outcomes were not collected, so no conclusions regarding durability or superiority can be drawn. Prospective studies with standardized outcome assessment are warranted.",
+      "doi": "10.1097/GOX.0000000000008201",
+      "authors": [
+        "Bracco Graziosi G",
+        "Nery ALV",
+        "Ribeiro BB",
+        "Moreira LR",
+        "Tavora FAA"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "10",
+      "pages": "e8201",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42903425/",
+      "added_at": "2026-10-23T00:15:56Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008201",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-23T00:16:00Z",
+      "summary_zh": {
+        "headline": "乳房中央蒂結合 P4HB 支架補強技術初步經驗，短期無併發症。",
+        "points": [
+          "單一外科醫師回顧性研究，30 名患者，追蹤 3–12 個月，無術中或術後併發症。",
+          "患者群體以大幅減重後乳房重塑為主（60%），平均年齡 42 歲、BMI 24.8 kg/m²，無吸菸、糖尿病或放療史。",
+          "最常用支架配置為摺紙式構型（70%），1 名患者出現暫時性下外側網膜觸感，4 週後自行消退。",
+          "作者明確指出未收集客觀下垂復發、下極延展、投影維持度等測量，無法評估耐久性或優越性。"
+        ],
+        "relevance": 1,
+        "reason": "乳房手術，與眼周主題無關，誤抓。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-23T00:17:11Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42903286",
+      "title": "Outcomes and Complications of Monobloc Versus Le Fort III Procedures for Treating Craniosynostosis: A Literature Review.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-10-20",
+      "abstract": "BACKGROUND: Craniosynostosis is a congenital disorder resulting in the early fusion of several bones in the skull, causing a deformity of the head and facial structures. The 2 most commonly performed surgical procedures to treat craniosynostosis include the monobloc and Le Fort III procedures. This literature review compares the functional and anatomical outcomes and complications between the monobloc and Le Fort III procedures for treating craniosynostosis.\n\nMETHODS: A PubMed search was conducted to identify studies assessing the outcomes following monobloc and Le Fort procedures. Data on anatomical changes, ophthalmic, airway, and neurological sequelae, as well as miscellaneous infectious or aesthetic complications were extracted from each study.\n\nRESULTS: A total of 63 articles were included for analysis. The average length of midface advancement across distraction and nondistraction procedures was significantly higher in the monobloc cases (14.28 mm; 98.8% of patients with distraction) compared with Le Fort III cases (12.26 mm; 63% of patients with distraction) (P = 0.002). Both procedures exhibited similar rates of obstructive sleep apnea improvement. Cerebrospinal fluid leakage (69 of 373 monobloc patients; 15 of 448 Le Fort III patients) (P ≤ 0.001), seizures (8 of 373 monobloc surgery patients), and meningitis (9 of 373 and 2 of 448, monobloc and Le Fort III patients respectively) (P = 0.01) were observed.\n\nCONCLUSIONS: In summary, this review demonstrates that both the monobloc and Le Fort III procedures are effective in producing maxillofacial advancement and correcting craniosynostosis, with the monobloc procedure demonstrating significantly greater average advancement. Future research should investigate the comparison of aesthetic and obstructive sleep apnea outcomes further.",
+      "doi": "10.1097/GOX.0000000000008193",
+      "authors": [
+        "Chamma B",
+        "Nagappala S",
+        "Arnold M",
+        "Trumza S",
+        "Samir Tadrousse K",
+        "Kapur S",
+        "Houdi M",
+        "Simman R"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "10",
+      "pages": "e8193",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42903286/",
+      "added_at": "2026-10-23T00:15:56Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008193",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-23T00:16:00Z",
+      "summary_zh": {
+        "headline": "Monobloc 手術相比 Le Fort III 提供更大的中臉前移，但腦脊液滲漏風險更高。",
+        "points": [
+          "63 篇文獻回顧：Monobloc 平均前移 14.28 mm（98.8% 使用牽引），Le Fort III 為 12.26 mm（63% 使用牽引），差異顯著（P=0.002）。",
+          "Monobloc 腦脊液滲漏率 18.5%（69/373），Le Fort III 為 3.4%（15/448），差異顯著（P≤0.001）；Monobloc 癲癇 2.1%、腦膜炎 2.4%。",
+          "兩術式改善阻塞性睡眠呼吸暫停效果相似，但 Monobloc 併發症風險較高，需權衡前移幅度與安全性。"
+        ],
+        "relevance": 3,
+        "reason": "涉及正顎手術（Le Fort III），但主要針對顱骨早閉症，非美容或功能性正顎的常見適應症。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-23T00:17:15Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42903507",
+      "title": "Robot-assisted Free Omental Flap for Scalp Reconstruction.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-10-19",
+      "abstract": "Scalp reconstruction can be challenging when there is significant tissue loss. We report a staged reconstruction using an omental free flap with a novel recipient vessel and split-thickness skin graft for a full-thickness scalp defect with exposed calvaria. A 64-year-old woman presented to a level 1 trauma center with severe scalp and right face avulsion injuries after being mauled by a dog. At the initial debridement, her scalp was non-salvageable and was subsequently treated with staged reconstruction using an omental free flap with the middle temporal artery as the recipient conduit and a split-thickness skin graft. She retained stable scalp coverage at 26 months postoperatively. The omental flap offers a promising option to recreate a protective soft-tissue covering of the calvaria with limited patient morbidity compared with conventional free-flap options. Although laparoscopic harvest of this flap has been described, limited literature exists with respect to robotic omental flap harvest and its associated outcomes. Additionally, in the setting of severe trauma, the usual recipient vessels for microvascular anastomosis can be damaged due to the zone of injury. The middle temporal artery provides an alternative when the standard conduit (ie, the superficial temporal artery) is unavailable. We report a unique case of traumatic scalp avulsion following a dog attack requiring staged reconstruction with a robot-assisted omental free flap and split-thickness skin graft, demonstrating the feasibility of robotic omental flap harvest and the use of an alternative recipient vessel for microvascular anastomosis.",
+      "doi": "10.1097/GOX.0000000000008175",
+      "authors": [
+        "Bettiol C",
+        "Prince JM",
+        "Maqusi S",
+        "Barreiro G"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "10",
+      "pages": "e8175",
+      "topics": [
+        "wound"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42903507/",
+      "added_at": "2026-10-23T00:15:56Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008175",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-23T00:16:00Z",
+      "summary_zh": {
+        "headline": "機器人輔助大網膜遊離皮瓣用於頭皮重建，提供創傷後頭皮缺損的新選項。",
+        "points": [
+          "64歲女性犬咬傷導致全層頭皮缺損伴露出顱骨，採用機器人輔助大網膜遊離皮瓣搭配分層植皮進行分期重建。",
+          "以中顳動脈作為受體血管進行顯微血管吻合，規避標準淺顳動脈因創傷區域損傷而不可用的問題。",
+          "術後26個月頭皮覆蓋穩定，大網膜皮瓣相比傳統遊離皮瓣提供更低的患者發病率。",
+          "機器人輔助大網膜皮瓣採收的文獻有限，本案例為可行性報告，缺乏對照組或長期系列數據。"
+        ],
+        "relevance": 3,
+        "reason": "頭皮重建屬於整形外科範疇，但非五大主題直接相關；機器人輔助技術與替代血管選擇具參考價值，但為個案報告。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-23T00:17:19Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42903501",
+      "title": "Skin Graft With Amniotic Membrane: Case Report of the Sandwich Technique in a Burn Hand.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-10-19",
+      "abstract": "Deep burns of the hand represent a major reconstructive challenge due to the critical functional role of the hand and the high risk of long-term disabling sequelae. The \"sandwich\" technique, combining an autologous skin graft with an amniotic membrane, has been described as a biological dressing with potential anti-inflammatory and wound-healing properties. A 32-year-old woman presented with a full-thickness burn involving the right palm and wrist after contact with an industrial thermal press. Following eschar excision, a full-thickness skin graft was harvested from the inner region of the ipsilateral arm; the donor site was closed primarily by advancing the wound edges with absorbable monofilament intradermal sutures and covered with Micropore tape to reduce tension. Because of incomplete well-vascularized perfusion of the recipient bed and the risk of functional impairment, an amniotic membrane was placed as an additional protective layer over the graft. By the seventh postoperative day, the graft showed satisfactory take, with no evidence of infection. At 12 months of follow-up, complete integration was achieved, with preserved joint mobility and a favorable aesthetic outcome. This case illustrates the technical feasibility of using preserved amniotic membrane as an overlay biological dressing over a full-thickness skin graft in a functionally critical palmar burn. Although satisfactory healing was observed, no causal conclusion can be drawn regarding improved graft integration, scar modulation, or functional preservation based on a single case. Further comparative studies are needed to determine whether the benefits reported in other grafting contexts also apply to full-thickness skin grafting.",
+      "doi": "10.1097/GOX.0000000000008218",
+      "authors": [
+        "Santamaria Cordoba N",
+        "Parra Gomez A",
+        "Murcia Espino S",
+        "Uribe Rodríguez MA",
+        "Mendez Gaitan MP"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "10",
+      "pages": "e8218",
+      "topics": [
+        "wound"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42903501/",
+      "added_at": "2026-10-23T00:15:56Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008218",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-23T00:16:00Z",
+      "summary_zh": {
+        "headline": "羊膜覆蓋全厚植皮治療手掌深度燒傷，12個月達完全整合與功能保存。",
+        "points": [
+          "32歲女性工業熱壓傷致右掌全厚燒傷，清創後進行全厚自體植皮加羊膜夾層技術",
+          "術後第7天植皮存活良好無感染，12個月追蹤達完全整合、關節活動度保留、美觀結果佳",
+          "羊膜作為生物敷料具抗發炎潛力，但本案例無法證明其對植皮整合、疤痕調節的因果效益",
+          "作者承認單一病例限制，呼籲需進行比較研究驗證羊膜在全厚植皮的實際優勢"
+        ],
+        "relevance": 3,
+        "reason": "屬慢性傷口重建範疇，但僅單一病例報告，缺乏對照組與量化證據支持羊膜的臨床效益。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-23T00:17:23Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42903433",
+      "title": "Surgical Correction of the Crooked Nose: A Procedure Proposal.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-10-19",
+      "abstract": "A crooked nose, resulting from the collapse of cartilaginous and/or bony support, often presents with depression of the nasal tip and middle third. This condition is frequently associated with septal deformities that impair breathing and cause damage to the upper lateral cartilages and bony framework. Traditional surgical techniques typically involve septal correction and the use of cartilage grafts to restore structure and projection, though such methods carry a risk of fibrosis and recurrent deformity. We present an alternative surgical approach that reconstructs the nasal pyramid without the use of tissue grafts, which begins with transcartilaginous and transfixion incisions, followed by a subperichondrial dissection extending beneath the cartilaginous vault. The upper lateral cartilages are separated from the septum, and fibrotic tissue on the concave surfaces is removed. A standard septoplasty using the Killian method straightens the septum. Scar tissue from contractures is released through complete subperichondrial dissection on the mucosal side and partial dissection on the cutaneous side. To support healing and preserve dorsal projection, radiographic film strips or sterile silicone bands are applied in a sandwich-like configuration and removed after 5 days; the external splint is removed after 10 days. This technique avoids grafts by relying on intrinsic nasal structural elements. In 70% of cases, satisfactory anatomical correction is achieved without further intervention, whereas 30% require minor refinements. Importantly, no postoperative respiratory impairment has been observed, underscoring the technique's effectiveness in both aesthetic and functional nasal reconstruction.",
+      "doi": "10.1097/GOX.0000000000008205",
+      "authors": [
+        "Cannistrà C",
+        "Moccia F",
+        "Guerrieri L",
+        "Molle M",
+        "Tripodi D",
+        "Faenza M"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "10",
+      "pages": "e8205",
+      "topics": [
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42903433/",
+      "added_at": "2026-10-23T00:15:56Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008205",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-23T00:16:00Z",
+      "summary_zh": {
+        "headline": "不用移植物的歪鼻矯正術：利用鼻部內在結構重建，70%患者無需二次手術。",
+        "points": [
+          "採用經軟骨及經固定切口，進行軟骨膜下剝離，分離上外側軟骨並清除瘢痕組織，避免使用軟骨移植物。",
+          "使用放射線膠片或矽膠帶以夾層方式支撐，5天後移除內部支撐、10天後移除外部夾板。",
+          "70%患者達到滿意的解剖學矯正且無需進一步手術，30%需輕微調整；術後無呼吸功能障礙。"
+        ],
+        "relevance": 4,
+        "reason": "屬於鼻整形主題，提供功能性與美容鼻整形的替代技術，臨床實用性中等。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-23T00:17:27Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42897251",
       "title": "\"Dou-gong\" Technique: A Novel Biomechanical Approach to Injection Rhinoplasty Based on Nasal Ligament Anatomy.",
