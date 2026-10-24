@@ -1,6 +1,131 @@
 {
-  "generated_at": "2026-10-24T00:10:15Z",
+  "generated_at": "2026-10-24T23:52:56Z",
   "articles": [
+    {
+      "pmid": "42918890",
+      "title": "Active Nerve Identification in Endoscopic Forehead Lift: A Neuroprotective Technique for Enhanced Sensory Recovery.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-22",
+      "abstract": "BACKGROUND: Endoscopic forehead lifting is a widely used minimally invasive procedure for upper facial rejuvenation. Postoperative forehead numbness caused by nerve injury remains a common complication, and conventional passive nerve protection is insufficient.\n\nMETHODS: A retrospective 1:1 matched case-control study was conducted with 28 patients (14 pairs). The study group received proactive endoscopic identification and protection of the supraorbital and supratrochlear nerves, while the control group underwent conventional surgery. Main outcomes included numbness VAS score, numbness area, FACE-Q satisfaction, and operation time.\n\nRESULTS: The study group presented significantly lower VAS scores and smaller numbness areas at 1 week, 1 month, 3 months, and 6 months postoperatively (P < 0.05), with faster and more complete sensory recovery. FACE-Q scores for forehead satisfaction, wrinkle improvement, and overall surgical outcome were all significantly higher (P < 0.05). Operation time was comparable between the two groups (P > 0.05).\n\nCONCLUSION: Proactive neuroprotective technique significantly reduces postoperative forehead numbness without compromising operation efficiency or aesthetic results, thus improving patient satisfaction.\n\nLEVEL OF EVIDENCE IV: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06368-z",
+      "authors": [
+        "Wang G",
+        "Peng S",
+        "Sun Y",
+        "Jia S",
+        "Xie H"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42918890/",
+      "added_at": "2026-10-24T23:52:40Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-24T23:52:43Z",
+      "summary_zh": {
+        "headline": "內視鏡額部拉提主動識別神經可減少術後感覺異常，改善患者滿意度。",
+        "points": [
+          "28名患者配對對照研究，主動識別保護眶上神經與眶滑車上神經組vs.傳統手術組",
+          "主動保護組術後1週至6個月感覺異常VAS評分與麻木面積均顯著降低(P<0.05)，感覺恢復更快更完全",
+          "FACE-Q滿意度評分(額部滿意度、皺紋改善、整體手術結果)均顯著提升(P<0.05)，手術時間無差異"
+        ],
+        "relevance": 4,
+        "reason": "屬年輕化主題中額部拉提的神經保護技巧改進，有直接臨床應用價值但樣本數較小。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-24T23:52:48Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42918889",
+      "title": "Redefining the Posterior Jawline: Anatomical Principles and Clinical Outcomes of Parotid Reduction in Aesthetic Neck Contouring-A Retrospective Case Series.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-22",
+      "abstract": "BACKGROUND: Posterior cervicomandibular line effacement and a shallow retromandibular groove can persist after standard neck-lift maneuvers. In selected patients, the parotid tail volume represents a deep-volume contributor that is not reliably addressed with subcutaneous fat reduction or platysmal modification alone. This retrospective case series evaluated anatomical principles, clinical outcomes, and complication profiles associated with adjunctive parotid reduction in aesthetic neck contouring.\n\nMETHODS: Consecutive patients undergoing combined face-neck or isolated neck rejuvenation by a single surgeon between January 2022 and March 2024 were retrospectively reviewed after exclusion of non-aesthetic causes of parotid enlargement. Patients with < 6 months of follow-up or irregular postoperative visits were excluded. The primary outcome was blinded photographic improvement at ≥ 6 months, using GAIS (1 = very much improved to 5 = worse), scored independently by two non-involved plastic surgeons. Interrater reliability was assessed using the intraclass correlation coefficient (ICC). Postoperative complications were captured as secondary outcomes.\n\nRESULTS: Fifty-nine patients underwent parotid reduction (53 women, 6 men; mean age 56 ± 9.1 years; BMI 28.4 ± 4.2 kg/m2) with a mean follow-up of 11.7 ± 5.9 months. Mean GAIS was 1.7 ± 0.7 and 2.0 ± 0.9 for both raters, yielding a final mean of 1.8 ± 0.7; all patients were rated at least \"improved,\" and 66% were rated \"much\" or \"very much improved.\" Interrater agreement was good (ICC = 0.63). Overall, 15.3% experienced ≥ 1 complication, predominantly minor and managed conservatively; one hematoma required operative evacuation, and no permanent sequelae were observed.\n\nCONCLUSION: In selected aesthetic patients, limited, superficial parotid tail debulking through a sub-SMAS corridor may help refine the posterior jawline-neck transition with acceptable morbidity.\n\nLEVEL OF EVIDENCE IV: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266.",
+      "doi": "10.1007/s00266-026-06341-w",
+      "authors": [
+        "Sozer SO",
+        "Şibar S",
+        "Ersan M",
+        "Arslan A"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42918889/",
+      "added_at": "2026-10-24T23:52:40Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-24T23:52:43Z",
+      "summary_zh": {
+        "headline": "淺層耳下腺減容術可改善頸部輪廓，66%患者達顯著改善，併發症率15.3%。",
+        "points": [
+          "59名患者（平均年齡56歲）接受耳下腺減容術，平均追蹤11.7個月；GAIS評分平均1.8，66%達「顯著」或「非常顯著」改善。",
+          "經sub-SMAS通道進行淺層耳下腺尾部減容，可改善標準頸部拉提後仍存在的後下頜線凹陷與淺層retromandibular groove。",
+          "併發症率15.3%，多為輕微且保守治療，僅1例血腫需手術清除，無永久性後遺症；評分者間信度良好（ICC=0.63）。"
+        ],
+        "relevance": 4,
+        "reason": "屬年輕化頸部拉提的進階技巧，直接影響頸部輪廓手術決策，但非五大主題核心。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-24T23:52:52Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42918888",
+      "title": "A Prospective Cohort Study Demonstrating Measurable Facial Lifting with Fan-Shaped Poly-L-Lactic Acid Injections in Asian Patients.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-22",
+      "abstract": "INTRODUCTION: This study aimed to evaluate the efficacy of fan-shaped poly-L-lactic acid (PLLA) injections for facial lifting in Asian patients using quantitative measurements.\n\nMETHODS: Twelve Asian participants aged 18-50 years were enrolled in this prospective, open-label study. PLLA (Sculptra®, Galderma) was injected with blunt cannulas at two key anatomical sites: the temporal region (targeting the sub-superficial fascia) and the buccal region (above the SMAS layer near the anterior border of the masseter). Injections were administered in a retrograde, fan-shaped pattern. Facial assessments were performed at baseline and at weeks 4, 12, and 24 using 4-angle and 6-length measurements via the OBSERV® A+ skin analysis system. Participant satisfaction was also evaluated.\n\nRESULT: At week 24, the tragus-oral commissure length shortened from 221.17 ± 16.90 mm to 209.14 ± 10.14 mm (p < 0.05), while the lower facial contour length was reduced from 264.83 ± 18.04 mm to 251.93 ± 12.21 mm (p < 0.05). Both measurements showed earlier significance at week 12(p < 0.01). In the upper face, the eyebrow peak angle rose from 21.79 ± 3.75° to 24.02 ± 4.92° at week 24 (p < 0.05), and the vertical palpebral fissure length increased from 9.92 ± 1.27 mm to 10.42 ± 1.05 mm at week 24(p < 0.05). The canthus-oral-nasal angle showed a transient increase at week 4 (37.8 ± 6.1° to 41.64 ± 4.26°, p < 0.05) but was not sustained thereafter. No serious adverse events were observed, and patient satisfaction remained consistently high throughout the study period.\n\nCONCLUSION: Fan-shaped PLLA injections are a minimally invasive, well-tolerated, and effective approach to facial rejuvenation in Asian patients, yielding measurable improvements in periorbital features and sustained contour enhancement in the mid- and lower face.\n\nLEVEL OF EVIDENCE II: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .\n\nIMPORTANT POINTS: Fan-shaped PLLA injections provide a safe, minimally invasive option for mid- and lower-face rejuvenation, especially suitable for Asian patients. Facial contour improvements, including reduced tragus-oral and lower facial lengths, are maintained for up to 24 weeks. Although upper facial effects were less sustained, combining Fan-shaped PLLA injections with collagen-stimulating agents like hyaluronic acid may enhance and prolong results.",
+      "doi": "10.1007/s00266-026-06346-5",
+      "authors": [
+        "Liu PH",
+        "Liao J",
+        "Liu PH",
+        "Chang CC",
+        "Huang YH",
+        "Hsu YC"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye",
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42918888/",
+      "added_at": "2026-10-24T23:52:40Z",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s00266-026-06346-5.pdf",
+      "oa_pdf": true,
+      "oa_checked_at": "2026-10-24T23:52:43Z",
+      "summary_zh": {
+        "headline": "扇形PLLA注射在亞洲患者可量化改善臉部輪廓與眼周，24週效果維持。",
+        "points": [
+          "12名亞洲患者（18-50歲）前瞻性研究，PLLA注射於顳部與頰部，使用OBSERV A+系統量化測量。",
+          "24週時tragus-oral commissure長度從221.17mm降至209.14mm（p<0.05），眉峰角從21.79°升至24.02°（p<0.05），12週已達統計顯著。",
+          "上臉效果較不持久（canthus-oral-nasal角僅第4週顯著），無嚴重不良事件，患者滿意度高。",
+          "樣本數小（n=12）、無對照組、隨訪期24週，建議與其他膠原刺激劑併用以延長效果。"
+        ],
+        "relevance": 4,
+        "reason": "非手術年輕化方法，涉及眼周與臉部輪廓改善，但屬注射治療而非手術，臨床參考價值中等。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-24T23:52:56Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42913480",
       "title": "Single-Stage Nipple Sparing Mastectomy with Concurrent Mastopexy: A Systematic Review and Meta-Analysis.",
