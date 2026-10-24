@@ -1,6 +1,165 @@
 {
-  "generated_at": "2026-10-23T00:17:27Z",
+  "generated_at": "2026-10-24T00:10:15Z",
   "articles": [
+    {
+      "pmid": "42913480",
+      "title": "Single-Stage Nipple Sparing Mastectomy with Concurrent Mastopexy: A Systematic Review and Meta-Analysis.",
+      "journal": "ASJ",
+      "journal_full": "Aesthetic surgery journal",
+      "pub_date": "2026-10-23",
+      "abstract": "Patients with macromastia or breast ptosis are typically considered poor candidates for nipple-sparing mastectomy (NSM) due to concerns regarding nipple and mastectomy flap vascularity as well as challenges in maintaining optimal nipple position due to the redundant skin envelope. Several techniques for concurrent NSM and mastopexy have been described with encouraging results; however, data is limited to case series with small sample sizes. PubMed, Scopus, and Cochrane databases were queried to identify all studies analyzing outcomes in patients who underwent nipple-sparing mastectomy and simultaneous mastopexy with implant-based reconstruction. Study characteristics, patient demographics, surgical techniques, and post-operative complications were collected from relevant articles. Random-effects model meta-analysis was performed to assess complication rates. Nineteen studies, with a pooled total of 1,076 breasts were identified for analysis. The average patient was 48.1 ± 5.2 years old with a mean BMI of 27.2 ± 3.0 and a mean mastectomy specimen weight of 701.3 ± 93.8 g. The majority of mastopexies were performed using a Wise-pattern skin resection (70%) however there was a wide variety of dermal pedicles used to supply the nipple-areolar complex (NAC). Meta-analysis demonstrated acceptable complication rates, including partial NAC necrosis (5.9%, CI 3.0-9.5 %), total NAC necrosis (0.9%, CI 0.0-2.4%), and mastectomy flap necrosis (3.1%, CI 0.7-6.6%). The current literature supports the safety of performing single-stage NSM and mastopexy in favorable and highly selective patient populations. Additional studies are needed to refine specific, objective preoperative and intraoperative indications as well as to evaluate aesthetic and patient-reported outcomes.",
+      "doi": "10.1093/asj/sjag242",
+      "authors": [
+        "Gibson E",
+        "Vega V",
+        "Salibian AA"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42913480/",
+      "added_at": "2026-10-24T00:09:57Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-24T00:10:00Z",
+      "summary_zh": {
+        "headline": "乳房保留乳頭乳房切除術併同時乳房上提手術安全性可接受，但應嚴格選擇患者。",
+        "points": [
+          "系統性回顧與統合分析19篇研究、1,076例乳房，平均年齡48.1歲、BMI 27.2、切除標本重701.3克。",
+          "部分乳頭壞死5.9%、完全壞死0.9%、乳房瓣膜壞死3.1%，併發症率可接受；70%採用Wise-pattern皮膚切除。",
+          "文獻支持在嚴格選擇的患者族群進行單階段手術，但仍需更多研究建立客觀術前/術中指標與美學預後評估。"
+        ],
+        "relevance": 1,
+        "reason": "乳房手術，非眼周整形；誤抓原因為 ptosis 關鍵字，實際內容與讀者五大主題無關。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-24T00:10:05Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42913479",
+      "title": "Commentary On: Interval to Secondary Facelift: A Match-Cohort Analysis of Interval Time, Technique, and Complications.",
+      "journal": "ASJ",
+      "journal_full": "Aesthetic surgery journal",
+      "pub_date": "2026-10-23",
+      "abstract": "",
+      "doi": "10.1093/asj/sjag237",
+      "authors": [
+        "Stuzin JM"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42913479/",
+      "added_at": "2026-10-24T00:09:57Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-24T00:10:00Z",
+      "summary_zh": {
+        "headline": "次級 facelift 的時間間隔、術式選擇與併發症關係之評論性分析。",
+        "points": [
+          "本文為評論性文章，分析重複 facelift 患者的最適時間間隔、不同術式選擇與併發症發生率的關聯。",
+          "無摘要可得，依標題判斷為配對世代研究，探討 facelift 翻修手術的臨床決策因素。"
+        ],
+        "relevance": 4,
+        "reason": "直接涉及 facelift 臨床決策與長期追蹤，但為評論文而非原始研究，實用性受限。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-24T00:10:08Z",
+        "basis": "title"
+      }
+    },
+    {
+      "pmid": "42909603",
+      "title": "Reply to: \"Comment on 'AI-Based Quantitative and Objective Analysis of Aesthetic Results in Genioplasty'\".",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-23",
+      "abstract": "",
+      "doi": "10.1007/s00266-026-06315-y",
+      "authors": [
+        "Munzinger RJ",
+        "Knoedler S",
+        "Niederegger T",
+        "Bigus S",
+        "Pooth R",
+        "Kreiker H",
+        "Lellouch AG",
+        "Voss JO",
+        "Knoedler L"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42909603/",
+      "added_at": "2026-10-24T00:09:57Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-24T00:10:00Z",
+      "summary_zh": {
+        "headline": "AI量化分析頦成形美學結果的回覆意見",
+        "points": [
+          "這是對先前AI頦成形分析研究的回覆評論，無摘要，依標題判斷",
+          "涉及AI客觀量化評估頦成形術後美學結果的方法論討論"
+        ],
+        "relevance": 3,
+        "reason": "頦成形屬主題範圍，但此為回覆信函，非原始研究，臨床參考價值有限。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-24T00:10:10Z",
+        "basis": "title"
+      }
+    },
+    {
+      "pmid": "42910391",
+      "title": "A Case of Long-term Follow-up of Severe Hidradenitis Suppurativa of the Buttocks Treated With Free and Pedicled Flap.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-10-21",
+      "abstract": "Long-term outcomes of flap surgery for hidradenitis suppurativa (HS) of the buttocks have not been reported. We encountered a case of severe HS in which multiple new lesions appeared during a 27-year follow-up period. This article reports useful information regarding reconstruction using a free flap from the back. The patient was a 62-year-old Japanese man. At the age of 35 years, he developed HS in the bilateral groin and sacral regions. Reconstructive surgery was performed for the left groin using a left pedicled rectus abdominis flap, for the right groin using a left free scapular flap, and for the sacral region using a mesh skin graft. During the follow-up period, new lesions appeared in the axilla, face, buttocks, and lower extremities and were primarily treated with deroofing and skin grafting. Subsequently, no recurrent lesions were observed in the sacrum, left buttock, or axilla, and only mild recurrence was observed in the scapular flap transplanted to the right groin. In such severely affected patients, initially harvesting a flap from a distal area rather than an adjacent area may reduce the burden of any subsequent surgery. In particular, the incidence of HS has been reported to be low in the back, and HS did not occur in this patient. This report describes the challenges of buttock reconstruction for progressive severe HS, the advantages of using a free flap from the back during the initial surgery, and the favorable long-term results achieved.",
+      "doi": "10.1097/GOX.0000000000008227",
+      "authors": [
+        "Sasaki C",
+        "Nakano H",
+        "Harada M",
+        "Kuwahara M"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "10",
+      "pages": "e8227",
+      "topics": [
+        "wound"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42910391/",
+      "added_at": "2026-10-24T00:09:57Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008227",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-24T00:10:00Z",
+      "summary_zh": {
+        "headline": "27年追蹤顯示背部遊離皮瓣用於臀部化膿性汗腺炎重建具長期優勢，復發率低。",
+        "points": [
+          "62歲患者35歲發病，雙側腹股溝與薦骨區化膿性汗腺炎，採用左腹直肌帶蒂皮瓣、左肩胛遊離皮瓣與網狀植皮重建。",
+          "27年追蹤期間新病灶出現於腋窩、臉部、臀部與下肢，主要以deroofing與植皮治療；薦骨、左臀部與腋窩無復發，右腹股溝遊離皮瓣僅輕度復發。",
+          "初次手術採用遠端區域（背部）遊離皮瓣而非鄰近區域，可減少後續手術負擔；背部化膿性汗腺炎發生率低，本例背部未發病。"
+        ],
+        "relevance": 3,
+        "reason": "化膿性汗腺炎屬皮膚病而非傳統慢性傷口；皮瓣選擇與重建技巧有參考價值，但非讀者主要關注的傷口照護範疇。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-24T00:10:15Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42904892",
       "title": "Upper Eyelid Anatomy Revisited based on Detailed Operating Microscope Observations.",
