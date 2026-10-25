@@ -1,6 +1,168 @@
 {
-  "generated_at": "2026-10-24T23:52:56Z",
+  "generated_at": "2026-10-25T23:43:08Z",
   "articles": [
+    {
+      "pmid": "42926183",
+      "title": "Stability and outcome after two approaches for counterclockwise mandibular setback in patients with skeletal class III high-angle malocclusion: a prospective study.",
+      "journal": "IJOMS",
+      "journal_full": "International journal of oral and maxillofacial surgery",
+      "pub_date": "2026-10-24",
+      "abstract": "Patients of skeletal class III high-angle malocclusion have different clinical entities. This prospective study aimed to compare stability and outcomes following two approaches for counterclockwise mandibular setback in bimaxillary rotational surgery to correct skeletal class III high-angle malocclusion. Fifty-six adult patients with skeletal class III high-angle malocclusion who underwent surgery-first bimaxillary surgery with counterclockwise mandibular setback were analyzed. Patients were grouped by different direction of mandibular distal segment: posterior-shortening (n = 25) and posterior-lengthening (n = 31). Measures from CBCT scans compared changes from pre-treatment (T0) to surgical simulation (Ts), 1-week post-surgery (T1), and post-treatment (T2), which included translation (left/right, posterior/anterior, superior/inferior) and rotation (yaw, roll, pitch). Outcomes were compared for jaw projection, incisor angle and occlusion. Pre-treatment, frequency was greater for gummy smile and smaller for maxillary and mandibular projection and overbite for the posterior-shortening compared with the posterior-lengthening group. Changes in both groups from pre-treatment were seen for backward and anterior upward movement with counterclockwise pitch rotation of the mandible (Ts); relapse in mandibular vertical translation and pitch (T1); and significant sagittal relapse of the mandible (T2). Most treatment outcomes at post-treatment were similar for posterior-shortening and posterior-lengthening groups; however, the posterior-shortening group had a significantly smaller maxillary and mandibular projection and upper incisor angle. The results of this study indicate that despite post-surgical relapse, both posterior-shortening and posterior-lengthening approaches to counterclockwise mandibular setback are effective strategies for correcting skeletal class III high-angle malocclusion, achieving both aesthetic and functional goals when tailored to individual skeletal and occlusal characteristics.",
+      "doi": "10.1016/j.ijom.2026.10.006",
+      "authors": [
+        "Lin LL",
+        "Chen YF",
+        "Chen YA",
+        "Yao CF",
+        "Chen YR",
+        "Liao YF"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42926183/",
+      "added_at": "2026-10-25T23:41:42Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-25T23:41:45Z",
+      "summary_zh": {
+        "headline": "下顎後縮逆時針旋轉術：後縮式與後延式兩種方式穩定性與療效相近",
+        "points": [
+          "56名骨骼第三類高角患者接受雙顎手術，分為後縮組（n=25）與後延組（n=31），追蹤術前、模擬、術後1週及最終結果",
+          "兩組均出現下顎後退、上前移及逆時針旋轉，術後1週有垂直與旋轉復發，術後2年有矢狀面顯著復發",
+          "最終療效相似，但後縮組上下顎突出度與上門齒角度顯著較小；兩種方式均能有效矯正高角第三類咬合不正"
+        ],
+        "relevance": 4,
+        "reason": "正顎手術的穩定性與療效比較研究，對下顎後縮手術決策有實用參考價值，但非新技術或突破性發現。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-25T23:42:54Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42921627",
+      "title": "Double Horizontal Semicircular 1-stage Island Forehead Flap for Nasal Reconstruction in an Older Patient.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-10-23",
+      "abstract": "A conventional paramedian forehead flap-a reliable option for nasal reconstruction-typically requires multiple stages and often results in a vertically oriented donor-site scar that crosses the natural forehead rhytids. Although single-stage island forehead flaps have been introduced to reduce the treatment burden, concerns remain regarding aesthetic outcomes and flap perfusion stability. Herein, we report a successful case of nasal reconstruction using a modified 1-stage island forehead flap with a double horizontal semicircular design. An 89-year-old woman presented with a squamous cell carcinoma of the nasal dorsum. The patient lived with her husband, who required nursing care, and requested a treatment plan that minimized time away from home. Following tumor excision, 1-stage reconstruction was performed using a horizontally oriented double horizontal semicircular island forehead flap. A musculocutaneous island flap with a buried frontal muscle pedicle in the supratrochlear artery was elevated. The flap was transferred through a subcutaneous tunnel and folded to cover the nasal dorsal defect. The donor site was closed primarily along the horizontal rhytids. Postoperatively, mild transient venous congestion was observed, which resolved spontaneously. Minor secondary revisions, including flap defatting and medial brow lifts, were performed on an outpatient basis. At the 1-year follow-up, the patient demonstrated excellent aesthetic outcomes with a well-camouflaged donor-site scar. This modified 1-stage island forehead flap presented a balanced reconstruction approach that can achieve favorable cosmetic results, flap reliability, and early social reintegration. This technique is particularly suitable for older patients with horizontal forehead rhytids who prefer single-stage reconstructions.",
+      "doi": "10.1097/GOX.0000000000008190",
+      "authors": [
+        "Takeji M",
+        "Kagaya Y"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "10",
+      "pages": "e8190",
+      "topics": [
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42921627/",
+      "added_at": "2026-10-25T23:41:42Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008190",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-25T23:41:45Z",
+      "summary_zh": {
+        "headline": "改良式單階段島狀額頭瓣用於鼻背重建，供體瘢痕沿水平皺紋隱蔽性佳。",
+        "points": [
+          "89歲患者鼻背鱗狀細胞癌切除後，採用雙水平半圓形島狀額頭瓣單階段重建，供體瘢痕沿自然額頭水平皺紋走向，美觀性優於傳統縱向瘢痕。",
+          "瓣膜血供基於眶上動脈，術後出現輕微暫時性靜脈充血自行緩解，無嚴重併發症，1年追蹤美觀效果優異。",
+          "單階段設計減少患者往返就醫次數，適合年長患者及有家庭照護責任者；次要修正（瓣膜去脂、眉毛提升）可門診進行。",
+          "個案報告，樣本數為1，缺乏對照組比較；長期瘢痕演變、大樣本療效數據仍需進一步驗證。"
+        ],
+        "relevance": 4,
+        "reason": "鼻部重建技術創新，單階段島狀瓣設計具臨床實用價值，但僅個案報告，證據等級有限。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-25T23:42:59Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42921614",
+      "title": "Role of Hyaluronic Acid Fillers in Facial Paralysis.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-10-23",
+      "abstract": "BACKGROUND: Facial paralysis results in multifaceted functional and aesthetic deficits, including lagophthalmos, oral incompetence, and profound asymmetry. Although surgical reanimation is the primary treatment for functional restoration, hyaluronic acid (HA) fillers have emerged as a minimally invasive adjunctive tool for soft-tissue support and aesthetic refinement.\n\nMETHODS: A comprehensive narrative review was conducted using PubMed, Embase, Scopus, and the Cochrane Library databases through November 15, 2025. This study follows the rigorous methodological framework for narrative synthesis, emphasizing clarity of scope, reflexivity, and thematic sufficiency. Studies evaluating HA fillers for lagophthalmos, oral competence, and facial symmetry were analyzed.\n\nRESULTS: Data from prospective and retrospective studies indicate that HA fillers can notably improve lagophthalmos by providing mechanical lid loading, reducing residual gaps from an average of 5.5 to 0.8 mm. In the perioral region, HA injections have been shown to increase labial strength by 1.4-fold, reducing bolus spillage and improving speech articulation. Patient-reported outcomes show substantial improvements in psychosocial distress (P < 0.0001) and quality of life. However, evidence for neuromuscular recovery is absent, and there is a documented risk of vascular complications, including central retinal artery occlusion.\n\nCONCLUSIONS: HA fillers provide immediate mechanical and aesthetic benefits as an adjunctive treatment for facial paralysis and should be considered complementary to surgical interventions where indicated; however, they do not restore nerve function and cannot replace surgery. Future research must focus on standardized protocols and the long-term safety of periorbital injections.",
+      "doi": "10.1097/GOX.0000000000008089",
+      "authors": [
+        "Iqbal M",
+        "Berour A",
+        "Wakim M",
+        "Ajlan Z",
+        "Emmanuel N",
+        "Nicolas G",
+        "Menéndez JP"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "10",
+      "pages": "e8089",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42921614/",
+      "added_at": "2026-10-25T23:41:42Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008089",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-25T23:41:45Z",
+      "summary_zh": {
+        "headline": "玻尿酸填充劑可改善顏面癱瘓的眼瞼閉合不全與口周對稱，但不能替代手術重建。",
+        "points": [
+          "敘述性文獻回顧，納入 PubMed、Embase、Scopus 與 Cochrane 資料庫至 2025 年 11 月的研究。",
+          "玻尿酸注射可將眼瞼閉合不全的殘留間隙從平均 5.5 mm 減少至 0.8 mm；口周注射可增加唇部強度 1.4 倍，改善吞嚥與言語。",
+          "患者自評心理社交困擾與生活品質顯著改善（P < 0.0001），但無神經肌肉恢復證據，眶周注射有中央視網膜動脈阻塞等血管併發症風險。"
+        ],
+        "relevance": 4,
+        "reason": "眼周與口周應用相關，但玻尿酸填充屬非手術輔助手段，非眼瞼整形或功能性重建的核心技術。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-25T23:43:04Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42921348",
+      "title": "Single-stage Free Nipple Grafting Mastopexy Reconstruction in 34 Patients With Long-term Clinical Follow-up.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-10-23",
+      "abstract": "Breast reconstruction for patients with pendulous breasts and grade III ptosis often requires multiple staged procedures, increasing perioperative risk and recovery burden. This case series presents a single-stage free nipple grafting (SFNG) mastopexy reconstruction technique that integrates multiple reconstructive steps into a single operation. From 2009 to 2019, 34 patients (68 breasts) underwent SFNG mastopexy reconstruction with follow-up through 2025. The average age of patients was 46 years, and the mean body mass index was 28.3 kg/m2. All mastectomies were performed by a single breast surgeon, Heidi Rafferty, MD, providing consistency in oncological technique throughout the series. Immediate implant-based reconstruction was then performed by the author. Skin-reducing mastectomy patterns (Wise, vertical, or crescent incisions) were selected according to breast morphology. All reconstructions used submuscular implants supported by acellular dermal matrix, with immediate free nipple grafting to the newly positioned areola sites. Complications were limited to 3 cases of flap necrosis requiring revision, 3 episodes of cellulitis that resolved with intravenous antibiotics, and 9 seroma aspirations. Two patients received adjuvant radiation therapy without significant compromise of nipple graft viability. Long-term follow-up of up to 16 years revealed no local recurrences, minimal loss of nipple projection, and significant improvement in patient-reported outcomes. The BREAST-Q assessment demonstrated significant postoperative improvements in satisfaction, psychosocial well-being, and aesthetic outcomes. SFNG mastopexy reconstruction offers a reliable alternative for patients with grade III ptosis, combining oncological safety with immediate aesthetic restoration while reducing the need for multiple reconstructive procedures.",
+      "doi": "10.1097/GOX.0000000000008150",
+      "authors": [
+        "Asfa S"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "10",
+      "pages": "e8150",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42921348/",
+      "added_at": "2026-10-25T23:41:42Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008150",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-25T23:41:46Z",
+      "summary_zh": {
+        "headline": "乳房下垂重建單階段遊離乳頭移植法安全有效，長期追蹤無局部復發。",
+        "points": [
+          "34名患者68側乳房接受單階段遊離乳頭移植乳房懸吊重建，平均年齡46歲，追蹤至16年；併發症包括3例皮瓣壞死、3例蜂窩織炎、9例血清腫。",
+          "所有重建使用肌下植入物搭配無細胞真皮基質，立即進行遊離乳頭移植；2名患者接受輔助放療後乳頭移植存活率未受影響。",
+          "長期追蹤無局部復發，乳頭投影最小喪失，BREAST-Q評估顯示滿意度、心理社會福祉與美學結果顯著改善。",
+          "此技術將多階段手術整合為單一手術，減少患者周術期風險與恢復負擔。"
+        ],
+        "relevance": 1,
+        "reason": "乳房手術，非眼周、輪廓、慢性傷口、鼻整形或臉頸年輕化主題。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-25T23:43:08Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42918890",
       "title": "Active Nerve Identification in Endoscopic Forehead Lift: A Neuroprotective Technique for Enhanced Sensory Recovery.",
