@@ -1,6 +1,42 @@
 {
-  "generated_at": "2026-10-25T23:43:08Z",
+  "generated_at": "2026-10-27T01:01:16Z",
   "articles": [
+    {
+      "pmid": "42931926",
+      "title": "Commentary on \"Evaluating Tranexamic Acid's Role in Upper Eyelid Blepharoplasty: A Systematic Review and Meta-Analysis\".",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-26",
+      "abstract": "",
+      "doi": "10.1007/s00266-026-05783-6",
+      "authors": [
+        "Naeiji A"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42931926/",
+      "added_at": "2026-10-27T01:01:02Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-27T01:01:06Z",
+      "summary_zh": {
+        "headline": "評論：止血酸在上眼瞼手術中的角色與證據品質",
+        "points": [
+          "這是對系統性回顧與統合分析的評論文章，評估止血酸在上眼瞼整形術中的應用",
+          "無摘要，依標題判斷；原文獻探討止血酸對術中出血與瘀青的影響"
+        ],
+        "relevance": 3,
+        "reason": "眼周整形相關，但評論文章為二手文獻，臨床應用價值需參考原始研究。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-27T01:01:16Z",
+        "basis": "title"
+      }
+    },
     {
       "pmid": "42926183",
       "title": "Stability and outcome after two approaches for counterclockwise mandibular setback in patients with skeletal class III high-angle malocclusion: a prospective study.",
