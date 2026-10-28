@@ -242,18 +242,18 @@ fetch.yml 在抓取之後執行（`continue-on-error: true`，失敗不擋 commi
 - **模型**：`claude-sonnet-5-5`（最新 Sonnet，2026-10）。**沒有用 GET /v1/models 驗證過**（本機沒有 API key），是依目前模型清單選的；
   業主設好 secret 後可用 `curl https://api.anthropic.com/v1/models -H "x-api-key: …" -H "anthropic-version: 2026-10-21"` 確認，
   換模型改 `wrangler.toml` 的 `MODEL` 再 deploy。
-- **API 參數**：`anthropic-version: 2026-10-21`、`max_tokens` 4000、`stream: true`、`thinking: {type: "between_tools"}`（不開 extended thinking，
+- **API 參數**：`anthropic-version: 2026-10-21`、`max_tokens` 8000（#10.1 從 4000 調高）、`stream: true`、`thinking: {type: "between_tools"}`（不開 extended thinking，
   token 全給輸出）；**沒有送 temperature**（Sonnet 5.5 與 2026-10-21 版 API 都拒絕非預設值，handoff 的 temperature 0 做不到）。
   另開 server-side fallback（`fallbacks: "default"`、beta `server-side-fallback-2026-07-01`）：安全分類器拒答 cyber／frontier_llm 類時自動改用其他模型；
   其他拒答（`stop_reason: "refusal"`）前端顯示錯誤、不存檔。
 - **Prompt**：`worker/prompt.js`。`SYSTEM` 由解析與追問共用，PDF document block 標 `cache_control`，解析後幾分鐘內追問會命中 prompt cache。
   輸出第一行「文章類型：X」（手術技巧／臨床研究／系統性回顧或統合分析／個案系列／其他），段落標題固定：一句話、研究設計與樣本、主要結果、
-  圖表重點、步驟拆解（手術技巧必有，其他類型有術式才有）、限制、臨床意義、值得引用的原文。改標題要一併改 `analysis.js` 的 `OPEN_SECTIONS`。
+  圖表重點、步驟拆解（手術技巧必有，其他類型有術式才有）、限制、臨床意義、值得引用的原文；段落內容不重複該段標題。改標題要一併改 `analysis.js` 的 `OPEN_SECTIONS`。
 - **前端**（`assets/js/analysis.js`）：論文卡片內容列「解析」（已有解析顯示「看解析」，淡青底）→ 全幅對話框（手機全螢幕、桌機置中 760px）。
   有 `oa_url` 時「用 OA 全文解析」（經 `/fetch-pdf`），否則／失敗時「選擇 PDF」（`accept="application/pdf"`，≤ 15 MB，檢查 `%PDF` 檔頭）。
   串流中可取消（同時 cancel 串流 reader），關閉進行中的對話框會先確認。完成後段落可收合，預設展開「一句話」「主要結果」「步驟拆解」；
   達 max_tokens 時標示「可能不完整」。下方追問框（⌘／Ctrl+Enter 送出），問答接在解析下方。
-  「重新解析」會取代解析與問答（先確認）。寫入失敗時保留在畫面並提供「重試儲存」。
+  「重新解析」在頂端 meta 列右側（先確認）：只取代解析本文，問答保留；這次頁面抓過的 OA PDF 直接重用。重跑失敗可「返回解析」。寫入失敗時保留在畫面並提供「重試儲存」。
 - PDF 只放在這次頁面的記憶體；重整後追問：OA 來源自動重抓，上傳來源請使用者再選一次檔。
 - 回顧區卡片有解析時多一個「看全文解析 →」；「收藏」分頁的卡片本來就有「看解析」。論文搜尋範圍加入解析全文與問答。
 - 手機版「收藏」分頁連結按鈕有四顆（筆記／解析／看全文／PDF）時排成 2×2；桌機操作列排不下時換列。
@@ -420,3 +420,7 @@ console 會有該集合監聽失敗的錯誤。
     320px 與桌機版面。
   - ⚠️ **業主要先在 Cloudflare 後台設定 `ANTHROPIC_API_KEY` secret**；尚未以真實 PDF 與 API 驗收（模型 id 也待 secret 設好後確認）。
     `max_tokens` 4000 對長篇手術技巧論文可能不夠，若常出現「可能不完整」可把 `MAX_TOKENS` 調到 8000。
+- [x] **Handoff #10.1 解析小修正**（2026-10-28）：`worker/wrangler.toml`、`worker/index.js`、`worker/prompt.js`、`analysis.js`、`style.css`。
+  - `MAX_TOKENS` 4000 → 8000，已重新部署（版本 `e6c4d3aa`，100% 流量；`wrangler versions view` 確認 Cloudflare 上的值是 8000）。
+  - prompt 加規則：各段落內容不要重複該段標題。
+  - 「重新解析」移到解析視窗頂端、保留問答（原本在最底、會清掉問答）；截斷提示文字指向這顆按鈕。

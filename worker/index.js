@@ -106,7 +106,7 @@ async function callClaude(env, text, pdf, cors) {
     },
     body: JSON.stringify({
       model: env.MODEL,
-      max_tokens: Number(env.MAX_TOKENS) || 4000,
+      max_tokens: Number(env.MAX_TOKENS) || 8000,
       stream: true,
       // Sonnet 5.5 不接受非預設的 temperature；不開 extended thinking，max_tokens 全部留給輸出
       thinking: { type: "between_tools" },

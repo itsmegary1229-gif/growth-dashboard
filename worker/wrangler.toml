@@ -11,4 +11,5 @@ ALLOWED_UID = "caItxfEfasaJYMCLCnhEd7OGRMl1"
 ALLOWED_ORIGINS = "https://itsmegary1229-gif.github.io,http://127.0.0.1:5500,http://localhost:5500"
 # 最新的 Sonnet 系列（2026-10 時）；換模型只改這裡
 MODEL = "claude-sonnet-5-5"
-MAX_TOKENS = "4000"
+# 長篇手術技巧論文 4000 會被截斷（#10.1 改 8000）
+MAX_TOKENS = "8000"

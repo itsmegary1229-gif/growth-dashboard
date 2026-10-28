@@ -159,6 +159,8 @@ function parseType(md) {
 async function runAnalyze(source, file = null) {
   const cur = s;
   const pmid = cur.article.pmid;
+  // 重新解析時保留舊的問答（只換解析本文）
+  const keepQa = cur.reanalyze ? currentAnalysis()?.qa || [] : [];
   const ctrl = new AbortController();
   Object.assign(cur, { phase: source === "oa" ? "fetching" : "streaming", text: "", error: "", notice: "", abort: ctrl, source, model: "" });
   render();
@@ -166,7 +168,9 @@ async function runAnalyze(source, file = null) {
     let b64;
     if (source === "oa") {
       try {
-        b64 = await fetchOaPdf(ctrl.signal);
+        // 這次頁面已抓過同一篇的 OA PDF（例如重新解析）就直接用
+        const cached = pdfCache.get(pmid);
+        b64 = cached?.source === "oa" ? cached.b64 : await fetchOaPdf(ctrl.signal);
       } catch (err) {
         if (isAbort(err) || err.status === 401 || err instanceof AuthRequiredError) throw err;
         throw Object.assign(new Error(`OA 全文抓不到：${err.message}。請改用「選擇 PDF」。`), { oaFailed: true });
@@ -196,7 +200,7 @@ async function runAnalyze(source, file = null) {
       source,
       at: new Date().toISOString(),
       truncated: done.stop_reason === "max_tokens",
-      qa: [],
+      qa: keepQa,
     };
     cur.phase = "done";
     cur.abort = null;
@@ -366,17 +370,18 @@ function render() {
     case "error":
       html = `<p class="an-error">${esc(s.error)}</p>
         ${s.text ? `<div class="an-partial">${renderAnalysisMd(s.text, true)}</div>` : ""}
-        ${s.oaFailed ? `<div class="an-choose"><button type="button" class="an-btn an-primary" data-act="pick">選擇 PDF</button></div>` : sourceButtons()}`;
+        ${s.oaFailed ? `<div class="an-choose"><button type="button" class="an-btn an-primary" data-act="pick">選擇 PDF</button></div>` : sourceButtons()}
+        ${s.reanalyze ? `<div class="an-row"><button type="button" class="an-btn an-small" data-act="back">返回解析</button></div>` : ""}`;
       break;
     case "done":
       html = `${notice}
-        <p class="an-meta">${metaLine(analysis)}</p>
-        ${analysis.truncated ? `<p class="an-notice">輸出達到長度上限，最後一段可能不完整。</p>` : ""}
+        <div class="an-row an-meta-row"><p class="an-meta">${metaLine(analysis)}</p>
+          <button type="button" class="an-btn an-small" data-act="reanalyze">重新解析</button></div>
+        ${analysis.truncated ? `<p class="an-notice">輸出達到長度上限，最後一段可能不完整；可以按「重新解析」重跑。</p>` : ""}
         ${s.unsaved && !s.ask ? `<div class="an-row"><span class="an-error">尚未同步到雲端</span>
           <button type="button" class="an-btn an-small" data-act="save-retry">重試儲存</button></div>` : ""}
         ${renderAnalysisMd(analysis.markdown, false)}
-        ${renderQa(analysis)}
-        <div class="an-row an-foot"><button type="button" class="an-btn an-small" data-act="reanalyze">重新解析</button></div>`;
+        ${renderQa(analysis)}`;
       break;
   }
   body.innerHTML = html;
@@ -464,7 +469,7 @@ function bind() {
         s.reanalyze = false;
         return render();
       case "reanalyze":
-        if (!confirm("重新解析會取代目前的解析和追問。確定？")) return;
+        if (!confirm("重新解析會取代目前的解析（追問會保留）。確定？")) return;
         s.reanalyze = true;
         s.notice = "";
         s.phase = "choose";

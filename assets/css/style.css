@@ -878,7 +878,6 @@ html.an-open { overflow: hidden; }
 .an-choose .an-btn { flex: 1 1 160px; }
 .an-row { display: flex; align-items: center; gap: 10px; margin: 10px 0; }
 .an-sticky { position: sticky; top: -16px; z-index: 2; margin: -16px calc(-1 * var(--gutter)) 12px; padding: 10px var(--gutter); background: rgba(255, 255, 255, 0.95); border-bottom: 1px solid #efefed; }
-.an-foot { justify-content: center; margin-top: 28px; }
 .an-status { flex: 1; color: var(--text-2); font-size: 0.95rem; }
 .an-status::before {
   content: "";
@@ -895,6 +894,8 @@ html.an-open { overflow: hidden; }
 .an-error { color: #9b2c2c; font-size: 0.95rem; }
 .an-notice { color: var(--text-2); font-size: 0.9rem; }
 .an-meta { margin: 0 0 10px; font-size: 0.82rem; color: var(--text-3); }
+.an-meta-row { margin: 0 0 8px; }
+.an-meta-row .an-meta { flex: 1; margin: 0; }
 .an-partial { opacity: 0.6; }
 
 .an-btn {
