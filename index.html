@@ -171,6 +171,26 @@
   </main>
   </div>
 
+  <!-- 論文全文解析（assets/js/analysis.js；論文各分頁與回顧區共用） -->
+  <dialog class="an-dialog" id="analysis-dialog" aria-labelledby="an-title">
+    <div class="an-frame">
+      <div class="an-head">
+        <div class="an-head-text">
+          <p class="an-kicker">全文解析</p>
+          <h2 class="an-title" id="an-title"></h2>
+        </div>
+        <button type="button" class="an-close" data-act="close" aria-label="關閉">×</button>
+      </div>
+      <div class="an-body" id="an-body"></div>
+      <form class="an-ask" id="an-ask" hidden>
+        <textarea class="an-ask-input" id="an-ask-input" rows="2" aria-label="追問"
+          placeholder="針對這篇追問，例如：皮瓣存活率怎麼定義？"></textarea>
+        <button type="submit" class="an-btn an-primary" id="an-ask-send">送出</button>
+      </form>
+      <input type="file" id="an-file" accept="application/pdf,.pdf" hidden>
+    </div>
+  </dialog>
+
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 </body>
 </html>

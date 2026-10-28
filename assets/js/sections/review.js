@@ -7,6 +7,7 @@
 import { paperState, onAuthChange, AuthRequiredError } from "../state.js";
 import { $, esc, twDay, toast, authRequiredMessage, loadPrefs, savePrefs, fetchJSON } from "../util.js";
 import { renderAbstract, summaryOf, renderRelevance, journalClass } from "./papers.js";
+import { openAnalysis, hasAnalysis } from "../analysis.js";
 
 const { getAllSaved, getAllReviewed, markReviewed, setSaved, isSynced, onStatesChange } = paperState;
 
@@ -105,6 +106,7 @@ function renderCard(s, n, limit) {
     </div>
     ${points}
     ${note}
+    ${hasAnalysis(s.pmid) ? `<button type="button" class="rv-analysis" data-act="analysis">看全文解析 →</button>` : ""}
     ${more}
   </article>
   <div class="review-actions${open ? " is-open" : ""}" data-pmid="${esc(s.pmid)}">
@@ -164,6 +166,11 @@ function bindEvents() {
     if (act === "more") {
       addExtra(day);
       render();
+      return;
+    }
+    if (act === "analysis") {
+      const s = savedList.find((x) => x.pmid === el.closest("[data-pmid]").dataset.pmid);
+      if (s) openAnalysis(articleOf(s));
       return;
     }
     if (act === "reread") {

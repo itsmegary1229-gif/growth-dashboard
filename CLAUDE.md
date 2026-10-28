@@ -8,6 +8,7 @@
 - 託管於 GitHub Pages（repo 根目錄）：`itsmegary1229-gif/growth-dashboard`
 - 四個分區：**論文**（PubMed E-utilities）、**影片**（YouTube 公開 RSS）、**文章**（任意 RSS／Atom，非醫學的 newsletter、部落格），
   由 GitHub Actions 每天台灣 06:00 自動抓取；**回顧**（每天從收藏抽文章重讀，純前端）
+- 論文的**全文解析**（PDF → Claude）經 Cloudflare Worker 代理（程式在 `worker/`，API key 只在 Worker secret）
 
 ## 檔案結構
 
@@ -28,11 +29,18 @@ growth-dashboard/
 ├── data/feeds.json               ← 排程產出的 RSS 文章資料（勿手動編輯）
 ├── index.html                    ← 儀表板主頁（單頁；頂層分區「論文」「影片」「文章」「回顧」，各自的子分頁頁內切換）
 ├── firestore.rules               ← Firestore 安全規則（只放 repo，由業主貼到主控台）
+├── worker/                       ← 論文解析 Cloudflare Worker（growth-dashboard-analyze）
+│   ├── wrangler.toml             ← Worker 名稱、[vars]（模型、允許的 uid／origin）
+│   ├── index.js                  ← 端點 /analyze、/ask、/fetch-pdf，SSE 轉發
+│   ├── auth.js                   ← Firebase ID token 驗證（Web Crypto RS256）
+│   └── prompt.js                 ← 解析／追問 prompt（調整只改這裡）
 └── assets/
     ├── css/style.css
     └── js/
         ├── app.js                ← 外殼：分區切換（URL hash）、頁首各分區篇數、登入 UI
         ├── util.js               ← 共用工具：esc、台灣日期、toast、搜尋框、localStorage 偏好、共用 JSON 抓取
+        ├── analysis.js           ← 論文全文解析對話框（取得 PDF、呼叫 Worker、串流、追問、存 Firestore）
+        ├── markdown.js           ← 輕量 Markdown → HTML（解析結果用）
         ├── state.js              ← 個人狀態抽象層（Firestore，每分區一個集合）＋登入狀態
         ├── firebase.js           ← Firebase 初始化（CDN SDK，版號只寫在這裡）
         └── sections/
@@ -51,6 +59,8 @@ growth-dashboard/
 3. 本地預覽須用 **Live Server**（`http://127.0.0.1:5500`），不要用 `file://` 開啟（fetch JSON / Firebase 會失敗）。
 4. 抓取腳本只用 Python 標準函式庫，不引入第三方套件（Actions 不需要 pip install）。
 5. 每個 handoff 完成後，更新本檔的「現況」段落。
+6. `worker/` 用 wrangler 部署，這台 Mac 沒有系統 Node：用 `~/.local/node`（#10 從 nodejs.org 下載的 v24 LTS），
+   指令前加 `PATH=$HOME/.local/node/bin:$PATH`。`worker/node_modules`、`.wrangler` 不進 git。
 
 ## 分區架構
 
@@ -215,6 +225,39 @@ fetch.yml 在抓取之後執行（`continue-on-error: true`，失敗不擋 commi
 - 完成畫面：今天回顧 N 篇・收藏共 M 篇・從未回顧 K 篇；還有候選時顯示「再來一篇」，收藏都回顧過時顯示「明天再來」。
 - 文章在 `articles.json` 時用完整資料，否則用 Firestore 副本（見 `reviewCopy`）。
 
+### 論文全文解析（Handoff #10）
+- **Worker**：`https://growth-dashboard-analyze.growth-dashboard-analyze.workers.dev`（Cloudflare 帳號的 workers.dev 子網域也叫
+  growth-dashboard-analyze）。部署：`cd worker && PATH=$HOME/.local/node/bin:$PATH npx wrangler deploy`（已 `wrangler login`）。
+- **Secret**：`ANTHROPIC_API_KEY`，業主在 Cloudflare 後台 Workers → growth-dashboard-analyze → Settings → Variables and Secrets 設定；
+  缺少時 `/analyze`、`/ask` 回 500 並說明。`[vars]`（`wrangler.toml`）：`FIREBASE_PROJECT_ID`、`ALLOWED_UID`、`ALLOWED_ORIGINS`
+  （GitHub Pages、127.0.0.1:5500、localhost:5500）、`MODEL`、`MAX_TOKENS`。
+- **驗證**：每個請求都要 `Authorization: Bearer <Firebase ID token>`；公鑰取自 Google securetoken JWK（快取 1 小時，kid 不明時重抓），
+  檢查 RS256 簽章、iss、aud、exp、sub == `ALLOWED_UID`，不符一律 401。帶 Origin 但不在白名單回 403；處理 OPTIONS preflight。
+- **端點**（皆 POST，請求體上限 20 MB，超過 413）：
+  - `/analyze` `{ pmid, title, journal, year, pdf_base64 }` → SSE
+  - `/ask` `{ pmid, question, analysis, qa?, title?, pdf_base64 }` → SSE（`qa` 是先前問答，讓追問有上下文）
+  - `/fetch-pdf` `{ url }` → PDF bytes（上限 15 MB）；網址是 HTML 落地頁時找 `<meta name="citation_pdf_url">` 再抓一次；
+    不是 PDF 或抓不到回 422，前端改請使用者選檔。
+  - SSE 事件：`meta {model}`、`text {t}`、`done {stop_reason, model, usage}`、`error {message}`；串流前的錯誤回 JSON `{error}`。
+- **模型**：`claude-sonnet-5-5`（最新 Sonnet，2026-10）。**沒有用 GET /v1/models 驗證過**（本機沒有 API key），是依目前模型清單選的；
+  業主設好 secret 後可用 `curl https://api.anthropic.com/v1/models -H "x-api-key: …" -H "anthropic-version: 2026-10-21"` 確認，
+  換模型改 `wrangler.toml` 的 `MODEL` 再 deploy。
+- **API 參數**：`anthropic-version: 2026-10-21`、`max_tokens` 4000、`stream: true`、`thinking: {type: "between_tools"}`（不開 extended thinking，
+  token 全給輸出）；**沒有送 temperature**（Sonnet 5.5 與 2026-10-21 版 API 都拒絕非預設值，handoff 的 temperature 0 做不到）。
+  另開 server-side fallback（`fallbacks: "default"`、beta `server-side-fallback-2026-07-01`）：安全分類器拒答 cyber／frontier_llm 類時自動改用其他模型；
+  其他拒答（`stop_reason: "refusal"`）前端顯示錯誤、不存檔。
+- **Prompt**：`worker/prompt.js`。`SYSTEM` 由解析與追問共用，PDF document block 標 `cache_control`，解析後幾分鐘內追問會命中 prompt cache。
+  輸出第一行「文章類型：X」（手術技巧／臨床研究／系統性回顧或統合分析／個案系列／其他），段落標題固定：一句話、研究設計與樣本、主要結果、
+  圖表重點、步驟拆解（手術技巧必有，其他類型有術式才有）、限制、臨床意義、值得引用的原文。改標題要一併改 `analysis.js` 的 `OPEN_SECTIONS`。
+- **前端**（`assets/js/analysis.js`）：論文卡片內容列「解析」（已有解析顯示「看解析」，淡青底）→ 全幅對話框（手機全螢幕、桌機置中 760px）。
+  有 `oa_url` 時「用 OA 全文解析」（經 `/fetch-pdf`），否則／失敗時「選擇 PDF」（`accept="application/pdf"`，≤ 15 MB，檢查 `%PDF` 檔頭）。
+  串流中可取消（同時 cancel 串流 reader），關閉進行中的對話框會先確認。完成後段落可收合，預設展開「一句話」「主要結果」「步驟拆解」；
+  達 max_tokens 時標示「可能不完整」。下方追問框（⌘／Ctrl+Enter 送出），問答接在解析下方。
+  「重新解析」會取代解析與問答（先確認）。寫入失敗時保留在畫面並提供「重試儲存」。
+- PDF 只放在這次頁面的記憶體；重整後追問：OA 來源自動重抓，上傳來源請使用者再選一次檔。
+- 回顧區卡片有解析時多一個「看全文解析 →」；「收藏」分頁的卡片本來就有「看解析」。論文搜尋範圍加入解析全文與問答。
+- 手機版「收藏」分頁連結按鈕有四顆（筆記／解析／看全文／PDF）時排成 2×2；桌機操作列排不下時換列。
+
 ### 個人狀態的三個概念（互相獨立，一篇可以同時具備）
 - **稍後細讀**（`later`）：短期待讀佇列。標已讀時自動離開佇列。
 - **收藏**（`saved`）：長期書庫。筆記、RIS 匯出都在這裡；標已讀不影響收藏。
@@ -230,6 +273,8 @@ Firebase 專案 `growth-dashboard-989fb`，SDK **13.0.0**（gstatic CDN 的 ES m
 （#8 起，`reviewCopy`；只寫有值的欄位，不會用空值蓋掉舊副本；#8 之前的收藏在第一次回顧時補上——前提是文章還在 `articles.json`）。
 `title`～`oa_pdf` 是冗餘副本，讓收藏／已讀清單、回顧與 RIS 匯出不依賴 `articles.json`（90 天後退場）。
 回顧：`reviewedAt`（Timestamp，最後一次「還記得／完成」）、`reviewCount`（number，沒有視為 0；以本地快取 +1 寫入，不用 `increment()`）。
+全文解析（#10）：`analysis` = `{ markdown, type, model, source: "oa"|"upload", at（ISO）, truncated（bool）, qa: [{ q, a, at }] }`，
+解析完成、每次追問完成時整份寫入；setDoc(merge) 會深層合併 map，所以每次都給齊所有鍵。PDF 不存。
 寫入一律 `setDoc(..., { merge: true })`；取消已讀／稍後細讀／收藏時不刪文件，只把布林改 false、時間改 null；
 例外：`setRead(pmid, true)` 時若 `later` 為 true，同一次寫入把 `later` 改 false，但 `laterAt` 保留當歷史；`note` 只由 `setNote` 改，
 取消收藏不動它（再次收藏時筆記會回來）。
@@ -250,7 +295,8 @@ Firebase 專案 `growth-dashboard-989fb`，SDK **13.0.0**（gstatic CDN 的 ES m
 `getAllSaved`／`getAllRead`。videoState、feedState 由 `createListStore(name, doneFlag, meta, item)` 產生，另有
 `doneFlag`（`"watched"`／`"read"`）、`setDone(id, bool, item?)`、`getAllDone()`（項目帶 `{doneFlag}At`）——#9 起取代 `setWatched`／`getAllWatched`。paperState 另有 #8 的 `markReviewed(pmid, article?)`、
 `getAllReviewed()`（有 `reviewedAt` 的文件，含已取消收藏的）、`isSynced()`（登入後第一次 onSnapshot 是否已到，回顧區用來避免閃出空狀態）；
-`getAllSaved()` 項目多 `reviewedAt`（ISO）、`reviewCount`。清單項目一律有 `id`、`item`（論文另帶 `pmid`、`article`）。
+`getAllSaved()` 項目多 `reviewedAt`（ISO）、`reviewCount`。#10 加 `getAnalysis(pmid)`（同步）、`setAnalysis(pmid, analysis, article?)`，
+以及模組層級的 `getIdToken()`（呼叫 Worker 用）。清單項目一律有 `id`、`item`（論文另帶 `pmid`、`article`）。
 登入相關 `onAuthChange`、`signIn`、`signOutUser`、`AuthRequiredError` 各分區共用。
 
 ### 安全規則（`firestore.rules`）
@@ -361,3 +407,16 @@ console 會有該集合監聽失敗的錯誤。
     壞的那個跳過；重跑無變更不寫檔。前端以假 Firestore 驗證文章分區（分類／來源 pill、稍後讀、已讀、已讀分頁、未登入提示）
     與影片分區重構後行為（頻道 pill、搜尋、時間範圍偏好沿用、已看／稍後看、隱藏已看、展開）。測完 `feeds.json` 清回 `[]`、`data/feeds.json` 清回空殼。
   - ⚠️ **新安全規則（含 `feedState`）待業主套用**；**業主尚未填 feed、尚未以真實帳號驗收**。
+- [x] **Handoff #10 論文全文解析（PDF → Claude，經 Cloudflare Worker）**（2026-10-28）：`worker/`（新：`wrangler.toml`、`index.js`、`auth.js`、
+  `prompt.js`、`package.json`）、`assets/js/analysis.js`（新）、`assets/js/markdown.js`（新）、`state.js`、`papers.js`、`review.js`、
+  `index.html`、`style.css`、`.gitignore`。細節見「資料層說明 → 論文全文解析」。
+  - Worker 已部署：`https://growth-dashboard-analyze.growth-dashboard-analyze.workers.dev`；實測無 token／壞 token 回 401、
+    非白名單 Origin 回 403、preflight 回 204 並帶 CORS 標頭。
+  - 與 handoff 的差異：不送 temperature（模型不接受）；面板做成全幅對話框而非卡片內展開（列表在 Firestore 變動時會整個重繪，
+    串流內容與追問框會被洗掉）；`/ask` 多收 `qa` 讓連續追問有上下文；`/fetch-pdf` 會跟 `citation_pdf_url`（PRS-GO 等落地頁）；
+    OA 抓取失敗回 422。
+  - 本機以 Node 模擬 JWK 與 Anthropic SSE 測 Worker（20 項：驗證、CORS、串流轉發、413、缺 secret 500、fetch-pdf）；
+    前端以假 Firestore＋假 Worker 串流驗證解析、存檔、追問（含重整後 OA 自動重抓／上傳再選檔）、取消、錯誤、搜尋、回顧區入口、
+    320px 與桌機版面。
+  - ⚠️ **業主要先在 Cloudflare 後台設定 `ANTHROPIC_API_KEY` secret**；尚未以真實 PDF 與 API 驗收（模型 id 也待 secret 設好後確認）。
+    `max_tokens` 4000 對長篇手術技巧論文可能不夠，若常出現「可能不完整」可把 `MAX_TOKENS` 調到 8000。

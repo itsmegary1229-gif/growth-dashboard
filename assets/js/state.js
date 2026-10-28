@@ -20,6 +20,8 @@
 //   getAllRead()                 → [{ pmid, readAt, article }]，依 readAt 新到舊
 //   getAllReviewed()             → [{ pmid, reviewedAt, article }]，回顧過的文章（含已取消收藏的），依 reviewedAt 新到舊
 //   isSynced()                   登入後第一次 onSnapshot 是否已到（之前的空清單不代表真的沒有）
+//   getAnalysis(pmid)            同步回傳全文解析 analysis（#10，見 sections/analysis.js），沒有為 null
+//   setAnalysis(pmid, analysis, article?)  整份寫入 analysis（解析完成、追問完成時）
 // videoState、feedState 由 createListStore 產生（清單分區 sections/listSection.js 用），另有：
 //   doneFlag                     「完成」旗標名稱：videoState 為 "watched"（已看），feedState 為 "read"（已讀）
 //   setDone(id, done, item?)     標完成時若在「稍後」佇列中，同一次寫入把 later 改 false（laterAt 保留當歷史）
@@ -31,6 +33,7 @@
 // 登入相關（所有分區共用）：
 //   onAuthChange(cb)             cb({ status, email })，status 為 unknown | signedIn | signedOut | unavailable（SDK 載入失敗）
 //   signIn(email, password) / signOutUser()
+//   getIdToken()                 目前使用者的 Firebase ID token（呼叫解析 Worker 用）；未登入丟 AuthRequiredError
 
 const LEGACY_KEY = "mdr.state.v1"; // Handoff #2 的 localStorage 狀態，登入後遷移一次即刪除
 
@@ -171,6 +174,12 @@ export async function signIn(email, password) {
 
 export async function signOutUser() {
   if (fb) await fb.signOut(fb.auth);
+}
+
+export async function getIdToken() {
+  const user = fb?.auth.currentUser;
+  if (auth.status !== "signedIn" || !user) throw new AuthRequiredError();
+  return user.getIdToken();
 }
 
 // ---------- 論文：userState ----------
@@ -322,6 +331,16 @@ export const paperState = {
   // 筆記存在同一份文件的 note 欄位；取消收藏時不動它，再次收藏時筆記會回來
   async setNote(pmid, text) {
     await papers.write(pmid, { note: String(text ?? "") });
+  },
+
+  // 全文解析：{ markdown, type, model, source: "oa"|"upload", at, truncated, qa: [{ q, a, at }] }，時間為 ISO 字串。
+  // setDoc(merge) 會深層合併 map，所以呼叫端每次都要給齊所有鍵（qa 陣列則是整個取代）；
+  // 另補 title 等副本，讓只有解析、沒有其他狀態的文件也有標題
+  getAnalysis(pmid) {
+    return papers.entry(pmid)?.analysis || null;
+  },
+  async setAnalysis(pmid, analysis, article = null) {
+    await papers.write(pmid, { analysis, ...paperMeta(article) });
   },
 };
 

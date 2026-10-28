@@ -1,7 +1,8 @@
 // 論文分區：articles.json＋Firestore userState。
-// 子分頁「新進」「稍後細讀」「收藏」「已讀」、主題 pill、搜尋、AI 摘要與相關度排序、收藏筆記、RIS 匯出。
+// 子分頁「新進」「稍後細讀」「收藏」「已讀」、主題 pill、搜尋、AI 摘要與相關度排序、收藏筆記、RIS 匯出、全文解析入口（analysis.js）。
 
 import { paperState, onAuthChange, AuthRequiredError } from "../state.js";
+import { openAnalysis, hasAnalysis, analysisSearchText } from "../analysis.js";
 import {
   $, DAY, esc, twDay, metaText, toast, authRequiredMessage, bindSearch, loadPrefs, savePrefs, fetchJSON,
 } from "../util.js";
@@ -107,13 +108,13 @@ function noteOf(pmid) {
   return savedList.find((s) => s.pmid === pmid)?.note || "";
 }
 
-// 空白分隔多詞為 AND；比對標題＋摘要＋AI 摘要（headline、points），「收藏」另含筆記
+// 空白分隔多詞為 AND；比對標題＋摘要＋AI 摘要（headline、points）＋全文解析與追問，「收藏」另含筆記
 function searchArticles(scope) {
   const terms = ui.query.toLowerCase().split(/\s+/).filter(Boolean);
   if (!terms.length) return scope;
   return scope.filter((a) => {
     const s = a.summary_zh;
-    let hay = `${a.title}\n${a.abstract}\n${s?.headline || ""}\n${(s?.points || []).join("\n")}`;
+    let hay = `${a.title}\n${a.abstract}\n${s?.headline || ""}\n${(s?.points || []).join("\n")}\n${analysisSearchText(a.pmid)}`;
     if (ui.tab === "saved") hay += `\n${noteOf(a.pmid)}`;
     hay = hay.toLowerCase();
     return terms.every((t) => hay.includes(t));
@@ -206,6 +207,7 @@ function renderCard(a) {
   // Unpaywall 有 PDF 直連才標「PDF」，否則是 OA 落地頁
   const oa = a.oa_url ? `<a class="act act-link act-oa" href="${esc(a.oa_url)}" target="_blank" rel="noopener noreferrer">${a.oa_pdf ? "PDF ↗" : "OA 全文 ↗"}</a>` : "";
   const summary = summaryOf(a);
+  const analyzed = hasAnalysis(a.pmid);
   const topics = (a.topics || []).map((t) =>
     `<span class="topic">${esc(TOPIC_NAME[t] || t)}</span>`).join("");
   return `
@@ -233,6 +235,7 @@ function renderCard(a) {
       </div>
       <div class="act-group act-group-links">
         ${withNote ? `<button type="button" class="act act-note" data-act="note" aria-expanded="${editingNote === a.pmid}">✎ 筆記</button>` : ""}
+        <button type="button" class="act act-analyze${analyzed ? " has-analysis" : ""}" data-act="analyze">${analyzed ? "看解析" : "解析"}</button>
         <a class="act act-link" href="${esc(a.url)}" target="_blank" rel="noopener noreferrer">看全文 ↗</a>
         ${oa}
       </div>
@@ -478,6 +481,14 @@ function bindSearchBox() {
 
 // ---------- 事件 ----------
 
+// articles.json 的完整資料優先，退場的用 Firestore 副本
+function articleOf(pmid) {
+  return articles.find((a) => a.pmid === pmid) ||
+    laterList.find((l) => l.pmid === pmid)?.article ||
+    savedList.find((s) => s.pmid === pmid)?.article ||
+    readList.find((r) => r.pmid === pmid)?.article || null;
+}
+
 function bindEvents() {
   root.querySelector(".tabs").addEventListener("click", (e) => {
     const b = e.target.closest(".tab");
@@ -550,6 +561,9 @@ function bindEvents() {
       case "note-edit":
         openNote(pmid);
         return;
+      case "analyze":
+        openAnalysis(articleOf(pmid));
+        return;
       case "read":
       case "later":
       case "save":
@@ -562,10 +576,7 @@ function bindEvents() {
       return;
     }
     // 樂觀更新：state.js 先改本地快取並觸發 onStatesChange 重繪，寫入失敗會自行回滾
-    const article = articles.find((a) => a.pmid === pmid) ||
-      laterList.find((l) => l.pmid === pmid)?.article ||
-      savedList.find((s) => s.pmid === pmid)?.article ||
-      readList.find((r) => r.pmid === pmid)?.article || null;
+    const article = articleOf(pmid);
     try {
       if (el.dataset.act === "read") await setRead(pmid, !st.read, article);
       else if (el.dataset.act === "later") await setLater(pmid, !st.later, article);
