@@ -1,14 +1,15 @@
 // 論文分區：articles.json＋Firestore userState。
-// 子分頁「新進」「稍後細讀」「收藏」「已讀」、主題 pill、搜尋、AI 摘要與相關度排序、收藏筆記、RIS 匯出、全文解析入口（analysis.js）。
+// 子分頁「新進」「稍後細讀」「收藏」「已讀」「自選」（#11，手動加入的文章，見 addArticle.js）、主題 pill、搜尋、AI 摘要與相關度排序、收藏筆記、RIS 匯出、全文解析入口（analysis.js）。
 
 import { paperState, onAuthChange, AuthRequiredError } from "../state.js";
 import { openAnalysis, hasAnalysis, analysisSearchText } from "../analysis.js";
+import { initAddArticle, openAddArticle } from "../addArticle.js";
 import {
   $, DAY, esc, twDay, metaText, toast, authRequiredMessage, bindSearch, loadPrefs, savePrefs, fetchJSON,
 } from "../util.js";
 
 const {
-  getAllStates, setRead, setLater, setSaved, setNote, getAllLater, getAllSaved, getAllRead, onStatesChange,
+  getAllStates, setRead, setLater, setSaved, setNote, getAllLater, getAllSaved, getAllRead, getAllManual, onStatesChange,
 } = paperState;
 
 const TOPICS = [
@@ -24,7 +25,7 @@ const PREFS_KEY = "mdr.prefs.v1";
 const NOTE_DELAY = 800;
 
 const ui = {
-  tab: "new",     // new | later（稍後細讀佇列）| saved（收藏書庫）| read
+  tab: "new",     // new | later（稍後細讀佇列）| saved（收藏書庫）| read | manual（自選）
   topic: "all",   // all | topic id
   range: "7",     // 7 | 30 | all
   hideRead: false,
@@ -36,6 +37,7 @@ let states = new Map();   // pmid → { read, later, saved }
 let laterList = [];       // getAllLater() 結果（laterAt 新到舊）
 let savedList = [];       // getAllSaved() 結果（savedAt 新到舊）
 let readList = [];        // getAllRead() 結果（readAt 新到舊）
+let manualList = [];      // getAllManual() 結果（addedAt 新到舊）
 let authStatus = "unknown"; // unknown | signedIn | signedOut | unavailable
 let loaded = false;       // articles.json 載入完成前不渲染列表
 const expanded = new Set();
@@ -89,9 +91,9 @@ function storePrefs() {
 // ---------- 資料 ----------
 
 // 目前分頁＋時間範圍內的文章（搜尋、主題、隱藏已讀之前）
-// 「稍後細讀」「收藏」「已讀」以 Firestore 副本為主，articles.json 仍有該篇時改用完整資料（含摘要）；
-// 三份清單在 state.js 已依各自的時間排好
-const PERSONAL_LISTS = { later: () => laterList, saved: () => savedList, read: () => readList };
+// 「稍後細讀」「收藏」「已讀」「自選」以 Firestore 副本為主，articles.json 仍有該篇時改用完整資料（含摘要）；
+// 清單在 state.js 已依各自的時間排好
+const PERSONAL_LISTS = { later: () => laterList, saved: () => savedList, read: () => readList, manual: () => manualList };
 
 function scopeArticles() {
   if (PERSONAL_LISTS[ui.tab]) {
@@ -122,8 +124,9 @@ function searchArticles(scope) {
 }
 
 function visibleArticles(scope) {
+  // 自選文章不分主題，「自選」分頁不套主題 pill
   const list = scope.filter((a) =>
-    (ui.topic === "all" || a.topics.includes(ui.topic)) &&
+    (ui.tab === "manual" || ui.topic === "all" || a.topics.includes(ui.topic)) &&
     !(ui.tab === "new" && ui.hideRead && states.get(a.pmid)?.read));
   // articles 本身已依時間排好；其他分頁維持各自的排序
   return ui.tab === "new" && ui.sort === "rel" ? list.sort(compareByRelevance) : list;
@@ -142,6 +145,7 @@ function renderControls(scope) {
     <button type="button" class="pill" role="radio" data-topic="${t.id}"
       aria-checked="${ui.topic === t.id}">${esc(t.name)}<span class="pill-count">${counts[t.id]}</span></button>`
   ).join("");
+  $("topics").hidden = ui.tab === "manual";
 
   $("search").placeholder = ui.tab === "saved" ? "搜尋標題、摘要、筆記" : "搜尋標題、摘要";
   $("search-clear").hidden = !$("search").value;
@@ -217,9 +221,10 @@ function renderCard(a) {
     </h2>
     ${summary ? `<p class="headline">${esc(summary.headline)}</p>` : ""}
     <div class="card-meta">
-      ${a.journal ? `<span class="journal ${journalClass(a.journal)}">${esc(a.journal)}</span>` : ""}
+      ${a.journal || a.journal_full ? `<span class="journal ${journalClass(a.journal)}">${esc(a.journal || a.journal_full)}</span>` : ""}
+      ${a.manual ? `<span class="manual-tag">自選</span>` : ""}
       ${renderRelevance(a)}
-      <time datetime="${esc(a.pub_date)}">${esc(a.pub_date)}</time>
+      <time datetime="${esc(a.pub_date || a.year)}">${esc(a.pub_date || a.year)}</time>
     </div>
     ${ui.tab === "read" ? `<p class="read-at">${readAt ? `已讀於 ${twDay.format(new Date(readAt))}` : "已讀日期不明"}</p>` : ""}
     ${saved?.reviewCount ? `<p class="review-stat">回顧 ${saved.reviewCount} 次${saved.reviewedAt ? ` · 上次 ${twDay.format(new Date(saved.reviewedAt))}` : ""}</p>` : ""}
@@ -236,7 +241,7 @@ function renderCard(a) {
       <div class="act-group act-group-links">
         ${withNote ? `<button type="button" class="act act-note" data-act="note" aria-expanded="${editingNote === a.pmid}">✎ 筆記</button>` : ""}
         <button type="button" class="act act-analyze${analyzed ? " has-analysis" : ""}" data-act="analyze">${analyzed ? "看解析" : "解析"}</button>
-        <a class="act act-link" href="${esc(a.url)}" target="_blank" rel="noopener noreferrer">看全文 ↗</a>
+        ${a.url ? `<a class="act act-link" href="${esc(a.url)}" target="_blank" rel="noopener noreferrer">看全文 ↗</a>` : ""}
         ${oa}
       </div>
     </div>
@@ -283,11 +288,16 @@ function render() {
   } else if (personal && authStatus === "unavailable") {
     msg = "同步服務載入失敗，請重新整理頁面。";
   } else if (personal && authStatus !== "signedIn") {
-    msg = { later: "登入後才能看到稍後細讀佇列。", saved: "登入後才能看到收藏。", read: "登入後才能看到已讀紀錄。" }[ui.tab];
+    msg = {
+      later: "登入後才能看到稍後細讀佇列。", saved: "登入後才能看到收藏。",
+      read: "登入後才能看到已讀紀錄。", manual: "登入後才能看到自選文章。",
+    }[ui.tab];
   } else if (ui.tab === "later" && !laterList.length) {
     msg = "佇列是空的。<br>按下「稍後細讀」，文章就會排進這裡；標成已讀後自動離開。";
   } else if (ui.tab === "saved" && !savedList.length) {
     msg = "還沒有收藏的文章。<br>按下「☆ 收藏」，文章就會長期留在這裡，可以寫筆記、匯出 RIS。";
+  } else if (ui.tab === "manual" && !manualList.length) {
+    msg = "還沒有自選文章。<br>按「＋ 加入文章」，貼 PMID、DOI，或直接上傳 PDF。";
   } else if (ui.tab === "read" && !readList.length) {
     msg = "還沒有已讀的文章。<br>在「新進」按下「已讀」，文章就會依時間出現在這裡。";
   } else if (searching && !searched.length) {
@@ -342,7 +352,7 @@ function risRecord(a) {
     ["DO", a.doi],
     ["AB", a.abstract],
     ["UR", a.url],
-    ["AN", a.pmid],
+    ["AN", /^\d+$/.test(a.pmid) ? a.pmid : ""], // 自選文章的文件 ID 不一定是 PMID
     ["N1", noteOf(a.pmid)],
   );
   return fields
@@ -383,8 +393,8 @@ function bindState() {
 }
 
 async function refreshStates() {
-  [states, laterList, savedList, readList] = await Promise.all([
-    getAllStates(), getAllLater(), getAllSaved(), getAllRead(),
+  [states, laterList, savedList, readList, manualList] = await Promise.all([
+    getAllStates(), getAllLater(), getAllSaved(), getAllRead(), getAllManual(),
   ]);
 }
 
@@ -486,7 +496,39 @@ function articleOf(pmid) {
   return articles.find((a) => a.pmid === pmid) ||
     laterList.find((l) => l.pmid === pmid)?.article ||
     savedList.find((s) => s.pmid === pmid)?.article ||
-    readList.find((r) => r.pmid === pmid)?.article || null;
+    readList.find((r) => r.pmid === pmid)?.article ||
+    manualList.find((m) => m.pmid === pmid)?.article || null;
+}
+
+// ---------- 自選文章 ----------
+
+function findExisting({ pmid, doi }) {
+  const d = (doi || "").toLowerCase();
+  return articles.find((a) => (pmid && a.pmid === pmid) || (d && (a.doi || "").toLowerCase() === d)) || null;
+}
+
+// 切到這篇所在的分頁（儀表板的文章到「新進」全部時間，自選文章到「自選」），清掉篩選、捲過去並閃一下。
+// 範圍與隱藏已讀只改這次畫面、不存偏好
+function showArticle(article) {
+  const inFeed = articles.some((a) => a.pmid === article.pmid);
+  ui.tab = inFeed ? "new" : "manual";
+  ui.topic = "all";
+  if (inFeed) {
+    ui.range = "all";
+    ui.hideRead = false;
+  }
+  clearSearch();
+  ui.query = "";
+  if (location.hash !== "#papers") location.hash = "papers";
+  render();
+  window.scrollTo({ top: 0 });
+  requestAnimationFrame(() => {
+    const card = $("list").querySelector(`.card[data-pmid="${CSS.escape(article.pmid)}"]`);
+    if (!card) return;
+    card.scrollIntoView({ block: "center" });
+    card.classList.add("is-flash");
+    setTimeout(() => card.classList.remove("is-flash"), 1700);
+  });
 }
 
 function bindEvents() {
@@ -524,6 +566,7 @@ function bindEvents() {
   });
 
   $("export-ris").addEventListener("click", exportRis);
+  $("add-article").addEventListener("click", openAddArticle);
 
   $("hide-read").addEventListener("change", (e) => {
     ui.hideRead = e.target.checked;
@@ -601,6 +644,7 @@ export async function init(ctx) {
   bindSearchBox();
   bindNotes();
   bindState();
+  initAddArticle({ findExisting, showArticle });
   try {
     const data = await fetchJSON("data/articles.json");
     articles = (data.articles || []).slice().sort(compareArticles);

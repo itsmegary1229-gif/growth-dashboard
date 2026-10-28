@@ -9,6 +9,7 @@
 - 四個分區：**論文**（PubMed E-utilities）、**影片**（YouTube 公開 RSS）、**文章**（任意 RSS／Atom，非醫學的 newsletter、部落格），
   由 GitHub Actions 每天台灣 06:00 自動抓取；**回顧**（每天從收藏抽文章重讀，純前端）
 - 論文的**全文解析**（PDF → Claude）經 Cloudflare Worker 代理（程式在 `worker/`，API key 只在 Worker secret）
+- **自選文章**：手動加入儀表板沒抓到的論文（PMID／DOI／網址或只給 PDF），存 Firestore，不進 `articles.json`
 
 ## 檔案結構
 
@@ -33,6 +34,8 @@ growth-dashboard/
 │   ├── wrangler.toml             ← Worker 名稱、[vars]（模型、允許的 uid／origin）
 │   ├── index.js                  ← 端點 /analyze、/ask、/fetch-pdf，SSE 轉發
 │   ├── auth.js                   ← Firebase ID token 驗證（Web Crypto RS256）
+│   ├── lookup.js                 ← /lookup：PubMed efetch／esearch、Crossref、Unpaywall
+│   ├── summary-prompt.js         ← /summarize 的 prompt（⚠️ 與 scripts/summarize.py 同步）
 │   └── prompt.js                 ← 解析／追問 prompt（調整只改這裡）
 └── assets/
     ├── css/style.css
@@ -41,6 +44,7 @@ growth-dashboard/
         ├── util.js               ← 共用工具：esc、台灣日期、toast、搜尋框、localStorage 偏好、共用 JSON 抓取
         ├── analysis.js           ← 論文全文解析對話框（取得 PDF、呼叫 Worker、串流、追問、存 Firestore）
         ├── markdown.js           ← 輕量 Markdown → HTML（解析結果用）
+        ├── addArticle.js         ← 自選文章：「＋ 加入文章」對話框、lookup／summarize 流程、文件 ID 規則
         ├── state.js              ← 個人狀態抽象層（Firestore，每分區一個集合）＋登入狀態
         ├── firebase.js           ← Firebase 初始化（CDN SDK，版號只寫在這裡）
         └── sections/
@@ -258,6 +262,39 @@ fetch.yml 在抓取之後執行（`continue-on-error: true`，失敗不擋 commi
 - 回顧區卡片有解析時多一個「看全文解析 →」；「收藏」分頁的卡片本來就有「看解析」。論文搜尋範圍加入解析全文與問答。
 - 手機版「收藏」分頁連結按鈕有四顆（筆記／解析／看全文／PDF）時排成 2×2；桌機操作列排不下時換列。
 
+### 自選文章（Handoff #11）
+- **Worker 新端點**（皆需 token，同其他端點）：
+  - `/lookup` `{ query }`：PMID、`PMID: …`、PubMed 網址、DOI、`doi:`、doi.org 或含 DOI 的期刊網址 → 書目
+    `{ pmid, doi, title, authors, journal, journal_full, pub_date, year, volume, issue, pages, abstract, url, oa_url, oa_pdf, source }`。
+    PMID 走 PubMed efetch（XML 以正規式解析，欄位規則同 `fetch_pubmed.parse_article`，五本期刊轉簡稱）；
+    **DOI 先用 PubMed esearch `<doi>[doi]` 找 PMID**，找到就用 PubMed 書目（摘要、作者較完整，也能判斷是否已在儀表板），
+    找不到才查 Crossref（`?mailto=`）；有 DOI 再查 Unpaywall 的 OA。看不出識別碼 400、找不到 404。
+    聯絡 email 在 `wrangler.toml` 的 `CONTACT_EMAIL`。
+  - `/summarize` `{ title, abstract, journal, journal_full?, pub_date?, year }` → `summary_zh`
+    `{ headline, points, relevance, reason, model, at, basis }`，模型 `MODEL_SUMMARY`（`claude-haiku-4-5`），非串流、max_tokens 600、
+    不送 temperature（2026-10-21 版 API 不接受）。JSON 解析與欄位檢查同 `summarize.py`，不合格 502。
+  - `/analyze` 沒有 `title` 時（只上傳 PDF）prompt 要求先輸出 `<biblio>{title, authors, journal, journal_full, year, doi, abstract}</biblio>`
+    再接解析；前端拆出書目、其餘存 `analysis.markdown`。一般文章沒有標題副本時前端送「PMID xxx」當標題，不會誤觸發。
+- ⚠️ **兩處 prompt 要同步**：`worker/summary-prompt.js` 的 `SUMMARY_SYSTEM`／`summaryUserText`／`NO_ABSTRACT_NOTE`
+  是 `scripts/summarize.py` 的 `SYSTEM_PROMPT`／`USER_TEMPLATE`／`NO_ABSTRACT_NOTE` 的複本（#11 時 system prompt 逐字相同，
+  只有「命中主題」一行改成「無：使用者手動加入」）。改任何一邊都要改另一邊。
+- **文件 ID**（`addArticle.js` 的 `docIdFor`）：有 PMID → PMID；沒有 PMID 有 DOI → `doi_` + DOI 小寫、`/` 和 `.` 換成 `_`；
+  都沒有 → `manual_` + 8 碼隨機。PMID 或 DOI 對到 `articles.json` 已有的文章時不建立，提示「這篇已在儀表板」，
+  切到「新進」（全部時間、不隱藏已讀，不存偏好）捲到那張卡閃一下並開它的解析視窗；已在自選則提示「這篇已在自選」同樣處理。
+- **欄位**（userState，與冗餘副本同名、放文件頂層）：`manual: true`、`addedAt`（Timestamp，已存在的自選文章保留原值）、`title`、`authors`、
+  `journal`、`journal_full`、`year`、`pub_date`、`volume`、`issue`、`pages`、`doi`、`pmid`（字串，沒有為空）、`url`（PubMed 或 doi.org，
+  都沒有為空）、`oa_url`、`oa_pdf`、`abstract`、`topics: []`、`summary_zh`、`analysis`（同 #10）。`state.js` 的 `fallbackArticle` 組回文章物件，
+  所以已讀／稍後細讀／收藏／筆記／RIS／回顧都照常運作（RIS 的 AN 只寫數字 PMID）。
+- **流程 A**（有識別碼，可另附 PDF）：純數字 PMID 先比對 `articles.json`（不打 Worker）→ `/lookup` → 比對重複 → 書目預覽
+  （標題、作者、期刊年卷期頁、PMID／DOI、摘要前 6 行、接下來會不會自動解析）→「確認加入」→ `addManual` → `/summarize`（等它完成）
+  → 切到「自選」、閃卡片 → 有附 PDF 用它解析，否則有 `oa_url` 自動抓 OA 解析，都沒有就提示到卡片上傳。摘要失敗時文章照樣建立，提示失敗原因。
+- **流程 B**（只有 PDF）：關掉加入視窗、直接開解析視窗（標題「上傳的 PDF（書目讀取中）」，串流中隱藏 `<biblio>`）→ 完成後
+  `onBiblio`：書目有 DOI 就再 `/lookup` 補齊 PMID、卷期、OA（查不到用 PDF 讀出的書目；沒有標題時用檔名）→ 比對重複
+  （重複就把解析存到既有那篇）→ `addManual` → 背景 `/summarize` → 解析存到新文件。
+- **畫面**：論文子分頁「新進｜稍後細讀｜收藏｜已讀｜自選」（320px 排得下），「自選」依 `addedAt` 新到舊、隱藏主題 pill、搜尋適用。
+  結果列右側「＋ 加入文章」（每個分頁都有，實心）。卡片期刊標籤顯示 lookup 的期刊縮寫（沒有就全名，太長截斷）、虛線框小標「自選」。
+  加入視窗手機全螢幕、桌機 560px，手機不自動聚焦輸入框（免得鍵盤蓋住「選擇 PDF」）。
+
 ### 個人狀態的三個概念（互相獨立，一篇可以同時具備）
 - **稍後細讀**（`later`）：短期待讀佇列。標已讀時自動離開佇列。
 - **收藏**（`saved`）：長期書庫。筆記、RIS 匯出都在這裡；標已讀不影響收藏。
@@ -295,7 +332,8 @@ Firebase 專案 `growth-dashboard-989fb`，SDK **13.0.0**（gstatic CDN 的 ES m
 `getAllSaved`／`getAllRead`。videoState、feedState 由 `createListStore(name, doneFlag, meta, item)` 產生，另有
 `doneFlag`（`"watched"`／`"read"`）、`setDone(id, bool, item?)`、`getAllDone()`（項目帶 `{doneFlag}At`）——#9 起取代 `setWatched`／`getAllWatched`。paperState 另有 #8 的 `markReviewed(pmid, article?)`、
 `getAllReviewed()`（有 `reviewedAt` 的文件，含已取消收藏的）、`isSynced()`（登入後第一次 onSnapshot 是否已到，回顧區用來避免閃出空狀態）；
-`getAllSaved()` 項目多 `reviewedAt`（ISO）、`reviewCount`。#10 加 `getAnalysis(pmid)`（同步）、`setAnalysis(pmid, analysis, article?)`，
+`getAllSaved()` 項目多 `reviewedAt`（ISO）、`reviewCount`。#11 加 `getAllManual()`、`getManual(id)`（同步）、`addManual(id, biblio)`、
+`setSummary(id, summary)`；清單項目的 `article.manual` 標示自選。#10 加 `getAnalysis(pmid)`（同步）、`setAnalysis(pmid, analysis, article?)`，
 以及模組層級的 `getIdToken()`（呼叫 Worker 用）。清單項目一律有 `id`、`item`（論文另帶 `pmid`、`article`）。
 登入相關 `onAuthChange`、`signIn`、`signOutUser`、`AuthRequiredError` 各分區共用。
 
@@ -424,3 +462,15 @@ console 會有該集合監聽失敗的錯誤。
   - `MAX_TOKENS` 4000 → 8000，已重新部署（版本 `e6c4d3aa`，100% 流量；`wrangler versions view` 確認 Cloudflare 上的值是 8000）。
   - prompt 加規則：各段落內容不要重複該段標題。
   - 「重新解析」移到解析視窗頂端、保留問答（原本在最底、會清掉問答）；截斷提示文字指向這顆按鈕。
+- [x] **Handoff #11 自選文章——手動加入任何論文並解析**（2026-10-28）：`worker/lookup.js`（新）、`worker/summary-prompt.js`（新）、
+  `worker/index.js`、`worker/prompt.js`、`worker/wrangler.toml`、`assets/js/addArticle.js`（新）、`analysis.js`、`state.js`、`papers.js`、
+  `index.html`、`style.css`。細節見「資料層說明 → 自選文章」。
+  - Worker 已重新部署（版本 `231f3678`），新增 `MODEL_SUMMARY`、`CONTACT_EMAIL`。
+  - `/lookup` 以真實 PubMed／Crossref／Unpaywall 測過：PMID、DOI（經 esearch 對到 PMID）、Crossref 才有的 DOI、不存在的 PMID／DOI（404）、
+    無法辨識（400）；作者、期刊簡稱與 `articles.json` 一致。`/summarize` 的 system prompt 與 `summarize.py` 逐字比對相同。
+    Worker 本機測試 30 項全過。
+  - 前端以假 Firestore＋假 Worker 驗證：流程 A（含 OA 自動解析、無 OA、摘要失敗）、流程 B（書目讀出、`<biblio>` 不顯示也不存）、
+    重複判斷（儀表板既有 PMID／DOI、已在自選）、404、收藏／筆記／RIS／回顧候選、320px 版面。
+  - 與 handoff 的差異：DOI 先查 PubMed 再 Crossref（handoff 寫直接 Crossref）；只給 PDF 時若讀出的書目有 DOI 會再 `/lookup` 補齊；
+    `/summarize` 不送 temperature；`<biblio>` 的 abstract 要求照抄原文 Abstract（沒有才寫 150 words 摘要），不是 150 字中文摘要。
+  - ⚠️ 尚未以真實 API 驗收（需要 `ANTHROPIC_API_KEY` secret）。摘要失敗的自選文章目前沒有「重新產生摘要」按鈕。

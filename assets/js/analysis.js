@@ -24,8 +24,11 @@ let s = null;
 //   article, phase: choose | fetching | streaming | done | error,
 //   text, model, source, error, notice, abort, reanalyze（從已有解析按「重新解析」進來）,
 //   ask: null | { q, a, phase: fetching | streaming | error, error, abort },
-//   pendingQuestion（等使用者選檔後再送的追問）, fileFor: "analyze" | "ask"
+//   pendingQuestion（等使用者選檔後再送的追問）, fileFor: "analyze" | "ask",
+//   onBiblio（只有 PDF 的自選文章：解析完成後用讀出的書目建立文章，回傳文章物件；見 addArticle.js）
 // }
+
+export const PENDING_ID = "__pending"; // 只有 PDF、書目還沒讀出來時的暫用 ID
 
 // ---------- 對外 ----------
 
@@ -40,7 +43,12 @@ export function analysisSearchText(pmid) {
   return [a.markdown, ...(a.qa || []).flatMap((x) => [x.q, x.a])].join("\n");
 }
 
-export function openAnalysis(article) {
+// opts（#11 自選文章）：
+//   file      直接用這個 PDF 開始解析（已有解析時不自動重跑）
+//   autoOa    有 oa_url 時直接用 OA 全文開始解析（同上）
+//   onBiblio  只有 PDF、沒有書目：article.pmid 用 PENDING_ID，/analyze 不送標題，Worker 會先輸出 <biblio> 書目；
+//             完成後呼叫 onBiblio(biblio, { fileName })，回傳建立好的文章物件，解析存到那份文件
+export function openAnalysis(article, opts = {}) {
   if (authStatus !== "signedIn") {
     toast(authRequiredMessage(authStatus));
     return;
@@ -51,19 +59,24 @@ export function openAnalysis(article) {
     phase: saved?.markdown ? "done" : "choose",
     text: "",
     ask: null,
+    onBiblio: opts.onBiblio || null,
   };
-  $("an-title").textContent = article.title || `PMID ${article.pmid}`;
+  $("an-title").textContent = s.onBiblio ? "上傳的 PDF（書目讀取中）" : article.title || `PMID ${article.pmid}`;
   $("an-ask-input").value = "";
   render();
   const dlg = $("analysis-dialog");
   if (!dlg.open) dlg.showModal();
   document.documentElement.classList.add("an-open");
   $("an-body").scrollTop = 0;
+  if (!saved?.markdown) {
+    if (opts.file) runAnalyze("upload", opts.file);
+    else if (opts.autoOa && article.oa_url) runAnalyze("oa");
+  }
 }
 
 // ---------- Worker ----------
 
-async function workerFetch(path, body, signal) {
+export async function workerFetch(path, body, signal) {
   const token = await getIdToken();
   const res = await fetch(`${WORKER_URL}${path}`, {
     method: "POST",
@@ -152,6 +165,26 @@ function articleYear(a) {
   return a.year || (a.pub_date || "").slice(0, 4);
 }
 
+// 只有 PDF 時 Worker 輸出最前面的 <biblio>{…}</biblio>；回傳 { biblio（解析失敗為 null）, body }
+function splitBiblio(text) {
+  const m = text.match(/^\s*<biblio>([\s\S]*?)<\/biblio>\s*/);
+  if (!m) return { biblio: null, body: text };
+  let biblio = null;
+  try {
+    const raw = m[1].trim().replace(/^```[a-z]*\s*/i, "").replace(/\s*```$/, "");
+    const d = JSON.parse(raw);
+    if (d && typeof d === "object") biblio = d;
+  } catch (err) {
+    console.warn("書目 JSON 解析失敗", err);
+  }
+  return { biblio, body: text.slice(m[0].length) };
+}
+
+// 顯示用：去掉 <biblio> 區塊（串流中還沒收到結尾標籤時整段先不顯示）
+function stripBiblio(md) {
+  return md.replace(/^\s*<biblio>[\s\S]*?(<\/biblio>\s*|$)/, "");
+}
+
 function parseType(md) {
   return md.match(/文章類型\s*[:：]\s*\**\s*([^\n*]+)/)?.[1].trim() || "";
 }
@@ -182,8 +215,11 @@ async function runAnalyze(source, file = null) {
     cur.phase = "streaming";
     render();
     const a = cur.article;
+    // 不送標題＝請 Worker 先讀出書目，只用在只有 PDF 的自選文章；其他文章沒有標題副本時用 PMID 代替
     const res = await workerFetch("/analyze", {
-      pmid, title: a.title, journal: a.journal, year: articleYear(a), pdf_base64: b64,
+      pmid: cur.onBiblio ? "" : pmid,
+      title: cur.onBiblio ? "" : a.title || `PMID ${pmid}`,
+      journal: a.journal, year: articleYear(a), pdf_base64: b64,
     }, ctrl.signal);
     const done = await readStream(res, ctrl.signal, (t) => {
       cur.text += t;
@@ -193,9 +229,21 @@ async function runAnalyze(source, file = null) {
       if (s === cur) render();
     });
     if (done.stop_reason === "refusal") throw new Error("模型拒絕回答這篇（安全分類器）。可以換一個 PDF 版本再試。");
+    const { biblio, body } = splitBiblio(cur.text);
+    if (cur.onBiblio) {
+      // 建立自選文章（或對到儀表板既有的那篇），解析存到那份文件
+      cur.phase = "creating";
+      render();
+      const article = await cur.onBiblio(biblio || {}, { fileName: file?.name || "" });
+      pdfCache.set(article.pmid, pdfCache.get(PENDING_ID));
+      pdfCache.delete(PENDING_ID);
+      cur.article = article;
+      cur.onBiblio = null;
+      if (s === cur) $("an-title").textContent = article.title || "上傳的 PDF";
+    }
     const analysis = {
-      markdown: cur.text,
-      type: parseType(cur.text),
+      markdown: body,
+      type: parseType(body),
       model: done.model || cur.model,
       source,
       at: new Date().toISOString(),
@@ -283,6 +331,8 @@ function currentAnalysis() {
 
 // 「## 標題」切段，可收合；第一行「文章類型：X」改成標籤
 function renderAnalysisMd(md, streaming) {
+  md = stripBiblio(md);
+  if (streaming && !md.trim()) return `<p class="an-status">讀出書目中…</p>`;
   const lines = md.split("\n");
   const pre = [];
   const sections = [];
@@ -358,6 +408,9 @@ function render() {
         ${sourceButtons()}
         ${s.reanalyze ? `<div class="an-row"><button type="button" class="an-btn an-small" data-act="back">返回解析</button></div>` : ""}`;
       break;
+    case "creating":
+      html = `<div class="an-row"><span class="an-status">建立文章、產生 AI 摘要中…</span></div>`;
+      break;
     case "fetching":
       html = `<div class="an-row"><span class="an-status">正在取得 OA 全文…</span>
         <button type="button" class="an-btn an-small" data-act="cancel">取消</button></div>`;
@@ -414,7 +467,7 @@ function scheduleStreamPaint() {
 // ---------- 事件 ----------
 
 function busy() {
-  return s && (s.phase === "fetching" || s.phase === "streaming" || (s.ask && s.ask.phase !== "error"));
+  return s && (s.phase === "fetching" || s.phase === "streaming" || s.phase === "creating" || (s.ask && s.ask.phase !== "error"));
 }
 
 function close(force = false) {

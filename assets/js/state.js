@@ -22,6 +22,10 @@
 //   isSynced()                   登入後第一次 onSnapshot 是否已到（之前的空清單不代表真的沒有）
 //   getAnalysis(pmid)            同步回傳全文解析 analysis（#10，見 sections/analysis.js），沒有為 null
 //   setAnalysis(pmid, analysis, article?)  整份寫入 analysis（解析完成、追問完成時）
+//   getAllManual()               → [{ pmid, addedAt, article }]，自選文章（manual == true，#11），依 addedAt 新到舊
+//   getManual(id)                同步回傳自選文章的清單項目（沒有為 null）
+//   addManual(id, biblio)        建立／補寫自選文章：manual = true、addedAt（已有就保留）＋書目欄位
+//   setSummary(id, summary)      寫入 AI 摘要 summary_zh（自選文章，由 Worker /summarize 產生）
 // videoState、feedState 由 createListStore 產生（清單分區 sections/listSection.js 用），另有：
 //   doneFlag                     「完成」旗標名稱：videoState 為 "watched"（已看），feedState 為 "read"（已讀）
 //   setDone(id, done, item?)     標完成時若在「稍後」佇列中，同一次寫入把 later 改 false（laterAt 保留當歷史）
@@ -189,12 +193,15 @@ const papers = createCollection("userState", ["read", "later", "saved"]);
 // 冗餘副本只有 title／journal／url／topics（收藏、稍後細讀另有書目欄位；收藏、回顧另有 AI 摘要等，見 reviewCopy），
 // 其餘欄位補空值讓 papers.js 能照常排序、渲染
 // （#2 遷移來的已讀文件可能沒有 title，由 papers.js 顯示成「PMID xxx」；#5 之前的收藏沒有書目欄位）
+// 自選文章（#11）的書目也存在同一份文件，同樣由這裡組回文章物件；文件 ID 不一定是 PMID（doi_…、manual_…）
 function fallbackArticle(pmid, e, at) {
+  const numeric = /^\d+$/.test(pmid);
   return {
     pmid,
+    manual: !!e.manual,
     title: e.title || "",
     journal: e.journal || "",
-    journal_full: "",
+    journal_full: e.journal_full || "",
     pub_date: e.pub_date || "",
     abstract: e.abstract || "",
     summary_zh: e.summary_zh,
@@ -207,7 +214,7 @@ function fallbackArticle(pmid, e, at) {
     issue: e.issue || "",
     pages: e.pages || "",
     topics: e.topics || [],
-    url: e.url || `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`,
+    url: e.url || (numeric ? `https://pubmed.ncbi.nlm.nih.gov/${pmid}/` : ""),
     added_at: at || new Date(0).toISOString(),
   };
 }
@@ -341,6 +348,41 @@ export const paperState = {
   },
   async setAnalysis(pmid, analysis, article = null) {
     await papers.write(pmid, { analysis, ...paperMeta(article) });
+  },
+
+  // 自選文章（#11）：書目存在文件頂層（與冗餘副本同名欄位），不寫進 articles.json
+  async getAllManual() {
+    return papers.list("manual", "addedAt", paperItem);
+  },
+  getManual(id) {
+    const e = papers.entry(id);
+    return e?.manual ? paperItem(id, e, toIso(e.addedAt)) : null;
+  },
+  async addManual(id, b) {
+    const prev = papers.entry(id);
+    await papers.write(id, {
+      manual: true,
+      addedAt: prev?.manual && prev.addedAt ? prev.addedAt : now(),
+      title: b.title || "",
+      authors: b.authors || [],
+      journal: b.journal || "",
+      journal_full: b.journal_full || "",
+      year: b.year || (b.pub_date || "").slice(0, 4),
+      pub_date: b.pub_date || "",
+      volume: b.volume || "",
+      issue: b.issue || "",
+      pages: b.pages || "",
+      doi: b.doi || "",
+      pmid: b.pmid || "",
+      url: b.url || (b.pmid ? `https://pubmed.ncbi.nlm.nih.gov/${b.pmid}/` : b.doi ? `https://doi.org/${b.doi}` : ""),
+      oa_url: b.oa_url || null,
+      oa_pdf: !!b.oa_pdf,
+      abstract: b.abstract || "",
+      topics: [],
+    });
+  },
+  async setSummary(id, summary) {
+    await papers.write(id, { summary_zh: summary });
   },
 };
 

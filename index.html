@@ -52,6 +52,7 @@
         <button type="button" role="tab" class="tab" data-tab="later" aria-selected="false">稍後細讀 <span class="tab-count" id="later-count"></span></button>
         <button type="button" role="tab" class="tab" data-tab="saved" aria-selected="false">收藏</button>
         <button type="button" role="tab" class="tab" data-tab="read" aria-selected="false">已讀</button>
+        <button type="button" role="tab" class="tab" data-tab="manual" aria-selected="false">自選</button>
       </div>
       <div class="pills" id="topics" role="radiogroup" aria-label="主題"></div>
       <div class="search" role="search">
@@ -81,7 +82,10 @@
   <main class="wrap">
     <div class="result-bar">
       <p class="result-count" id="result-count" aria-live="polite"></p>
-      <button type="button" class="export-btn" id="export-ris" hidden>匯出 RIS</button>
+      <div class="result-actions">
+        <button type="button" class="export-btn" id="export-ris" hidden>匯出 RIS</button>
+        <button type="button" class="export-btn add-btn" id="add-article">＋ 加入文章</button>
+      </div>
     </div>
     <div id="list" class="list"></div>
   </main>
@@ -188,6 +192,21 @@
         <button type="submit" class="an-btn an-primary" id="an-ask-send">送出</button>
       </form>
       <input type="file" id="an-file" accept="application/pdf,.pdf" hidden>
+    </div>
+  </dialog>
+
+  <!-- 自選文章：加入文章（assets/js/addArticle.js） -->
+  <dialog class="an-dialog add-dialog" id="add-dialog" aria-labelledby="add-title">
+    <div class="an-frame">
+      <div class="an-head">
+        <div class="an-head-text">
+          <p class="an-kicker">自選文章</p>
+          <h2 class="an-title" id="add-title">加入文章</h2>
+        </div>
+        <button type="button" class="an-close" data-act="close" aria-label="關閉">×</button>
+      </div>
+      <div class="an-body" id="add-body"></div>
+      <input type="file" id="add-file" accept="application/pdf,.pdf" hidden>
     </div>
   </dialog>
 

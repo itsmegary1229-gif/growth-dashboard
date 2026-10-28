@@ -1015,3 +1015,67 @@ html.an-open { overflow: hidden; }
   .an-sticky { top: -18px; margin: -18px -24px 12px; padding: 10px 24px; }
   .an-ask { padding: 12px 24px 14px; }
 }
+
+/* ---------- 自選文章（addArticle.js） ---------- */
+
+.result-actions { display: flex; gap: 8px; margin-left: auto; }
+.result-actions .export-btn { margin-left: 0; }
+.add-btn { background: var(--accent); color: #fff; }
+.add-btn:hover { background: var(--accent-strong); }
+
+/* 自選文章的期刊名可能很長（lookup 的縮寫或全名）：整列可換行，期刊名太長時截斷 */
+.card-meta { flex-wrap: wrap; row-gap: 6px; }
+.card-meta .journal { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.card-meta time, .rel { white-space: nowrap; }
+.manual-tag {
+  flex: none;
+  white-space: nowrap;
+  padding: 1px 8px;
+  border-radius: 999px;
+  border: 1px dashed var(--accent);
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+/* 從「加入文章」導過來時閃一下，讓人知道是哪張卡 */
+.card.is-flash { animation: card-flash 1.6s ease-out; }
+@keyframes card-flash {
+  0%, 30% { box-shadow: 0 0 0 3px var(--accent); }
+  100% { box-shadow: 0 0 0 3px transparent; }
+}
+
+.add-dialog .an-body { padding-top: 18px; }
+.add-form { display: flex; flex-direction: column; }
+.add-label { margin: 0 0 6px; font-size: 0.9rem; font-weight: 600; color: var(--text-2); }
+.add-input {
+  min-height: 48px;
+  margin-bottom: 18px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+  font-size: 1rem; /* ≥16px，iOS 才不會自動放大 */
+}
+.add-input:focus { outline: none; border-color: var(--accent); background: var(--surface); }
+.add-pick { align-self: flex-start; }
+.add-file { display: flex; align-items: center; gap: 10px; }
+.add-file-name { flex: 1; min-width: 0; overflow-wrap: anywhere; font-size: 0.95rem; }
+.add-file-name small { margin-left: 8px; color: var(--text-3); }
+
+.add-preview { padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: #fafaf8; }
+.add-preview-title { margin: 0 0 6px; font-weight: 650; line-height: 1.5; }
+.add-preview-meta { margin: 2px 0 0; font-size: 0.86rem; color: var(--text-2); overflow-wrap: anywhere; }
+.add-preview-abs {
+  margin: 10px 0 0;
+  font-size: 0.9rem;
+  color: var(--text-2);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .add-dialog { width: min(560px, calc(100% - 48px)); }
+}
