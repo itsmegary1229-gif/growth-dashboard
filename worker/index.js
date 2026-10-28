@@ -4,6 +4,9 @@
 //   /analyze    { pmid, title, journal, year, pdf_base64 }         → SSE 串流解析文字
 //   /ask        { pmid, question, analysis, qa?, title?, pdf_base64 } → SSE 串流回答
 //   /fetch-pdf  { url } → 代抓 OA PDF（瀏覽器直接抓會被 CORS 擋）；不是 PDF 或抓不到回 422
+//   /lookup     { query } → 書目 JSON（PMID／DOI／PubMed 網址／doi.org 網址；見 lookup.js）；找不到 404
+//   /summarize  { title, abstract, journal, journal_full?, pub_date?, year } → summary_zh（同 scripts/summarize.py 的結構）
+// /analyze 沒有 title 時（只上傳 PDF 的自選文章）輸出最前面多一段 <biblio>{…}</biblio> 書目（見 prompt.js）。
 //
 // SSE 格式（前端 assets/js/analysis.js 解析）：
 //   event: meta   data: { model }                    Anthropic 回應開始
@@ -16,6 +19,8 @@
 
 import { verifyIdToken, AuthError } from "./auth.js";
 import { SYSTEM, analyzeText, askText } from "./prompt.js";
+import { SUMMARY_SYSTEM, summaryUserText, parseSummary } from "./summary-prompt.js";
+import { lookup, LookupError } from "./lookup.js";
 
 const API_URL = "https://api.anthropic.com/v1/messages";
 const API_VERSION = "2026-10-21";
@@ -91,11 +96,25 @@ function documentBlock(b64) {
   };
 }
 
-async function callClaude(env, text, pdf, cors) {
+function requireKey(env) {
   if (!env.ANTHROPIC_API_KEY) {
     throw new HttpError(500,
       "Worker 尚未設定 ANTHROPIC_API_KEY：請到 Cloudflare 後台 Workers → growth-dashboard-analyze → Settings → Variables and Secrets 新增 Secret");
   }
+}
+
+async function apiError(res) {
+  let msg = `HTTP ${res.status}`;
+  try {
+    const err = await res.json();
+    msg = `${err.error?.type || res.status}: ${err.error?.message || ""}`;
+  } catch { /* 保留 HTTP 狀態 */ }
+  console.error("Claude API 錯誤", msg);
+  return new HttpError(502, `Claude API 錯誤（${msg}）`);
+}
+
+async function callClaude(env, text, pdf, cors) {
+  requireKey(env);
   const res = await fetch(API_URL, {
     method: "POST",
     headers: {
@@ -115,15 +134,7 @@ async function callClaude(env, text, pdf, cors) {
       messages: [{ role: "user", content: [documentBlock(pdf), { type: "text", text }] }],
     }),
   });
-  if (!res.ok) {
-    let msg = `HTTP ${res.status}`;
-    try {
-      const err = await res.json();
-      msg = `${err.error?.type || res.status}: ${err.error?.message || ""}`;
-    } catch { /* 保留 HTTP 狀態 */ }
-    console.error("Claude API 錯誤", msg);
-    throw new HttpError(502, `Claude API 錯誤（${msg}）`);
-  }
+  if (!res.ok) throw await apiError(res);
   return new Response(relay(res.body), {
     headers: {
       "Content-Type": "text/event-stream; charset=utf-8",
@@ -301,7 +312,65 @@ async function fetchPdf(request, env, cors) {
   });
 }
 
-const ROUTES = { "/analyze": analyze, "/ask": ask, "/fetch-pdf": fetchPdf };
+async function lookupRoute(request, env, cors) {
+  const body = await readBody(request);
+  try {
+    return json(await lookup(str(body.query, 500), env), 200, cors);
+  } catch (err) {
+    if (err instanceof LookupError) throw new HttpError(err.status, err.message);
+    if (err.name === "TimeoutError") throw new HttpError(504, "書目查詢逾時，請稍後再試");
+    throw err;
+  }
+}
+
+// 自選文章的 AI 摘要：非串流、Haiku 等級（MODEL_SUMMARY），回傳 summary_zh（含 model、at、basis）
+async function summarize(request, env, cors) {
+  const body = await readBody(request);
+  const meta = {
+    title: str(body.title, 1000).trim(),
+    abstract: str(body.abstract, 20000).trim(),
+    journal: str(body.journal, 200),
+    journal_full: str(body.journal_full, 300),
+    pub_date: str(body.pub_date, 20),
+    year: str(body.year, 10),
+  };
+  if (!meta.title) throw new HttpError(400, "缺少標題");
+  requireKey(env);
+  const model = env.MODEL_SUMMARY || "claude-haiku-4-5";
+  const res = await fetch(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": env.ANTHROPIC_API_KEY,
+      "anthropic-version": API_VERSION,
+    },
+    // summarize.py 送 temperature 0（舊版 API）；2026-10-21 版 API 不接受 temperature，這裡不送
+    body: JSON.stringify({
+      model,
+      max_tokens: 600,
+      system: SUMMARY_SYSTEM,
+      messages: [{ role: "user", content: summaryUserText(meta) }],
+    }),
+  });
+  if (!res.ok) throw await apiError(res);
+  const msg = await res.json();
+  if (msg.stop_reason === "refusal") throw new HttpError(502, "模型拒絕摘要這篇");
+  const raw = (msg.content || []).filter((b) => b.type === "text").map((b) => b.text).join("");
+  let summary;
+  try {
+    summary = parseSummary(raw);
+  } catch (err) {
+    throw new HttpError(502, `摘要格式不合格（${err.message}）`);
+  }
+  return json({
+    ...summary,
+    model: msg.model || model,
+    at: new Date().toISOString().replace(/\.\d+Z$/, "Z"),
+    basis: meta.abstract ? "abstract" : "title",
+  }, 200, cors);
+}
+
+const ROUTES = { "/analyze": analyze, "/ask": ask, "/fetch-pdf": fetchPdf, "/lookup": lookupRoute, "/summarize": summarize };
 
 export default {
   async fetch(request, env) {

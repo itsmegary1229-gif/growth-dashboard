@@ -13,3 +13,7 @@ ALLOWED_ORIGINS = "https://itsmegary1229-gif.github.io,http://127.0.0.1:5500,htt
 MODEL = "claude-sonnet-5-5"
 # 長篇手術技巧論文 4000 會被截斷（#10.1 改 8000）
 MAX_TOKENS = "8000"
+# 自選文章的 AI 摘要（/summarize），與 scripts/summarize.py 同模型
+MODEL_SUMMARY = "claude-haiku-4-5"
+# NCBI E-utilities、Crossref、Unpaywall 要求附聯絡 email（同 scripts/fetch_pubmed.py 的 EMAIL）
+CONTACT_EMAIL = "itsmegary1229@gmail.com"

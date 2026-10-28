@@ -16,12 +16,23 @@ export const SYSTEM = `你是協助整形外科醫師讀論文的研究夥伴。
 - 用 Markdown 輸出：段落標題用 ##，條列用 -，必要時可用 ### 小標或表格；不要使用 HTML。
 - 各段落的內容直接切入重點，不要重複該段的標題（例如「## 主要結果」底下不要再寫「主要結果：」或「主要結果如下」，也不要再加同名的 ### 小標）。`;
 
+// 沒有標題＝使用者只上傳 PDF（自選文章，Handoff #11）：先輸出 <biblio> JSON 書目，前端解析後存成文章書目
+const BIBLIO = `這份 PDF 沒有附書目。輸出的最開頭先寫一段書目，格式固定為（<biblio> 標籤內是一個合法 JSON 物件，字串內的雙引號要跳脫）：
+<biblio>{"title": "英文原標題", "authors": ["Yang JR", "Chen YH"], "journal": "Plast Reconstr Surg", "journal_full": "Plastic and Reconstructive Surgery", "year": "2026", "doi": "10.xxxx/xxxx", "abstract": "…"}</biblio>
+- authors：每位寫成「姓 名字縮寫」（例如 Yang JR），依原文順序，最多 20 位。
+- journal：期刊的 PubMed／NLM 縮寫（不加句點）；看不出縮寫就用全名。journal_full 是期刊全名。
+- year：四位數字；doi：文中找不到就寫空字串。
+- abstract：論文原文 Abstract 照抄（英文）；論文沒有 Abstract 就用英文寫 150 words 內的摘要。
+書目之後換行，再照下面的格式輸出解析。
+
+`;
+
 export function analyzeText({ title, journal, year }) {
   const meta = [title && `標題：${title}`, journal && `期刊：${journal}`, year && `年份：${year}`]
     .filter(Boolean).join("\n");
-  return `${meta ? `${meta}\n\n` : ""}請完整解析上面這篇論文的全文。
+  return `${meta ? `${meta}\n\n` : BIBLIO}請完整解析上面這篇論文的全文。
 
-先判斷文章類型，輸出的第一行固定寫成「文章類型：X」，X 只能是以下其一：${TYPES.join("、")}。
+先判斷文章類型，${title ? "輸出的第一行" : "書目之後的第一行"}固定寫成「文章類型：X」，X 只能是以下其一：${TYPES.join("、")}。
 接著依序輸出下列段落，每段以「## 標題」開頭，標題文字照抄：
 
 ## 一句話
