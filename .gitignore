@@ -2,3 +2,8 @@ __pycache__/
 *.pyc
 .DS_Store
 .vscode/
+
+# Cloudflare Worker
+worker/node_modules/
+worker/.wrangler/
+worker/.dev.vars
