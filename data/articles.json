@@ -1,6 +1,42 @@
 {
-  "generated_at": "2026-10-27T01:01:16Z",
+  "generated_at": "2026-10-28T00:52:00Z",
   "articles": [
+    {
+      "pmid": "42937516",
+      "title": "The V-Shaped Subdomal Graft: A Structural Template for Geometric Control of the Nasal Tip.",
+      "journal": "PRS",
+      "journal_full": "Plastic and reconstructive surgery",
+      "pub_date": "2026-10-27",
+      "abstract": "",
+      "doi": "10.1097/PRS.0000000000013563",
+      "authors": [
+        "Salah AM"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42937516/",
+      "added_at": "2026-10-28T00:50:49Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-28T00:50:54Z",
+      "summary_zh": {
+        "headline": "V形下鼻甲移植物作為鼻尖幾何控制的結構性模板",
+        "points": [
+          "無摘要，依標題判斷。提出V形下鼻甲移植物作為鼻尖手術的結構性支撐模板，用於改善鼻尖幾何形狀控制。",
+          "屬於鼻尖結構性重建技術，可能涉及移植物設計與放置方式的創新方法。"
+        ],
+        "relevance": 4,
+        "reason": "鼻尖手術的結構性技術創新，但無摘要難以評估臨床實用性與證據強度。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-28T00:52:00Z",
+        "basis": "title"
+      }
+    },
     {
       "pmid": "42931926",
       "title": "Commentary on \"Evaluating Tranexamic Acid's Role in Upper Eyelid Blepharoplasty: A Systematic Review and Meta-Analysis\".",
