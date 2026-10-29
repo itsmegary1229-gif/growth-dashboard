@@ -1,6 +1,48 @@
 {
-  "generated_at": "2026-10-28T00:52:00Z",
+  "generated_at": "2026-10-29T01:27:14Z",
   "articles": [
+    {
+      "pmid": "42946603",
+      "title": "Contralateral condylar remodeling following unilateral total temporomandibular joint replacement.",
+      "journal": "IJOMS",
+      "journal_full": "International journal of oral and maxillofacial surgery",
+      "pub_date": "2026-10-27",
+      "abstract": "The aim of this study was to investigate the three-dimensional bone remodeling of the contralateral condyle following unilateral temporomandibular joint replacement (TMJR) and to measure the positional stability of the condyle prosthesis postoperatively. The retrospective study included patients who received unilateral total TMJR and underwent computed tomography immediately after surgery (T1) and during long-term follow-up (T2). A total of 17 patients were included, with an average age of 26 (SD 3.6) years. The mean follow-up time was 13.2 (SD 5) months. The volume of the contralateral condyle decreased significantly after surgery by 139 (SD 98.9) mm3 (P < 0.001), with an average reduction of 9.3%. Bone resorption was observed on the posterior and superior surfaces of the condyle. Whether orthognathic surgery was performed simultaneously did not affect the remodeling trend of the contralateral joint. The average displacement of the condyle prosthesis in each direction was <1 mm. This study shows that after unilateral temporomandibular joint replacement, the volume of the contralateral condyle decreases significantly, and the position of the condylar prosthesis remained stable.",
+      "doi": "10.1016/j.ijom.2026.09.019",
+      "authors": [
+        "Yuan M",
+        "Zhu Z",
+        "Li H",
+        "Wang P",
+        "Zhu S",
+        "Bi R"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42946603/",
+      "added_at": "2026-10-29T01:26:06Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-29T01:26:09Z",
+      "summary_zh": {
+        "headline": "單側顳顎關節置換後，對側髁突明顯骨吸收，假體位置穩定。",
+        "points": [
+          "17名平均26歲患者單側全顳顎關節置換，追蹤13.2個月；對側髁突體積平均減少139 mm³（9.3%），主要發生在後上表面。",
+          "同時進行正顎手術與否不影響對側關節重塑趨勢。",
+          "髁突假體各方向位移均<1 mm，顯示術後位置穩定。"
+        ],
+        "relevance": 4,
+        "reason": "涉及正顎手術與顳顎關節置換的相互影響，對複雜顏面輪廓重建有參考價值。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-29T01:27:14Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42937516",
       "title": "The V-Shaped Subdomal Graft: A Structural Template for Geometric Control of the Nasal Tip.",
