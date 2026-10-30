@@ -1,6 +1,159 @@
 {
-  "generated_at": "2026-10-29T01:27:14Z",
+  "generated_at": "2026-10-30T01:29:23Z",
   "articles": [
+    {
+      "pmid": "42950266",
+      "title": "Reply: Does Laterality of the Caudal Septal Extension Graft Matter? A Photograph-Based Analysis of Symmetry in Rhinoplasty.",
+      "journal": "PRS",
+      "journal_full": "Plastic and reconstructive surgery",
+      "pub_date": "2026-10-30",
+      "abstract": "",
+      "doi": "10.1097/PRS.0000000000013202",
+      "authors": [
+        "Khetpal S",
+        "Roostaeian J"
+      ],
+      "year": "2026",
+      "volume": "158",
+      "issue": "5",
+      "pages": "901e-902e",
+      "topics": [
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42950266/",
+      "added_at": "2026-10-30T01:28:05Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-30T01:28:08Z",
+      "summary_zh": {
+        "headline": "尾部中隔延伸移植物的側性是否影響鼻整形對稱性——基於照片分析的回覆意見",
+        "points": [
+          "此為回覆性文章（Reply），針對先前研究提出討論或異議",
+          "無摘要可得，依標題判斷為探討鼻整形中 caudal septal extension graft 放置位置（左右側性）對術後對稱性的影響"
+        ],
+        "relevance": 3,
+        "reason": "屬鼻整形技術細節討論，但為回覆意見文章，臨床應用價值有限。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-30T01:29:14Z",
+        "basis": "title"
+      }
+    },
+    {
+      "pmid": "42950261",
+      "title": "Dental Principles for Plastic Surgery.",
+      "journal": "PRS",
+      "journal_full": "Plastic and reconstructive surgery",
+      "pub_date": "2026-10-30",
+      "abstract": "LEARNING OBJECTIVES: After studying this article, the participant should be able to: 1. Understand the relevant dental anatomy, chronicity, nomenclature, and diagnostic imaging. 2. Identify dental pathologies, including congenital abnormalities and dentofacial developmental disorders. 3. Review management strategies for dental infections or trauma. 4. Highlight the role of orthodontics in orthognathic and craniofacial reconstructive surgery.\n\nSUMMARY: Craniofacial surgery requires a thorough understanding of dental pathology and basic orthodontic principles to treat patients presenting with complex congenital disorders, trauma, and maxillomandibular discrepancies. Despite the close relationship between dentistry, orthodontics, and plastic surgery that dates to the late 1800s, there is a dearth of formalized education of basic dental and orthodontic concepts within plastic surgery curricula. This article outlines basic principles of dental anatomy, dental anomalies, and technology managed by orthodontists to optimize the multidisciplinary approach to craniomaxillofacial pathology.",
+      "doi": "10.1097/PRS.0000000000013305",
+      "authors": [
+        "Perez-Alvarez I",
+        "Shenaq D",
+        "Matros E",
+        "Kronstadt K"
+      ],
+      "year": "2026",
+      "volume": "158",
+      "issue": "5",
+      "pages": "875e-886e",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42950261/",
+      "added_at": "2026-10-30T01:28:05Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-30T01:28:08Z",
+      "summary_zh": {
+        "headline": "整形外科醫師需掌握牙科與正畸基礎，優化顱顎面手術的多科協作。",
+        "points": [
+          "綜述文章涵蓋牙科解剖、牙齒異常、感染創傷管理與正畸原理，針對整形外科醫師的教育缺口。",
+          "強調正畸在正顎手術與顱顎面重建中的角色，以及多科協作的重要性。",
+          "文章為教育性綜述，無新臨床數據或研究結果，主要目的是補充整形外科課程中牙科知識的不足。"
+        ],
+        "relevance": 4,
+        "reason": "屬正顎手術相關背景知識，有助臨床決策，但為教育綜述而非原創研究或技術創新。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-30T01:29:17Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42950257",
+      "title": "Discussion: What Makes Rhinoplasty Challenging? Some Answers from 45+ Years of Clinical Experience.",
+      "journal": "PRS",
+      "journal_full": "Plastic and reconstructive surgery",
+      "pub_date": "2026-10-30",
+      "abstract": "",
+      "doi": "10.1097/PRS.0000000000012940",
+      "authors": [
+        "Boyd JB"
+      ],
+      "year": "2026",
+      "volume": "158",
+      "issue": "5",
+      "pages": "743-744",
+      "topics": [
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42950257/",
+      "added_at": "2026-10-30T01:28:05Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-30T01:28:09Z",
+      "summary_zh": {
+        "headline": "45年臨床經驗分享鼻整形手術的挑戰與難點",
+        "points": [
+          "資深外科醫師基於45年以上臨床經驗的討論文章，探討鼻整形手術的主要困難因素",
+          "無摘要，依標題判斷；屬於經驗分享與討論性質，具體數據與證據需閱讀全文確認"
+        ],
+        "relevance": 4,
+        "reason": "鼻整形是核心主題，但討論性文章的臨床指導價值需全文評估。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-30T01:29:19Z",
+        "basis": "title"
+      }
+    },
+    {
+      "pmid": "42955309",
+      "title": "Artificial Intelligence in Facelift Surgery: A Systematic Review of Objective Outcome Assessment and Patient-Perceived Rejuvenation.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-28",
+      "abstract": "INTRODUCTION: Artificial intelligence (AI) has emerged as a tool for objective outcome assessment in facelift surgery (rhytidectomy), yet the clinical validity and limitations of these technologies remain incompletely characterized. This review evaluates the evidence on AI applications in facelift surgery, focusing on neural network based age estimation, concordance with patient perception, and large language model (LLM) supported patient counseling.\n\nMETHODS: A systematic review was conducted following Preferred Reporting Items for Systematic Reviews and Meta-Analyses guidelines. Databases were searched for studies applying AI to facelift surgery with primary clinical data.\n\nRESULTS: Nine studies published between 2020 and 2025 met inclusion criteria. Convolutional neural networks quantified postoperative age reduction ranging from 1.7 to 5.8 years depending on surgical technique and follow-up interval. AI-derived estimates consistently underestimated patient-perceived rejuvenation by approximately 35% to 50%. Superficial musculoaponeurotic system-based techniques demonstrated greater AI-measured age reduction than skin-only procedures. LLMs achieved 85% to 88% diagnostic accuracy for patient counseling but exceeded recommended readability standards.\n\nCONCLUSIONS: AI enables objective quantification of facelift outcomes but demonstrates systematic discordance with patient perception. Current AI modalities should function as adjuncts to validated patient-reported outcome measures, not replacements. These preliminary findings warrant cautious interpretation given the limited and heterogeneous evidence base. Ethical concerns regarding algorithmic definitions of surgical success warrant consideration.\n\nLEVEL OF EVIDENCE III: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06392-z",
+      "authors": [
+        "Ozdemir M",
+        "Morkuzu S",
+        "Mosahebi A"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42955309/",
+      "added_at": "2026-10-30T01:28:05Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-30T01:28:09Z",
+      "summary_zh": {
+        "headline": "AI 年齡估算可量化拉皮效果，但低估患者主觀年輕化感受 35–50%。",
+        "points": [
+          "9 篇研究（2020–2025）納入，CNN 測得術後年齡減少 1.7–5.8 年，因手術方式與追蹤期不同而異。",
+          "AI 估算與患者感受存在系統性偏差，AI 低估患者主觀年輕化 35–50%；SMAS 技術較皮膚單獨手術顯示更大 AI 測量年齡減少。",
+          "LLM 用於患者諮詢達 85–88% 診斷準確度，但可讀性超過建議標準；作者建議 AI 應輔助而非取代患者自評量表。",
+          "證據等級 III，樣本異質性高、數量有限，倫理議題待釐清。"
+        ],
+        "relevance": 4,
+        "reason": "直接涉及拉皮手術客觀評估與患者溝通，但 AI 工具應用仍在初期，臨床決策影響間接。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-30T01:29:23Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42946603",
       "title": "Contralateral condylar remodeling following unilateral total temporomandibular joint replacement.",
