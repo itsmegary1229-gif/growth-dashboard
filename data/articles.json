@@ -1,6 +1,44 @@
 {
-  "generated_at": "2026-10-30T01:29:23Z",
+  "generated_at": "2026-10-31T01:18:27Z",
   "articles": [
+    {
+      "pmid": "42961480",
+      "title": "Multifactorial Structural Aging of the Nose and Ear: Cartilage Senescence and Soft-Tissue Remodeling.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-10-30",
+      "abstract": "BACKGROUND: Aging of the nose and ear reflects interacting changes in cartilage, soft tissues, fibrous support, and the facial skeleton. This review examines the contribution of cartilage senescence within this multifactorial process and its implications for treatment selection.\n\nMETHODS: A narrative literature review was conducted using PubMed, Google Scholar, and relevant specialty literature from database inception through May 2026. Histologic, biochemical, morphometric, and clinical evidence was synthesized to characterize nasal and auricular aging and evaluate the roles and limitations of fillers, fat grafting, and surgery.\n\nRESULTS: Reported cartilage changes include matrix depletion, reduced cellularity, and altered mechanical properties, with elastic fiber disruption in auricular cartilage. In the nose, cartilage senescence interacts with soft-tissue remodeling, weakened fibrous support, muscular forces, and pyriform-maxillary skeletal change, contributing to apparent lengthening, reduced tip rotation, and tip descent. In the ear, cartilage remodeling affects auricular contour and recoil, whereas earlobe elongation and ptosis predominantly involve the noncartilaginous fibrofatty lobule. Hyaluronic acid fillers may temporarily improve selected contour or volume deficiencies but do not regenerate cartilage. Nasal filler treatment carries substantial vascular risk, and evidence for filler use in the cartilaginous auricle remains limited.\n\nCONCLUSIONS: A composite anatomic model better explains nasal and auricular aging than cartilage atrophy alone. Treatment should address the dominant tissue abnormality, with surgery considered for major structural deformity or functional impairment.\n\nLEVEL OF EVIDENCE V: This journal requires that authors assign a level of evidence to each submission to which Evidence-Based Medicine rankings are applicable. This excludes Review Articles, Book Reviews, and manuscripts that concern Basic Science, Animal Studies, Cadaver Studies, and Experimental Studies. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06296-y",
+      "authors": [
+        "Yi KH"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye",
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42961480/",
+      "added_at": "2026-10-31T01:17:19Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-10-31T01:17:21Z",
+      "summary_zh": {
+        "headline": "鼻耳老化涉及軟骨退化與軟組織重塑，治療應針對主要病理組織而非單一軟骨萎縮。",
+        "points": [
+          "敘述性文獻回顧，整合組織學、生化、形態計測與臨床證據，分析鼻耳老化的多因素機制。",
+          "鼻部老化涉及軟骨基質耗損、細胞減少、纖維支持減弱與顱骨變化，導致鼻尖下降與旋轉減少；耳部則以軟骨重塑與耳垂非軟骨纖脂組織下垂為主。",
+          "玻尿酸填充物無法再生軟骨，鼻部填充具血管風險；手術應針對主要結構異常或功能障礙。"
+        ],
+        "relevance": 4,
+        "reason": "屬鼻整形與耳部老化主題，提供治療選擇的解剖學基礎，但為敘述性回顧而非新臨床證據。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-10-31T01:18:27Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42950266",
       "title": "Reply: Does Laterality of the Caudal Septal Extension Graft Matter? A Photograph-Based Analysis of Symmetry in Rhinoplasty.",
