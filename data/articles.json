@@ -1,6 +1,131 @@
 {
-  "generated_at": "2026-10-31T01:18:27Z",
+  "generated_at": "2026-11-04T01:47:43Z",
   "articles": [
+    {
+      "pmid": "42972132",
+      "title": "Quantitative Assessment of the Upper Eyelid Margin Aesthetic Point in Double Eyelid Surgery.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-11-02",
+      "abstract": "BACKGROUND: The upper eyelid margin peak, defined as the highest point of the upper eyelid margin, is a recognized component of upper eyelid contour and has been quantitatively evaluated in previous studies. Given its relevance to eyelid morphology, a standardized approach for quantitatively describing this landmark in the context of perioperative assessment of upper eyelid margin abnormalities remains of clinical interest. In this study, we use the term upper eyelid margin aesthetic point (UEMAP) to describe this anatomical feature and propose a standardized method for its quantitative assessment.\n\nMETHODS: This retrospective study included patients undergoing primary or revision double eyelid surgery for abnormalities of upper eyelid margin height and/or contour who achieved favourable postoperative aesthetic outcomes. Standardized preoperative and 6-month postoperative photographs were analysed. The horizontal distance between the UEMAP and the pupil midline was normalized by corneal width to generate the relative UEMAP distance, and preoperative and postoperative measurements were compared.\n\nRESULTS: Eighty eyes from 44 patients were included. Postoperative relative UEMAP distances were distributed closer to the pupil midline than preoperative measurements. The mean absolute relative UEMAP distance decreased significantly after surgery (0.333 ± 0.100 vs. 0.049 ± 0.044, p < 0.001).\n\nCONCLUSIONS: This study establishes a standardized quantitative method for assessing the upper eyelid peak position. In patients with favourable postoperative outcomes, UEMAP deviation was reduced after surgery. This quantitative assessment method may provide an objective anatomical reference for perioperative evaluation during surgical correction of upper eyelid margin abnormalities.\n\nLEVEL OF EVIDENCE III: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors http://www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06353-6",
+      "authors": [
+        "Wang X",
+        "Wang H",
+        "Zhang S",
+        "Zhao M",
+        "Lei T",
+        "Li T",
+        "Du Y"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42972132/",
+      "added_at": "2026-11-04T01:46:28Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-04T01:46:31Z",
+      "summary_zh": {
+        "headline": "雙眼皮手術中上眼瞼邊緣美學點的量化評估方法建立。",
+        "points": [
+          "回顧性研究，80眼44名患者接受雙眼皮手術，術後6個月隨訪；採用標準化照片分析。",
+          "建立UEMAP相對距離量化方法，以角膜寬度正規化瞳孔中線距離，客觀評估上眼瞼邊緣高度。",
+          "術後UEMAP相對距離顯著減少（0.333±0.100 vs 0.049±0.044，p<0.001），偏離度改善。",
+          "提供上眼瞼邊緣異常矯正的客觀解剖參考，但樣本量中等、缺乏對照組比較。"
+        ],
+        "relevance": 4,
+        "reason": "直接針對上眼瞼整形的量化評估方法，有助術前術後評估，但為描述性研究無新手術技巧。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-04T01:47:38Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42972128",
+      "title": "Letter To Editor: \"Asymmetric Puzzle Spreader Graft: A Systematic Approach for Correction of Crooked Nose Deformity\".",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-11-02",
+      "abstract": "",
+      "doi": "10.1007/s00266-026-06417-7",
+      "authors": [
+        "Naz S",
+        "Shahid R",
+        "Rizwan M"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42972128/",
+      "added_at": "2026-11-04T01:46:28Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-04T01:46:31Z",
+      "summary_zh": {
+        "headline": "非對稱 puzzle spreader graft 用於歪鼻矯正的系統性方法",
+        "points": [
+          "編輯信函，介紹非對稱 puzzle spreader graft 技術矯正歪鼻變形",
+          "無摘要，依標題判斷，具體臨床數據與手術細節需查閱全文"
+        ],
+        "relevance": 4,
+        "reason": "屬鼻整形主題，提出歪鼻矯正的 graft 技術創新，但編輯信函篇幅與深度有限",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-04T01:47:40Z",
+        "basis": "title"
+      }
+    },
+    {
+      "pmid": "42971876",
+      "title": "Influence of different sagittal split osteotomy techniques on bone contact in mandibular advancement: a double-blind randomized clinical trial.",
+      "journal": "IJOMS",
+      "journal_full": "International journal of oral and maxillofacial surgery",
+      "pub_date": "2026-11-02",
+      "abstract": "This randomized, double-blind, single-center controlled clinical trial compared sagittal split osteotomy (SSO, Dal Pont modification as refined by Epker) and anterior oblique osteotomy (AOO) in terms of lingual split patterns and bone contact area (BCA) following mandibular advancement. The study included 52 patients (104 osteotomies) with skeletal class II facial and occlusal patterns who underwent orthognathic surgery. Fracture patterns were classified according to Plooij (2009) into four types using Lingual Split Scale (LSS). The magnitude of point B advancement and BCA between proximal and distal segments were measured using Dolphin Imaging software. The SSO group demonstrated a significantly greater BCA compared to the AOO group (P < 0.001). The magnitude of mandibular advancement (P = 0.14) and execution time (P = 0.081) were similar between groups. However, the distribution of lingual cortical split patterns differed significantly (P < 0.001). In the SSO group, LSS3 fractures predominated, followed by LSS1, whereas the AOO group showed a higher prevalence of LSS1 fractures, followed by LSS2 and LSS3. Although no absolute superiority of either technique was observed, SSO resulted in greater BCA and may therefore be considered the preferred technique for large mandibular advancements.",
+      "doi": "10.1016/j.ijom.2026.10.014",
+      "authors": [
+        "Suassuna TM",
+        "Martins-de-Barros AV",
+        "Castro CCLP",
+        "Araújo ESM",
+        "Faro TF",
+        "Filho JRL",
+        "Araújo FAC"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42971876/",
+      "added_at": "2026-11-04T01:46:28Z",
+      "oa_url": "https://doi.org/10.1016/j.ijom.2026.10.014",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-04T01:46:31Z",
+      "summary_zh": {
+        "headline": "下顎前移手術中，矢狀劈開術比前斜劈開術提供更大骨接觸面積。",
+        "points": [
+          "隨機雙盲試驗，52名患者104個截骨術，比較矢狀劈開術（SSO）與前斜劈開術（AOO）。",
+          "SSO組骨接觸面積顯著大於AOO組（P<0.001），舌側劈裂型態分布差異顯著（P<0.001）。",
+          "前移幅度與手術時間兩組相似（P=0.14、0.081），SSO因骨接觸面積較大可作為大幅前移之優先選擇。"
+        ],
+        "relevance": 5,
+        "reason": "直接比較正顎手術中兩種常用截骨技術的生物力學效果，影響下顎前移手術的技術選擇。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-04T01:47:43Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42961480",
       "title": "Multifactorial Structural Aging of the Nose and Ear: Cartilage Senescence and Soft-Tissue Remodeling.",
