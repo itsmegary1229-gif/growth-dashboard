@@ -1,6 +1,84 @@
 {
-  "generated_at": "2026-11-04T01:47:43Z",
+  "generated_at": "2026-11-05T01:55:40Z",
   "articles": [
+    {
+      "pmid": "42980683",
+      "title": "Chin Sagittal Reduction to Counterbalance Its Forward Displacement by BSSO Advancement.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-11-03",
+      "abstract": "The sagittal changes in the chin due to BSSO may for esthetic reasons require simultaneous genioplasty. Aggravation of genial projection by BSSO advancement can be prevented through chin frontal decortication. A patient with mandibular retrusion and chin protrusion underwent 5-mm chin sagittal reduction osteotomy. Another patient was suffering facial vertical asymmetry and genial side-shifted prominence, and underwent combined 3-mm chin centralizing chiseling corticotomy, BSSO, and Lefort I unilateral maxillary impaction. A remarkable correction of an aging appearance of the lower face was achieved in both cases. The esthetic aspects of maxillofacial osteotomies should be encouraged to match the contemporary demand for facial harmony.Level of Evidence III This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06414-w",
+      "authors": [
+        "El Danaf AA"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42980683/",
+      "added_at": "2026-11-05T01:54:26Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-05T01:54:29Z",
+      "summary_zh": {
+        "headline": "BSSO前移時同步進行頦骨矢狀面縮小，可預防頦部前突加重。",
+        "points": [
+          "兩例病例報告：第一例下顎後縮合併頦部前突患者接受5mm頦骨矢狀面縮小截骨術；第二例顏面垂直不對稱合併頦部偏移患者接受3mm頦骨中心化鑿骨皮質切開術併BSSO及單側Le Fort I上顎內陷。",
+          "BSSO前移會加重頦部前突，可透過頦骨額面去皮質化（frontal decortication）預防。",
+          "兩例患者下臉部老化外觀均獲得顯著改善，強調正顎截骨手術應重視美學考量以達臉部和諧。",
+          "證據等級III，樣本數少（2例病例報告），缺乏對照組或系列分析。"
+        ],
+        "relevance": 5,
+        "reason": "直接涉及BSSO與頦成形的聯合手術決策，提供臨床實用的技術建議。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-05T01:55:36Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42977643",
+      "title": "Robotic applications in orthognathic surgery: a scoping review.",
+      "journal": "IJOMS",
+      "journal_full": "International journal of oral and maxillofacial surgery",
+      "pub_date": "2026-11-03",
+      "abstract": "Orthognathic surgery has increasingly incorporated digital technologies to improve accuracy and reproducibility, and robotic systems have recently emerged as a potential extension of these advances. This scoping review aimed to comprehensively map and synthesize the existing literature on robotic applications in orthognathic surgery, with emphasis on the types of robotic systems, their functional roles, level of clinical translation, and current limitations. A scoping review was conducted using Embase, Web of Science, MEDLINE, and the Cochrane Library to identify relevant studies published up to 28 May 2026. All original articles reporting robotic applications in orthognathic surgery were included. Thirty-five publications met the inclusion criteria. Most investigations were preclinical, relying on phantom, cadaveric, or animal models, while clinical studies were limited to early feasibility evaluations. Robotic applications evolved from passive measurement and positioning systems toward integrated platforms supporting navigation, bone repositioning, and controlled osteotomy execution. The included studies most consistently reported improvement in geometric accuracy and reproducibility of plan-to-execution transfer, particularly for maxillary positioning and linear osteotomies under surgeon supervision, with performance generally comparable to established digital techniques rather than superior. Clinical adoption remains limited by small patient cohorts, lack of long-term outcome data, and insufficient comparative evidence. Overall, robotic technology represents a promising, task-specific adjunct in orthognathic surgery, but current evidence does not support routine replacement of established digital workflows. Future research should prioritize comparative clinical trials, standardized outcome reporting, and improved integration into surgical workflows to better define the clinical value of robotics in orthognathic surgery.",
+      "doi": "10.1016/j.ijom.2026.10.015",
+      "authors": [
+        "AlAli AM",
+        "Vitoratos M",
+        "Koppel DA"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42977643/",
+      "added_at": "2026-11-05T01:54:26Z",
+      "oa_url": "https://doi.org/10.1016/j.ijom.2026.10.015",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-05T01:54:29Z",
+      "summary_zh": {
+        "headline": "機器人在正顎手術的應用多為前臨床研究，精準度可比數位技術但尚無優勢證據。",
+        "points": [
+          "35篇文獻回顧，多數為體模、屍體或動物研究，臨床研究僅限早期可行性評估。",
+          "機器人系統從被動測量演進至整合導航、骨重位與控制截骨，上頜定位與直線截骨精準度與重現性最佳。",
+          "臨床應用受限於小樣本、缺乏長期追蹤與比較證據，目前性能與既有數位技術相當而非優於。",
+          "作者建議未來需進行比較臨床試驗、標準化結果報告，以定義機器人在正顎手術的臨床價值。"
+        ],
+        "relevance": 4,
+        "reason": "直接涉及正顎手術技術進展，但目前機器人應用仍在早期階段，臨床實用性有限。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-05T01:55:40Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42972132",
       "title": "Quantitative Assessment of the Upper Eyelid Margin Aesthetic Point in Double Eyelid Surgery.",
