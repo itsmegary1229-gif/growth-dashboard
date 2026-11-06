@@ -1,6 +1,102 @@
 {
-  "generated_at": "2026-11-05T01:55:40Z",
+  "generated_at": "2026-11-06T01:57:13Z",
   "articles": [
+    {
+      "pmid": "42986403",
+      "title": "Safety and Efficacy of a Lyophilized Compound Sodium Hyaluronate Injection for the Improvement of Skin Texture.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-11-05",
+      "abstract": "BACKGROUND: The demand for interventions to enhance personal appearance continues to grow, driving the need for effective treatments to improve overall skin quality. This study aimed to evaluate the efficacy and safety of intradermal injection of a lyophilized compound sodium hyaluronate for ameliorating facial skin quality.\n\nMETHODS: This multicenter, randomized, evaluator-blinded study was conducted across seven research centers in China and enrolled 446 eligible subjects presenting with facial skin dryness and dullness. The treatment group received three intradermal injection sessions at intervals of 4 weeks, with follow-up to 3 months post final injection. The primary efficacy endpoint was the treatment response rate, defined by the modified Global Aesthetic Improvement Scale (mGAIS) score at 4 weeks after the third injection. Secondary endpoints included changes in mGAIS assessed by blinded evaluators, GAIS assessed by subjects at other time points, Allergan Fine Lines Scale (AFLS), Allergan Skin Roughness Scale (ASRS), and stratum corneum water content measured using a Corneometer® at each follow-up visit. All adverse events occurring throughout the trial period were collected.\n\nRESULTS: Blinded evaluator-assessed mGAIS response rates at the primary endpoint (4 weeks post final injection) favored treatment over control (84.9% vs. 14.1%, P < 0.0001), with adjusted rate difference 70.69% (95% CI: 63.23%-76.52%). For secondary endpoints, responder rates at 4 weeks after the first, second, and third injections were 83.4% vs. 14.2%, 83.3% vs. 15.1%, and 86.4% vs. 14.1%, respectively (P < 0.0001). Treatment response persisted at 76.3% at 3 months post final injection. Subject‑assessed GAIS demonstrated consistent superiority, with responder rates of 94.0% vs. 4.6%, 93.0% vs. 5.5%, and 95.8% vs. 3.2% at the respective post-injection visits (P < 0.0001), and 91.9% at 3 months post final injection. Improvements were also observed in fine lines and skin roughness after each of the three injections (P < 0.0001). Eight adverse events occurring in 3.7% of the treatment group (9 episodes) were considered possibly related to the investigational device, including pruritus, dermatitis, acne, hyperpigmentation, and periorbital twitching. All were mild to moderate in severity and most of them resolved within 14 days.\n\nCONCLUSION: Intradermal injection of lyophilized compound sodium hyaluronate containing sodium hyaluronate, vitamin C, glycine, and alanine demonstrates a favorable safety profile and is associated with improvements in facial skin quality, including fine lines and skin dryness and roughness. These findings indicate its potential as an aesthetic treatment option for skin texture enhancement, although further studies are warranted to confirm long-term efficacy.\n\nLEVEL OF EVIDENCE I: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06404-y",
+      "authors": [
+        "Wang X",
+        "Luo S",
+        "Zhang Y",
+        "Chen J",
+        "Liu Y",
+        "Pan J",
+        "Chen R",
+        "Wang S",
+        "Hou Y",
+        "Li H",
+        "Luo Y",
+        "Chen K",
+        "Wu Y"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42986403/",
+      "added_at": "2026-11-06T01:56:00Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-06T01:56:02Z",
+      "summary_zh": {
+        "headline": "玻尿酸複合注射改善臉部膚質，84.9% 患者達治療反應，安全性良好。",
+        "points": [
+          "446 名受試者、多中心隨機對照試驗，治療組接受三次間隔 4 週的真皮注射，追蹤至第三次注射後 3 個月。",
+          "主要終點（第三次注射後 4 週）：治療組 mGAIS 反應率 84.9% vs. 對照組 14.1%（P<0.0001），調整後差異 70.69%。",
+          "次要終點顯示細紋、膚質粗糙度改善（P<0.0001），角質層含水量增加；3.7% 治療組出現輕中度不良事件（瘙癢、皮炎、痤瘡、色素沉著、眼周抽搐），多於 14 天內消退。",
+          "限制：中國單一地區試驗，長期療效需進一步確認。"
+        ],
+        "relevance": 2,
+        "reason": "非手術注射治療，與眼周手術無直接關係；膚質改善屬年輕化範疇但偏邊緣。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-06T01:57:09Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42983071",
+      "title": "Efficacy and Safety of Poly-L-Lactic Acid Microspheres for Temporal Hollowing Correction: A Multicenter, Randomized, No-Treatment-Controlled, Evaluator-Blinded Trial.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-11-04",
+      "abstract": "BACKGROUND: Temporal hollowing may reflect constitutional craniofacial morphology, acquired soft-tissue loss, or age-related change. High-quality evidence specifically validating poly-L-lactic acid (PLLA) for temporal augmentation remains sparse. This study evaluated the efficacy, safety, and durability of PLLA microspheres for temporal hollowing correction.\n\nMETHODS: In a multicenter, randomized, evaluator-blinded trial, 162 adults with mild-to-severe bilateral temporal hollowing (Allergan Temple Hollowing Scale [ATHS] grades 2-4) were randomized (2:1) to PLLA microspheres (up to 3 sessions) or no treatment. The primary endpoint was the blinded-evaluator-assessed ATHS responder rate at Month 6. Secondary endpoints, interpreted as exploratory, included ATHS responder rates at Months 1, 3, 9, and 12, 3D volumetric changes, Global Aesthetic Improvement Scale (GAIS), and subject satisfaction/pain assessments.\n\nRESULTS: The Full Analysis Set included 161 subjects. At Month 6, the ATHS responder rate was 80.2% (PLLA) versus 1.8% (Control) (difference: 78.4%; 95% CI 68.1%-85.9%; P < 0.001). Early efficacy was observed (Month 1: 65.3%; Month 3: 76.5%). By Month 6, 95.8% of treated subjects self-reported aesthetic improvement. 3D imaging showed a mean volume increase of 0.66 mL in PLLA subjects versus small negative mean changes of 0.37-0.44 mL in controls. Responder rates were 91.7% at Month 9 and 89.5% at Month 12. Device-related adverse events occurred in 8.5%, with no device-related serious AEs.\n\nCONCLUSIONS: PLLA microspheres provided significant, progressive, and durable correction of temporal hollowing compared with no treatment, with a favorable safety profile.\n\nLEVEL OF EVIDENCE V: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06372-3",
+      "authors": [
+        "Ting W",
+        "Wang B",
+        "Ding X",
+        "Liu H",
+        "Cui H",
+        "Yang J",
+        "Jin Z",
+        "Yu N",
+        "Long X"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42983071/",
+      "added_at": "2026-11-06T01:56:00Z",
+      "oa_url": "https://doi.org/10.1007/s00266-026-06372-3",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-06T01:56:02Z",
+      "summary_zh": {
+        "headline": "聚左乳酸微球注射矯正顳部凹陷，6個月應答率達80%，效果可維持12個月。",
+        "points": [
+          "多中心隨機對照試驗，162名受試者（2:1分配至PLLA或對照組），評估顳部凹陷矯正效果。",
+          "PLLA組6個月應答率80.2% vs 對照組1.8%（差異78.4%，P<0.001），3D體積增加平均0.66 mL。",
+          "早期效果於第1個月出現（65.3%），12個月應答率維持89.5%，裝置相關不良事件8.5%，無嚴重不良事件。",
+          "研究採用盲化評估者與標準化量表（ATHS、GAIS），但證據等級為V級（專家意見）。"
+        ],
+        "relevance": 4,
+        "reason": "屬年輕化主題的注射填充治療，臨床實用性高，但非手術方式，影響較間接。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-06T01:57:13Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42980683",
       "title": "Chin Sagittal Reduction to Counterbalance Its Forward Displacement by BSSO Advancement.",
