@@ -1,6 +1,87 @@
 {
-  "generated_at": "2026-11-06T01:57:13Z",
+  "generated_at": "2026-11-07T01:29:28Z",
   "articles": [
+    {
+      "pmid": "42993309",
+      "title": "Design and Application of a Novel Device for Nasal Tip Flexibility and Stability.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-11-06",
+      "abstract": "OBJECTIVE: To design a novel device for multi‑point and multi‑angle measurement of nasal tip flexibility and stability, and provide objective data for surgical planning and postoperative outcome comparison.\n\nMATERIALS AND METHODS: The device comprises an arched support with an annular chute, an adjustable-height base, an electric push rod, a laser positioning unit, and a high-precision pressure sensor. After programming, the device was used to measure 50 young Chinese women at four nasal tip points under 1.5 N force; displacement was recorded and force-displacement curves were plotted.\n\nRESULTS: The device was successfully fabricated and calibrated. Mean displacements under 1.5 N were: superior nasal tip turning point 8.845 ± 1.967 mm, columellar-lobular angle junction 11.166 ± 1.659 mm, left 45° nasal tip defining point 8.650 ± 2.471 mm, right 45° defining point 8.571 ± 2.495 mm. Force-displacement curves were successfully generated.\n\nCONCLUSION: This novel device enables accurate, objective quantification of nasal tip flexibility and stability. It shows high potential for establishing a nasal tip measurement database and evaluating preoperative and postoperative surgical efficacy.\n\nLEVEL OF EVIDENCE V: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06390-1",
+      "authors": [
+        "Chang J",
+        "Ge H",
+        "Xiang X",
+        "Wang X"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42993309/",
+      "added_at": "2026-11-07T01:28:16Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-07T01:28:19Z",
+      "summary_zh": {
+        "headline": "新型鼻尖柔軟度量測裝置可客觀評估鼻尖穩定性與手術效果。",
+        "points": [
+          "多點多角度量測裝置，包含電動推桿、雷射定位、高精度壓力感測器，可在1.5N力量下量測鼻尖位移。",
+          "50位年輕中國女性受試者，鼻尖四個位置平均位移8.6–11.2mm，成功建立力-位移曲線。",
+          "裝置已成功製造與校準，可提供客觀數據用於術前規劃與術後效果比較，但目前僅為初步驗證研究。"
+        ],
+        "relevance": 4,
+        "reason": "鼻尖手術的客觀評估工具，有助於術前評估與術後療效比較，但為基礎測量研究非臨床應用。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-07T01:29:25Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "42988925",
+      "title": "Precision Correction of Upper Eyelid Volume Deficiency: A Prospective Study on Sharp Needle Injection of Type I Collagen into the Orbital Septal Fat.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-11-05",
+      "abstract": "BACKGROUND: Age-related atrophy of the upper eyelid orbital septal fat is a primary cause of sunken upper eyelid, contributing to an aged appearance. Safe and effective volume restoration remains a clinical challenge.\n\nOBJECTIVE: To evaluate the efficacy, safety, and durability of sharp needle injection of Type I collagen into the orbital septal fat for upper eyelid augmentation.\n\nMETHODS: In this prospective study, 92 subjects with bilateral sunken upper eyelid received sharp needle injections of Type I collagen into the orbital septal layer. Primary outcome measures included physician-assessed improvement in sunken upper eyelid and patient satisfaction Visual Analog Scale (VAS) scores. Secondary outcomes included safety assessments. Follow-ups were conducted immediately, and at 1, 3, and 6 months post-treatment.\n\nRESULTS: Significant improvement in sunken upper eyelid depth was observed at all follow-up time points (P<0.05). Patient satisfaction scores were high. All adverse events were mild and transient.\n\nCONCLUSION: Sharp needle injection of Type I collagen into the orbital septal layer is an effective, safe, and durable method for restoring upper eyelid volume, with high satisfaction from both physicians and patients.\n\nLEVEL OF EVIDENCE IV: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06275-3",
+      "authors": [
+        "Chen W",
+        "Shi L",
+        "Wen X",
+        "Cui H"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye",
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42988925/",
+      "added_at": "2026-11-07T01:28:16Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-07T01:28:19Z",
+      "summary_zh": {
+        "headline": "上眼瞼眶隔脂肪萎縮可用第一型膠原蛋白注射安全有效改善，6個月內維持效果。",
+        "points": [
+          "前瞻性研究，92名雙側上眼瞼凹陷患者接受銳針注射第一型膠原蛋白至眶隔層",
+          "所有追蹤時點（即刻、1、3、6個月）均見顯著改善（P<0.05），患者滿意度高",
+          "不良事件均為輕微暫時性，證據等級IV，缺乏對照組與長期追蹤數據"
+        ],
+        "relevance": 4,
+        "reason": "眼周年輕化的非手術注射方式，臨床實用但證據等級較低，無對照組比較。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-07T01:29:28Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42986403",
       "title": "Safety and Efficacy of a Lyophilized Compound Sodium Hyaluronate Injection for the Improvement of Skin Texture.",
