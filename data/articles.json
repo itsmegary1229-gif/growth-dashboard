@@ -1,6 +1,43 @@
 {
-  "generated_at": "2026-11-07T01:29:28Z",
+  "generated_at": "2026-11-08T00:59:57Z",
   "articles": [
+    {
+      "pmid": "42995066",
+      "title": "Is virtual planning using standardized temporomandibular joint prostheses appropriate? Case series.",
+      "journal": "IJOMS",
+      "journal_full": "International journal of oral and maxillofacial surgery",
+      "pub_date": "2026-11-06",
+      "abstract": "The evolution of virtual surgical planning of advanced corrections of the temporomandibular joint with a total joint replacement (TJR), and with simultaneous corrections of dentofacial deformities, has contributed to a profound improvement of treatment possibilities. However, in cases where virtual surgical planning has been desirable, a customized TJR has up to now been preferred. As such, a customized patient-specific implant always comes with a higher cost compared to a standardized total joint replacement design. The present technical note illustrates how virtual surgical planning is possible to perform using available standardized total temporomandibular joint replacement. In detail, workflow, and all features of valuable image information, such as resection models, drilling depths, and occlusal, splints are presented. The largest distances of movements in this sample were 37 mm anterior reposition of the chin together with 22 mm vertical reposition of the mandibular angle. The suggested method combines the advantages of virtual surgical planning with the economic advantages of standardized design of TJR. However, a future comparison of the outcome with the patient-specific TJR is warranted.",
+      "doi": "10.1016/j.ijom.2026.10.011",
+      "authors": [
+        "Bengtsson M"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42995066/",
+      "added_at": "2026-11-08T00:58:32Z",
+      "oa_url": "https://doi.org/10.1016/j.ijom.2026.10.011",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-08T00:58:34Z",
+      "summary_zh": {
+        "headline": "虛擬規劃搭配標準化顳顎關節假體可行，成本更低但需與客製化假體比較。",
+        "points": [
+          "案例系列研究展示虛擬規劃搭配現成標準化顳顎關節置換術的工作流程，包括切除模型、鑽孔深度、咬合夾板等影像資訊。",
+          "最大下頜骨移動距離達前移37mm、垂直移位22mm，同時矯正牙顏面畸形。",
+          "標準化假體相比客製化假體成本更低，但缺乏長期預後比較數據，作者認為未來需與客製化假體進行對照研究。"
+        ],
+        "relevance": 3,
+        "reason": "涉及正顎手術虛擬規劃與顳顎關節置換，但主要聚焦成本效益與技術可行性，臨床應用價值需進一步驗證。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-08T00:59:57Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42993309",
       "title": "Design and Application of a Novel Device for Nasal Tip Flexibility and Stability.",
@@ -3030,7 +3067,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42809129/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:52:46Z",
+      "oa_checked_at": "2026-11-08T00:58:35Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "高位與低位鼻中膈保留鼻整形術在駝峰-眉間動態上的量化形態學差異分析。",
@@ -3113,7 +3150,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42803819/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:52:48Z",
+      "oa_checked_at": "2026-11-08T00:58:35Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "擴張額皮瓣搭配肋軟骨重建玻尿酸注射引起的鼻翼壞死，同側與對側蒂設計效果相當。",
@@ -3193,7 +3230,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42809320/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:52:51Z",
+      "oa_checked_at": "2026-11-08T00:58:35Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "低鼻背帶保留鼻整形中，風箏形固定法可顯著降低駝峰復發率。",
@@ -3278,7 +3315,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42786800/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:52:53Z",
+      "oa_checked_at": "2026-11-08T00:58:35Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "保留式鼻整形中使用不對稱下移截骨術矯正歪鼻，12個月達90%軸線偏差改善。",
@@ -3321,7 +3358,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42781764/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:52:54Z",
+      "oa_checked_at": "2026-11-08T00:58:35Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "東亞鼻整形採用彈性雙弧模型搭配韌帶重建，可改善美觀與功能並保留鼻尖活動度。",
@@ -3515,7 +3552,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42773939/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:52:59Z",
+      "oa_checked_at": "2026-11-08T00:58:36Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "下眼瞼經結膜眶脂移除術後滿意度與下眼瞼表型分類的回應文章。",
@@ -3638,7 +3675,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42768206/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:02Z",
+      "oa_checked_at": "2026-11-08T00:58:36Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "頭側鼻翼基部位置異常可用推進瓣膜術矯正，101例患者滿意度顯著改善。",
@@ -3677,7 +3714,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42765934/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:03Z",
+      "oa_checked_at": "2026-11-08T00:58:36Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "AI模型檢測發現RealSelf鼻整形術後照片19.5%遭數位修改，可協助驗證術前術後影像真實性。",
@@ -3724,7 +3761,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42760356/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:04Z",
+      "oa_checked_at": "2026-11-08T00:58:36Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "混合耳軟骨與ePTFE植入物用於輕度鼻短縮患者的鼻整形，併發症率低且美學效果良好。",
@@ -3764,7 +3801,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42760355/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:05Z",
+      "oa_checked_at": "2026-11-08T00:58:36Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "雙眼皮修復後多重眼褶可用低劑量肉毒桿菌暫時改善，提示額肌代償性收縮的貢獻。",
@@ -3805,7 +3842,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42760153/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:06Z",
+      "oa_checked_at": "2026-11-08T00:58:37Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "矢狀面改變對顏面吸引力與正顎手術需求認知的影響因人而異，AI與人類評估不完全一致。",
@@ -3885,7 +3922,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42758306/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:08Z",
+      "oa_checked_at": "2026-11-08T00:58:37Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "基於深層筋膜系統解剖的改良提眉術在亞洲女性眼周年輕化的應用與成效",
@@ -3929,7 +3966,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42754700/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:09Z",
+      "oa_checked_at": "2026-11-08T00:58:37Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "不對稱下顎後縮手術中，術前髁突體積與術後髁突位移呈弱相關，單靠體積參數無法預測個別患者穩定性。",
@@ -3967,7 +4004,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42754699/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:10Z",
+      "oa_checked_at": "2026-11-08T00:58:37Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "多層次奈米脂肪注射結合微針與雷射可改善皮膚質感與臉部輪廓。",
@@ -4006,7 +4043,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42753205/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:11Z",
+      "oa_checked_at": "2026-11-08T00:58:37Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "老化鼻部的結構性改變與手術重建策略：強調軟骨補強與瓣膜穩定的重要性。",
@@ -4047,7 +4084,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42749522/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:12Z",
+      "oa_checked_at": "2026-11-08T00:58:38Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "客製化手術導板改善微創雙側矢狀劈開截骨術的3D虛擬手術計畫轉移精準度",
@@ -4085,7 +4122,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42747262/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:13Z",
+      "oa_checked_at": "2026-11-08T00:58:38Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "下眼瞼經結膜內視鏡手術長期效果的讀者意見信",
@@ -4166,7 +4203,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42741888/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:15Z",
+      "oa_checked_at": "2026-11-08T00:58:38Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "次級 facelift 安全性與初級相當，年輕時接受初級手術者二次手術間隔更長。",
@@ -4286,7 +4323,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42728839/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:17Z",
+      "oa_checked_at": "2026-11-08T00:58:38Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "厚皮鼻整形需多模式策略：結構支撐、死腔管理與異維A酸輔助治療。",
@@ -4368,7 +4405,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42728362/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:19Z",
+      "oa_checked_at": "2026-11-08T00:58:38Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "高齡患者功能性鼻整形術後外觀與心理生活品質均有改善，但證據等級低。",
@@ -4531,7 +4568,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42716981/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:24Z",
+      "oa_checked_at": "2026-11-08T00:58:39Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "眼下體積輪廓手術：針對高眉位患者的五步驟技術，100% 滿意度、暫時感覺異常可逆。",
@@ -4574,7 +4611,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42716979/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:24Z",
+      "oa_checked_at": "2026-11-08T00:58:39Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "乳房縮小手術與眼周無關，誤抓。",
@@ -4613,7 +4650,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42714254/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:25Z",
+      "oa_checked_at": "2026-11-08T00:58:39Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "Radix High Spreader Graft 技術可改善背根部對齊與背根交界，適用於次級鼻整形與背根低平。",
@@ -4652,7 +4689,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42711479/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:26Z",
+      "oa_checked_at": "2026-11-08T00:58:39Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "SMAS改良式鼻下唇提升術在600例患者中顯示良好疤痕結果與低併發症率。",
@@ -4692,7 +4729,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42711476/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:27Z",
+      "oa_checked_at": "2026-11-08T00:58:39Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "深層扇形肉毒桿菌注射治療咬肌肥厚，239例患者滿意度高、併發症少。",
@@ -4863,7 +4900,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42695809/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:31Z",
+      "oa_checked_at": "2026-11-08T00:58:40Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "複雜三顎正顎手術在門診手術中心安全可行，無需住院。",
@@ -4902,7 +4939,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42695808/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:32Z",
+      "oa_checked_at": "2026-11-08T00:58:40Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "美國整形外科研修課程中保留性鼻整形的訓練現況與臨床整合調查。",
@@ -4941,7 +4978,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42695798/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:33Z",
+      "oa_checked_at": "2026-11-08T00:58:40Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "東亞患者頸部輪廓手術中部分下頜下腺切除術，240例併發症率低且輪廓改善明顯。",
@@ -4981,7 +5018,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42691211/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:33Z",
+      "oa_checked_at": "2026-11-08T00:58:40Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "乳房下垂手術中使用胸骨間皮膚移植物提供雙向支撐，改善長期對稱性。",
@@ -5189,7 +5226,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42686471/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:38Z",
+      "oa_checked_at": "2026-11-08T00:58:40Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "CBCT定位下顎神經優於全景片，BSSRO術後感覺恢復快2–3個月",
@@ -5227,7 +5264,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42685067/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:39Z",
+      "oa_checked_at": "2026-11-08T00:58:41Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "鼻整形中使用刨削軟骨移植物的技術與應用",
@@ -5430,7 +5467,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42660550/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:43Z",
+      "oa_checked_at": "2026-11-08T00:58:41Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "鼻部填充劑注射導致視力喪失22例，僅27%完全恢復，橋部最高危。",
@@ -5469,7 +5506,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42658087/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:44Z",
+      "oa_checked_at": "2026-11-08T00:58:41Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "下眼瞼經結膜內視鏡拉皮術長期效果：200例連續病例前瞻性研究。",
@@ -5511,7 +5548,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42658153/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:45Z",
+      "oa_checked_at": "2026-11-08T00:58:41Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "機器學習模型可客觀評估臉部年輕化手術效果，術前年齡感知越高改善越明顯。",
@@ -5639,7 +5676,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42647885/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:48Z",
+      "oa_checked_at": "2026-11-08T00:58:41Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "上顎牽張成骨術在唇顎裂患者中作為正顎手術的橋接或替代方案",
@@ -5684,7 +5721,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42647884/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:49Z",
+      "oa_checked_at": "2026-11-08T00:58:42Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "顎骨牽張成骨術在唇顎裂患者中可作為正顎手術的替代或橋接方案，年齡為關鍵預測因子。",
@@ -5730,7 +5767,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42647882/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:50Z",
+      "oa_checked_at": "2026-11-08T00:58:42Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "術中快速分離表皮幹細胞改善複合皮膚移植在全厚度傷口的存活率",
@@ -5770,7 +5807,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42647880/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:51Z",
+      "oa_checked_at": "2026-11-08T00:58:42Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "頸部拉提手術中頸闊肌帶狀肌束的處理討論",
@@ -5808,7 +5845,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42637645/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:52Z",
+      "oa_checked_at": "2026-11-08T00:58:42Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "虛擬手術規劃可精確控制上顎垂直移位，消除三角測量誤差。",
@@ -5929,7 +5966,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42629250/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:55Z",
+      "oa_checked_at": "2026-11-08T00:58:42Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "下顎後退術後咽喉氣道變化與骨骼復發無相關性，提示兩者為獨立考量因素。",
@@ -5975,7 +6012,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42627492/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:53:56Z",
+      "oa_checked_at": "2026-11-08T00:58:43Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "隱形牙套與固定矯正器在正顎手術前矯正的效果比較：隱形牙套顯示更佳的垂直控制。",
@@ -6181,7 +6218,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42613261/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:01Z",
+      "oa_checked_at": "2026-11-08T00:58:43Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "虛擬手術規劃減少嚴重下頦偏斜患者的輔助頦成形使用，但對稱性結果相當。",
@@ -6310,7 +6347,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42587095/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:04Z",
+      "oa_checked_at": "2026-11-08T00:58:43Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "微焦點超音波合併1550nm非剝脫分段雷射對亞洲膚質III-IV型患者的年輕化效果優於單一治療",
@@ -6354,7 +6391,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42581097/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:05Z",
+      "oa_checked_at": "2026-11-08T00:58:43Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "鼻整形應從單純縮小轉向結構保留，強調功能保護與安全文化建立。",
@@ -6493,7 +6530,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42576065/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:08Z",
+      "oa_checked_at": "2026-11-08T00:58:43Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "Deep plane facelift 併發症率 6.6%，無永久性顏面神經損傷，美容效果優於 SMAS 術式。",
@@ -6537,7 +6574,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42576062/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:09Z",
+      "oa_checked_at": "2026-11-08T00:58:44Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "非消融型鉺雅各雷射安全改善深膚色眼周靜態皺紋，無色素沉著併發症。",
@@ -6579,7 +6616,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42575825/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:10Z",
+      "oa_checked_at": "2026-11-08T00:58:44Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "淺腹壁迴旋動脈淺支穿通皮瓣用於頭頸部重建，16例中15例成功，供區發病率低。",
@@ -6858,7 +6895,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42557456/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:17Z",
+      "oa_checked_at": "2026-11-08T00:58:44Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "深膚色患者上眼瞼手術疤痕色素沉著風險更高，需個別化管理策略。",
@@ -6900,7 +6937,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42557455/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:17Z",
+      "oa_checked_at": "2026-11-08T00:58:44Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "魚鱗狀軟骨移植在鼻整形中顯示優異存活率與增生能力，可減少吸收與修正率。",
@@ -6942,7 +6979,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42554674/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:18Z",
+      "oa_checked_at": "2026-11-08T00:58:44Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "正顎手術合併鼻整形時，鼻中膈延長移植物的骨骼固定方法探討。",
@@ -6983,7 +7020,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42554673/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:20Z",
+      "oa_checked_at": "2026-11-08T00:58:45Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "序列式翼根切除術在初次與次級鼻整形中達成對稱、客製化的翼根縮小，患者滿意度高。",
@@ -7196,7 +7233,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42547599/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:24Z",
+      "oa_checked_at": "2026-11-08T00:58:45Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "PRP 穩定的碎軟骨用於鼻背增高：初步可行性報告，短期無遷移或輪廓不規則。",
@@ -7235,7 +7272,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42547597/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:25Z",
+      "oa_checked_at": "2026-11-08T00:58:45Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "黃金三角法提供系統化鼻整形模擬框架，顯著提升美學評分與醫師共識度。",
@@ -7278,7 +7315,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42547595/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:26Z",
+      "oa_checked_at": "2026-11-08T00:58:45Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "四款AI系統在鼻部畸形分析中表現不佳，ChatGPT 4o定性評估準確率僅70%。",
@@ -7320,7 +7357,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42545491/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:27Z",
+      "oa_checked_at": "2026-11-08T00:58:45Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "玻尿酸注射隆頦安全有效，短期滿意度逾90%，但長期證據仍不足。",
@@ -7401,7 +7438,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42538455/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:29Z",
+      "oa_checked_at": "2026-11-08T00:58:46Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "乳房縮小術新技術：無蒂膜保留乳暈-腺體連續性，45例無乳暈壞死。",
@@ -7444,7 +7481,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42536174/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:29Z",
+      "oa_checked_at": "2026-11-08T00:58:46Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "性別肯認胸部手術採用 Lahey 改良法可保留乳頭感覺，38 例患者無完全壞死。",
@@ -7482,7 +7519,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42530441/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:30Z",
+      "oa_checked_at": "2026-11-08T00:58:46Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "提出臉部老化為prestressed biotensegrity系統失效，整形手術應著重恢復prestress而非單純組織重位。",
@@ -7566,7 +7603,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42519939/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:32Z",
+      "oa_checked_at": "2026-11-08T00:58:46Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "乳房手術研究，與眼周整形無關，誤抓。",
@@ -7645,7 +7682,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42520012/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:34Z",
+      "oa_checked_at": "2026-11-08T00:58:46Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "三葉瓣結合鼻唇肌肉張力系統重建改善單側唇裂鼻部對稱性，5年以上追蹤穩定。",
@@ -7765,7 +7802,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42502006/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:37Z",
+      "oa_checked_at": "2026-11-08T00:58:47Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "正顎手術患者中73%存在眼眶不對稱，術前規劃需納入眼眶評估。",
@@ -7894,7 +7931,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42493593/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:40Z",
+      "oa_checked_at": "2026-11-08T00:58:47Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "喉嚨填塞與性別對鼻中膈鼻整形術後噁心嘔吐的影響：隨機對照試驗回應文",
@@ -7931,7 +7968,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42493592/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:41Z",
+      "oa_checked_at": "2026-11-08T00:58:47Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "淚溝年輕化注射生物刺激劑的技術安全考量評論",
@@ -8143,7 +8180,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42486938/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:45Z",
+      "oa_checked_at": "2026-11-08T00:58:47Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "內視鏡輔助自體中隔軟骨移植矯正歪鼻，186例患者鼻功能與美觀均顯著改善。",
@@ -8185,7 +8222,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42486933/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:46Z",
+      "oa_checked_at": "2026-11-08T00:58:47Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "閉眼AI分析顯示內視鏡提眉有效改善眼周美觀，不會明顯增大額頭。",
@@ -8225,7 +8262,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42485070/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:47Z",
+      "oa_checked_at": "2026-11-08T00:58:48Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "玻尿酸填充隆頦的三維體積分析：14週追蹤顯示體積保留率良好且患者滿意度高。",
@@ -8263,7 +8300,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42481023/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:48Z",
+      "oa_checked_at": "2026-11-08T00:58:48Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "SMAS 概念五十年演進回顧，探討現代拉提手術的發展軌跡。",
@@ -8299,7 +8336,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42481794/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:49Z",
+      "oa_checked_at": "2026-11-08T00:58:48Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "評論上眼瞼整形在抗凝血或抗血小板治療下的安全性問題。",
@@ -8336,7 +8373,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42477150/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:50Z",
+      "oa_checked_at": "2026-11-08T00:58:48Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "外陰大陰脣下垂可用多向量深層縫合技術改善，24例初步結果無併發症。",
@@ -8499,7 +8536,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42467617/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:54Z",
+      "oa_checked_at": "2026-11-08T00:58:48Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "Dorsal preservation 鼻整形經1,191例演進，建立分類框架降低修正率至3.3%。",
@@ -8666,7 +8703,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42458045/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:57Z",
+      "oa_checked_at": "2026-11-08T00:58:49Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "自體脂肪移植與玻尿酸填充在臉部年輕化的滿意度比較：系統性回顧與統合分析",
@@ -8705,7 +8742,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42455864/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:58Z",
+      "oa_checked_at": "2026-11-08T00:58:49Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "保留型鼻整形已成主流術式，技術更易習得且併發症可預防。",
@@ -8744,7 +8781,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42455863/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:54:59Z",
+      "oa_checked_at": "2026-11-08T00:58:49Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "30年來鼻整形與美容外科期刊發展的回顧反思。",
@@ -8873,7 +8910,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42448835/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:02Z",
+      "oa_checked_at": "2026-11-08T00:58:49Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "下眼瞼脂肪轉移併上眼瞼手術同時改善淚溝與上眼瞼凹陷，脂肪轉移組效果更佳。",
@@ -8912,7 +8949,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42448834/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:03Z",
+      "oa_checked_at": "2026-11-08T00:58:49Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "眼周浮腫分級系統與手術策略：132例雙眼皮成形術結果",
@@ -8954,7 +8991,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42448833/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:04Z",
+      "oa_checked_at": "2026-11-08T00:58:50Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "膠原蛋白-玻尿酸混合填充物（2:1比例）搭配創新注射技術，可有效改善眼下老化。",
@@ -9040,7 +9077,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42443423/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:06Z",
+      "oa_checked_at": "2026-11-08T00:58:50Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "淚溝填充新分類法：根據眶隔位置分「innie」「outie」型，以blending技術改善眼頰交界",
@@ -9082,7 +9119,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42443422/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:07Z",
+      "oa_checked_at": "2026-11-08T00:58:50Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "東亞患者非手術隆鼻的標準化注射方案：528例患者顯示鼻長、鼻尖投影顯著改善，無血管併發症。",
@@ -9124,7 +9161,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42443420/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:08Z",
+      "oa_checked_at": "2026-11-08T00:58:50Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "自體脂肪移植改善局部硬皮症患者的視覺注意力分布，減少病灶凝視。",
@@ -9173,7 +9210,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42443418/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:09Z",
+      "oa_checked_at": "2026-11-08T00:58:50Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "conjoint fascial sheath 懸吊術矯正先天性中重度眼瞼下垂，95.4% 達滿意矯正。",
@@ -9335,7 +9372,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42432378/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:12Z",
+      "oa_checked_at": "2026-11-08T00:58:51Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "眉間紋肉毒桿菌注射採肌肉導向策略，823例患者滿意度高、併發症少。",
@@ -9377,7 +9414,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42426477/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:13Z",
+      "oa_checked_at": "2026-11-08T00:58:51Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "單眼皮與雙眼皮的眼瞼前葉脂肪筋膜層結構差異，可指導雙眼皮成形手術設計。",
@@ -9462,7 +9499,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42425818/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:15Z",
+      "oa_checked_at": "2026-11-08T00:58:51Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "Le Fort I 術後鼻翼寬度增加 2.33 mm，與術前鼻翼寬度和臉部變化相關性更強於骨頭移動。",
@@ -9668,7 +9705,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42467998/",
       "added_at": "2026-10-08T01:19:39Z",
       "oa_url": null,
-      "oa_checked_at": "2026-10-08T02:55:21Z",
+      "oa_checked_at": "2026-11-08T00:58:51Z",
       "oa_pdf": false,
       "summary_zh": {
         "headline": "胸骨傷口重建30年經驗：延遲手術與腎病、糖尿病增加併發症風險。",
@@ -9795,9 +9832,9 @@
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42842697/",
       "added_at": "2026-10-08T01:09:30Z",
-      "oa_url": null,
+      "oa_url": "https://doi.org/10.1097/prs.0000000000013481",
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-08T02:55:24Z",
+      "oa_checked_at": "2026-11-08T00:58:51Z",
       "summary_zh": {
         "headline": "乳房手術使用 ciNPWT 可降低傷口併發症 14%，特別是裂開與壞死。",
         "points": [
@@ -9836,9 +9873,9 @@
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42841083/",
       "added_at": "2026-10-08T01:09:30Z",
-      "oa_url": null,
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008156",
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-08T02:55:25Z",
+      "oa_checked_at": "2026-11-08T00:58:52Z",
       "summary_zh": {
         "headline": "側邊並排ATV事故致上肢創傷：207例患者高截肢率（25.6%）與感染率（19.6%）",
         "points": [
@@ -9876,9 +9913,9 @@
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42840772/",
       "added_at": "2026-10-08T01:09:30Z",
-      "oa_url": null,
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008165",
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-08T02:55:26Z",
+      "oa_checked_at": "2026-11-08T00:58:52Z",
       "summary_zh": {
         "headline": "Keystone flap 成功保留脊椎植入物，覆蓋感染後大型背部缺損。",
         "points": [
@@ -9920,7 +9957,7 @@
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-08T02:55:27Z",
+      "oa_checked_at": "2026-11-08T00:58:52Z",
       "summary_zh": {
         "headline": "Le Fort I 水平前移與鼻面角相關性強，鼻唇角變化較難預測。",
         "points": [
@@ -9959,7 +9996,7 @@
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-08T02:55:28Z",
+      "oa_checked_at": "2026-11-08T00:58:52Z",
       "summary_zh": {
         "headline": "Facelift 中局部麻醉混合 TXA 的標準化劑量安全性良好，未增加缺血或全身併發症。",
         "points": [
@@ -9999,7 +10036,7 @@
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-08T02:55:30Z",
+      "oa_checked_at": "2026-11-08T00:58:52Z",
       "summary_zh": {
         "headline": "內視鏡眼周中臉拉提搭配直接固定，改善眉下垂與眼瞼-頰部鬆弛。",
         "points": [
@@ -10044,7 +10081,7 @@
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-08T02:55:31Z",
+      "oa_checked_at": "2026-11-08T00:58:53Z",
       "summary_zh": {
         "headline": "非切口雙眼皮手術中，經結膜固定優於經皮膚固定，長期皺褶保留率顯著更高。",
         "points": [
@@ -10087,7 +10124,7 @@
       "added_at": "2026-10-08T01:09:30Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-08T02:55:31Z",
+      "oa_checked_at": "2026-11-08T00:58:53Z",
       "summary_zh": {
         "headline": "鼻中隔篩板垂直板移植在亞洲次發性唇顎裂鼻畸形重建中安全有效，優於肋軟骨。",
         "points": [
