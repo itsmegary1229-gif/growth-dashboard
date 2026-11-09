@@ -1,6 +1,50 @@
 {
-  "generated_at": "2026-11-08T00:59:57Z",
+  "generated_at": "2026-11-09T01:20:39Z",
   "articles": [
+    {
+      "pmid": "42998945",
+      "title": "Condylectomy for active unilateral condylar hyperplasia: a single-arm meta-analysis of secondary orthognathic surgery and demographic outcomes.",
+      "journal": "IJOMS",
+      "journal_full": "International journal of oral and maxillofacial surgery",
+      "pub_date": "2026-11-07",
+      "abstract": "The objective was to quantify the proportion of patients requiring secondary orthognathic surgery after condylectomy for active unilateral condylar hyperplasia (UCH) and to assess whether outcomes differ among high, proportional, and adaptable condylectomy techniques. Secondary aims were to pool sex distribution and age at surgery. A systematic review and single-arm meta-analysis were conducted according to PRISMA 2020. PubMed, Scopus, Embase, and the Cochrane Library were searched up to 31 October 2025. Eligible studies reported outcomes of condylectomy for active UCH with ≥3 patients and ≥12 months of follow-up. Female proportion and mean age were pooled respectively. Seventeen studies, including 476 patients, were analyzed. The pooled random-effects estimate for secondary orthognathic surgery was 15.4% (95% confidence interval (CI) 4.7-29.7%). Subgroup analysis showed no significant difference among high, proportional, and adaptable condylectomy (P = 0.41). The pooled proportion of female patients was 63% (95% CI 56-70%; I2 = 40.3%) and the pooled mean age at surgery was 23.47 years; however, very high heterogeneity limits the interpretability of a single summary estimate, and the observed age range may be more informative clinically (95% CI 19.72-27.22; I2 = 89.6%). Despite substantial between-study heterogeneity, condylectomy appears to function as an effective growth-stabilizing procedure in active UCH, with a descriptively pooled orthognathic surgery rate of approximately 15%. No condylectomy variant demonstrated statistically detectable differences in orthognathic surgery rates. Patients are predominantly young adult females. Condylectomy should be considered a central component of early management of active UCH, although further standardized prospective studies are needed.",
+      "doi": "10.1016/j.ijom.2026.10.026",
+      "authors": [
+        "Vellone V",
+        "Romanelli G",
+        "Hashmi AS",
+        "Sampaio P",
+        "Spallaccia F",
+        "Vaira LA",
+        "HernÁndez-Alfaro F"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42998945/",
+      "added_at": "2026-11-09T01:19:30Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-09T01:19:33Z",
+      "summary_zh": {
+        "headline": "單側髁突過度增生的髁突切除術：15%患者需二次正顎手術，三種技術無顯著差異。",
+        "points": [
+          "17篇研究、476名患者的meta分析，髁突切除後需二次正顎手術的比例為15.4% (95% CI 4.7-29.7%)。",
+          "高位、比例性、適應性三種髁突切除技術在二次手術率上無統計學差異 (P=0.41)。",
+          "患者以年輕成人女性為主 (63%)，平均手術年齡23.47歲，但研究間異質性高 (I²=89.6%)，限制單一估計值的臨床解釋。",
+          "髁突切除可有效穩定活動性單側髁突過度增生的生長，應列為早期治療的核心策略。"
+        ],
+        "relevance": 4,
+        "reason": "屬正顎手術相關的髁突病變管理，提供二次手術風險評估，但非主流輪廓手術技巧。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-09T01:20:39Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42995066",
       "title": "Is virtual planning using standardized temporomandibular joint prostheses appropriate? Case series.",
