@@ -1,6 +1,91 @@
 {
-  "generated_at": "2026-11-10T03:54:08Z",
+  "generated_at": "2026-11-11T01:37:16Z",
   "articles": [
+    {
+      "pmid": "43007373",
+      "title": "Prospective Assessment of Nasal Airway Function After Primary Open Rhinoplasty.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-11-10",
+      "abstract": "PURPOSE: To prospectively evaluate functional preservation after primary open rhinoplasty performed for aesthetic indications in patients without preoperative nasal obstruction, using objective airflow measurement, patient-reported outcomes, and endoscopic internal nasal valve (INV) angle assessment.\n\nMETHODS: This single-center prospective study included 32 patients undergoing primary open rhinoplasty (January-July 2024) who presented solely for aesthetic concerns and reported no nasal obstruction. Nasal endoscopy and computed tomography confirmed patency of the nasal cavity and nasopharynx. Preoperatively and at postoperative third month, peak nasal inspiratory flow (PNIF) was recorded, NOSE questionnaire scores (Turkish version) were obtained, and right/left INV angles and the nasolabial angle were measured using standardized endoscopic photographs and photographic analysis.\n\nRESULTS: PNIF increased significantly from 76.9 ± 14.2 L/min to 86.2 ± 14.1 L/min (p < 0.001). NOSE scores decreased from 23.4 ± 11.2 to 14.3 ± 8.9 (p < 0.001); item-level analysis showed improvement in items 2-5, while item 1 (nasal fullness) worsened slightly (p = 0.006). The nasolabial angle increased (85.5° ± 6.4° to 96.2° ± 4.1°, p < 0.001). INV angles improved on both sides (p ≤ 0.02). No significant correlations were found among changes in PNIF, NOSE, nasolabial, and INV angles (all p > 0.05).\n\nCONCLUSION: In patients undergoing primary open rhinoplasty for aesthetic indications without baseline nasal obstruction, PNIF and NOSE outcomes improved at 3 months alongside favorable changes in nasolabial and INV angles, suggesting preserved nasal function without a detrimental effect on quality of life and supporting the value of combined anatomical, objective, and patient-reported pre- and post-assessment.\n\nLEVEL OF EVIDENCE IV: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06413-x",
+      "authors": [
+        "Koçdemir Erul N",
+        "Yeniçeri A",
+        "Gülhan Yaşar N",
+        "Çayönü M"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43007373/",
+      "added_at": "2026-11-11T01:37:05Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-11T01:37:08Z",
+      "summary_zh": {
+        "headline": "美容鼻整形術後三個月鼻腔功能改善，PNIF 與 NOSE 評分均顯著提升。",
+        "points": [
+          "前瞻性單中心研究，32 名無術前鼻塞症狀患者接受初次開放式鼻整形，術後三個月追蹤。",
+          "PNIF 從 76.9 L/min 增至 86.2 L/min（p<0.001），NOSE 評分從 23.4 降至 14.3（p<0.001），內鼻瓣角度雙側改善。",
+          "鼻唇角增加（85.5° 至 96.2°），但 PNIF、NOSE、鼻唇角與內鼻瓣角變化間無顯著相關性（p>0.05）。",
+          "證據等級 IV，短期追蹤（3 個月），未評估長期功能維持或併發症發生率。"
+        ],
+        "relevance": 4,
+        "reason": "鼻整形術後功能評估屬臨床實用主題，但缺乏長期追蹤與對照組，證據等級較低。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-11T01:37:13Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "43003973",
+      "title": "Comparison of 3D-Surface Imaging and MRI for Breast Volume Measurement.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-11-09",
+      "abstract": "BACKGROUND: Breast volume is an important factor in reconstructive surgery with its implications particularly relevant in implant selection. Breast MRI and 3D-surface imaging (3D-SI) is being increasingly used to measure breast volume but neither have been compared directly to our knowledge.\n\nAIMS: This study aims to assess the agreement of breast volumes obtained from MRI and 3D-SI in the largest prospective study of patients without previous breast cancer.\n\nMETHODS: This study is a retrospective cohort study including all patients who underwent MRI and 3D-SI in a 5-year period. The primary objective was to quantify the limits of agreement between the methods. The secondary objective was to evaluate whether ptosis grade and subcutaneous tissue thickness (surrogate marker for BMI [1]) were predictors of measurement discrepancy.\n\nRESULTS: Fifty-three patients participated in the study. Agreement between 3D-SI measurements and MRI was good with ICC of 0.64 (CI 0.16-0.83). 3D-SI systematically underestimates breast volume compared with MRI with mean bias of - 210.57cc. The relationship between 3D-SI and MRI can be quantified by: 3D-SI = 0.49 × MRI + 147.8. Multivariable linear regression analysis showed that ptosis severity and inframammary subcutaneous tissue thickness were independent predictors of measurement bias.\n\nCONCLUSION: 3D-SI provides a different breast volume estimate based on surface anatomy and standing breast position. This estimate is generally lower than MRI-derived volume, particularly in patients with larger, more ptotic breasts and greater inframammary soft tissue thickness.\n\nLEVEL OF EVIDENCE III: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06394-x",
+      "authors": [
+        "Pham M",
+        "Afaghi M",
+        "De Silva R",
+        "Grayson S",
+        "Elder E",
+        "French J",
+        "Hsu J",
+        "Meybodi F"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43003973/",
+      "added_at": "2026-11-11T01:37:05Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-11T01:37:08Z",
+      "summary_zh": {
+        "headline": "乳房體積測量：3D表面影像系統低估MRI測量值約210cc",
+        "points": [
+          "53名患者回顧性隊列研究，比較3D-SI與MRI乳房體積測量的一致性（ICC 0.64）",
+          "3D-SI系統性低估乳房體積，平均偏差-210.57cc；關係式為3D-SI = 0.49 × MRI + 147.8",
+          "下垂程度與乳房下皮下組織厚度為測量偏差的獨立預測因子，大型下垂乳房誤差更大"
+        ],
+        "relevance": 1,
+        "reason": "乳房重建手術與眼周整形無關，誤抓為眼周ptosis；內容與讀者五大主題完全無關。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-11T01:37:16Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "42998945",
       "title": "Condylectomy for active unilateral condylar hyperplasia: a single-arm meta-analysis of secondary orthognathic surgery and demographic outcomes.",
