@@ -1,6 +1,227 @@
 {
-  "generated_at": "2026-11-11T01:37:16Z",
+  "generated_at": "2026-11-12T02:37:32Z",
   "articles": [
+    {
+      "pmid": "43012055",
+      "title": "Prevention of Pressure Ulcer Recurrence by Vastus Lateralis Electrical Stimulation and Transfer - PReVEnT.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-11-10",
+      "abstract": "Increased life expectancy is associated with a rising incidence of long-term complications related to chronic immobility, most notably pressure ulcers (PUs). Despite substantial advances in flap surgery, previous reconstructive strategies have placed limited emphasis on functional aspects aimed at preventing PU recurrence. As a result, current treatment protocols have failed to substantially reduce recurrence rates, which have been reported to reach up to 82%. Muscle flaps, such as the myocutaneous vastus lateralis flap, not only provide durable soft-tissue coverage but may also improve skin perfusion through active contraction when used as semifunctional flaps in combination with electrical stimulation. Although most patients with spinal cord injury retain muscle excitability due to preserved lower motor neurons in the L2-L4 segments, the potential of semifunctional muscle tissue for the long-term prevention of ischial and trochanteric pressure ulcers has not yet been systematically investigated. The PReVEnT concept integrates a neurovascularly pedicled ipsilateral semifunctional myocutaneous vastus lateralis flap, rerouted with an appropriate resting length to permit effective contraction, with transcutaneous electrical stimulation. This approach was specifically designed to address both reconstruction and long-term prevention of ischial and trochanteric PUs, particularly in patients with spinal cord injury. PReVEnT significantly reduced recurrence rates and may represent a promising preventive strategy in PU reconstruction surgery.",
+      "doi": "10.1097/GOX.0000000000008206",
+      "authors": [
+        "Eisenmann SM",
+        "Anker AM",
+        "Prantl L",
+        "Eigenberger A",
+        "Batista da Silva NP",
+        "Siegmund AM",
+        "Oliinyk D",
+        "Kehrer A",
+        "Gohritz A",
+        "Ruewe M"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "11",
+      "pages": "e8206",
+      "topics": [
+        "wound"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43012055/",
+      "added_at": "2026-11-12T02:37:09Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008206",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-12T02:37:11Z",
+      "summary_zh": {
+        "headline": "半功能性股外側肌皮瓣搭配電刺激可顯著降低壓瘡復發率",
+        "points": [
+          "研究對象為脊髓損傷患者的坐骨結節與轉子部壓瘡，採用神經血管蒂股外側肌皮瓣搭配經皮電刺激",
+          "傳統壓瘡重建術復發率高達82%，PReVEnT概念透過肌肉主動收縮改善皮膚灌流以預防復發",
+          "半功能性肌皮瓣利用脊髓損傷患者保留的L2-L4下運動神經元肌肉興奮性，設計適當靜息長度以允許有效收縮"
+        ],
+        "relevance": 4,
+        "reason": "屬慢性傷口重建主題，創新的壓瘡預防策略結合肌皮瓣與功能性電刺激，但缺乏具體臨床數據與對照組比較。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-12T02:37:17Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "43012051",
+      "title": "The Bright Line Between Survival and Necrosis: Indocyanine Green Angiography in Predicting Breast Reconstruction Outcomes.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-11-10",
+      "abstract": "BACKGROUND: Mastectomy skin flap necrosis (MSFN) is a frequent complication of breast reconstruction, occurring in 10%-30% of cases. Traditional clinical assessments of flap viability are often subjective. This systematic review and meta-analysis evaluates the effectiveness of indocyanine green (ICG) angiography in reducing MSFN and related postoperative complications compared to clinical assessment alone.\n\nMETHODS: A comprehensive search of PubMed, Embase, CENTRAL, and Web of Science was conducted through July 2025. Randomized controlled trials and cohort studies comparing intraoperative ICG angiography with clinical assessment in immediate breast reconstruction were included. The primary outcome was the 30-day incidence of MSFN; secondary outcomes included reoperation, debridement, infection, hematoma, and seroma.\n\nRESULTS: Twelve studies (n = 2152 reconstructions) met the inclusion criteria. ICG angiography significantly reduced the odds of MSFN by 50% compared to clinical assessment (odds ratio [OR] 0.50, 95% confidence interval: 0.31-0.81, P = 0.005), with pooled rates of 11.7% and 17.8%, respectively. Significant reductions were also observed in reoperation (OR 0.42), surgical debridement (OR 0.48), and infections (OR 0.63). No significant differences were found regarding hematoma or seroma. Results remained robust across subgroup and sensitivity analyses despite moderate heterogeneity.\n\nCONCLUSIONS: Intraoperative ICG angiography provides an objective assessment of flap viability, significantly reducing MSFN and associated surgical complications. These findings support integrating ICG angiography into standard breast reconstruction protocols to improve patient outcomes.",
+      "doi": "10.1097/GOX.0000000000008103",
+      "authors": [
+        "Alkhwildi LA",
+        "Alwathnani YK",
+        "Alanazi AM",
+        "Alshiekh KA",
+        "Beyari MB",
+        "Alobaidy SO",
+        "Almathami AA",
+        "Alshammari MS",
+        "Alammar AK",
+        "Alsahabi A"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "11",
+      "pages": "e8103",
+      "topics": [
+        "wound"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43012051/",
+      "added_at": "2026-11-12T02:37:09Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008103",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-12T02:37:11Z",
+      "summary_zh": {
+        "headline": "乳房重建中ICG血管造影可將乳房皮瓣壞死風險降低50%",
+        "points": [
+          "12項研究、2152例乳房重建個案的統合分析，ICG血管造影組乳房皮瓣壞死率11.7% vs 臨床評估組17.8%（OR 0.50）",
+          "ICG血管造影同時降低再手術率（OR 0.42）、清創率（OR 0.48）、感染率（OR 0.63），但對血腫、血清腫無顯著影響",
+          "研究納入隨機對照試驗與世代研究，結果在次群組與敏感性分析中穩健，儘管存在中度異質性"
+        ],
+        "relevance": 1,
+        "reason": "乳房重建屬乳房外科，非整形外科五大主題範圍內。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-12T02:37:20Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "43012050",
+      "title": "Limb Salvage Strategy With Double-flap Reconstruction for Soft-tissue Defect After Proximal Tibial Megaprosthesis.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-11-10",
+      "abstract": "The proximal tibia presents a challenging site for limb salvage due to its limited vascularity, substantial bony structure, and high risk of wound complications. Infection and implant exposure following tumor excision and reconstruction significantly increase the risk of treatment failure and possible amputation. We report the case of a 20-year-old woman diagnosed with a Campanacci grade II giant cell tumor of the right proximal tibia. Initially, the patient underwent tumor excision followed by cement spacer implantation but developed chronic wound dehiscence. Management included debridement, antibiotics, spacer removal, and megaprosthesis implantation. Due to high tension precluding primary closure, a double-flap reconstruction using gastrocnemius and soleus flaps was performed, augmented with vacuum-assisted closure (VAC). Flaps remained viable, healthy granulation developed, and subsequent skin grafting achieved stable coverage without recurrent infection. Proximal tibial megaprosthesis reconstruction has a high risk of wound complications and infection due to limited soft-tissue coverage. In this case, limb salvage was successfully achieved through serial debridement, gastrocnemius-hemisoleus double-flap reconstruction, and vacuum-assisted closure therapy. The dual-flap technique provided durable vascularized coverage, and VAC therapy supported granulation and infection control. This case highlights multidisciplinary management, double-flap reconstruction, and VAC, which are able to provide durable coverage, and hence, limb salvage in complex infected proximal tibial defects.",
+      "doi": "10.1097/GOX.0000000000008182",
+      "authors": [
+        "Meirizal M",
+        "Magetsari R",
+        "Putro YAP",
+        "Asdie RH",
+        "Lo AS",
+        "Dolly IM",
+        "Bimo K",
+        "Simanungkalit YBS"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "11",
+      "pages": "e8182",
+      "topics": [
+        "wound"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43012050/",
+      "added_at": "2026-11-12T02:37:09Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008182",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-12T02:37:12Z",
+      "summary_zh": {
+        "headline": "近端脛骨巨大假體重建後軟組織缺損，雙肌皮瓣搭配負壓治療成功保肢。",
+        "points": [
+          "20歲女性患者，巨細胞瘤切除後發生慢性傷口裂開，後續置入近端脛骨巨大假體。",
+          "採用腓腸肌與比目魚肌雙肌皮瓣重建，搭配真空輔助閉合（VAC）治療，瓣膜存活良好。",
+          "經過序列清創、雙肌皮瓣覆蓋與負壓治療後，成功達成穩定傷口覆蓋與保肢，無復發感染。"
+        ],
+        "relevance": 3,
+        "reason": "涉及慢性傷口清創、NPWT與肌皮瓣重建技術，但主要聚焦腫瘤切除後的肢體保存，非讀者主要臨床場景。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-12T02:37:23Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "43012028",
+      "title": "Cephalad Migration of Permanent Thread Fragments Following Nose Augmentation by Thread.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-11-10",
+      "abstract": "Thread lifting is commonly used for minimally invasive facial rejuvenation, yet thread migration remains a rare and underrecognized complication. Identifying the mechanical and material factors contributing to migration is essential for safe management. Permanent thread migration can occur years after implantation and may be overlooked when thread composition is unknown or inaccurately recalled. Awareness of barb biomechanics and muscular traction patterns is critical for timely diagnosis and appropriate management of similar complications. A 54-year-old woman presented with forehead irregularity and a palpable firm mass in the glabella five years after undergoing thread-based nasal augmentation. Surgical exploration revealed eight migrated thread fragments (2 blue and 6 transparent) located along the glabella and forehead. Nuclear magnetic resonance (1H- and 13C-NMR) analysis identified the material as a polypropylene-polylactic acid copolymer, indicating that permanent threads had been inserted. Repetitive contraction of the procerus and frontalis muscles, combined with unidirectional barb orientation, likely facilitated cephalad migration.",
+      "doi": "10.1097/GOX.0000000000008230",
+      "authors": [
+        "Yun CW",
+        "Lee W",
+        "Lee S",
+        "Yi KH"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "11",
+      "pages": "e8230",
+      "topics": [
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43012028/",
+      "added_at": "2026-11-12T02:37:09Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008230",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-12T02:37:12Z",
+      "summary_zh": {
+        "headline": "鼻部永久線材植入五年後向頭側移位，需警惕肌肉牽引與倒鉤設計的交互作用。",
+        "points": [
+          "54歲女性鼻部線材隆鼻術後5年出現額部不規則與眉間觸及腫塊，手術探查發現8條線材碎片（藍色2條、透明6條）沿眉間及額部移位。",
+          "核磁共振分析確認線材為聚丙烯-聚乳酸共聚物，屬永久性線材；機械分析顯示單向倒鉤設計與皺眉肌、額肌反覆收縮共同促進向頭側移位。",
+          "永久線材移位可發生於植入數年後，臨床易忽視；需了解線材成分、倒鉤生物力學與肌肉牽引模式以利早期診斷與管理。"
+        ],
+        "relevance": 2,
+        "reason": "涉及鼻整形併發症，但重點為線材移位機制而非鼻整形本身的手術技巧或美學結果。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-12T02:37:27Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "43009552",
+      "title": "Preserving Floor-of-Mouth Support in Aesthetic Chin Shortening and Inferior Border Mandibular Contouring: A Clinical and Biomechanical-Anatomic Comparison of Drawer Genioplasty Versus U-Shaped Osteotomy.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-11-10",
+      "abstract": "BACKGROUND: Chin shortening should reduce excess vertical height without compromising floor-of-mouth support or the cervicomental contour. The study aims to compare drawer genioplasty (DG) and U-shaped osteotomy (UO) for vertical chin shortening.\n\nMETHODS: This is a single-center cohort study. Sixty-seven patients (DG 37, UO 30) with standardized preoperative and postoperative 64-slice CT and at least 9 months of follow-up were analyzed; 24 pairs were propensity matched for age, BMI, and ΔMe. CT and standardized photographs were used to compare hard- and soft-tissue chin positions, cervicomental angle (CA), and anterior belly of digastric muscle (ABDM) cross sectional area (CSA). Finite element analysis (FEA) modeled DG and UO under gravity, and cadaveric dissection defined submental anatomy.\n\nRESULTS: Bony chin shortening was similar between groups. DG showed greater intended reduction in soft-tissue chin height at Me' with smaller relative soft-tissue vertical lag/descent, whereas UO was associated with larger increases in CA and ABDM CSA. In the matched cohort, CA change remained minimal after DG (0.09°) but increased after UO (6.60°, P < 0.001). Power and minimum detectable difference analyses supported these principal soft-tissue and contour endpoints. FEA showed higher ABDM stress and approximately 2.7-fold greater vertical displacement after UO. Both techniques maintained acceptable average profiles, but the soft-tissue outcomes favored DG for controlling submental descent. Cadaveric measurements confirmed ABDM thickness.\n\nCONCLUSIONS: In chin shortening, DG was associated with better preservation of floor-of-mouth support and submental contour than UO when comparable vertical reduction was achieved. Using standard intraoral osteotomy and fixation, DG appears to be a reproducible option for aesthetic chin shortening.\n\nLEVEL OF EVIDENCE III: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06357-2",
+      "authors": [
+        "Zeng H",
+        "Wang Y",
+        "Wang N",
+        "Yue Y",
+        "Guo X",
+        "Lai C",
+        "Song G",
+        "Jin X"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43009552/",
+      "added_at": "2026-11-12T02:37:09Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-12T02:37:12Z",
+      "summary_zh": {
+        "headline": "Drawer genioplasty 比 U-shaped osteotomy 更能保留口底支撐與頸部輪廓，適用於美容性下頦縮短。",
+        "points": [
+          "單中心隊列研究，67 名患者（DG 37、UO 30），術後追蹤≥9 個月，配對分析控制年齡、BMI 與下頦位移量。",
+          "DG 組軟組織下頦高度縮短效果更佳，頸部下垂較少；UO 組頸部下頦角增加 6.60°（P<0.001），前腹肌橫截面積增加明顯。",
+          "有限元素分析顯示 UO 後前腹肌應力更高、垂直位移增加 2.7 倍；屍體解剖確認前腹肌厚度。",
+          "兩種術式均維持可接受的側面輪廓，但 DG 在控制口底下垂與美容輪廓上優於 UO。"
+        ],
+        "relevance": 5,
+        "reason": "直接比較兩種下頦縮短術式的臨床與生物力學結果，提供頦成形手術決策的實證依據。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-12T02:37:32Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "43007373",
       "title": "Prospective Assessment of Nasal Airway Function After Primary Open Rhinoplasty.",
