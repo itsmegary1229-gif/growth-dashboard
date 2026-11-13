@@ -1,6 +1,131 @@
 {
-  "generated_at": "2026-11-12T02:37:32Z",
+  "generated_at": "2026-11-13T02:18:49Z",
   "articles": [
+    {
+      "pmid": "43017812",
+      "title": "Perioperative Interventions to Reduce Edema and Ecchymosis After Rhinoplasty: A Network Meta-Analysis of Randomized Controlled Trials.",
+      "journal": "ASJ",
+      "journal_full": "Aesthetic surgery journal",
+      "pub_date": "2026-11-11",
+      "abstract": "Postoperative edema and ecchymosis are common sequelae following rhinoplasty but the relative effectiveness of the many proposed perioperative interventions has remained unclear. A systematic review and network meta-analysis (NMA) of randomized controlled trials was conducted following PRISMA-NMA guidelines searching PubMed, EMBASE, and Cochrane through December 2025. Eligible studies included patients undergoing rhinoplasty receiving pharmacological or physical interventions to reduce edema and/or ecchymosis. Random-effects pairwise meta-analyses and a frequentist NMA were performed. Treatments were ranked using SUCRA. Risk of bias was assessed using RoB2, and certainty of evidence was assessed using CINeMA.Thirty-six studies contributed to quantitative synthesis. Corticosteroids consistently reduced postoperative edema and ecchymosis across multiple time points, with most robust and stable effects among all interventions. Tranexamic acid (TXA) produced a modest but statistically significant reduction in early ecchymosis (SMD -0.80, 95% CI -1.39 to -0.21), though its effect on edema was inconsistent. In contrast, natural supplements, cooling strategies, and heparinoids showed no consistent benefit. NMA suggested that combining corticosteroids with TXA had the highest SUCRA-based probability of effectiveness for both outcomes; however, these combination estimates relied predominantly on indirect, sparse evidence and were rated low to very-low certainty by CINeMA, and should be interpreted as hypothesis-generating rather than a confirmed treatment hierarchy.. Certainty of evidence ranged from low to moderate. Multimodal perioperative strategies may provide incremental benefit in reducing postoperative edema and ecchymosis after rhinoplasty. High-quality randomized trials with standardized outcomes and direct comparisons are needed to define optimal management strategies.",
+      "doi": "10.1093/asj/sjag252",
+      "authors": [
+        "Constante MM",
+        "Kumar SIS",
+        "Kodalak EA",
+        "Mokhtar J",
+        "Franco C"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43017812/",
+      "added_at": "2026-11-13T02:17:31Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-13T02:17:36Z",
+      "summary_zh": {
+        "headline": "類固醇可穩定減少鼻整形術後腫脹與瘀青，複合療法證據等級低",
+        "points": [
+          "納入36項隨機對照試驗的網絡統合分析，評估鼻整形術後腫脹與瘀青的預防策略。",
+          "類固醇在多個時間點穩定減少腫脹與瘀青，效果最強；傳明酸對早期瘀青有中等效果（SMD -0.80），但對腫脹效果不一致。",
+          "類固醇加傳明酸組合療法SUCRA排名最高，但證據主要為間接比較，CINeMA評級為低至極低，應視為假說生成而非確認治療階層。",
+          "天然補充品、冷卻療法、肝素類藥物無一致效益；整體證據等級低至中等，需更多高品質直接比較試驗。"
+        ],
+        "relevance": 4,
+        "reason": "直接針對鼻整形術後管理的實證綜述，提供臨床決策參考，但證據等級限制其應用強度。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-13T02:18:43Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "43015364",
+      "title": "Percutaneous Vertical Buried Mattress Suture and Bisecting Technique for External Alar Incision Closure in Combined Sill and Alar Reduction.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-11-11",
+      "abstract": "BACKGROUND: Closure of the external alar incision is technically challenging due to its unique anatomy and position along the alar-facial groove. Combined sill and alar excision further complicates wound closure by creating incision length discrepancies and high tension. This study aimed to evaluate the percutaneous vertical buried mattress suture combined with the bisecting technique for external alar incision closure.\n\nMETHODS: A retrospective cohort study was performed on 345 patients who underwent combined alar sill and alar reduction from 2018 to 2025. Surgical outcomes were assessed using the Patient and Observer Scar Assessment Scale (POSAS) and FACE-Q scales; pre- and postoperative alar dimensions were measured with a vernier caliper.\n\nRESULTS: Mean external alar excision was 4.6 ± 1.2 mm and internal sill excision 6.8 ± 0.7 mm. External alar flare width decreased from 36.5 ± 2.6 mm preoperatively to 32.3 ± 2.2 mm postoperatively (P < 0.05). POSAS observer/patient total scar scores were 11.3 ± 7.2/12.4 ± 8.3, with overall scar appearance scores of 2.3 ± 1.8/2.6 ± 1.9. Patient extreme dissatisfaction with nasal base width decreased from 66.5 to 5.3%, with significant improvement in FACE-Q nostril satisfaction scores (P < 0.05). Overall decision satisfaction was high (72.3 ± 19.7). The most common complications were suture extrusion (4.6%), hypertrophic scar (3.8%), pitted scar (3.8%), and asymmetry (2.0%).\n\nCONCLUSION: The percutaneous vertical buried mattress suture combined with the bisecting technique is a feasible alternative for external alar incision closure, achieving acceptable short- to mid-term clinical outcomes.\n\nLEVEL OF EVIDENCE IV: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06396-9",
+      "authors": [
+        "Zhang F",
+        "Wang H",
+        "Yan L",
+        "Zhou Y",
+        "Li N",
+        "Huang J",
+        "Wang Z",
+        "Chen J"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43015364/",
+      "added_at": "2026-11-13T02:17:31Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-13T02:17:36Z",
+      "summary_zh": {
+        "headline": "垂直埋沒褥式縫合併平分技術用於鼻翼外側切口閉合，345例患者疤痕評分良好。",
+        "points": [
+          "345例患者回顧性隊列研究，2018–2025年進行聯合鼻翼及鼻基底縮小手術，外側鼻翼切除4.6±1.2mm、內側鼻基底6.8±0.7mm。",
+          "POSAS觀察者/患者疤痕總分11.3±7.2/12.4±8.3，疤痕外觀評分2.3±1.8/2.6±1.9，患者對鼻基底寬度極度不滿意率從66.5%降至5.3%。",
+          "主要併發症為縫線脫出4.6%、肥厚性疤痕3.8%、凹陷疤痕3.8%、不對稱2.0%，整體決策滿意度72.3±19.7%。",
+          "證據等級IV，短期至中期臨床結果可接受，但缺乏長期追蹤及對照組比較。"
+        ],
+        "relevance": 5,
+        "reason": "直接針對鼻翼縮小手術的外側切口閉合技巧，提供實用的縫合方法與臨床結果數據。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-13T02:18:47Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "43015363",
+      "title": "Clinical Insights: Regarding \"Association of AbobotulinumtoxinA and Skinbooster for Periorbital Wrinkles: A Randomized, Controlled, Double-blind, Split-Face Study\".",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-11-11",
+      "abstract": "",
+      "doi": "10.1007/s00266-026-06438-2",
+      "authors": [
+        "Khan NUW",
+        "Haris M",
+        "Jabbar D"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43015363/",
+      "added_at": "2026-11-13T02:17:31Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-13T02:17:36Z",
+      "summary_zh": {
+        "headline": "肉毒桿菌毒素與皮膚保養針劑併用治療眼周皺紋的隨機對照研究",
+        "points": [
+          "眼周皺紋治療採用 AbobotulinumtoxinA 與 skinbooster 併用方案的隨機對照雙盲分臉研究",
+          "無摘要可供參考，僅依標題判斷研究設計與主題"
+        ],
+        "relevance": 4,
+        "reason": "眼周年輕化的非手術注射治療屬相關主題，但為評論性文章，臨床應用價值需見全文。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-13T02:18:49Z",
+        "basis": "title"
+      }
+    },
     {
       "pmid": "43012055",
       "title": "Prevention of Pressure Ulcer Recurrence by Vastus Lateralis Electrical Stimulation and Transfer - PReVEnT.",
@@ -2927,7 +3052,7 @@
       "added_at": "2026-10-14T00:45:40Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-14T00:45:45Z",
+      "oa_checked_at": "2026-11-13T02:17:37Z",
       "summary_zh": {
         "headline": "鼻整形術後疼痛管理：布比卡因複合給藥（局部注射+局部敷用）最有效",
         "points": [
@@ -2969,7 +3094,7 @@
       "added_at": "2026-10-14T00:45:40Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-14T00:45:45Z",
+      "oa_checked_at": "2026-11-13T02:17:37Z",
       "summary_zh": {
         "headline": "東亞患者雙眼皮手術保留眼輪匝肌、邊緣切口內固定法減少腫脹、改善瘢痕與眼瞼功能。",
         "points": [
@@ -3009,7 +3134,7 @@
       "added_at": "2026-10-14T00:45:40Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-14T00:45:45Z",
+      "oa_checked_at": "2026-11-13T02:17:37Z",
       "summary_zh": {
         "headline": "orbicularis oculi肌肉包裹筋膜脂肪瓣固定於眼瞼板可有效改善下眼瞼pretarsal飽滿度，213例患者滿意度91.5%。",
         "points": [
@@ -3093,9 +3218,9 @@
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42864540/",
       "added_at": "2026-10-14T00:45:40Z",
-      "oa_url": null,
+      "oa_url": "https://doi.org/10.1007/s00266-026-06369-y",
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-14T00:45:46Z",
+      "oa_checked_at": "2026-11-13T02:17:37Z",
       "summary_zh": {
         "headline": "亞洲患者眼瞼下垂手術：脂肪變性分級可改進 levator plication 公式準確度",
         "points": [
@@ -3139,7 +3264,7 @@
       "added_at": "2026-10-14T00:45:40Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-14T00:45:46Z",
+      "oa_checked_at": "2026-11-13T02:17:37Z",
       "summary_zh": {
         "headline": "Transconjunctival blepharoplasty 搭配 nanofat 移植對輕中度淚溝畸形的矯正效果優於傳統脂肪移植。",
         "points": [
@@ -3181,7 +3306,7 @@
       "added_at": "2026-10-14T00:45:40Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-14T00:45:46Z",
+      "oa_checked_at": "2026-11-13T02:17:38Z",
       "summary_zh": {
         "headline": "擴展顳部自體脂肪移植可改善顳部輪廓連續性，滿意度高且併發症少。",
         "points": [
@@ -3218,7 +3343,7 @@
       "added_at": "2026-10-14T00:45:40Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-14T00:45:47Z",
+      "oa_checked_at": "2026-11-13T02:17:38Z",
       "summary_zh": {
         "headline": "Deep plane facelift中，臉部斜向+頸部水平固定向量策略優於其他組合，FACE-Q評分與皺紋改善最佳。",
         "points": [
