@@ -1,6 +1,131 @@
 {
-  "generated_at": "2026-11-13T02:18:49Z",
+  "generated_at": "2026-11-14T01:55:55Z",
   "articles": [
+    {
+      "pmid": "43023332",
+      "title": "Regional Facial Rejuvenation Rankings: Statistical Dependence, Modification Magnitude, and Clinical Interpretation.",
+      "journal": "ASJ",
+      "journal_full": "Aesthetic surgery journal",
+      "pub_date": "2026-11-13",
+      "abstract": "",
+      "doi": "10.1093/asj/sjag258",
+      "authors": [
+        "Arruda F"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43023332/",
+      "added_at": "2026-11-14T01:54:37Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-14T01:54:40Z",
+      "summary_zh": {
+        "headline": "臉部各區域年輕化手術效果的統計排名與臨床解讀方法",
+        "points": [
+          "研究比較不同臉部區域年輕化手術的效果大小與統計相依性，提供臨床決策參考。",
+          "無摘要，依標題判斷：著重統計方法論與臨床詮釋，可能涉及多種年輕化術式（facelift、提眉、注射等）的相對效果評估。"
+        ],
+        "relevance": 3,
+        "reason": "屬年輕化主題但偏向統計方法論與比較研究，臨床應用價值需見全文。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-14T01:55:47Z",
+        "basis": "title"
+      }
+    },
+    {
+      "pmid": "43023161",
+      "title": "Breast Morphology, Volume, and Ptosis Patterns in Pakistani Women: An Anthropometric Study.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-11-12",
+      "abstract": "BACKGROUND: Anthropometric breast data are crucial for planning aesthetic and reconstructive breast surgery. The purpose of this study is to evaluate baseline breast anthropometric measurements, breast volume, and assess patterns of breast ptosis in Pakistani women.\n\nMETHODS: From October 2023 to February 2024, a multicenter cross-sectional study was carried out with 198 women 16-60 years of age having a body mass index of 25-32 kg/m2. Volume was calculated using Qiao's anthropometric formula, and ptosis was graded using Regnault classification. Statistical analysis involved Spearman rho (ρ), Mann-Whitney U tests, and multiple linear regression with significance set at P < 0.05.\n\nRESULTS: Median breast volume was 628 cm3. Most participants exhibited breast symmetry (94.4%). Breast ptosis increased significantly with age, with normal positioning most common in women 20-30 years of age (66.7%), whereas higher grades predominated after the third decade (P < 0.001). Breast volume showed strong positive correlations with medial mammary radius (ρ = 0.902), lateral mammary radius (ρ = 0.936), mammary projection (ρ = 0.889), and inframammary fold length (ρ = 0.867) (P < 0.001). Parity demonstrated a weak negative correlation with breast volume. Multivariate regression confirmed medial mammary radius and mammary projection as the strongest independent predictors (R 2 = 0.946). Breastfeeding significantly influenced multiple anthropometric parameters, including breast volume.\n\nCONCLUSIONS: This study presents the first anthropometric data for breast morphology of Pakistani women. The findings underscore the importance of population-specific data for surgical planning in oncoplastic and aesthetic breast surgery, potentially improving outcomes by reducing anatomical mismatches.",
+      "doi": "10.1097/GOX.0000000000008255",
+      "authors": [
+        "Khan S",
+        "Kamran H",
+        "Naeem MAB",
+        "Zain M",
+        "Raza M",
+        "Mehmood H",
+        "Umair M",
+        "Asif M",
+        "Mustansir M",
+        "Rani S",
+        "Amjad N",
+        "Aminpoor H",
+        "Aimen UE",
+        "Suhail A"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "11",
+      "pages": "e8255",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43023161/",
+      "added_at": "2026-11-14T01:54:37Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008255",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-14T01:54:40Z",
+      "summary_zh": {
+        "headline": "乳房手術無關，誤抓。本研究為巴基斯坦女性乳房人體測量學，非眼周整形。",
+        "points": [
+          "研究對象198名巴基斯坦女性（16-60歲，BMI 25-32），測量乳房體積、對稱性與下垂分級",
+          "乳房下垂（breast ptosis）隨年齡增加而惡化，20-30歲正常位置佔66.7%，30歲後高分級下垂增加（P<0.001）",
+          "乳房體積與內側/外側乳房半徑、乳房投影、乳下褶長度呈強正相關（ρ=0.867-0.936），多變量迴歸R²=0.946"
+        ],
+        "relevance": 1,
+        "reason": "乳房手術研究，與眼周整形無關。breast ptosis為乳房下垂，非眼瞼下垂（blepharoptosis）。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-14T01:55:51Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "43023155",
+      "title": "Outcomes and Trends in Pediatric Orthognathic Surgery.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-11-12",
+      "abstract": "BACKGROUND: This study compares risk factors, complication rates, and perioperative outcomes among pediatric patients undergoing Le Fort I osteotomy (LF1), mandibular osteotomy (MO), bimaxillary osteotomy (BMO), or Le Fort I with distraction osteogenesis (LF1+DO).\n\nMETHODS: We conducted a retrospective review of the National Surgical Quality Improvement Program Pediatrics database from 2018 to 2023, including patients aged 5-18 years who underwent an orthognathic procedure. The primary outcome was unplanned readmission or reoperation. Secondary outcomes included total hospital length of stay, operative time, and blood loss.\n\nRESULTS: A total of 1203 patients met inclusion criteria: LF1 (n = 651), BMO (n = 294), MO (n = 190), and LF1+DO (n = 68). BMO was associated with a significantly higher risk of readmission or reoperation compared with both LF1 (odds ratio = 4.84, P < 0.01) and MO (odds ratio = 2.10, P = 0.03). American Society of Anesthesiologists (ASA) classification of 3 or higher was independently linked to increased hospital length of stay (β = 6.3, P < 0.01) and longer operative times (β = 4.3, P < 0.01). BMO was associated with a longer hospital stay compared with LF1 (β = 2.2, P = 0.03). There was no significant difference in readmission and reoperation between LF1 and LF1+DO.\n\nCONCLUSIONS: BMO was associated with the greatest surgical burden, whereas LF1+DO had a similar safety profile to LF1. In addition, higher ASA class predicted prolonged stays and operative times. Careful patient selection and multidisciplinary planning are essential to optimize pediatric orthognathic outcomes.",
+      "doi": "10.1097/GOX.0000000000008242",
+      "authors": [
+        "Ahdoot AI",
+        "Massenburg BB",
+        "Kanack MD"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "11",
+      "pages": "e8242",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43023155/",
+      "added_at": "2026-11-14T01:54:37Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008242",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-14T01:54:40Z",
+      "summary_zh": {
+        "headline": "小兒正顎手術中，雙頜骨截骨術併發症最高，Le Fort I加牽張骨生成安全性相當。",
+        "points": [
+          "回顧性分析1203名5-18歲患者（2018-2023），比較Le Fort I、下顎截骨、雙頜骨截骨、Le Fort I加牽張骨生成的併發症。",
+          "雙頜骨截骨術再入院/再手術風險最高（vs Le Fort I: OR=4.84; vs 下顎截骨: OR=2.10），住院時間與手術時間亦最長。",
+          "ASA分級≥3獨立預測住院時間延長（β=6.3）與手術時間增加（β=4.3）；Le Fort I加牽張骨生成與單純Le Fort I安全性無差異。"
+        ],
+        "relevance": 5,
+        "reason": "直接針對小兒正顎手術術式選擇與風險分層，提供大樣本實證數據指導臨床決策。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-14T01:55:55Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "43017812",
       "title": "Perioperative Interventions to Reduce Edema and Ecchymosis After Rhinoplasty: A Network Meta-Analysis of Randomized Controlled Trials.",
@@ -2608,7 +2733,7 @@
       "added_at": "2026-10-15T00:12:09Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-15T00:12:12Z",
+      "oa_checked_at": "2026-11-14T01:54:41Z",
       "summary_zh": {
         "headline": "內部止血網絡技術在356例拉皮手術中完全消除術後血腫，優於傳統引流方式。",
         "points": [
@@ -2648,7 +2773,7 @@
       "added_at": "2026-10-15T00:12:09Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-15T00:12:12Z",
+      "oa_checked_at": "2026-11-14T01:54:41Z",
       "summary_zh": {
         "headline": "內視鏡拉皮完全隔離額顳面神經分支，300例無永久神經損傷但100%暫時性額肌無力。",
         "points": [
@@ -2684,9 +2809,9 @@
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42872269/",
       "added_at": "2026-10-15T00:12:09Z",
-      "oa_url": null,
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008090",
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-15T00:12:12Z",
+      "oa_checked_at": "2026-11-14T01:54:41Z",
       "summary_zh": {
         "headline": "PDLLA與CaHA皮膚生物刺激劑的組織學效應不同：PDLLA促進血管新生與膠原重塑，CaHA促進彈性蛋白與幹細胞活化。",
         "points": [
@@ -2724,9 +2849,9 @@
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42871939/",
       "added_at": "2026-10-15T00:12:09Z",
-      "oa_url": null,
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008096",
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-15T00:12:13Z",
+      "oa_checked_at": "2026-11-14T01:54:41Z",
       "summary_zh": {
         "headline": "下肢壞死性軟組織感染經多次清創與遠端蒂gracilis肌肉瓣重建成功保肢",
         "points": [
@@ -2765,9 +2890,9 @@
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42871867/",
       "added_at": "2026-10-15T00:12:09Z",
-      "oa_url": null,
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008141",
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-15T00:12:13Z",
+      "oa_checked_at": "2026-11-14T01:54:42Z",
       "summary_zh": {
         "headline": "AI 模型能準確識別燒傷但治療決策不可靠，臨床應用受限。",
         "points": [
@@ -2805,7 +2930,7 @@
       "added_at": "2026-10-15T00:12:09Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-15T00:12:13Z",
+      "oa_checked_at": "2026-11-14T01:54:42Z",
       "summary_zh": {
         "headline": "肋軟骨鈣化在40-49歲女性患者最嚴重，平面X光可作為鼻整形術前篩檢工具。",
         "points": [
@@ -2852,7 +2977,7 @@
       "added_at": "2026-10-15T00:12:09Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-15T00:12:13Z",
+      "oa_checked_at": "2026-11-14T01:54:42Z",
       "summary_zh": {
         "headline": "ePTFE鼻整形感染率1.6%，超半數為延遲感染；系統性圍手術期管理策略可維持低感染率。",
         "points": [
@@ -2889,7 +3014,7 @@
       "added_at": "2026-10-15T00:12:09Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-15T00:12:13Z",
+      "oa_checked_at": "2026-11-14T01:54:42Z",
       "summary_zh": {
         "headline": "下眼瞼非生物可降解填充物肉芽腫手術切除：15年經驗與分層法技巧",
         "points": [
@@ -2926,7 +3051,7 @@
       "added_at": "2026-10-15T00:12:09Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-15T00:12:14Z",
+      "oa_checked_at": "2026-11-14T01:54:42Z",
       "summary_zh": {
         "headline": "髮際線矯正作為非骨骼性上臉部輪廓調整的攝影測量學分析。",
         "points": [
@@ -2971,7 +3096,7 @@
       "added_at": "2026-10-15T00:12:09Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-15T00:12:14Z",
+      "oa_checked_at": "2026-11-14T01:54:42Z",
       "summary_zh": {
         "headline": "Nanofat移植在美容與重建應用快速增長，但缺乏標準化方法與高品質證據。",
         "points": [
