@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T01:55:55Z",
+  "generated_at": "2026-11-15T01:26:49Z",
   "articles": [
     {
       "pmid": "43023332",
@@ -2654,9 +2654,9 @@
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42875609/",
       "added_at": "2026-10-15T23:58:37Z",
-      "oa_url": null,
-      "oa_pdf": false,
-      "oa_checked_at": "2026-10-15T23:58:41Z",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s00266-026-06333-w.pdf",
+      "oa_pdf": true,
+      "oa_checked_at": "2026-11-15T01:26:51Z",
       "summary_zh": {
         "headline": "居家LED光生物調節對臉部年輕化安全有效，紅光與近紅外線效果最佳。",
         "points": [
@@ -2694,7 +2694,7 @@
       "added_at": "2026-10-15T23:58:37Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-15T23:58:42Z",
+      "oa_checked_at": "2026-11-15T01:26:51Z",
       "summary_zh": {
         "headline": "患者專用植入物輔助微創正顎手術在高難度病例中仍能維持準確度",
         "points": [
