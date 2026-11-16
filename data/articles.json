@@ -1,6 +1,85 @@
 {
-  "generated_at": "2026-11-15T01:26:49Z",
+  "generated_at": "2026-11-16T01:29:52Z",
   "articles": [
+    {
+      "pmid": "43032810",
+      "title": "Quality of Blepharoplasty Information on Social Media: A Decision-making Information Support Criteria for Evaluating the Reliability of Nonrandomized Studies Score Analysis of TikTok Videos.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-11-13",
+      "abstract": "BACKGROUND: TikTok is a major platform for sharing information about surgical interventions, but the educational quality of blepharoplasty content remains poorly characterized. This study evaluated accuracy, risk disclosure, promotional framing and overall educational quality in the most viewed blepharoplasty videos, comparing medical and nonmedical creators.\n\nMETHODS: A cross-sectional analysis was conducted of the top 30 most viewed English language TikTok videos tagged #Blepharoplasty (November 23, 2025). The selection of these videos was intended to provide a high-impact snapshot of widely viewed content. Videos were assessed using a modified Decision-making Information Support Criteria for Evaluating the Reliability of Nonrandomized Studies score-derived rubric evaluating accuracy, risk disclosure, promotional bias (1 = highly promotional, 4 = not promotional), and creator qualifications. Mentions of cost and specific surgeons or practices were recorded. Two-sample t tests and Fisher exact tests compared outcomes between groups.\n\nRESULTS: Of the 30 videos, 23 (76.7%) were produced by nonmedical creators. Educational quality was low (mean accuracy 1.4 of 4; risk disclosure 1.34 of 4). Promotional tone was moderately high (mean promotional bias 2.0 of 4). Medical creators had significantly higher accuracy (2.29 versus 1.13; P < 0.05) and total Decision-making Information Support Criteria for Evaluating the Reliability of Nonrandomized Study scores (9.86 versus 5.43; P < 0.01) but did not differ in promotional bias or risk disclosure. Cost information was reported exclusively by nonmedical creators (P < 0.05).\n\nCONCLUSIONS: Highly viewed TikTok videos on blepharoplasty offer limited educational value and frequently adopt promotional framing. Increased professional engagement and improved patient digital literacy may help counteract misleading or incomplete online content.",
+      "doi": "10.1097/GOX.0000000000008246",
+      "authors": [
+        "Maher CB",
+        "Hodge CB",
+        "Levitz LM",
+        "Garrott HM"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "11",
+      "pages": "e8246",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43032810/",
+      "added_at": "2026-11-16T01:29:41Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008246",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-16T01:29:44Z",
+      "summary_zh": {
+        "headline": "TikTok眼瞼整形影片多為非醫療人士製作，教育品質低且宣傳色彩濃厚。",
+        "points": [
+          "橫斷面分析30支最高瀏覽英文TikTok眼瞼整形影片，76.7%由非醫療人士製作。",
+          "教育品質低落：準確度平均1.4/4、風險揭露1.34/4、宣傳偏見2.0/4；醫療人士製作影片準確度顯著較高（2.29 vs 1.13, P<0.05）。",
+          "非醫療人士獨家提及費用資訊（P<0.05），醫療人士與非醫療人士在宣傳偏見與風險揭露無顯著差異。"
+        ],
+        "relevance": 3,
+        "reason": "涉及眼瞼整形患者教育與資訊品質，但屬社群媒體內容分析，非臨床手術或治療決策相關。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-16T01:29:49Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "43032422",
+      "title": "Pilot Study: Preliminary Experience with Dual-strut Tip Support Using Repurposed Cephalic Trim Cartilage in East Asian Rhinoplasty.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-11-13",
+      "abstract": "BACKGROUND: In East Asian rhinoplasty, stable tip support must often be achieved despite weak medial crura and limited septal cartilage while avoiding excessive grafting and postoperative tip rigidity.\n\nMETHODS: We retrospectively reviewed 10 primary East Asian rhinoplasty patients treated using a dual-strut tip-support technique combining a trapezoidal septal extension graft with paired columellar struts fashioned from repurposed cephalic-trim cartilage. The paired struts were secured bilaterally to the distal trapezoidal septal extension graft and directly to the native medial crura, reinforcing the central limb of the nasal tip tripod. Cephalic trimming was performed only when adequate residual lateral crural width and structural integrity could be preserved.\n\nRESULTS: In total, 10 Japanese female patients underwent the procedure between December 2024 and November 2025. The mean age was 33.7 ± 8.9 years, and the mean follow-up duration was 10.1 ± 2.6 months (range, 7-14 mo). No infections, graft extrusions, septal instability, significant tip deformity, clinically evident external nasal valve compromise, or columellar widening were observed.\n\nCONCLUSIONS: In selected primary East Asian rhinoplasty patients, this preliminary dual-strut technique may provide a cartilage-economizing option for moderate tip repositioning by reinforcing the native medial crura without additional donor-site harvest. Its proposed biomechanical advantages remain theoretical, and longer-term follow-up, objective outcome measures, and comparative studies are required.",
+      "doi": "10.1097/GOX.0000000000008245",
+      "authors": [
+        "Morello AM",
+        "Asano H"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "11",
+      "pages": "e8245",
+      "topics": [
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43032422/",
+      "added_at": "2026-11-16T01:29:41Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008245",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-16T01:29:44Z",
+      "summary_zh": {
+        "headline": "東亞鼻整形中利用鼻翼軟骨重製雙支柱技術可穩定鼻尖，初步10例無併發症。",
+        "points": [
+          "10名日本女性患者，平均年齡33.7歲，平均追蹤10.1個月（7-14月），採用梯形中隔延伸移植搭配成對柱狀軟骨支撐鼻尖。",
+          "無感染、移植物外露、中隔不穩定、鼻尖變形、鼻瓣膜狹窄或柱狀部寬化等併發症。",
+          "此技術利用鼻翼軟骨修剪廢料，避免額外取材部位，適用於中度鼻尖重新定位的患者。",
+          "樣本數極小、追蹤期短、缺乏客觀量化指標與對照組，生物力學優勢仍為理論推測。"
+        ],
+        "relevance": 4,
+        "reason": "直接針對東亞鼻整形鼻尖支撐技術，臨床可行性初步驗證，但證據等級低。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-16T01:29:52Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "43023332",
       "title": "Regional Facial Rejuvenation Rankings: Statistical Dependence, Modification Magnitude, and Clinical Interpretation.",
@@ -2529,7 +2608,7 @@
       "added_at": "2026-10-17T00:04:24Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-17T00:04:27Z",
+      "oa_checked_at": "2026-11-16T01:29:44Z",
       "summary_zh": {
         "headline": "Hemostatic net 在頸面部拉皮中減少血腫風險 93%，但證據多來自非隨機對照研究。",
         "points": [
@@ -2570,7 +2649,7 @@
       "added_at": "2026-10-17T00:04:24Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-17T00:04:27Z",
+      "oa_checked_at": "2026-11-16T01:29:44Z",
       "summary_zh": {
         "headline": "3歲前手術矯正先天性眼瞼下垂可改善屈光參數恢復，3歲後效果不顯著。",
         "points": [
@@ -2613,7 +2692,7 @@
       "added_at": "2026-10-17T00:04:24Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-17T00:04:27Z",
+      "oa_checked_at": "2026-11-16T01:29:44Z",
       "summary_zh": {
         "headline": "焦慮憂鬱症患者功能性鼻整形滿意度較低、修訂率高；美容性鼻整形無顯著差異。",
         "points": [
