@@ -1,6 +1,137 @@
 {
-  "generated_at": "2026-11-17T04:15:53Z",
+  "generated_at": "2026-11-18T03:15:02Z",
   "articles": [
+    {
+      "pmid": "43043427",
+      "title": "Subconjunctival Injection of Hyaluronic Acid Versus Triamcinolone Acetonide in Thyroid Eye Disease-related Upper Eyelid Retraction: A Pilot Study.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-11-17",
+      "abstract": "PURPOSE: To objectively assess the preliminary effectiveness and safety of subconjunctival injection of hyaluronic acid (HA) and triamcinolone acetonide (TA) in the management of upper eyelid retraction (UER) in patients with thyroid eye disease (TED) through a quantitative image-based approach.\n\nMETHODS: In this prospective, exploratory pilot study, patients were randomly assigned to receive a single subconjunctival injection of either HA (Restylane Eyelight®, Galderma, Q-med, Sweden) or TA (Trigon Depot®, Bristol-Myers Squibb, Spain). Standardized frontal digital photographs were taken at baseline and during follow-up visits at one, three, and six months. The margin-reflex distance 1 (MRD1) was measured using ImageJ software. Data were analyzed primarily with nonparametric tests (Wilcoxon and Mann-Whitney) and confirmed with repeated-measures ANOVA using the Greenhouse-Geisser correction. Patient satisfaction and adverse events were recorded.\n\nRESULTS: Sixteen eyes from 13 patients (mean age 45.5 ± 8.7 years; 75% female) were included. Eleven eyes (68.8%) received TA and five received HA. Both groups showed a significant reduction in MRD1 over time (Wilcoxon p < 0.05; ANOVA p = 0.001), with mean changes of approximately 1.0 mm at six months and no significant differences between treatments (p > 0.05). The lowest mean MRD1 (5.20 ± 1.01 mm; 95% CI 4.78-5.91) was observed at three months. Satisfaction rates were high and comparable (p = 0.252). No serious adverse events occurred; mild transient edema and small depot formation were observed.\n\nCONCLUSION: This exploratory study represents the first quantitative comparison between subconjunctival HA and TA injections for TED-related UER. Both agents may provide measurable improvement in eyelid position with acceptable safety, and TA achieved outcomes comparable to HA. These findings support their potential role as minimally invasive, non-surgical options for mild to moderate cases and should be confirmed in larger, controlled studies with longer follow-up.\n\nLEVEL OF EVIDENCE IV: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06437-3",
+      "authors": [
+        "Padilla-Pantoja FD",
+        "Sanchez-Tocino H",
+        "Bermúdez-Castellanos I",
+        "Marqués-Fernández VE",
+        "Galindo-Ferreiro A"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43043427/",
+      "added_at": "2026-11-18T03:14:47Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-18T03:14:49Z",
+      "summary_zh": {
+        "headline": "玻尿酸與類固醇眼下注射對甲狀腺眼病上眼瞼縮小均有效，安全性可接受。",
+        "points": [
+          "小型前瞻性隨機對照試驗，16眼（13患者），平均年齡45.5歲，75%女性；11眼接受類固醇，5眼接受玻尿酸。",
+          "兩組MRD1於6個月時均顯著改善約1.0mm（Wilcoxon p<0.05；ANOVA p=0.001），治療間無顯著差異（p>0.05）；3個月時改善最明顯。",
+          "患者滿意度高且相當（p=0.252），無嚴重不良事件，僅見輕微暫時性水腫與小型藥物沉積。",
+          "證據等級IV，樣本數小，需更大規模長期追蹤研究確認。"
+        ],
+        "relevance": 4,
+        "reason": "屬眼周主題，針對甲狀腺眼病上眼瞼縮小的微創注射治療，臨床實用但證據等級低。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-18T03:14:55Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "43039989",
+      "title": "The Next Step in Facial Aesthetic Surgery Outcome Evaluation: Quantifying Classical Deep Plane versus Preservation Facelift with 3-Dimensional Surface Imaging.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-11-16",
+      "abstract": "BACKGROUND: Improved outcomes in facial rejuvenation surgery can be attributed directly to a better understanding of facial anatomy. The deep plane facelift (DP) has offered improved outcomes by repositioning deeper structures, yet proponents arguing against the technique cite a suboptimal midface repositioning as its limitation. The \"limited delamination\" extended deep plane rhytidectomy (LDR), more colloquially known as the \"preservation facelift\" (PFL) was recently developed to address this inconsistency by leveraging an accepted understanding of the relationship between the fascia and skin to increase the biomechanical strength of lift, while preserving vascular integrity and reduced skin trauma. Although favorable clinical outcomes have been reported with the PFL, quantitative biomechanical analysis comparing it to the classical DP approach remains limited.\n\nOBJECTIVE: This study aims to objectively compare the soft tissue vectorial movement achieved with the preservative facelift versus the traditional deep plane facelift using three-dimensional surface imaging, to evaluate differences in tissue displacement and surgical biomechanics.\n\nMATERIALS AND METHODS: A retrospective, single-center, single-surgeon consecutive cohort analysis was conducted on 32 female patients (14 DP, 18 PFL) who underwent either a DP or PFL facelift between January and October 2024 by a single high-volume facelift surgeon. Technique allocation was non-randomized and reflected the temporal adoption of the PFL during the study period together with surgeon preference. Standardized preoperative and postoperative 3D surface imaging (Vectra H2, Canfield Scientific) was used to assess facial displacement at a uniform 6-month (± 2 weeks) postoperative time point in both groups. Displacement vectors (X = lateral, Y = vertical, Z = anterior-posterior) were analyzed across four regions: medial midface, lateral midface, nasolabial fold, and jawline. Data were processed using the Mirror Software Suite, and statistical comparisons were performed using t-tests or Mann-Whitney U tests, based on data distribution. A p-value < 0.05 was considered significant. The manuscript is reported in accordance with the STROBE statement for observational studies.\n\nRESULTS: Across most facial regions, PFL demonstrated significantly greater displacement than DP. In the X-axis, the PFL showed higher mean displacement in the medial midface (4.75 ± 2.38 mm vs. 2.54 ± 0.99 mm), lateral midface (4.84 ± 2.52 mm vs. 2.49 ± 1.74 mm), nasolabial fold (1.98 ± 1.05 mm vs. 0.96 ± 0.66 mm), and jawline (3.12 ± 1.32 mm vs. 1.88 ± 1.02 mm), all p < 0.05. Y-axis displacements were also greater for PFL in the medial (4.34 ± 2.19 mm vs. 2.54 ± 1.62 mm) and lateral midface (9.63 ± 8.26 mm vs. 5.50 ± 4.53 mm), with no significant difference in the nasolabial fold. In the Z-axis, PFL outperformed DP in the medial and lateral midface (p < 0.05), with no significant difference in the nasolabial fold.\n\nCONCLUSION: The preservative facelift technique results in significantly greater soft tissue mobilization across all axes and most facial regions compared to the traditional deep plane facelift. These biomechanical advantages stem from reduced skin undermining, preservation of fibrous septa, optimized vector geometry, and reduced dead space. The findings support the PFL as a mechanically efficient and reproducible technique that enhances both safety and aesthetic outcomes. However, further research with larger cohorts and long-term follow-up is necessary to assess durability, patient satisfaction, and overall clinical benefit.\n\nLEVEL OF EVIDENCE III: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06300-5",
+      "authors": [
+        "Roskies M",
+        "Bray D",
+        "van Gijn DR",
+        "Gualdi A",
+        "Nayak ML",
+        "Talei B",
+        "Levin M",
+        "Frank K"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "rejuv"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43039989/",
+      "added_at": "2026-11-18T03:14:47Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-18T03:14:49Z",
+      "summary_zh": {
+        "headline": "保留式facelift相比deep plane facelift在3D影像量化中顯示更大的軟組織位移。",
+        "points": [
+          "單一外科醫師回顧性研究，32名女性患者（DP 14例、PFL 18例），2024年1月至10月進行，術後6個月用Vectra H2進行3D表面影像評估。",
+          "PFL在X軸（外側位移）各區域均優於DP：內側中臉4.75 vs 2.54 mm、外側中臉4.84 vs 2.49 mm、鼻唇溝1.98 vs 0.96 mm、下頜線3.12 vs 1.88 mm（p<0.05）。",
+          "Y軸（垂直位移）與Z軸（前後位移）在中臉區域PFL亦顯著優於DP，但鼻唇溝無明顯差異。",
+          "限制：樣本數小、非隨機分配、單一外科醫師、缺乏長期追蹤與患者滿意度評估。"
+        ],
+        "relevance": 5,
+        "reason": "直接比較兩種主流facelift技術的生物力學效果，提供量化數據支持臨床決策與手術選擇。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-18T03:14:58Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "43039986",
+      "title": "Balancing Function and Aesthetics: Clinical Insights from Contemporary Rhinoplasty in a Regional Middle Eastern Cohort.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-11-16",
+      "abstract": "BACKGROUND: Rhinoplasty is one of the most commonly performed facial plastic surgery procedures, addressing both functional and aesthetic concerns. Despite its popularity, published data from the Middle East, particularly from practices that combine academic and private clinical settings, remain limited.\n\nMETHODS: Electronic medical records and clinical notes of all primary rhinoplasty cases performed by a single surgeon between April 2023 and April 2025 were retrospectively reviewed. Data collected included patient demographics, nationality, surgical indications, aesthetic concerns, operative details, and short-term outcomes. Patient-reported satisfaction was assessed using the validated Arabic version of the Rhinoplasty Outcome Evaluation (ROE) questionnaire.\n\nRESULTS: A total of 263 patients were included in this review. More than two-thirds were female, with a mean age of approximately 25 years. Most procedures (72.2%) were performed in private hospitals, whereas 27.8% were performed at a university-affiliated teaching hospital, where functional indications were more prevalent. Combined functional and aesthetic indications accounted for 61.6% of cases. The most commonly utilized structural techniques included septal extension grafts and columellar strut grafts, particularly for addressing tip ptosis and under-projection. ROE scores improved significantly from 31.45 ± 6.67 preoperatively to 84.79 ± 7.90 postoperatively (Δ = 53.34 ± 9.89, p < 0.001). Greater patient satisfaction was associated with female gender, the use of an open surgical approach, and the use of cartilaginous grafts. No major complications or revision surgeries were reported during the follow-up period.\n\nCONCLUSIONS: This study provides insight into patient priorities and surgical planning within a rhinoplasty practice serving patients from several Middle Eastern countries and demonstrates consistent postoperative improvement. The diversity of cases and practice settings offers practical guidance for facial plastic surgeons managing similar patient populations.\n\nLEVEL OF EVIDENCE IV: This journal requires that authors assign a level of evidence to each article. For a full description of these Evidence-Based Medicine ratings, please refer to the Table of Contents or the online Instructions to Authors www.springer.com/00266 .",
+      "doi": "10.1007/s00266-026-06355-4",
+      "authors": [
+        "Alzayadneh I",
+        "Alzayadneh L",
+        "Hamdan O",
+        "Abualhaj S",
+        "Solomon P",
+        "Rival R"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye",
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43039986/",
+      "added_at": "2026-11-18T03:14:47Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-18T03:14:50Z",
+      "summary_zh": {
+        "headline": "中東地區鼻整形手術結合功能與美學考量，患者滿意度顯著提升。",
+        "points": [
+          "回顧性研究263例初次鼻整形，72.2%於私立醫院、27.8%於教學醫院進行；61.6%兼具功能與美學適應症。",
+          "ROE問卷評分術前31.45±6.67進步至術後84.79±7.90（p<0.001），改善幅度53.34±9.89分。",
+          "常用技術為鼻中膈延伸移植與鼻柱支撐移植；女性患者、開放式入路、軟骨移植與更高滿意度相關。",
+          "追蹤期間無重大併發症或二次手術報告，但研究為單一術者、短期追蹤之回顧性設計。"
+        ],
+        "relevance": 4,
+        "reason": "屬鼻整形主題，提供功能與美學平衡的臨床實踐經驗與技術應用，但缺乏長期追蹤與對照組。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-18T03:15:02Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "43032810",
       "title": "Quality of Blepharoplasty Information on Social Media: A Decision-making Information Support Criteria for Evaluating the Reliability of Nonrandomized Studies Score Analysis of TikTok Videos.",
