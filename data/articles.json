@@ -1,6 +1,171 @@
 {
-  "generated_at": "2026-11-18T03:15:02Z",
+  "generated_at": "2026-11-19T02:53:54Z",
   "articles": [
+    {
+      "pmid": "43048714",
+      "title": "Postoperative Evaluation of the Inferior Alveolar Nerve Safe Zone Following Sagittal Ramus Osteotomy With the Low and Short Medial Osteotomy.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-11-17",
+      "abstract": "BACKGROUND: There is potential for inferior alveolar nerve (IAN) injury while making the medial corticotomy of the sagittal ramus osteotomy during mandibular orthognathic surgery. The low and short medial osteotomy modification places the medial corticotomy inferior to the mandibular foramen. The authors aim to define the IAN canal (IAC) position relative to the medial cortex of the mandible for the low and short medial osteotomy.\n\nMETHODS: A retrospective cohort study of subjects undergoing sagittal ramus osteotomy with the low and short medial osteotomy by a single surgeon was conducted. Bivariate and simple linear regression analysis were used to assess anatomic and procedural variables associated with IAC position relative to the medial corticotomy.\n\nRESULTS: The final study sample comprised 210 subjects (419 hemimandibles), mean age 26.2 ± 12.8 years. Distance from the anterior edge of the medial cortex of the ramus to the IAC (P = 0.01), corticotomy height from the inferior border (P = 0.008), and angle relative to occlusal plane (P < 0.0001) were significantly associated with the distance from medial cortex of the mandibular ramus to the IAC.\n\nCONCLUSIONS: The IAC is expected to be encountered 8-12 mm from the anterior edge of the medial cortex with an average depth of 1-2 mm when using the low and short medial osteotomy modification. Medial corticotomy height and angle should be considered to minimize potential IAN injury.",
+      "doi": "10.1097/GOX.0000000000008275",
+      "authors": [
+        "Ritchie CA",
+        "Zhai G",
+        "Kinard BE"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "11",
+      "pages": "e8275",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43048714/",
+      "added_at": "2026-11-19T02:53:32Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008275",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-19T02:53:35Z",
+      "summary_zh": {
+        "headline": "低位短距內側骨切術中下齒槽神經安全區距離為8-12mm，高度與角度影響神經損傷風險。",
+        "points": [
+          "回顧性隊列研究，210名患者419側半下顎骨，平均年齡26.2±12.8歲。",
+          "下齒槽神經管距內側皮質前緣8-12mm，平均深度1-2mm；內側骨切高度、與咬合平面角度與神經位置顯著相關（P<0.01）。",
+          "低位短距修正術可將內側骨切置於下顎孔下方，降低神經損傷風險，但需考慮個體解剖變異。"
+        ],
+        "relevance": 5,
+        "reason": "直接針對正顎手術（sagittal ramus osteotomy）內側骨切的神經解剖安全區定義，提供臨床決策依據。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-19T02:53:41Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "43045582",
+      "title": "Does orthognathic surgery increase the risk of obstructive sleep apnoea?",
+      "journal": "IJOMS",
+      "journal_full": "International journal of oral and maxillofacial surgery",
+      "pub_date": "2026-11-17",
+      "abstract": "The objective of this prospective cohort study was to evaluate longitudinal changes in the risk of obstructive sleep apnoea (OSA) and subjective sleep quality in healthy adults following orthognathic surgery to correct Class II and Class III dentoskeletal deformities. Seventy healthy adult subjects were assessed using the STOP-BANG Questionnaire (SBQ), Berlin Questionnaire (BQ), and Epworth Sleepiness Scale (ESS) approximately 1 month preoperatively (T0), 6 months postoperatively (T1), and 1 year postoperatively (T2). All procedures were performed by a single oral and maxillofacial surgeon over a 2-year period at two tertiary academic centres. Subjects with Class II discrepancies, predominantly treated with mandibular or bimaxillary advancement, demonstrated a statistically significant reduction in OSA risk at both 6 months and 1 year postoperatively based on SBQ (P = 0.012 and P = 0.046, respectively) and BQ scores (P = 0.012 and P = 0.007, respectively). No statistically significant differences in ESS scores were observed at either postoperative interval (P = 0.15 and P = 0.26, respectively). In contrast, subjects with Class III discrepancies, most of whom underwent bimaxillary surgery, did not exhibit a statistically significant increase in OSA risk or daytime sleepiness following surgery. Within the 1-year interval evaluated, orthognathic surgery did not increase the screening-based risk of OSA in healthy adults.",
+      "doi": "10.1016/j.ijom.2026.11.011",
+      "authors": [
+        "Au D",
+        "Magalhaes M",
+        "Vendittelli BL",
+        "Caminiti MF"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43045582/",
+      "added_at": "2026-11-19T02:53:32Z",
+      "oa_url": "https://doi.org/10.1016/j.ijom.2026.11.011",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-19T02:53:35Z",
+      "summary_zh": {
+        "headline": "正顎手術不增加健康成人阻塞性睡眠呼吸暫停風險，Class II患者術後風險反而下降。",
+        "points": [
+          "前瞻性隊列研究，70名健康成人，單一外科醫師執行，術前1個月、術後6個月及1年評估。",
+          "Class II患者（主要接受下顎或雙顎前移）術後6個月及1年的STOP-BANG及Berlin問卷評分顯著下降（P=0.012-0.046），ESS評分無顯著變化。",
+          "Class III患者（多數接受雙顎手術）術後OSA風險及日間嗜睡無顯著增加。",
+          "1年追蹤期內，正顎手術未增加健康成人的OSA篩檢風險。"
+        ],
+        "relevance": 4,
+        "reason": "正顎手術的安全性評估與術後併發症預防屬臨床決策重點，但睡眠呼吸暫停非直接手術技巧問題。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-19T02:53:45Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "43045581",
+      "title": "Autonomous systems in oral and maxillofacial surgery: a narrative review of current applications, regulatory considerations, and medicolegal implications.",
+      "journal": "IJOMS",
+      "journal_full": "International journal of oral and maxillofacial surgery",
+      "pub_date": "2026-11-17",
+      "abstract": "Robotic and artificial intelligence (AI) systems are increasingly described as autonomous in oral and maxillofacial surgery (OMS), although the operational meaning of that term varies widely across devices and procedures. This narrative review aims to classify robotic systems in OMS by level of autonomy and evidence stage, describe AI-driven surgical planning tools, and examine the regulatory status and liability implications of both. A PubMed search combining OMS procedural and anatomical terms with autonomy descriptors was conducted on March 2, 2026, supplemented by manual citation tracking, and findings were synthesized narratively. Dental implant placement accounts for most clinical activity. The single US Food and Drug Administration (FDA)-cleared OMS system provides haptic guidance only and does not execute any step independently. Other systems, none currently FDA-cleared, carry out the osteotomy and implant placement along a surgeon-approved plan and have been reported in patient series across single-tooth, full-arch, zygomatic, pterygoid, and sinus augmentation procedures. Beyond implants, a laser osteotome has performed Le Fort I cuts in a multicenter patient trial. Systems demonstrating autonomous mandibular tumor resection, maxillary repositioning, robotic orthognathic execution, and soft tissue tumor resection remain preclinical. AI-driven tools can segment craniomaxillofacial anatomy, identify landmarks, and generate surgical plans with accuracy comparable to expert reference standards, but their outputs are generally not linked to robotic execution in current OMS workflows. Competency standards, society guidelines, and specialty-specific consent language have not developed in parallel, possibly leaving the operating surgeon as the default bearer of risk when employing these technologies.",
+      "doi": "10.1016/j.ijom.2026.11.001",
+      "authors": [
+        "Liu K",
+        "Morgan CD",
+        "Borbiev ST",
+        "Wang J",
+        "Ilies TM",
+        "Hajibandeh JT"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43045581/",
+      "added_at": "2026-11-19T02:53:32Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-19T02:53:35Z",
+      "summary_zh": {
+        "headline": "機器人與AI在口腔顎面手術的自主程度分類與法規風險分析。",
+        "points": [
+          "綜述分類OMS機器人系統的自主程度與證據階段；FDA核准系統僅提供觸覺引導，不獨立執行步驟；其他系統可沿外科醫師核准計畫執行截骨與植入，應用於單顆牙到全口弧、顴骨、翼突、竇提升等程序。",
+          "雷射截骨刀在多中心試驗中完成Le Fort I截骨；下顎腫瘤切除、上顎重位、正顎手術執行、軟組織腫瘤切除等系統仍處臨床前階段。",
+          "AI工具可分割顱顎面解剖、識別地標、生成手術計畫，準確度與專家參考標準相當，但目前OMS工作流程中未與機器人執行連結。",
+          "專科能力標準、學會指南、特異性知情同意語言未同步發展，外科醫師可能成為使用這些技術的預設風險承擔者。"
+        ],
+        "relevance": 4,
+        "reason": "涵蓋正顎手術（Le Fort I、下顎截骨）與顴骨手術的機器人應用現況與法規考量，對臨床決策有參考價值。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-19T02:53:50Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "43045580",
+      "title": "Does pterygomaxillary junction anatomy affect separation patterns during orthognathic surgery in patients with cleft lip and palate?",
+      "journal": "IJOMS",
+      "journal_full": "International journal of oral and maxillofacial surgery",
+      "pub_date": "2026-11-17",
+      "abstract": "Pterygomaxillary separation during Le Fort I osteotomy may be influenced by anatomical variations, particularly in patients with repaired cleft lip and palate (CLP). This single-centre, retrospective, comparative study evaluated pterygomaxillary junction anatomy and separation patterns in 31 patients with repaired CLP who underwent orthognathic surgery, and compared these findings with those of 31 age- and deformity-comparable non-cleft skeletal Class III control patients. The right and left pterygomaxillary regions were assessed separately. Linear and angular measurements were performed on preoperative cone-beam computed tomography (CBCT) images, and separation patterns were classified on 1-month postoperative CBCT images. The groups were similar in age and sex distribution, and all patients had a skeletal Class III deformity. On both sides, pterygomaxillary junction thickness and width were significantly greater in patients with repaired CLP, while medial pterygoid plate length was significantly shorter (all P < 0.05). The right side pterygomaxillary angle was also greater in the CLP patients. Separation patterns were similar on the right side, whereas a significant difference was observed on the left side (P = 0.012), with a higher frequency of type 4 separation in patients with repaired CLP. Additional exploratory subgroup analyses according to cleft morphology showed no significant difference between the lesser and greater segments in unilateral complete cleft patients or between isolated cleft lip and isolated cleft palate subgroups. These findings indicate that repaired CLP is associated with distinct pterygomaxillary junction anatomy and altered separation behaviour, supporting careful preoperative CBCT assessment for surgical planning and risk reduction.",
+      "doi": "10.1016/j.ijom.2026.11.008",
+      "authors": [
+        "Guliyev M",
+        "Topan C",
+        "Çoban G",
+        "Demirbaş AE",
+        "Alkan A"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43045580/",
+      "added_at": "2026-11-19T02:53:32Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-19T02:53:35Z",
+      "summary_zh": {
+        "headline": "唇顎裂患者正顎手術中翼上頜關節解剖異常導致分離型態改變，左側尤明顯。",
+        "points": [
+          "31名修復唇顎裂患者與31名對照組（骨骼第三類咬合不正）比較，CBCT測量翼上頜關節厚度、寬度、內翼板長度及分離型態。",
+          "唇顎裂組雙側翼上頜關節厚度、寬度顯著增加，內翼板長度顯著縮短（P<0.05）；右側翼上頜角亦增大。",
+          "左側分離型態差異顯著（P=0.012），唇顎裂組第4型分離頻率較高；右側無顯著差異。",
+          "建議術前詳細CBCT評估翼上頜關節解剖以優化手術計畫與降低風險。"
+        ],
+        "relevance": 4,
+        "reason": "直接涉及Le Fort I正顎手術技巧與術前評估，但限於特定族群（唇顎裂），臨床應用範圍較窄。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-19T02:53:54Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "43043427",
       "title": "Subconjunctival Injection of Hyaluronic Acid Versus Triamcinolone Acetonide in Thyroid Eye Disease-related Upper Eyelid Retraction: A Pilot Study.",
@@ -2574,7 +2739,7 @@
       "added_at": "2026-10-20T00:50:09Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-20T00:50:12Z",
+      "oa_checked_at": "2026-11-19T02:53:36Z",
       "summary_zh": {
         "headline": "肉毒桿菌毒素A對比安慰劑確實改善患者自覺美學滿意度，但心理健康效益證據較弱。",
         "points": [
