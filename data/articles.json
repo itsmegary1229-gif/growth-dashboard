@@ -1,6 +1,48 @@
 {
-  "generated_at": "2026-11-19T02:53:54Z",
+  "generated_at": "2026-11-20T02:46:07Z",
   "articles": [
+    {
+      "pmid": "43053604",
+      "title": "Determining the Appropriate Age for Aesthetic Procedures in Minors: A Review of the Guidelines, Outcomes, and Ethical Considerations.",
+      "journal": "ASJ",
+      "journal_full": "Aesthetic surgery journal",
+      "pub_date": "2026-11-19",
+      "abstract": "Adolescents seeking aesthetic procedures present unique clinical and ethical challenges because they exist within an evolving stage of cognitive, emotional, and physical development. Although legal frameworks generally require parental consent for minors, determining procedural appropriateness extends beyond consent alone. It also requires careful consideration of psychosocial maturity, motivation, and long-term well-being. Perspectives regarding cosmetic procedures in minors vary widely, particularly because many interventions are performed to improve appearance or psychosocial distress rather than treat a clearly defined medical condition. This review synthesizes current evidence regarding regulatory considerations, safety outcomes, and ethical principles surrounding non-surgical and surgical aesthetic procedures in minors. Common non-surgical procedures include topical skincare regimens, injectables, lasers, skin resurfacing, and microneedling. Commonly performed surgical procedures include otoplasty, rhinoplasty, breast reduction, breast augmentation, and other body contouring interventions. Throughout the literature, there is substantial variability in minimum age recommendations, professional guidance, and procedural oversight across procedures and countries. However, prior studies have generally demonstrated favorable safety profiles, high postoperative satisfaction, and psychosocial improvement in appropriately selected adolescent patients. Given the absence of standardized age requirements for many procedures, surgeons bear substantial responsibility in determining procedural appropriateness on an individualized basis. Careful assessment of emotional maturity, body image, social influences, motivation, and understanding of procedural risks and limitations is therefore critical when evaluating minors seeking aesthetic intervention.",
+      "doi": "10.1093/asj/sjag265",
+      "authors": [
+        "Gimenez Lynch C",
+        "Munkwitz SE",
+        "Smith K",
+        "Shah H",
+        "Kassira W",
+        "Thaller S"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "nose"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43053604/",
+      "added_at": "2026-11-20T02:45:58Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-20T02:46:01Z",
+      "summary_zh": {
+        "headline": "未成年人美容手術的年齡適切性與倫理考量：綜合指引、安全性與心理社會評估",
+        "points": [
+          "綜合回顧非手術（肉毒、雷射、微針等）與手術程序（耳廓成形、鼻整形、隆乳等）在未成年人的安全性與滿意度，文獻顯示適當選案者預後良好",
+          "各國與各程序的最低年齡建議差異大，缺乏標準化要求，臨床醫師需個案評估心理成熟度、身體意象、動機與風險認知",
+          "強調除法律同意外，需評估心理社會成熟度與長期福祉，以區分醫學必要性與純美容需求"
+        ],
+        "relevance": 3,
+        "reason": "涵蓋鼻整形但重點在倫理與年齡指引，非臨床技巧或手術決策，屬背景知識層級。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-20T02:46:07Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "43048714",
       "title": "Postoperative Evaluation of the Inferior Alveolar Nerve Safe Zone Following Sagittal Ramus Osteotomy With the Low and Short Medial Osteotomy.",
@@ -2423,7 +2465,7 @@
       "added_at": "2026-10-21T00:15:34Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-21T00:15:37Z",
+      "oa_checked_at": "2026-11-20T02:46:01Z",
       "summary_zh": {
         "headline": "「斗拱」技術：基於鼻韌帶解剖的新型注射隆鼻生物力學方法，100例患者顯示良好效果。",
         "points": [
@@ -2463,7 +2505,7 @@
       "added_at": "2026-10-21T00:15:34Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-21T00:15:37Z",
+      "oa_checked_at": "2026-11-20T02:46:01Z",
       "summary_zh": {
         "headline": "Deep plane facelift 平均年輕化 7.64 歲，CNN 估計與患者滿意度呈中等相關。",
         "points": [
@@ -2501,7 +2543,7 @@
       "added_at": "2026-10-21T00:15:34Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-21T00:15:37Z",
+      "oa_checked_at": "2026-11-20T02:46:01Z",
       "summary_zh": {
         "headline": "乳房下垂誤抓為眼周ptosis，內容與眼周整形無關。",
         "points": [
@@ -2538,7 +2580,7 @@
       "added_at": "2026-10-21T00:15:34Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-21T00:15:38Z",
+      "oa_checked_at": "2026-11-20T02:46:02Z",
       "summary_zh": {
         "headline": "乳房重建 ELD 皮瓣供區使用 NPWT 引流未能顯著減少血清腫形成",
         "points": [
@@ -2618,7 +2660,7 @@
       "added_at": "2026-10-21T00:15:34Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-21T00:15:38Z",
+      "oa_checked_at": "2026-11-20T02:46:02Z",
       "summary_zh": {
         "headline": "雙層表面內眥成形術可安全擴大東亞人眼裂，疤痕最小化且滿意度高。",
         "points": [
@@ -2657,7 +2699,7 @@
       "added_at": "2026-10-21T00:15:34Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-21T00:15:38Z",
+      "oa_checked_at": "2026-11-20T02:46:02Z",
       "summary_zh": {
         "headline": "上眼瞼凹陷矯正中經眶上途徑脂肪移植的評論文章。",
         "points": [
