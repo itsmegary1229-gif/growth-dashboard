@@ -1,6 +1,48 @@
 {
-  "generated_at": "2026-11-20T02:46:07Z",
+  "generated_at": "2026-11-22T01:49:22Z",
   "articles": [
+    {
+      "pmid": "43064613",
+      "title": "Accuracy of guided midface surgery in complex craniomaxillofacial anomalies.",
+      "journal": "IJOMS",
+      "journal_full": "International journal of oral and maxillofacial surgery",
+      "pub_date": "2026-11-20",
+      "abstract": "While virtual surgical planning using patient-specific implants has improved orthognathic surgery accuracy, quantitative evidence on the three-dimensional (3D) accuracy of complex midfacial reconstructions remains limited. This study compared postoperative results with virtual plans in patients with complex craniofacial anomalies treated with patient-specific implants. Patients receiving guided surgical correction of the maxilla, zygoma or orbit between 2016 and 2025 were included. Pre- and postoperative cone-beam computed tomography (CBCT) scans were segmented into 3D models of the zygoma, maxilla, orbit, and remaining skull. Postoperative models were aligned with the preoperative plan to calculate positional differences. Twelve patients underwent bilateral zygomatic advancement with Le Fort I (n = 6), unilateral zygomatic advancement with Le Fort I (n = 1), bilateral zygomatic advancement (n = 2) or orbital box osteotomy (n = 3). The mean ± standard deviation (SD) Euclidean deviation between planned and achieved positions was 2.4 ± 1.1 mm. Orbit and maxilla deviations were within the < 2 mm/° threshold, while the left and right zygoma showed significant posterior deviation -2.6 (95% confidence interval (CI) -4.2 to -1.1) mm (P = 0.031) and -2.4 (95% CI -3.8 to -0.9) mm (P = 0.038), and significant yaw rotation for the left zygoma (6.1 (95% CI 4.2 to 8.0)°, P <0.001) and right zygoma (-7.0 (95% CI -8.84 to -5.26)°, P <0.001). In conclusion, virtual surgical planning translated well to the operating room, achieving <2 mm accuracy for the maxilla and orbital region. Posterior translation and inward rotation of the zygoma remain challenging.",
+      "doi": "10.1016/j.ijom.2026.11.010",
+      "authors": [
+        "Roumen B",
+        "El Ghoul K",
+        "van Walsum T",
+        "Mathijssen I",
+        "Wolvius E",
+        "Cornelissen B"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43064613/",
+      "added_at": "2026-11-22T01:49:14Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-22T01:49:17Z",
+      "summary_zh": {
+        "headline": "虛擬正顎手術計畫在複雜顏面異常的精準度：顴骨位置偏差最大。",
+        "points": [
+          "12名患者接受導航式上頜骨、顴骨或眼眶手術，平均三維偏差2.4±1.1 mm。",
+          "上頜骨與眼眶達成<2 mm精準度，但雙側顴骨均出現顯著後退位移（-2.4至-2.6 mm）與內旋（6.1至7.0°）。",
+          "虛擬計畫在眼眶與上頜區域可靠，但顴骨前移與旋轉矯正仍具挑戰性。"
+        ],
+        "relevance": 4,
+        "reason": "直接涉及正顎與顴骨手術精準度，但樣本數小（n=12），主要為技術驗證而非臨床對比研究。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-22T01:49:22Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "43053604",
       "title": "Determining the Appropriate Age for Aesthetic Procedures in Minors: A Review of the Guidelines, Outcomes, and Ethical Considerations.",
