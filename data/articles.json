@@ -1,6 +1,48 @@
 {
-  "generated_at": "2026-11-22T01:49:22Z",
+  "generated_at": "2026-11-23T02:05:46Z",
   "articles": [
+    {
+      "pmid": "43066456",
+      "title": "Mailbox Flap Mastopexy: Structural Internal Support Technique to Enhance Lower Pole Stability Breast Ptosis Correction.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-11-20",
+      "abstract": "BACKGROUND: Mastopexy remains one of the most common breast procedures, indicated for ptosis, postpartum changes, weight loss, asymmetry, and revision of prior augmentations. Despite multiple techniques, recurrent ptosis and lower pole instability persist, especially in implant-based lifts. This study introduces the mailbox flap mastopexy technique, designed to provide structural internal support and enhance long-term results.\n\nMETHODS: A retrospective cohort of 84 patients undergoing mastopexy with implants between 2021 and 2024 was analyzed. Exclusion criteria included recent smoking, connective tissue disease, or major comorbidities. Ptosis was graded by the Regnault system, and satisfaction was assessed with BREAST-Q. The surgical method used a 4 × 4 cm dermoglandular flap anchored to the pectoralis muscle, limited subpectoral myotomy, individualized implant pocket dissection, and optional internal bra reinforcement.\n\nRESULTS: The mean age of the patients was 39.7 ± 9.3 years and body mass index was 23.7 ± 3.0 kg/m2. Most patients had Regnault grade 2 (65.5%) or 3 (31.0%) ptosis; 60.7% underwent secondary mastopexies. Mean operation time was 320 ± 58 minutes. Complete ptosis correction was achieved in 90.5%, and mild residual ptosis in 9.5%. Complications occurred in 23.8%, comprising mainly minor wound dehiscence (5.9%), hypertrophic scars (3.6%), and asymmetry (3.6%). No life-threatening events were reported. BREAST-Q scores improved from 35.2 ± 4.4 to 93.8 ± 5.7 (P < 0.001).\n\nCONCLUSIONS: The mailbox flap technique provided durable lower pole reinforcement through a dermoglandular flap fixed to the pectoralis, reducing reliance on skin for support. This technique achieved stable, natural outcomes with high satisfaction and low complication rates.",
+      "doi": "10.1097/GOX.0000000000008237",
+      "authors": [
+        "Centeno-Silva J",
+        "Lopez PA",
+        "Condiño E",
+        "Ramirez B",
+        "Varela A"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "11",
+      "pages": "e8237",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43066456/",
+      "added_at": "2026-11-23T02:05:38Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008237",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-23T02:05:41Z",
+      "summary_zh": {
+        "headline": "乳房下垂矯正術中使用郵箱瓣膜技術提供內部支撐，改善長期穩定性。",
+        "points": [
+          "回顧性研究84名患者（2021-2024），平均年齡39.7歲，65.5%為Regnault第2級下垂；60.7%為二次手術。",
+          "使用4×4公分真皮腺體瓣固定於胸肌提供結構支撐，90.5%達完全矯正，9.5%輕微殘留下垂。",
+          "併發症23.8%，主要為輕微傷口裂開（5.9%）、肥厚性疤痕（3.6%）、不對稱（3.6%），無重症事件。",
+          "BREAST-Q滿意度從35.2±4.4顯著改善至93.8±5.7（P<0.001）。"
+        ],
+        "relevance": 1,
+        "reason": "乳房下垂矯正術，非眼周整形；自動篩選誤抓（ptosis關鍵字）。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-23T02:05:46Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "43064613",
       "title": "Accuracy of guided midface surgery in complex craniomaxillofacial anomalies.",
@@ -2093,7 +2135,7 @@
       "added_at": "2026-10-24T00:09:57Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-24T00:10:00Z",
+      "oa_checked_at": "2026-11-23T02:05:41Z",
       "summary_zh": {
         "headline": "乳房保留乳頭乳房切除術併同時乳房上提手術安全性可接受，但應嚴格選擇患者。",
         "points": [
@@ -2130,7 +2172,7 @@
       "added_at": "2026-10-24T00:09:57Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-24T00:10:00Z",
+      "oa_checked_at": "2026-11-23T02:05:41Z",
       "summary_zh": {
         "headline": "次級 facelift 的時間間隔、術式選擇與併發症關係之評論性分析。",
         "points": [
@@ -2172,9 +2214,9 @@
       ],
       "url": "https://pubmed.ncbi.nlm.nih.gov/42909603/",
       "added_at": "2026-10-24T00:09:57Z",
-      "oa_url": null,
-      "oa_pdf": false,
-      "oa_checked_at": "2026-10-24T00:10:00Z",
+      "oa_url": "https://link.springer.com/content/pdf/10.1007/s00266-026-06315-y.pdf",
+      "oa_pdf": true,
+      "oa_checked_at": "2026-11-23T02:05:41Z",
       "summary_zh": {
         "headline": "AI量化分析頦成形美學結果的回覆意見",
         "points": [
