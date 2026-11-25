@@ -1,6 +1,48 @@
 {
-  "generated_at": "2026-11-24T05:41:33Z",
+  "generated_at": "2026-11-25T04:42:45Z",
   "articles": [
+    {
+      "pmid": "43076915",
+      "title": "Aesthetic Periorbital Surgery in Patients with Prior Dermal Fillers and Energy-Based Device Treatments: Challenges and Strategic Considerations.",
+      "journal": "APS",
+      "journal_full": "Aesthetic plastic surgery",
+      "pub_date": "2026-11-24",
+      "abstract": "",
+      "doi": "10.1007/s00266-026-06256-6",
+      "authors": [
+        "Cervantes A",
+        "Kontoes P",
+        "Miotto G",
+        "Takayanagi S",
+        "Parreira JC",
+        "Errea E",
+        "Rouif M"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "eye"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43076915/",
+      "added_at": "2026-11-25T04:42:39Z",
+      "oa_url": null,
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-25T04:42:41Z",
+      "summary_zh": {
+        "headline": "曾接受填充劑與能量治療患者的眼周整形手術面臨的挑戰與策略",
+        "points": [
+          "無摘要，依標題判斷。文章討論眼周整形手術在患者既往接受皮膚填充劑與能量治療後的手術規劃與技術考量。",
+          "涵蓋美容眼周手術（上下眼瞼整形、眼周年輕化）與非手術治療（填充劑、能量治療）的交互影響。"
+        ],
+        "relevance": 4,
+        "reason": "直接屬眼周主題，涉及整形手術與既往非手術治療的臨床決策，但缺摘要難評具體實用價值。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-25T04:42:45Z",
+        "basis": "title"
+      }
+    },
     {
       "pmid": "43073110",
       "title": "Ipsilateral tooth-registered surgical guides for minimally invasive Le Fort I osteotomy.",
@@ -1972,7 +2014,7 @@
       "added_at": "2026-10-25T23:41:42Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-25T23:41:45Z",
+      "oa_checked_at": "2026-11-25T04:42:42Z",
       "summary_zh": {
         "headline": "下顎後縮逆時針旋轉術：後縮式與後延式兩種方式穩定性與療效相近",
         "points": [
