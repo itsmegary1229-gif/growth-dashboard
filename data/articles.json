@@ -1,6 +1,47 @@
 {
-  "generated_at": "2026-11-25T04:42:45Z",
+  "generated_at": "2026-11-26T03:51:51Z",
   "articles": [
+    {
+      "pmid": "43078722",
+      "title": "Mapping anatomical factors associated with unfavorable fractures during sagittal split osteotomy: a scoping review of computed tomography-based evidence.",
+      "journal": "IJOMS",
+      "journal_full": "International journal of oral and maxillofacial surgery",
+      "pub_date": "2026-11-24",
+      "abstract": "Unfavorable fractures during sagittal split osteotomy (SSO) represent a clinically relevant complication that may compromise surgical stability and postoperative outcomes. This scoping review aimed to map the computed tomography (CT)/cone-beam-CT-assessed mandibular anatomical factors reported in relation to unfavorable fractures during SSO and to identify gaps in the current evidence. A comprehensive search was conducted in multiple databases from inception to February 2026, including analytical and descriptive studies evaluating anatomical factors. Following PRISMA-ScR guidelines, data were charted regarding study characteristics, demographic data, osteotomy technique, incidence and classification of unfavorable fractures, imaging modality, anatomical factors and measurement sites, and reported associations between anatomical factors and unfavorable patterns. Sixteen studies comprising 2576 patients were analyzed, with reported unfavorable fracture incidence ranging from 1.28% to 29.2% per patient and from 0.6% to 20.65% per surgical side. Reduced buccolingual ramus thickness at the lingula level and a narrow distance between the mandibular canal and the buccal cortex were frequently reported as factors associated with unfavorable fractures. Other parameters, such as trabecular bone characteristics and regional density variations, appeared to influence fracture propagation, whereas age, sex, and third molars showed inconsistent clinical relevance. Critical evidence gaps identified include the lack of standardized definitions, inconsistent use of classification systems, and variation in anatomical landmarks. Mandibular anatomy appears to influence fracture behavior through localized structural constraints. However, due to significant methodological heterogeneity across the literature, these features should be interpreted as reported associations rather than definitive independent predictors.",
+      "doi": "10.1016/j.ijom.2026.10.024",
+      "authors": [
+        "Araújo ESM",
+        "Silva AGG",
+        "Rodrigues LNC",
+        "Almeida RAC",
+        "Araújo FAC"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43078722/",
+      "added_at": "2026-11-26T03:51:44Z",
+      "oa_url": "https://doi.org/10.1016/j.ijom.2026.10.024",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-26T03:51:47Z",
+      "summary_zh": {
+        "headline": "正顎手術中不利骨折的解剖風險因子：CT影像證據的系統性回顧",
+        "points": [
+          "16篇研究、2576名患者，不利骨折發生率為1.28%-29.2%（患者）或0.6%-20.65%（手術側），發生率差異大",
+          "舌側下頜骨厚度減少與下頜管至頰側皮質距離狹窄最常被報告為風險因子；骨小樑特性與局部骨密度變化也可能影響骨折傳播",
+          "年齡、性別、第三臼齒的臨床相關性不一致；缺乏標準化定義與分類系統，限制了證據品質與可比性"
+        ],
+        "relevance": 5,
+        "reason": "直接針對BSSO/sagittal split手術併發症的解剖風險因子進行系統性回顧，提供臨床決策參考。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-26T03:51:51Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "43076915",
       "title": "Aesthetic Periorbital Surgery in Patients with Prior Dermal Fillers and Energy-Based Device Treatments: Challenges and Strategic Considerations.",
@@ -1973,7 +2014,7 @@
       "added_at": "2026-10-27T01:01:02Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-27T01:01:06Z",
+      "oa_checked_at": "2026-11-26T03:51:47Z",
       "summary_zh": {
         "headline": "評論：止血酸在上眼瞼手術中的角色與證據品質",
         "points": [
