@@ -1,6 +1,86 @@
 {
-  "generated_at": "2026-11-26T03:51:51Z",
+  "generated_at": "2026-11-27T03:53:03Z",
   "articles": [
+    {
+      "pmid": "43095718",
+      "title": "Bone-preserving Granulation on Exposed Calvaria Using Combined Low-temperature Plasma and Negative-pressure Wound Therapy.",
+      "journal": "PRS-GO",
+      "journal_full": "Plastic and reconstructive surgery. Global open",
+      "pub_date": "2026-11-25",
+      "abstract": "An exposed calvaria denuded of periosteum traditionally requires cortectomy or flap coverage to create a graftable wound bed, both of which carry meaningful morbidity. A 49-year-old woman had a 10 × 5 cm infected blast-injury scalp defect that exposed the calvaria, entirely denuded of periosteum, across the sagittal suture. After 12 days of negative-pressure wound therapy (NPWT) at the referring hospital produced minimal granulation (<15% coverage), multimodal management was begun, comprising debridement, culture-directed antibiotics, nutritional supplementation, and combined low-temperature atmospheric-pressure plasma (LTAPP; intensity 5, 50 Hz, argon 1 L/min, 10 min) with continuous NPWT at -110 mm Hg, in 4 bedside sessions spanning 14 days. Granulation coverage increased to 100% of the exposed cortex without cortectomy, enabling split-thickness skin grafting with full graft take at 3 weeks and preservation of the skull contour. Bone-preserving wound-bed preparation occurred during multimodal management incorporating LTAPP and NPWT. Because multiple interventions were applied simultaneously in a single patient, the independent contribution of LTAPP cannot be determined; the observation is hypothesis-generating and requires controlled validation.",
+      "doi": "10.1097/GOX.0000000000008299",
+      "authors": [
+        "Ongkasuwan P"
+      ],
+      "year": "2026",
+      "volume": "14",
+      "issue": "11",
+      "pages": "e8299",
+      "topics": [
+        "wound"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43095718/",
+      "added_at": "2026-11-27T03:52:50Z",
+      "oa_url": "https://doi.org/10.1097/gox.0000000000008299",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-27T03:52:53Z",
+      "summary_zh": {
+        "headline": "低溫電漿合併負壓治療可促進暴露顱骨肉芽組織生成，保留骨質結構。",
+        "points": [
+          "49歲女性爆炸傷頭皮缺損（10×5 cm）暴露完全去骨膜顱骨，單獨NPWT 12天肉芽覆蓋<15%。",
+          "多模式治療（清創、抗生素、營養補充、低溫大氣壓電漿LTAPP + NPWT）4次療程14天內達100%肉芽覆蓋，無需皮質切除術。",
+          "3週後分層植皮完全存活，保留顱骨輪廓；但多項介入同時進行，LTAPP獨立貢獻無法確定，需對照研究驗證。",
+          "個案報告，無對照組，觀察性證據，假說生成階段。"
+        ],
+        "relevance": 2,
+        "reason": "個案報告涉及NPWT與創傷傷口，但主要焦點為顱骨暴露與電漿治療，非讀者五大主題核心。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-27T03:52:59Z",
+        "basis": "abstract"
+      }
+    },
+    {
+      "pmid": "43086127",
+      "title": "Alloplastic total temporomandibular joint replacement for progressive and idiopathic condylar resorption: a scoping review of clinical outcomes, stability, and complications.",
+      "journal": "IJOMS",
+      "journal_full": "International journal of oral and maxillofacial surgery",
+      "pub_date": "2026-11-25",
+      "abstract": "Evidence regarding the efficacy, stability, and clinical outcomes of alloplastic total temporomandibular joint replacement (TMJR) for managing progressive condylar resorption (PCR) and idiopathic condylar resorption (ICR) was reviewed. A PRISMA‑ScR‑compliant search was conducted across seven electronic databases from inception to February 2026; 1324 records were screened and 37 studies included, encompassing TMJR cohorts and contextual comparator series; within these, approximately 480 patients were treated with alloplastic TMJR for PCR/ICR, alongside smaller cohorts managed with orthognathic surgery or autogenous reconstruction. While traditional orthognathic surgery in PCR/ICR populations is associated with high skeletal relapse rates (often 31-100%), alloplastic TMJR provides superior stability, with cephalometric changes generally within 0-3% of immediate postoperative values in long‑term series. Postoperative maximum incisal opening improves from severely restricted ranges (8-25 mm) to functional ranges (30-42 mm; mean gain approximately 17-18 mm). Pain scores typically decrease by approximately 75-87%, with most cohorts reporting complete or near‑complete pain relief in the majority of patients. Diagnostic innovations such as Hounsfield Unit (HU) analysis, with a characteristic sclerotic peak around 1350-1500 HU, offer objective differentiation between ICR and osteoarthritis. Complication rates for TMJR, including heterotopic ossification and infection, are generally low in contemporary series, particularly when adjunctive autologous fat grafting and patient‑specific custom prostheses are used. Alloplastic TMJR is an acceptable and safe option for end‑stage PCR/ICR in appropriately selected patients. Success is likely optimized by combining prosthetic reconstruction with adjunctive autologous fat grafting and comprehensive pain management, including assessment for central sensitization.",
+      "doi": "10.1016/j.ijom.2026.11.004",
+      "authors": [
+        "Lima BC",
+        "Neves LBM",
+        "Grillo R",
+        "Brozoski MA",
+        "Melhem-Elias F",
+        "Mercuri LG"
+      ],
+      "year": "2026",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "topics": [
+        "contour"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43086127/",
+      "added_at": "2026-11-27T03:52:50Z",
+      "oa_url": "https://doi.org/10.1016/j.ijom.2026.11.004",
+      "oa_pdf": false,
+      "oa_checked_at": "2026-11-27T03:52:53Z",
+      "summary_zh": {
+        "headline": "全人工顳顎關節置換術對進行性及特發性髁突吸收的穩定性優於正顎手術，長期骨骼復發率<3%。",
+        "points": [
+          "Scoping review納入37篇研究、約480名患者接受alloplastic TMJR治療PCR/ICR；傳統正顎手術復發率31-100%，TMJR長期骨骼變化僅0-3%。",
+          "張口度從嚴重受限（8-25mm）改善至功能性範圍（30-42mm，平均增加17-18mm）；疼痛評分下降75-87%，多數患者達完全或近完全緩解。",
+          "HU分析（特徵性硬化峰值1350-1500 HU）可客觀區分ICR與骨關節炎；合併自體脂肪移植與客製化假體時，異位骨化與感染等併發症率低。"
+        ],
+        "relevance": 4,
+        "reason": "屬正顎領域，但重點在TMJ病理與假體重建，非傳統輪廓正顎手術；對特定患者族群有臨床參考價值。",
+        "model": "claude-haiku-4-5-20251001",
+        "at": "2026-11-27T03:53:03Z",
+        "basis": "abstract"
+      }
+    },
     {
       "pmid": "43078722",
       "title": "Mapping anatomical factors associated with unfavorable fractures during sagittal split osteotomy: a scoping review of computed tomography-based evidence.",
@@ -1978,7 +2058,7 @@
       "added_at": "2026-10-28T00:50:49Z",
       "oa_url": null,
       "oa_pdf": false,
-      "oa_checked_at": "2026-10-28T00:50:54Z",
+      "oa_checked_at": "2026-11-27T03:52:53Z",
       "summary_zh": {
         "headline": "V形下鼻甲移植物作為鼻尖幾何控制的結構性模板",
         "points": [
